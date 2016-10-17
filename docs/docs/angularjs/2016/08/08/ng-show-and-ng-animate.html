@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="F. Javier R. Donado - http://www.jdonado.com">
+  <title>ng-show and ng-animate</title>
+  <meta name="description" content="If ng-show happens to be too slow without an obvious reason">
 
-  <link rel="stylesheet" href="/blog/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/blog/about/">
-  <link rel="alternate" type="application/rss+xml" title="JDonado - Blog" href="/blog/feed.xml">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/angularjs/2016/08/08/ng-show-and-ng-animate.html">
+  <link rel="alternate" type="application/rss+xml" title="JDonado - Blog" href="/feed.xml">
   
   
 </head>
@@ -23,7 +23,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="/blog/">JDonado - Blog</a>
+    <a class="site-title" href="/">JDonado - Blog</a>
 
     <nav class="site-nav">
       <span class="menu-icon">
@@ -37,7 +37,7 @@
       <div class="trigger">
         
           
-          <a class="page-link" href="/blog/about/">About</a>
+          <a class="page-link" href="/about/">About</a>
           
         
           
@@ -58,17 +58,34 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title" itemprop="name headline">ng-show and ng-animate</h1>
+    <p class="post-meta"><time datetime="2016-08-08T19:26:53+02:00" itemprop="datePublished">Aug 8, 2016</time></p>
   </header>
 
-  <div class="post-content">
-    <p>This is the blog of <a href="http://www.jdonado.com">F. Javier R. Donado</a>.</p>
+  <div class="post-content" itemprop="articleBody">
+    <p>If ng-show happens to be too slow without an obvious reason</p>
+
+<p>It happened to me tonight that ng-show was taking too long to refresh. I know <a href="http://stackoverflow.com/questions/19177732/what-is-the-difference-between-ng-if-and-ng-show-ng-hide">the differences between ng-if and ng-show</a> and how sometimes ng-show can decrease performance. But in this case it was a pretty straightforward example, and it shouldn’t.</p>
+
+<p>In the end it turned out to be the combination of ng-show and ng-animate. I wasn’t using any animation, but there was a css transition running anyway, and making things look slower than they were.</p>
+
+<p>If any of this ever happens to you, and you don’t want to remove ng-animate from your project, simply add the .no-animate class to the element where ng-show or ng-hide is used, and update your css with the following lines.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.ng-animate.no-animate</span> <span class="p">{</span>
+  <span class="nl">transition</span><span class="p">:</span> <span class="m">0s</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="nl">-webkit-transition</span><span class="p">:</span> <span class="m">0s</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="nl">animation</span><span class="p">:</span> <span class="m">0s</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="nl">-webkit-animation</span><span class="p">:</span> <span class="m">0s</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>As simple as that.</p>
 
   </div>
 
+  
 </article>
 
       </div>
