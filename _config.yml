@@ -31,5 +31,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - run.sh
+  - build.sh
   - docs
   - README.md
