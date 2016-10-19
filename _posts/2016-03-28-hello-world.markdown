@@ -4,8 +4,8 @@ title:  "Hello World"
 date:   2016-03-28 
 category: coding 
 backgrounds:
-    - http://blog.jdonado.com/images/helloworld.jpg
-thumb: http://blog.jdonado.com/images/helloworld.jpg
+    - http://blog.jdonado.com/assets/images/helloworld.jpg
+thumb: http://blog.jdonado.com/assets/images/helloworld.jpg
 tags: about jdonado software
 ---
 
