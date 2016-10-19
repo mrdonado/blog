@@ -1,9 +1,14 @@
 ---
 layout: post
 title:  "Hello World"
-date:   2016-06-12 19:26:53 +0100
-categories: about jdonado software
+date:   2016-03-28 
+category: coding 
+backgrounds:
+    - http://blog.jdonado.com/images/helloworld.jpg
+thumb: http://blog.jdonado.com/images/helloworld.jpg
+tags: about jdonado software
 ---
+
 ## What is jdonado.com? 
 
 It's my personal page, and you're very welcome. 

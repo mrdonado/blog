@@ -1,8 +1,12 @@
 ---
 layout: post
 title:  "Inheritance and Observer Pattern in AngularJS 1.4"
-date:   2016-06-12 19:26:53 +0100
-categories: angularjs design patterns observer inheritance 
+date:   2016-06-12
+category: coding
+backgrounds:
+    - http://blog.jdonado.com/images/observer-angular.jpg
+thumb: http://blog.jdonado.com/images/observer-angular.jpg
+tags: angularjs design patterns observer inheritance 
 ---
 
 In AngularJS, when designing services, it is well common to return an instance of the **$http** service. The code that requests it (usually within a controller), must process then the promise and do whatever it is to be done with the data that come from server.

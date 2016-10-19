@@ -1,9 +1,14 @@
 ---
 layout: post
 title:  "Special Thanks"
-date:   2016-06-12 19:26:53 +0100
-categories: special thanks acknowledgements
+date:   2016-06-12 
+category: coding
+backgrounds:
+    - http://blog.jdonado.com/images/acknowledgements.jpg
+thumb: http://blog.jdonado.com/images/acknowledgements.jpg
+tags: special thanks acknowledgements
 ---
+
 # Acknowledgements
     
 I have to specially thank the help of the following people:
