@@ -33,8 +33,7 @@
 </head>
 <script type="application/javascript">
 
-    $( document).ready(
-            function(){
+    (function(){
                 // When we're in an iFrame, we don't want to show the navbar toggler
                 var isIframe = function () {
                     try {
@@ -46,9 +45,12 @@
 
                 if (isIframe()) {
                     $('.sb-toggle-left').hide();
+                    console.log("iframe detected.");
+                }else{
+                    console.log("No iframe detected.")
                 }
-            }
-    );
+            })()
+
 
 </script>
 
