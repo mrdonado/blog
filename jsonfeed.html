@@ -13,7 +13,7 @@ home: false
     "coverfile": "{{ post.thumb }}",
     "date": "{{ post.date | date: "%Y-%m-%d"}}",
     "tags": "{{ post.tags | array_to_sentence_string}}",
-    "description": "{{ post.excerpt | strip_html }}",
+    "description": {{ post.excerpt | strip_html | jsonify}},
     "type": "post"
     "author": "{{post.author}}"
   }
