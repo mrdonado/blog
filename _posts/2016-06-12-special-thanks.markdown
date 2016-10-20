@@ -4,14 +4,14 @@ title:  "Special Thanks"
 date:   2016-06-12 
 category: coding
 backgrounds:
-    - http://blog.jdonado.com/assets/images/acknowledgements.jpg
+    - http://blog.jdonado.com/assets/images/jsbg.jpg
 thumb: http://blog.jdonado.com/assets/images/acknowledgements.jpg
 tags: special thanks acknowledgements
 ---
 
 # Acknowledgements
     
-I have to specially thank the help of the following people:
+I have to specially thank the help of the following people when I was developing [www.jdonado.com](http://www.jdonado.com):
 
 - **Maria Kouman**, who is always supportive with me during my long hours in front of the computer, giving also great feedback and wonderful ideas.
 - **Artur Beyrle** [(Lexip Design)](http://lexip-design.de), who crafted some layouts for my home page and provided me with an extraordinary feedback. 

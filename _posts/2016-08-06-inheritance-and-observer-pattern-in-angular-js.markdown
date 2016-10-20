@@ -4,7 +4,7 @@ title:  "Inheritance and Observer Pattern in AngularJS 1.4"
 date:   2016-06-12
 category: coding
 backgrounds:
-    - http://blog.jdonado.com/assets/images/observer-angular.jpg
+    - http://blog.jdonado.com/assets/images/jsbg.jpg
 thumb: http://blog.jdonado.com/assets/images/observer-angular.jpg
 tags: angularjs design patterns observer inheritance 
 ---

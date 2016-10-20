@@ -3,6 +3,8 @@ layout: post
 title:  "ng-show and ng-animate"
 date:   2016-08-08 
 category: coding
+backgrounds:
+    - http://blog.jdonado.com/assets/images/jsbg.jpg
 thumb: http://blog.jdonado.com/assets/images/nganimate.jpg
 tags: javascript angularjs
 ---

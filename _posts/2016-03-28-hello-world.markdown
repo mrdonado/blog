@@ -4,14 +4,14 @@ title:  "Hello World"
 date:   2016-03-28 
 category: coding 
 backgrounds:
-    - http://blog.jdonado.com/assets/images/helloworld.jpg
+    - http://blog.jdonado.com/assets/images/jsbg.jpg
 thumb: http://blog.jdonado.com/assets/images/helloworld.jpg
 tags: about jdonado software
 ---
 
 ## What is jdonado.com? 
 
-It's my personal page, and you're very welcome. 
+[Jdonado.com](http://www.jdonado.com) is my personal page, [blog.jdonado.com](http://blog.jdonado.com) is this blog, and you're very welcome to them both.
 
 My name is F. Javier R. Donado, I'm from Madrid (Spain) and I live in Stuttgart (Germany). I'm a software developer, and I also take pictures and record music.
 
@@ -21,7 +21,7 @@ In my [blog](http://blog.jdonado.com) I write mostly about software development.
 
 I used AngularJS to develop [www.jdonado.com](http://www.jdonado.com). So actually, it's not exactly a just page but a web app.
 
-My blog is based in [Jekyll](https://jekyllrb.com/).
+This blog is based in [Jekyll](https://jekyllrb.com/).
 
 Both projects are open source, so feel free to visit me on [GitHub](https://github.com/fjrd84). Any feedback will be appreciated.
 
