@@ -2,13 +2,13 @@
 facebook: true
 twitter: true
 googleplus: true
-linkedin: false
+linkedin: true
 reddit: true
 hackernews: true
 pinterest: false
 tumblr: false
 pocket: true
-email: false
+email: true
 
 # Disqus
 disqus_shortname: 'jdonado-1'
