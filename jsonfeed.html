@@ -14,7 +14,7 @@ home: false
     "date": "{{ post.date | date: "%Y-%m-%d"}}",
     "tags": "{{ post.tags | array_to_sentence_string}}",
     "description": {{ post.excerpt | strip_html | jsonify}},
-    "type": "post"
+    "type": "post",
     "author": "{{post.author}}"
   }
   {% unless forloop.last %},{% endunless %}
