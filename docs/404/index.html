@@ -171,14 +171,6 @@ Please use the <a style="cursor: pointer;" class="sb-open-left">navigation</a> o
 <script type="text/javascript" src="/assets/js/functions.js"></script>
 <script type="text/javascript">
     $(function($) {
-
-        // When we're in an iFrame, we don't want to show the navbar toggler
-        try {
-            return window.self !== window.top;
-        } catch (e) { // Error when we're into an iFrame
-            $('.sb-toggle-left').hide()
-        }
-
         $.slidebars();
 
         var steps = [];
@@ -222,6 +214,20 @@ Please use the <a style="cursor: pointer;" class="sb-open-left">navigation</a> o
         $(document).on("backstretch.after", function (e, instance, index) {
             $('.loader').removeClass('loading');
         });
+
+    // When we're in an iFrame, we don't want to show the navbar toggler
+    var isIframe = function (){
+        try {
+            return window.self !== window.top;
+        } catch (e) { // Error when we're into an iFrame
+            return true;
+        }
+    };
+
+    if(isIframe()){
+        $('.sb-toggle-left').hide();
+    }
+
     });
 </script>
 
