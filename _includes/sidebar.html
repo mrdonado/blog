@@ -6,6 +6,9 @@
     <nav>
         <a href="{{ site.baseurl }}/"><h2 class="site-title">{{ site.name }}</h2></a>
         <ul class="sb-menu">
+            <li class="sb-close">
+                <a href="http://www.jdonado.com">Home</a>
+            </li>
         {% assign pages_list = site.pages | sort:"url" %}
         {% for node in pages_list %}
             {% if node.title != null %}
@@ -21,9 +24,6 @@
         <div class="site-info">
             <p>
                 {{ site.name }} &dash; Copyright &copy; {{ site.time | date: '%Y' }}
-            </p>
-            <p>
-                Powered by Jekyll using <a href="http://github.com/SalGnt/Travelogue">Travelogue</a>
             </p>
         </div>
     </nav>

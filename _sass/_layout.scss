@@ -7,6 +7,18 @@
     padding: ($spacing-unit * 2) 0;
 }
 
+#home-button{
+    position: fixed;
+    top:  $spacing-unit / 2;
+    right:  $spacing-unit / 2;
+    cursor: pointer;
+    width: 45px;
+    height: 40px;
+    z-index: 2;
+    background-image: url(../images/home.svg);
+    background-size: cover;
+}
+
 .container {
     background: $background-color;
     padding: 0;
@@ -112,6 +124,7 @@
 
         &:hover {
             border-color: $grey-color-light;
+            transform: scale(1.01);
         }
 
         .post-list-link {

@@ -5,7 +5,7 @@
    URL:    http://codepen.io/aurer/pen/jEGbA
    ========================================================================== */
 .loader {
-    right: $spacing-unit / 2;
+    right: 2 * $spacing-unit;
     position: fixed;
     opacity: 0;
     top: $spacing-unit / 2;
