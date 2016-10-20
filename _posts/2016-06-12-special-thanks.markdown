@@ -4,7 +4,7 @@ title:  "Special Thanks"
 date:   2016-06-12 
 category: coding
 backgrounds:
-    - http://blog.jdonado.com/assets/images/jsbg.jpg
+    - http://blog.jdonado.com/assets/images/desert.jpg
 thumb: http://blog.jdonado.com/assets/images/acknowledgements.jpg
 tags: special thanks acknowledgements
 ---
