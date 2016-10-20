@@ -6,7 +6,7 @@ category: coding
 backgrounds:
     - http://blog.jdonado.com/assets/images/desert.jpg
 thumb: http://blog.jdonado.com/assets/images/acknowledgements.jpg
-tags: special thanks acknowledgements
+tags: acknowledgements
 ---
 
 # Acknowledgements

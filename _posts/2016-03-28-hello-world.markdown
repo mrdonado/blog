@@ -6,7 +6,7 @@ category: coding
 backgrounds:
     - http://blog.jdonado.com/assets/images/jsbg.jpg
 thumb: http://blog.jdonado.com/assets/images/helloworld.jpg
-tags: about jdonado software
+tags: about jdonado.com
 ---
 
 ## What is jdonado.com? 

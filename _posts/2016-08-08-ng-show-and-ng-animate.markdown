@@ -6,7 +6,7 @@ category: coding
 backgrounds:
     - http://blog.jdonado.com/assets/images/jsbg.jpg
 thumb: http://blog.jdonado.com/assets/images/nganimate.jpg
-tags: javascript angularjs
+tags: angularjs
 ---
 
 ### If ng-show happens to be too slow without an obvious reason
