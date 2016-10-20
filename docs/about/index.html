@@ -164,6 +164,14 @@
 <script type="text/javascript" src="/assets/js/functions.js"></script>
 <script type="text/javascript">
     $(function($) {
+
+        // When we're in an iFrame, we don't want to show the navbar toggler
+        try {
+            return window.self !== window.top;
+        } catch (e) { // Error when we're into an iFrame
+            $('.sb-toggle-left').hide()
+        }
+
         $.slidebars();
 
         var steps = [];
