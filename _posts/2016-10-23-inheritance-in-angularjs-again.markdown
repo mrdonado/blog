@@ -6,7 +6,7 @@ category: coding
 backgrounds:
     - http://blog.jdonado.com/assets/images/jsbg.jpg
 thumb: http://blog.jdonado.com/assets/images/inheritance-again.jpg
-tags: angularjs
+tags: angularjs inheritance ecmascript5
 ---
 
 ### Rethinking about inheritance in AngularJS 1.5
