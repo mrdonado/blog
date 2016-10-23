@@ -1,0 +1,12 @@
+ul.post-archive{
+  li{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  li:not(:last-child):after{
+    display:block;
+    clear: both;
+    content: '·';
+  }
+}
