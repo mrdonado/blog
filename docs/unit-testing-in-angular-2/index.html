@@ -82,7 +82,7 @@
 <p>I’d like to share with you some of the most common exceptions I’ve found when first writing unit tests, and the solutions to them.</p>
 
 <h4 id="problem-your-directive-name-is-not-a-known-element">Problem: ‘your-directive-name’ is not a known element</h4>
-<p>Solution: import the component where <code class="highlighter-rouge">your-directive-name</code> is defined and include it into the declarations field of the TestBed.</p>
+<p>Solution: import the component where <code class="highlighter-rouge">your-directive-name</code> is defined and include it into the <code class="highlighter-rouge">declarations</code> field of the TestBed.</p>
 
 <h4 id="problem-cant-bind-to-ngmodel-since-it-isnt-a-known-property-of-input">Problem: Can’t bind to ‘ngModel’ since it isn’t a known property of ‘input’</h4>
 <p>Solution: import <code class="highlighter-rouge">FormsModule</code> and include it into the <code class="highlighter-rouge">imports</code> field of the TestBed.</p>

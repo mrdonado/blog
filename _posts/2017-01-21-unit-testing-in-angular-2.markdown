@@ -16,7 +16,7 @@ I've been working on an Angular 2 project ([or Angular 3, or 4, or whatever...](
 I'd like to share with you some of the most common exceptions I've found when first writing unit tests, and the solutions to them.
 
 #### Problem: 'your-directive-name' is not a known element
-Solution: import the component where `your-directive-name` is defined and include it into the declarations field of the TestBed.
+Solution: import the component where `your-directive-name` is defined and include it into the `declarations` field of the TestBed.
 
 #### Problem: Can't bind to 'ngModel' since it isn't a known property of 'input'
 Solution: import `FormsModule` and include it into the `imports` field of the TestBed.
