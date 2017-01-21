@@ -11,7 +11,7 @@ tags: angular angular2 unit testing
 
 ### Unit Testing in Angular 2: Common Exceptions
 
-I've been working on an Angular 2 ([or Angular 3, or 4, or whatever...](http://angularjs.blogspot.de/2016/12/ok-let-me-explain-its-going-to-be.html?utm_content=bufferec238&utm_medium=social&utm_source=facebook.com&utm_campaign=buffer)) during the last couple of months, and I'm still learning how to unit test a project based in this new framework.
+I've been working on an Angular 2 project ([or Angular 3, or 4, or whatever...](http://angularjs.blogspot.de/2016/12/ok-let-me-explain-its-going-to-be.html?utm_content=bufferec238&utm_medium=social&utm_source=facebook.com&utm_campaign=buffer)) during the last couple of months, and I'm still learning how to unit test a project based in this new framework.
 
 I'd like to share with you some of the most common exceptions I've found when first writing unit tests, and the solutions to them.
 
@@ -33,9 +33,9 @@ Solution: import `ConnectionBackend` and include it together with the rest of pr
 ### Problem: No provider for RequestOptions!
 Solution: import HttpModule and include it into the imports of TestBed.
 
-Here's an example for a LoginComponent, that loads a SessionService, requiring Http.
+Here's some code for a LoginComponent unit test, that loads a SessionService, requiring Http and all the aforementioned dependencies in a single example.
 
-I just want to illustrate the dependencies needed and how to bootstrap a test with them and the errors associated. It's no example about how to test a component (that would be subject for another post). In this example I just test that the component is successfully created.
+I just want to illustrate the dependencies needed and how to bootstrap a test with them and the errors associated. It's not an example about how to test a component (that would be subject for another post). What we test here is just whether the `HomeComponent` component is successfully created.
 
 {% highlight javascript %}
 

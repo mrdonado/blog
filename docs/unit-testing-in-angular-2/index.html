@@ -77,7 +77,7 @@
     <article class="post-content">
         <h3 id="unit-testing-in-angular-2-common-exceptions">Unit Testing in Angular 2: Common Exceptions</h3>
 
-<p>I’ve been working on an Angular 2 (<a href="http://angularjs.blogspot.de/2016/12/ok-let-me-explain-its-going-to-be.html?utm_content=bufferec238&amp;utm_medium=social&amp;utm_source=facebook.com&amp;utm_campaign=buffer">or Angular 3, or 4, or whatever…</a>) during the last couple of months, and I’m still learning how to unit test a project based in this new framework.</p>
+<p>I’ve been working on an Angular 2 project (<a href="http://angularjs.blogspot.de/2016/12/ok-let-me-explain-its-going-to-be.html?utm_content=bufferec238&amp;utm_medium=social&amp;utm_source=facebook.com&amp;utm_campaign=buffer">or Angular 3, or 4, or whatever…</a>) during the last couple of months, and I’m still learning how to unit test a project based in this new framework.</p>
 
 <p>I’d like to share with you some of the most common exceptions I’ve found when first writing unit tests, and the solutions to them.</p>
 
@@ -99,9 +99,9 @@ Solution: import <code class="highlighter-rouge">ConnectionBackend</code> and in
 <h3 id="problem-no-provider-for-requestoptions">Problem: No provider for RequestOptions!</h3>
 <p>Solution: import HttpModule and include it into the imports of TestBed.</p>
 
-<p>Here’s an example for a LoginComponent, that loads a SessionService, requiring Http.</p>
+<p>Here’s some code for a LoginComponent unit test, that loads a SessionService, requiring Http and all the aforementioned dependencies in a single example.</p>
 
-<p>I just want to illustrate the dependencies needed and how to bootstrap a test with them and the errors associated. It’s no example about how to test a component (that would be subject for another post). In this example I just test that the component is successfully created.</p>
+<p>I just want to illustrate the dependencies needed and how to bootstrap a test with them and the errors associated. It’s not an example about how to test a component (that would be subject for another post). What we test here is just whether the <code class="highlighter-rouge">HomeComponent</code> component is successfully created.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/* tslint:disable:no-unused-variable */</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">async</span><span class="p">,</span> <span class="nx">ComponentFixture</span><span class="p">,</span> <span class="nx">TestBed</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/core/testing'</span><span class="p">;</span>
