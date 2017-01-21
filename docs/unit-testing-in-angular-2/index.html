@@ -96,12 +96,15 @@
 <p>That appears when you test components or services where Http requests are performed.
 Solution: import <code class="highlighter-rouge">ConnectionBackend</code> and include it together with the rest of providers of the TestBed.</p>
 
-<h3 id="problem-no-provider-for-requestoptions">Problem: No provider for RequestOptions!</h3>
+<h4 id="problem-no-provider-for-requestoptions">Problem: No provider for RequestOptions!</h4>
 <p>Solution: import HttpModule and include it into the imports of TestBed.</p>
 
-<p>Here’s some code for a LoginComponent unit test, that loads a SessionService, requiring Http and all the aforementioned dependencies in a single example.</p>
+<h3 id="example">Example</h3>
+<p>Here’s some code for a <code class="highlighter-rouge">HomeComponent</code> unit test, that uses a <code class="highlighter-rouge">LoginComponent</code> and loads a SessionService, requiring Http and all the aforementioned dependencies in a single example.</p>
 
-<p>I just want to illustrate the dependencies needed and how to bootstrap a test with them and the errors associated. It’s not an example about how to test a component (that would be subject for another post). What we test here is just whether the <code class="highlighter-rouge">HomeComponent</code> component is successfully created.</p>
+<p>I just want to illustrate how to load and specify the dependencies needed in order to bootstrap a test with them and the associated errors if any of these steps are missing.</p>
+
+<p>It’s not an example about how to test a component (that would be subject for another post). What we test here is just whether the <code class="highlighter-rouge">HomeComponent</code> component is successfully created.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/* tslint:disable:no-unused-variable */</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">async</span><span class="p">,</span> <span class="nx">ComponentFixture</span><span class="p">,</span> <span class="nx">TestBed</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/core/testing'</span><span class="p">;</span>

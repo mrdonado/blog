@@ -30,12 +30,15 @@ The same error can appear if you need Http: `No provider for Http!`. The same so
 That appears when you test components or services where Http requests are performed.
 Solution: import `ConnectionBackend` and include it together with the rest of providers of the TestBed.
 
-### Problem: No provider for RequestOptions!
+#### Problem: No provider for RequestOptions!
 Solution: import HttpModule and include it into the imports of TestBed.
 
-Here's some code for a LoginComponent unit test, that loads a SessionService, requiring Http and all the aforementioned dependencies in a single example.
+### Example
+Here's some code for a `HomeComponent` unit test, that uses a `LoginComponent` and loads a SessionService, requiring Http and all the aforementioned dependencies in a single example.
 
-I just want to illustrate the dependencies needed and how to bootstrap a test with them and the errors associated. It's not an example about how to test a component (that would be subject for another post). What we test here is just whether the `HomeComponent` component is successfully created.
+I just want to illustrate how to load and specify the dependencies needed in order to bootstrap a test with them and the associated errors if any of these steps are missing.
+
+It's not an example about how to test a component (that would be subject for another post). What we test here is just whether the `HomeComponent` component is successfully created.
 
 {% highlight javascript %}
 
