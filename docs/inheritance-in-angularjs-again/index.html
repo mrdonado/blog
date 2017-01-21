@@ -83,7 +83,7 @@
 
 <p>I think it is a common problem when dealing with the (now old) ECMAScript 5, as long as you want to avoid code repetition and structure your code in a similar fashion as you would with a pure object oriented language, such as Java or C#.</p>
 
-<p>And yes, you can sort of implement inheritance in Javascript. <em>But should you?</em></p>
+<p>And yes, you can sort of implement classical inheritance in Javascript. <em>But should you?</em></p>
 
 <p>After thinking about it and trying out many experiments, I decided it’s not really worth it, since <strong>it complicates your code and makes it more difficult to read and maintain</strong>. But of course, <strong>repeating the code is no solution either</strong>. So maybe we can find an easier solution.</p>
 
@@ -91,7 +91,9 @@
 
 <p>Trying to do something the language was not designed for is somehow fighting against it. Instead of that, a better solution would be using the native characteristics of that language to fulfill our goals.</p>
 
-<p>Here I come with an alternative solution. The idea is a service with a toolset of constructors, implementing the code of the objects we may want to use again and again. Something like a <a href="https://en.wikipedia.org/wiki/Factory_method_pattern">factory</a>.</p>
+<p>Javascript provides many alternatives to classical inheritance if you’re willing to embrace prototypal inheritance. <a href="https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-javascript-d5d9bab29b0a">Eric Eliott has many very interesting articles about it</a>.</p>
+
+<p>Here I come with an alternative solution that worked for me with AngularJS services. The idea is a service with a toolset of constructors, implementing the code of the objects we may want to use again and again. Something like a <a href="https://en.wikipedia.org/wiki/Factory_method_pattern">factory</a>.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">'use strict'</span><span class="p">;</span>
 <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'exampleApp'</span><span class="p">,</span> <span class="p">[])</span>
@@ -101,14 +103,14 @@
       <span class="na">Observer</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">observer</span> <span class="o">=</span> <span class="p">{},</span>
           <span class="nx">observerCallbacks</span> <span class="o">=</span> <span class="p">[];</span>
-        
+
         <span class="nx">observer</span><span class="p">.</span><span class="nx">registerObserverCallback</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
           <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">callback</span> <span class="o">!==</span> <span class="s2">"function"</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span><span class="p">;</span>
           <span class="p">}</span>
           <span class="nx">observerCallbacks</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
         <span class="p">};</span>
-        
+
         <span class="nx">observer</span><span class="p">.</span><span class="nx">unregisterObserverCallback</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
           <span class="kd">var</span> <span class="nx">found</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
           <span class="nx">observerCallbacks</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="p">{</span>
@@ -353,6 +355,17 @@
 
 
             
+<div class="next-post">
+    <a href="/unit-testing-in-angular-2/" class="next-post-link"></a>
+
+    <img src="http://blog.jdonado.com/assets/images/scaffold-parthenon.jpg" class="next-post-thumb" />
+
+    <div class="next-post-info">
+        <span class="next-story">Next Story</span>
+        <h3 class="next-post-title">Unit Testing in Angular 2: Common Exceptions</h3>
+    </div>
+</div>
+
 
 
         </div>
@@ -403,6 +416,10 @@
             
         
             
+        
+            
+        
+            
                 
                 <li class="sb-close ">
                     <a href="/tags/">Tags</a>
@@ -414,7 +431,7 @@
 
         <div class="site-info">
             <p>
-                JDonado's Readme &dash; Copyright &copy; 2016
+                JDonado's Readme &dash; Copyright &copy; 2017
             </p>
         </div>
     </nav>
