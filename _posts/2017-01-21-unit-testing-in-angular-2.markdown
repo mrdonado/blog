@@ -31,10 +31,10 @@ That appears when you test components or services where Http requests are perfor
 Solution: import `ConnectionBackend` and include it together with the rest of providers of the TestBed.
 
 #### Problem: No provider for RequestOptions!
-Solution: import HttpModule and include it into the imports of TestBed.
+Solution: import `HttpModule` and include it into the `imports` of TestBed.
 
 ### Example
-Here's some code for a `HomeComponent` unit test, that uses a `LoginComponent` and loads a SessionService, requiring Http and all the aforementioned dependencies in a single example.
+Here's some code for a `HomeComponent` unit test, that uses a `LoginComponent` and loads a `SessionService`, requiring `Http` and all the aforementioned dependencies in a single example.
 
 I just want to illustrate how to load and specify the dependencies needed in order to bootstrap a test with them and the associated errors if any of these steps are missing.
 

@@ -97,10 +97,10 @@
 Solution: import <code class="highlighter-rouge">ConnectionBackend</code> and include it together with the rest of providers of the TestBed.</p>
 
 <h4 id="problem-no-provider-for-requestoptions">Problem: No provider for RequestOptions!</h4>
-<p>Solution: import HttpModule and include it into the imports of TestBed.</p>
+<p>Solution: import <code class="highlighter-rouge">HttpModule</code> and include it into the <code class="highlighter-rouge">imports</code> of TestBed.</p>
 
 <h3 id="example">Example</h3>
-<p>Here’s some code for a <code class="highlighter-rouge">HomeComponent</code> unit test, that uses a <code class="highlighter-rouge">LoginComponent</code> and loads a SessionService, requiring Http and all the aforementioned dependencies in a single example.</p>
+<p>Here’s some code for a <code class="highlighter-rouge">HomeComponent</code> unit test, that uses a <code class="highlighter-rouge">LoginComponent</code> and loads a <code class="highlighter-rouge">SessionService</code>, requiring <code class="highlighter-rouge">Http</code> and all the aforementioned dependencies in a single example.</p>
 
 <p>I just want to illustrate how to load and specify the dependencies needed in order to bootstrap a test with them and the associated errors if any of these steps are missing.</p>
 
