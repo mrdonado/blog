@@ -1,4 +1,92 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://blog.jdonado.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2017-01-21T14:06:12+01:00</updated><id>http://blog.jdonado.com//</id><title type="html">JDonado’s Readme</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>http://www.jdonado.com</uri></author><entry><title type="html">Unit Testing in Angular 2: Common Exceptions</title><link href="http://blog.jdonado.com/unit-testing-in-angular-2/" rel="alternate" type="text/html" title="Unit Testing in Angular 2: Common Exceptions" /><published>2017-01-21T00:00:00+01:00</published><updated>2017-01-21T00:00:00+01:00</updated><id>http://blog.jdonado.com/unit-testing-in-angular-2</id><content type="html" xml:base="http://blog.jdonado.com/unit-testing-in-angular-2/">&lt;h3 id=&quot;unit-testing-in-angular-2-common-exceptions&quot;&gt;Unit Testing in Angular 2: Common Exceptions&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<generator uri="http://jekyllrb.com" version="3.4.1">Jekyll</generator>
+<link href="http://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" />
+<link href="http://blog.jdonado.com/" rel="alternate" type="text/html" />
+<updated>2017-03-05T16:45:56+01:00</updated>
+<id>http://blog.jdonado.com/</id>
+<title>JDonado's Readme</title>
+<subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle>
+<author>
+<name>F. Javier R. Donado</name>
+<email>jdonado@jdonado.com</email>
+<uri>http://www.jdonado.com</uri>
+</author>
+<entry>
+<title>About Functional Programming</title>
+<link href="http://blog.jdonado.com/about-fp/" rel="alternate" type="text/html" title="About Functional Programming" />
+<published>2017-03-05T00:00:00+01:00</published>
+<updated>2017-03-05T00:00:00+01:00</updated>
+<id>http://blog.jdonado.com/about-fp</id>
+<content type="html" xml:base="http://blog.jdonado.com/about-fp/">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;Recently, I’ve been doing some research on the topic of functional programming. I think it’s a good time to get together some of the resources I’ve found so far, and remark the ideas that motivated me to learn more about it.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-functional-programming&quot;&gt;Why Functional Programming?&lt;/h2&gt;
+
+&lt;p&gt;After reading articles, books and watching videos by Eric Eliott, Brian Lonsdorf, Michael Fogus, Brian Beckman and others, I’ve convinced myself about the following facts:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Object Oriented Design and Relational Databases potentially have a big problem: they bind your software and your data together with a very rigid structure that is very difficult to modify in the future.&lt;/li&gt;
+  &lt;li&gt;You usually have to make decisions about that rigid structure at a development stage where you simply don’t have all the relevant information. Requirements change with time and rigid structures don’t like changes.&lt;/li&gt;
+  &lt;li&gt;It’s almost impossible to design a very good OOD or RDB from the very beginning because &lt;strong&gt;humans cannot predict future&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That’s why I think not just functional programming but also NoSQL databases are getting more and more traction. Now that memory and computational power are getting bigger and cheaper, they are becoming a great alternative for many applications. In addition to that, functional techniques present clear advantages in distributed computing.&lt;/p&gt;
+
+&lt;h3 id=&quot;fight-complexity&quot;&gt;Fight complexity&lt;/h3&gt;
+
+&lt;p&gt;As &lt;a href=&quot;https://youtu.be/ZhuHCtR3xq8?t=17m13s&quot;&gt;Brian Beckman said&lt;/a&gt;, today in the software development community, we’re out of control in the complexity space. &lt;strong&gt;The way to control complexity is compositionality&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Functional programming is probably the natural alternative to the classical object oriented paradigm. It’s been around since the very beginning of computation, but for some reason it never went mainstream. Until now.&lt;/p&gt;
+
+&lt;p&gt;JavaScript is (maybe alongside with Scala) the first mainstream programming language that provides basic tools for developing software based partially &lt;a href=&quot;https://www.youtube.com/watch?v=eetWam3nhoM&quot;&gt;or even completely&lt;/a&gt; on the functional paradigm. Functions are first class citizens, you can create high order functions, and you can do many other things that were not possible in any of the older classic mainstream programming languages (such as C++, Java or C#). Interestingly enough, now that functional programming is becoming something cool and more and more people are interested about it, also the classic OOP languages are incorporating functional features to them, which is great! In fact, I think there’s great potential in combining both paradigms.&lt;/p&gt;
+
+&lt;p&gt;But functional programming can be quite tricky to understand in the beginning. It has its roots in lambda calculus (or cathegory theory, as you prefer), and it’s full of rather esoteric terms such as monoids, monads, functors, applicative functors, and so on. But the main idea behind it is very simple: &lt;strong&gt;build software just by writing small pieces of code (functions) that perform very specific tasks&lt;/strong&gt; and then compose them in order to provide a more complex behaviour. One of the main advantages of such an approach is that unit testing is much easier, sometimes even trivial.&lt;/p&gt;
+
+&lt;h3 id=&quot;first-steps&quot;&gt;First Steps&lt;/h3&gt;
+
+&lt;p&gt;Basic and easy stuff first, please. The series on &lt;a href=&quot;https://www.youtube.com/playlist?list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84&quot;&gt;functional programming in JavaScript&lt;/a&gt; by MPJ are a great starting point. If you never heard of high order functions, Map, Reduce, Currying, and some other related concepts, you can find a quick and fun introduction here.&lt;/p&gt;
+
+&lt;h3 id=&quot;i-want-more-of-this&quot;&gt;I Want More of This&lt;/h3&gt;
+
+&lt;p&gt;After convincing myself of the conveninence of functions like Map and Reduce, I wanted to learn more. I found two very interesting books about functional programming with JavaScript:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.de/Functional-JavaScript-Introducing-Programming-Underscore-js/dp/1449360726&quot;&gt;Functional JavaScript&lt;/a&gt;, by Michael Fogus, is a comprehensive introduction to the main functional programming concepts. It focuses on JavaScript and the Underscore library. Concepts like purity, immutability, recursion, trampoline techniques, and currying are very well explained, with lots of examples.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/MostlyAdequate/mostly-adequate-guide&quot;&gt;Professor Frisby’s Mostly Adequate Guide to Functional Programming&lt;/a&gt;, by Brian Lonsdorf (AKA Dr. Boolean). It’s not finished yet but, hey! it’s free!!. It shows a way to develop JavaScript that, in my humble opinion, is closer to what you might expect when working with more purely functional oriented programming languages, like Scala or even Haskell. It’s related to the three videos series &lt;a href=&quot;https://www.youtube.com/watch?v=h_tkIpwbsxY&amp;amp;list=PLK_hdtAJ4KqX0JOs_KMAmUNTNMRYhWEaC&quot;&gt;Classroom Coding with Prof. Frisby&lt;/a&gt; (very interesting too, but also very dense. You might need to watch them twice to get all the concepts). You can also find many other interesting talks on youtube from this author.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you want to start writing functional routines in your JavaScript applications, in the sense that was explained on “Functional Javascript”, &lt;a href=&quot;https://lodash.com/&quot;&gt;Lodash&lt;/a&gt; (a more performant alternative to Underscore) is a great library.&lt;/p&gt;
+
+&lt;p&gt;If you want to explore a more pure functional programming style, &lt;a href=&quot;https://github.com/lodash/lodash/tree/4.17.4-npm/fp&quot;&gt;lodash/fp&lt;/a&gt;, &lt;a href=&quot;http://ramdajs.com/&quot;&gt;Ramda&lt;/a&gt;, &lt;a href=&quot;http://folktalejs.org/&quot;&gt;Folktale&lt;/a&gt; and &lt;a href=&quot;https://github.com/fantasyland/fantasy-land&quot;&gt;Fantasy Land&lt;/a&gt; are wonderful resources.&lt;/p&gt;
+
+&lt;p&gt;If that’s not functional enough for you, you can give a try at &lt;a href=&quot;http://www.purescript.org/&quot;&gt;PureScript&lt;/a&gt; or &lt;a href=&quot;https://clojurescript.org/&quot;&gt;ClojureScript&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-bit-more-advanced&quot;&gt;A Bit More Advanced&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ZhuHCtR3xq8&quot;&gt;Brian Beckman: Don’t fear the Monad&lt;/a&gt;. Brian Beckman (Princeton University, Microsoft, Amazon…) gives you a glimpse about the category theory behind monoids and monads, expressed in practical terms, familiar to an imperative programmer (he also gives C# examples). I find particularly interesting the following ideas:
+    &lt;ul&gt;
+      &lt;li&gt;Functions can be seen as data. You can model (almost) any function as a dictionary table where a lookup is performed.&lt;/li&gt;
+      &lt;li&gt;Short story about the two separated camps created when computing started: the imperative one (tradition that led to languages like Fortran, C, Pascal, Java, etc.), where Math theory was put aside and performance was king, and the functional one (this one led to languages like Algol, Lisp, Smalltalk or Haskell), where they started out with Math theory (lambda calculus) and went from there down to the machine, sometimes at the expense of performance.&lt;/li&gt;
+      &lt;li&gt;Build complexity out of simplicity by composing functions, not by adding ad-hoc features.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</content>
+<category term="functional-programming" />
+<category term="functional-programming" />
+<category term="javascript" />
+<summary>Introduction</summary>
+</entry>
+<entry>
+<title>Unit Testing in Angular 2: Common Exceptions</title>
+<link href="http://blog.jdonado.com/unit-testing-in-angular-2/" rel="alternate" type="text/html" title="Unit Testing in Angular 2: Common Exceptions" />
+<published>2017-01-21T00:00:00+01:00</published>
+<updated>2017-01-21T00:00:00+01:00</updated>
+<id>http://blog.jdonado.com/unit-testing-in-angular-2</id>
+<content type="html" xml:base="http://blog.jdonado.com/unit-testing-in-angular-2/">&lt;h3 id=&quot;unit-testing-in-angular-2-common-exceptions&quot;&gt;Unit Testing in Angular 2: Common Exceptions&lt;/h3&gt;
 
 &lt;p&gt;I’ve been working on an Angular 2 project (&lt;a href=&quot;http://angularjs.blogspot.de/2016/12/ok-let-me-explain-its-going-to-be.html?utm_content=bufferec238&amp;amp;utm_medium=social&amp;amp;utm_source=facebook.com&amp;amp;utm_campaign=buffer&quot;&gt;or Angular 3, or 4, or whatever…&lt;/a&gt;) during the last couple of months, and I’m still learning how to unit test a project based in this new framework.&lt;/p&gt;
 
@@ -29,41 +117,60 @@ Solution: import &lt;code class=&quot;highlighter-rouge&quot;&gt;ConnectionBacke
 
 &lt;p&gt;It’s not an example about how to test a component (that would be subject for another post). What we test here is just whether the &lt;code class=&quot;highlighter-rouge&quot;&gt;HomeComponent&lt;/code&gt; component is successfully created.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/* tslint:disable:no-unused-variable */&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ComponentFixture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TestBed&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/core/testing'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;By&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/platform-browser'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DebugElement&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/core'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;FormsModule&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/forms'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SessionService&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'../../services/session.service'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HttpModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;RequestMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;RequestOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ConnectionBackend&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/http'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HomeComponent&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./home.component'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;LoginComponent&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'../login/login.component'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;{% highlight javascript %}&lt;/p&gt;
 
-&lt;span class=&quot;nx&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'HomeComponent'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HomeComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fixture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ComponentFixture&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;HomeComponent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;/* tslint:disable:no-unused-variable */
+import { async, ComponentFixture, TestBed } from ‘@angular/core/testing’;
+import { By } from ‘@angular/platform-browser’;
+import { DebugElement } from ‘@angular/core’;
+import { FormsModule } from ‘@angular/forms’;
+import { SessionService } from ‘../../services/session.service’;
+import { Http, HttpModule, Headers, RequestMethod, RequestOptions, Response, ConnectionBackend } from ‘@angular/http’;
+import { HomeComponent } from ‘./home.component’;
+import { LoginComponent } from ‘../login/login.component’;&lt;/p&gt;
 
-  &lt;span class=&quot;nx&quot;&gt;beforeEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;TestBed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;configureTestingModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;imports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FormsModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HttpModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;providers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SessionService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ConnectionBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;declarations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;HomeComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;LoginComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;compileComponents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}));&lt;/span&gt;
+&lt;p&gt;describe(‘HomeComponent’, () =&amp;gt; {
+  let component: HomeComponent;
+  let fixture: ComponentFixture&lt;homecomponent&gt;;&lt;/homecomponent&gt;&lt;/p&gt;
 
-  &lt;span class=&quot;nx&quot;&gt;beforeEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;fixture&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TestBed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;HomeComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fixture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;componentInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;fixture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;detectChanges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;p&gt;beforeEach(async(() =&amp;gt; {
+    TestBed.configureTestingModule({
+      imports: [FormsModule, HttpModule],
+      providers: [SessionService, Http, ConnectionBackend],
+      declarations: [HomeComponent, LoginComponent]
+    })
+      .compileComponents();
+  }));&lt;/p&gt;
 
-  &lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'exists'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toBeTruthy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>http://www.jdonado.com</uri></author><category term="coding" /><category term="angular" /><category term="angular2" /><category term="unit" /><category term="testing" /><summary type="html">Unit Testing in Angular 2: Common Exceptions</summary></entry><entry><title type="html">Inheritance in AngularJS, again</title><link href="http://blog.jdonado.com/inheritance-in-angularjs-again/" rel="alternate" type="text/html" title="Inheritance in AngularJS, again" /><published>2016-10-23T00:00:00+02:00</published><updated>2016-10-23T00:00:00+02:00</updated><id>http://blog.jdonado.com/inheritance-in-angularjs-again</id><content type="html" xml:base="http://blog.jdonado.com/inheritance-in-angularjs-again/">&lt;h3 id=&quot;rethinking-about-inheritance-in-angularjs-15&quot;&gt;Rethinking about inheritance in AngularJS 1.5&lt;/h3&gt;
+&lt;p&gt;beforeEach(() =&amp;gt; {
+    fixture = TestBed.createComponent(HomeComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });&lt;/p&gt;
 
-&lt;p&gt;In &lt;a href=&quot;/inheritance-and-observer-pattern-in-angular-js/&quot;&gt;a previous post&lt;/a&gt; I showed an example about how could inheritance be implemented in an AngularJS project, using Javascript (ECMAScript 5).&lt;/p&gt;
+&lt;p&gt;it(‘exists’, () =&amp;gt; {
+    expect(component).toBeTruthy();
+  });
+});&lt;/p&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
+</content>
+<category term="coding" />
+<category term="angular" />
+<category term="angular2" />
+<category term="unit" />
+<category term="testing" />
+<summary>Unit Testing in Angular 2: Common Exceptions</summary>
+</entry>
+<entry>
+<title>Inheritance in AngularJS, again</title>
+<link href="http://blog.jdonado.com/inheritance-in-angularjs-again/" rel="alternate" type="text/html" title="Inheritance in AngularJS, again" />
+<published>2016-10-23T00:00:00+02:00</published>
+<updated>2016-10-23T00:00:00+02:00</updated>
+<id>http://blog.jdonado.com/inheritance-in-angularjs-again</id>
+<content type="html" xml:base="http://blog.jdonado.com/inheritance-in-angularjs-again/">&lt;h3 id=&quot;rethinking-about-inheritance-in-angularjs-15&quot;&gt;Rethinking about inheritance in AngularJS 1.5&lt;/h3&gt;
+
+&lt;p&gt;In &lt;a href=&quot;{% link _posts/2016-08-06-inheritance-and-observer-pattern-in-angular-js.markdown %}&quot;&gt;a previous post&lt;/a&gt; I showed an example about how could inheritance be implemented in an AngularJS project, using Javascript (ECMAScript 5).&lt;/p&gt;
 
 &lt;p&gt;In that example I used it to implement the &lt;a href=&quot;https://en.wikipedia.org/wiki/Observer_pattern&quot;&gt;observer pattern&lt;/a&gt; in different services without having to define the same functions again and again.&lt;/p&gt;
 
@@ -81,66 +188,89 @@ Solution: import &lt;code class=&quot;highlighter-rouge&quot;&gt;ConnectionBacke
 
 &lt;p&gt;Here I come with an alternative solution that worked for me with AngularJS services. The idea is a service with a toolset of constructors, implementing the code of the objects we may want to use again and again. Something like a &lt;a href=&quot;https://en.wikipedia.org/wiki/Factory_method_pattern&quot;&gt;factory&lt;/a&gt;.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;s1&quot;&gt;'use strict'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'exampleApp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'factoryService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// Observer is going to be our constructor&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;Observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;observer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;
-          &lt;span class=&quot;nx&quot;&gt;observerCallbacks&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+&lt;p&gt;{% highlight javascript %}&lt;/p&gt;
 
-        &lt;span class=&quot;nx&quot;&gt;observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;registerObserverCallback&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;function&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-          &lt;span class=&quot;nx&quot;&gt;observerCallbacks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;p&gt;‘use strict’;
+angular.module(‘exampleApp’, [])
+  .service(‘factoryService’, [function () {
+    return {
+      // Observer is going to be our constructor
+      Observer: function () {
+        var observer = {},
+          observerCallbacks = [];&lt;/p&gt;
 
-        &lt;span class=&quot;nx&quot;&gt;observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;unregisterObserverCallback&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;found&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-          &lt;span class=&quot;nx&quot;&gt;observerCallbacks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-              &lt;span class=&quot;nx&quot;&gt;found&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-          &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;found&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;observerCallbacks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;found&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    observer.registerObserverCallback = function (callback) {
+      if (typeof callback !== &quot;function&quot;) {
+        return;
+      }
+      observerCallbacks.push(callback);
+    };
 
-        &lt;span class=&quot;nx&quot;&gt;observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;notifyObservers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;oberverCallbacks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+    observer.unregisterObserverCallback = function (callback) {
+      var found = -1;
+      observerCallbacks.forEach(function (element, idx) {
+        if ((element + '') === (callback + '')) {
+          found = idx;
+        }
+      });
+      if (found !== -1) {
+        this.observerCallbacks.splice(found, 1);
+      }
+    };
 
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// end: Observer constructor&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}]);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    observer.notifyObservers = function () {
+      angular.forEach(this.oberverCallbacks, function (callback) {
+        callback();
+      });
+    };
+
+    return observer;
+  } // end: Observer constructor
+};   }]);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
 
 &lt;p&gt;Depending on how many constructors you want to define, you can have different factory services.&lt;/p&gt;
 
 &lt;p&gt;Now, if you want to create a new service that implements the functions defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;Observer&lt;/code&gt;, you can do something like this:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'exampleApp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'NewService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'factoryService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;factoryService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// New object using the constructor defined in the factory&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;observable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;factoryService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;observable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;observable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;otherStuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'service'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'specific'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'things'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}]);&lt;/span&gt;   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;{% highlight javascript %}&lt;/p&gt;
+
+&lt;p&gt;angular.module(‘exampleApp’, [])
+  .service(‘NewService’, [‘factoryService’, function (factoryService) {
+    // New object using the constructor defined in the factory
+    var observable = new factoryService.Observer();
+    return {
+      observable: observable,
+      otherStuff: [‘service’, ‘specific’, ‘things’]
+    };
+  }]);&lt;/p&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
 
 &lt;p&gt;This way, you will have a property in the &lt;code class=&quot;highlighter-rouge&quot;&gt;NewService&lt;/code&gt; that’s called &lt;code class=&quot;highlighter-rouge&quot;&gt;observable&lt;/code&gt;, on which you can call the functions of an &lt;code class=&quot;highlighter-rouge&quot;&gt;Observer&lt;/code&gt; object that only exists in &lt;code class=&quot;highlighter-rouge&quot;&gt;NewService&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;You have not repeated the code of the functions defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;Observable&lt;/code&gt; and the code is easier to understand and maintain.&lt;/p&gt;
 
-&lt;p&gt;What do you think about this approach? Would you prefer &lt;a href=&quot;/inheritance-and-observer-pattern-in-angular-js/&quot;&gt;the other one&lt;/a&gt;? Do you see any potential problems when doing something like this?&lt;/p&gt;
+&lt;p&gt;What do you think about this approach? Would you prefer &lt;a href=&quot;{% link _posts/2016-08-06-inheritance-and-observer-pattern-in-angular-js.markdown %}&quot;&gt;the other one&lt;/a&gt;? Do you see any potential problems when doing something like this?&lt;/p&gt;
 
-&lt;p&gt;Let me know!&lt;/p&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>http://www.jdonado.com</uri></author><category term="coding" /><category term="angularjs" /><category term="inheritance" /><category term="ecmascript5" /><summary type="html">Rethinking about inheritance in AngularJS 1.5</summary></entry><entry><title type="html">ng-show and ng-animate</title><link href="http://blog.jdonado.com/ng-show-and-ng-animate/" rel="alternate" type="text/html" title="ng-show and ng-animate" /><published>2016-08-08T00:00:00+02:00</published><updated>2016-08-08T00:00:00+02:00</updated><id>http://blog.jdonado.com/ng-show-and-ng-animate</id><content type="html" xml:base="http://blog.jdonado.com/ng-show-and-ng-animate/">&lt;h3 id=&quot;if-ng-show-happens-to-be-too-slow-without-an-obvious-reason&quot;&gt;If ng-show happens to be too slow without an obvious reason&lt;/h3&gt;
+&lt;p&gt;Let me know!&lt;/p&gt;
+</content>
+<category term="coding" />
+<category term="angularjs" />
+<category term="inheritance" />
+<category term="ecmascript5" />
+<summary>Rethinking about inheritance in AngularJS 1.5</summary>
+</entry>
+<entry>
+<title>ng-show and ng-animate</title>
+<link href="http://blog.jdonado.com/ng-show-and-ng-animate/" rel="alternate" type="text/html" title="ng-show and ng-animate" />
+<published>2016-08-08T00:00:00+02:00</published>
+<updated>2016-08-08T00:00:00+02:00</updated>
+<id>http://blog.jdonado.com/ng-show-and-ng-animate</id>
+<content type="html" xml:base="http://blog.jdonado.com/ng-show-and-ng-animate/">&lt;h3 id=&quot;if-ng-show-happens-to-be-too-slow-without-an-obvious-reason&quot;&gt;If ng-show happens to be too slow without an obvious reason&lt;/h3&gt;
 
 &lt;p&gt;It happened to me tonight that ng-show was taking too long to refresh. I’ve read about &lt;a href=&quot;http://stackoverflow.com/questions/19177732/what-is-the-difference-between-ng-if-and-ng-show-ng-hide&quot;&gt;the differences between ng-if and ng-show&lt;/a&gt; and how sometimes ng-show can decrease performance. But in this case it was a pretty straightforward example, and it shouldn’t.&lt;/p&gt;
 
@@ -148,38 +278,54 @@ Solution: import &lt;code class=&quot;highlighter-rouge&quot;&gt;ConnectionBacke
 
 &lt;p&gt;If any of this ever happens to you, and you don’t want to remove ng-animate from your project, simply add the .no-animate class to the element where ng-show or ng-hide is used, and update your css with the following lines.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.ng-animate.no-animate&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0s&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;-webkit-transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0s&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;animation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0s&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;-webkit-animation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0s&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;{% highlight css %}
+.ng-animate.no-animate {
+  transition: 0s none;
+  -webkit-transition: 0s none;
+  animation: 0s none;
+  -webkit-animation: 0s none;
+}
+{% endhighlight %}&lt;/p&gt;
 
-&lt;p&gt;As simple as that.&lt;/p&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>http://www.jdonado.com</uri></author><category term="coding" /><category term="angularjs" /><summary type="html">If ng-show happens to be too slow without an obvious reason</summary></entry><entry><title type="html">Inheritance and Observer Pattern in AngularJS 1.4</title><link href="http://blog.jdonado.com/inheritance-and-observer-pattern-in-angular-js/" rel="alternate" type="text/html" title="Inheritance and Observer Pattern in AngularJS 1.4" /><published>2016-06-12T00:00:00+02:00</published><updated>2016-06-12T00:00:00+02:00</updated><id>http://blog.jdonado.com/inheritance-and-observer-pattern-in-angular-js</id><content type="html" xml:base="http://blog.jdonado.com/inheritance-and-observer-pattern-in-angular-js/">&lt;p&gt;In AngularJS, when designing services, it is well common to return an instance of the &lt;strong&gt;$http&lt;/strong&gt; service. The code that requests it (usually within a controller), must process then the promise and do whatever it is to be done with the data that come from server.&lt;/p&gt;
+&lt;p&gt;As simple as that.&lt;/p&gt;
+</content>
+<category term="coding" />
+<category term="angularjs" />
+<summary>If ng-show happens to be too slow without an obvious reason</summary>
+</entry>
+<entry>
+<title>Inheritance and Observer Pattern in AngularJS 1.4</title>
+<link href="http://blog.jdonado.com/inheritance-and-observer-pattern-in-angular-js/" rel="alternate" type="text/html" title="Inheritance and Observer Pattern in AngularJS 1.4" />
+<published>2016-06-12T00:00:00+02:00</published>
+<updated>2016-06-12T00:00:00+02:00</updated>
+<id>http://blog.jdonado.com/inheritance-and-observer-pattern-in-angular-js</id>
+<content type="html" xml:base="http://blog.jdonado.com/inheritance-and-observer-pattern-in-angular-js/">&lt;p&gt;In AngularJS, when designing services, it is well common to return an instance of the &lt;strong&gt;$http&lt;/strong&gt; service. The code that requests it (usually within a controller), must process then the promise and do whatever it is to be done with the data that come from server.&lt;/p&gt;
 
 &lt;p&gt;Like in this example.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;s1&quot;&gt;'use strict'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'exampleApp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ItemsService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'$http'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItems&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'www.myapi-url.com/items'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}])&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;controller&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ExampleController'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ItemsService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ItemsService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;{% highlight javascript %}
+‘use strict’;
+angular.module(‘exampleApp’, [])
+  .service(‘ItemsService’, [‘$http’, function ($http) {
+    this.getItems = function () {
+      return $http.get(‘www.myapi-url.com/items’);
+    };
+  }])
+  .controller(‘ExampleController’, [‘ItemsService’, function (ItemsService) {
+    var self = this;&lt;/p&gt;
 
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;itemsList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// A property of the controller stores an array with items, initially empty.&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;this.itemsList = []; // A property of the controller stores an array with items, initially empty.
 
-    &lt;span class=&quot;nx&quot;&gt;ItemsService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-      &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;itemsList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-      &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;There has been an error&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}]);&lt;/span&gt;            &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+ItemsService.getItems().then(
+  function (data) {
+    self.itemsList = data.data;
+  },
+  function (error) {
+    console.log(&quot;There has been an error&quot; + error);
+  }
+);   }]);             {% endhighlight %}            
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;But, sometimes you just don’t want to handle the server information in the controller, because you might need to do it in many other places in your app, and you don’t want to repeat the same code in your controllers. After all, it seems reasonable that any processing related to your items (filters, date parsing or whatever you need to do) can be encapsulated in that ItemsService, so that you can reuse it easily.&lt;/p&gt;
 
@@ -201,127 +347,153 @@ Solution: import &lt;code class=&quot;highlighter-rouge&quot;&gt;ConnectionBacke
 
 &lt;p&gt;First, a service is declared with the functions that implement the observable pattern. But instead of returning a JSON, as usual in an AngularJS service, we return a function:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'notesApp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'observableService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// A constructor is defined in order to create further services that extend this functionality&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;observerCallbacks&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;//register an observer&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;registerObserverCallback&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;function&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;observerCallbacks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;//unregister an observer&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;unregisterObserverCallback&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;found&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;observerCallbacks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;found&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;found&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;observerCallbacks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;found&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;notifyObservers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;observerCallbacks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;{% highlight javascript %}
+angular.module(‘notesApp’)
+  .factory(‘observableService’, function () {
+    // A constructor is defined in order to create further services that extend this functionality
+    return function () {
+      this.observerCallbacks = [];
+      //register an observer
+      this.registerObserverCallback = function (callback) {
+        if (typeof callback !== “function”) {
+          return;
+        }
+        this.observerCallbacks.push(callback);
+      };
+      //unregister an observer
+      this.unregisterObserverCallback = function (callback) {
+        var found = -1;
+        this.observerCallbacks.forEach(function (element, idx) {
+          if ((element + ‘’) === (callback + ‘’)) {
+            found = idx;
+          }
+        });
+        if (found !== -1) {
+          this.observerCallbacks.splice(found, 1);
+        }
+      };
+      this.notifyObservers = function () {
+        angular.forEach(this.observerCallbacks, function (callback) {
+          callback();
+        });
+      }
+    };
+  });
+{% endhighlight %}&lt;/p&gt;
 
 &lt;h3 id=&quot;child-observable-service&quot;&gt;Child Observable Service&lt;/h3&gt;
 
 &lt;p&gt;Then, in order to inherit these functions, you can simply do the following (&lt;a href=&quot;https://github.com/fjrd84/notes-app/blob/master/app/scripts/services/configuration-service.js&quot;&gt;extract from the file configuration-service.js&lt;/a&gt;).&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;    
-&lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'notesApp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'configurationService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;observableService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;configService&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// The config service inherits observable service&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;configService&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;observableService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;p&gt;{% highlight javascript %}  &lt;br /&gt;
+angular.module(‘notesApp’)
+  .factory(‘configurationService’, function ($http, observableService) {
+    var configService = {};
+    // The config service inherits observable service
+    configService = new observableService();&lt;/p&gt;
 
-    &lt;span class=&quot;nx&quot;&gt;configService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;someNewProperty&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Initial Value&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;configService.someNewProperty = &quot;Initial Value&quot;;
 
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;configService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+return configService;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
 
 &lt;h3 id=&quot;inheritable-service-that-inherits-the-observableservice&quot;&gt;Inheritable Service that Inherits the observableService&lt;/h3&gt;
 
 &lt;p&gt;If you need to create a service that inherits from the observableService, that is also inheritable by other services, you should return a function, instead of a JSON object. This is what we do in &lt;a href=&quot;https://github.com/fjrd84/notes-app/blob/master/app/scripts/services/basic-resource.js&quot;&gt;basic-resource.js&lt;/a&gt;.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'notesApp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'basicResource'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'observableService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'$http'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'configurationService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;observableService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;configurationService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;p&gt;{% highlight javascript %}
+angular.module(‘notesApp’)
+  .factory(‘basicResource’, [‘observableService’, ‘$http’, ‘configurationService’,
+    function (observableService, $http, configurationService) {&lt;/p&gt;
 
-      &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;basicResource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  var basicResource;
 
-      &lt;span class=&quot;c1&quot;&gt;// some private variables and functions can be added here&lt;/span&gt;
-      &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;privateVar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;privateValue&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  // some private variables and functions can be added here
+  var privateVar = &quot;privateValue&quot;;
 
-      &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;privateFunction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;privateFunction&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+  var privateFunction = function (){
+    return &quot;privateFunction&quot;;
+  };
 
-      &lt;span class=&quot;c1&quot;&gt;// The function you return works as the constructor of your class&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;basicResource&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// In your new constructor, you apply the constructor of the class you want to inherit&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;observableService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  // The function you return works as the constructor of your class
+  basicResource = function () {
+    // In your new constructor, you apply the constructor of the class you want to inherit
+    observableService.apply(this, arguments);
+    var self = this;
 
-        &lt;span class=&quot;c1&quot;&gt;// here you define the properties of the service&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;allElements&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+    // here you define the properties of the service
+    this.allElements = [];
 
-        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;otherPublicProperty&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Initial Value&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    this.otherPublicProperty = &quot;Initial Value&quot;;
 
-      &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+  };
 
-      &lt;span class=&quot;c1&quot;&gt;// We inherit from observableService now&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;basicResource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;observableService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  // We inherit from observableService now
+  basicResource.prototype = new observableService();
 
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;basicResource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  return basicResource;
 
-    &lt;span class=&quot;p&quot;&gt;}]);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+}]); {% endhighlight %}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h3 id=&quot;controller-that-observes-services-that-inherit-from-observableservice&quot;&gt;Controller that Observes Services that Inherit from observableService&lt;/h3&gt;
 
 &lt;p&gt;Now that you have observable services, you can simply define the callbacks in your controllers, and these will be updated whenever the service retrieves new information.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt; &lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'notesApp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;controller&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'MainController'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'$scope'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'configurationService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'notesService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;configurationService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;notesService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;'use strict'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;{% highlight javascript %}
+ angular.module(‘notesApp’).controller(‘MainController’,
+  [‘$scope’, ‘configurationService’, ‘notesService’,
+    function ($scope, configurationService, notesService) {
+      ‘use strict’;&lt;/p&gt;
 
-      &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  var self = this;
 
-      &lt;span class=&quot;c1&quot;&gt;// Callback to be run when the configuration is ready&lt;/span&gt;
-      &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;configurationReady&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;notesService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadElements&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+  // Callback to be run when the configuration is ready
+  var configurationReady = function () {
+    notesService.loadElements();
+  };
 
-      &lt;span class=&quot;c1&quot;&gt;// Callbacks to update the scope when new elements are available&lt;/span&gt;
-      &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;updateNotes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;notes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;notesService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;allElements&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+  // Callbacks to update the scope when new elements are available
+  var updateNotes = function () {
+    self.notes = notesService.allElements;
+  };
 
-      &lt;span class=&quot;c1&quot;&gt;// Register observer callbacks&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;notesService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;registerObserverCallback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;updateNotes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;configurationService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;registerObserverCallback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;configurationReady&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  // Register observer callbacks
+  notesService.registerObserverCallback(updateNotes);
+  configurationService.registerObserverCallback(configurationReady);
 
-      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;configurationService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isConfigurationReady&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;configurationReady&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// The observer has been registered: when ready, loadElements will be automatically called.&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;configurationService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  if (configurationService.isConfigurationReady()) {
+    configurationReady();
+  } else {
+    // The observer has been registered: when ready, loadElements will be automatically called.
+    configurationService.loadConfiguration();
+  }
 
-    &lt;span class=&quot;p&quot;&gt;}]);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+}]); {% endhighlight %}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;That was it. If you want to explore the complete repository, or even experiment with it and modify it, feel free to fork me on github: &lt;a href=&quot;https://github.com/fjrd84/notes-app&quot;&gt;https://github.com/fjrd84/notes-app&lt;/a&gt;.&lt;/p&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>http://www.jdonado.com</uri></author><category term="coding" /><category term="angularjs" /><category term="design-patterns" /><category term="observer" /><category term="inheritance" /><summary type="html">In AngularJS, when designing services, it is well common to return an instance of the $http service. The code that requests it (usually within a controller), must process then the promise and do whatever it is to be done with the data that come from server.</summary></entry><entry><title type="html">Special Thanks</title><link href="http://blog.jdonado.com/special-thanks/" rel="alternate" type="text/html" title="Special Thanks" /><published>2016-06-12T00:00:00+02:00</published><updated>2016-06-12T00:00:00+02:00</updated><id>http://blog.jdonado.com/special-thanks</id><content type="html" xml:base="http://blog.jdonado.com/special-thanks/">&lt;h1 id=&quot;acknowledgements&quot;&gt;Acknowledgements&lt;/h1&gt;
+&lt;p&gt;That was it. If you want to explore the complete repository, or even experiment with it and modify it, feel free to fork me on github: &lt;a href=&quot;https://github.com/fjrd84/notes-app&quot;&gt;https://github.com/fjrd84/notes-app&lt;/a&gt;.&lt;/p&gt;
+</content>
+<category term="coding" />
+<category term="angularjs" />
+<category term="design-patterns" />
+<category term="observer" />
+<category term="inheritance" />
+<summary>In AngularJS, when designing services, it is well common to return an instance of the $http service. The code that requests it (usually within a controller), must process then the promise and do whatever it is to be done with the data that come from server.</summary>
+</entry>
+<entry>
+<title>Special Thanks</title>
+<link href="http://blog.jdonado.com/special-thanks/" rel="alternate" type="text/html" title="Special Thanks" />
+<published>2016-06-12T00:00:00+02:00</published>
+<updated>2016-06-12T00:00:00+02:00</updated>
+<id>http://blog.jdonado.com/special-thanks</id>
+<content type="html" xml:base="http://blog.jdonado.com/special-thanks/">&lt;h1 id=&quot;acknowledgements&quot;&gt;Acknowledgements&lt;/h1&gt;
 
 &lt;p&gt;I have to specially thank the help of the following people when I was developing &lt;a href=&quot;http://www.jdonado.com&quot;&gt;www.jdonado.com&lt;/a&gt;:&lt;/p&gt;
 
@@ -333,9 +505,20 @@ Solution: import &lt;code class=&quot;highlighter-rouge&quot;&gt;ConnectionBacke
   &lt;li&gt;&lt;strong&gt;Rubén Álvarez&lt;/strong&gt;, from &lt;a href=&quot;https://chismeanimal.bandcamp.com/&quot;&gt;Chisme Animal&lt;/a&gt; who has always been for me, during many many years, a great source of ideas and inspiration, and provided me with feedback and material for building this site.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;I also have to thank the following people for contributing to the open source community, because their work has been particularly helpful for me when developing this web page: &lt;a href=&quot;https://github.com/impress/impress.js&quot;&gt;Bartek Szopka&lt;/a&gt;, &lt;a href=&quot;http://codepen.io/pmcgriff/pen/myKGZg&quot;&gt;Peter McGriff&lt;/a&gt;, &lt;a href=&quot;https://github.com/blueimp/Gallery&quot;&gt;Sebastian Tschan&lt;/a&gt;, &lt;a href=&quot;http://codepen.io/dicson/pen/waKPgQ&quot;&gt;Dicson&lt;/a&gt;, &lt;a href=&quot;http://codepen.io/medemas/pen/QwvgEr&quot;&gt;Mason Medeiros&lt;/a&gt;, &lt;a href=&quot;https://github.com/SalGnt/Travelogue&quot;&gt;Dmitry Zelinsky and Salvatore Gentile&lt;/a&gt;&lt;/p&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>http://www.jdonado.com</uri></author><category term="coding" /><category term="acknowledgements" /><summary type="html">Acknowledgements
+&lt;p&gt;I also have to thank the following people for contributing to the open source community, because their work has been particularly helpful for me when developing this web page: &lt;a href=&quot;https://github.com/impress/impress.js&quot;&gt;Bartek Szopka&lt;/a&gt;, &lt;a href=&quot;http://codepen.io/pmcgriff/pen/myKGZg&quot;&gt;Peter McGriff&lt;/a&gt;, &lt;a href=&quot;https://github.com/blueimp/Gallery&quot;&gt;Sebastian Tschan&lt;/a&gt;, &lt;a href=&quot;http://codepen.io/dicson/pen/waKPgQ&quot;&gt;Dicson&lt;/a&gt;, &lt;a href=&quot;http://codepen.io/medemas/pen/QwvgEr&quot;&gt;Mason Medeiros&lt;/a&gt;, &lt;a href=&quot;https://github.com/SalGnt/Travelogue&quot;&gt;Dmitry Zelinsky and Salvatore Gentile&lt;/a&gt;&lt;/p&gt;
 
-I have to specially thank the help of the following people when I was developing www.jdonado.com:</summary></entry><entry><title type="html">Hello World</title><link href="http://blog.jdonado.com/hello-world/" rel="alternate" type="text/html" title="Hello World" /><published>2016-03-28T00:00:00+02:00</published><updated>2016-03-28T00:00:00+02:00</updated><id>http://blog.jdonado.com/hello-world</id><content type="html" xml:base="http://blog.jdonado.com/hello-world/">&lt;h2 id=&quot;what-is-jdonadocom&quot;&gt;What is jdonado.com?&lt;/h2&gt;
+</content>
+<category term="coding" />
+<category term="acknowledgements" />
+<summary>AcknowledgementsI have to specially thank the help of the following people when I was developing www.jdonado.com:</summary>
+</entry>
+<entry>
+<title>Hello World</title>
+<link href="http://blog.jdonado.com/hello-world/" rel="alternate" type="text/html" title="Hello World" />
+<published>2016-03-28T00:00:00+02:00</published>
+<updated>2016-03-28T00:00:00+02:00</updated>
+<id>http://blog.jdonado.com/hello-world</id>
+<content type="html" xml:base="http://blog.jdonado.com/hello-world/">&lt;h2 id=&quot;what-is-jdonadocom&quot;&gt;What is jdonado.com?&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.jdonado.com&quot;&gt;Jdonado.com&lt;/a&gt; is my personal page, &lt;a href=&quot;http://blog.jdonado.com&quot;&gt;blog.jdonado.com&lt;/a&gt; is this blog, and you’re very welcome to them both.&lt;/p&gt;
 
@@ -353,4 +536,12 @@ I have to specially thank the help of the following people when I was developing
 
 &lt;h2 id=&quot;did-you-do-it-all&quot;&gt;Did you do it all?&lt;/h2&gt;
 
-&lt;p&gt;For what you can see in &lt;a href=&quot;http://www.jdonado.com&quot;&gt;www.jdonado.com&lt;/a&gt;, mostly yes. Of course I used some plugins and snippets (I don’t think reinventing the wheel is a good idea), but apart from that, I took care about the rest (code, design, image editing…). I like to use it as a playground to try out new ideas. Check the &lt;a href=&quot;/special-thanks/&quot;&gt;Special Thanks&lt;/a&gt; post for more information.&lt;/p&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>http://www.jdonado.com</uri></author><category term="coding" /><category term="about" /><category term="jdonado.com" /><summary type="html">What is jdonado.com?</summary></entry></feed>
+&lt;p&gt;For what you can see in &lt;a href=&quot;http://www.jdonado.com&quot;&gt;www.jdonado.com&lt;/a&gt;, mostly yes. Of course I used some plugins and snippets (I don’t think reinventing the wheel is a good idea), but apart from that, I took care about the rest (code, design, image editing…). I like to use it as a playground to try out new ideas. Check the &lt;a href=&quot;{% link _posts/2016-06-12-special-thanks.markdown %}&quot;&gt;Special Thanks&lt;/a&gt; post for more information.&lt;/p&gt;
+
+</content>
+<category term="coding" />
+<category term="about" />
+<category term="jdonado.com" />
+<summary>What is jdonado.com?</summary>
+</entry>
+</feed>

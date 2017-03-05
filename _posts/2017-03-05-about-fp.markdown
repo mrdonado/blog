@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "About Functional Programming"
+date:   2017-03-05
+category: functional-programming 
+backgrounds:
+    - http://blog.jdonado.com/assets/images/jsbg.jpg
+thumb: http://blog.jdonado.com/assets/images/lambda-cover.png
+tags: functional-programming javascript
+---
+
+# Introduction
+
+Recently, I've been doing some research on the topic of functional programming. I think it's a good time to get together some of the resources I've found so far, and remark the ideas that motivated me to learn more about it.
+
+## Why Functional Programming?
+
+After reading articles, books and watching videos by Eric Eliott, Brian Lonsdorf, Michael Fogus, Brian Beckman and others, I've convinced myself about the following facts:
+
+- Object Oriented Design and Relational Databases potentially have a big problem: they bind your software and your data together with a very rigid structure that is very difficult to modify in the future.
+- You usually have to make decisions about that rigid structure at a development stage where you simply don't have all the relevant information. Requirements change with time and rigid structures don't like changes.
+- It's almost impossible to design a very good OOD or RDB from the very beginning because **humans cannot predict future**. 
+
+That's why I think not just functional programming but also NoSQL databases are getting more and more traction. Now that memory and computational power are getting bigger and cheaper, they are becoming a great alternative for many applications. In addition to that, functional techniques present clear advantages in distributed computing.
+
+### Fight complexity
+
+As [Brian Beckman said](https://youtu.be/ZhuHCtR3xq8?t=17m13s), today in the software development community, we're out of control in the complexity space. **The way to control complexity is compositionality**.
+
+Functional programming is probably the natural alternative to the classical object oriented paradigm. It's been around since the very beginning of computation, but for some reason it never went mainstream. Until now.
+
+JavaScript is (maybe alongside with Scala) the first mainstream programming language that provides basic tools for developing software based partially [or even completely](https://www.youtube.com/watch?v=eetWam3nhoM) on the functional paradigm. Functions are first class citizens, you can create high order functions, and you can do many other things that were not possible in any of the older classic mainstream programming languages (such as C++, Java or C#). Interestingly enough, now that functional programming is becoming something cool and more and more people are interested about it, also the classic OOP languages are incorporating functional features to them, which is great! In fact, I think there's great potential in combining both paradigms.
+
+But functional programming can be quite tricky to understand in the beginning. It has its roots in lambda calculus (or cathegory theory, as you prefer), and it's full of rather esoteric terms such as monoids, monads, functors, applicative functors, and so on. But the main idea behind it is very simple: **build software just by writing small pieces of code (functions) that perform very specific tasks** and then compose them in order to provide a more complex behaviour. One of the main advantages of such an approach is that unit testing is much easier, sometimes even trivial.
+
+### First Steps
+
+Basic and easy stuff first, please. The series on [functional programming in JavaScript](https://www.youtube.com/playlist?list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84) by MPJ are a great starting point. If you never heard of high order functions, Map, Reduce, Currying, and some other related concepts, you can find a quick and fun introduction here.
+
+### I Want More of This
+
+After convincing myself of the conveninence of functions like Map and Reduce, I wanted to learn more. I found two very interesting books about functional programming with JavaScript:
+
+- [Functional JavaScript](https://www.amazon.de/Functional-JavaScript-Introducing-Programming-Underscore-js/dp/1449360726), by Michael Fogus, is a comprehensive introduction to the main functional programming concepts. It focuses on JavaScript and the Underscore library. Concepts like purity, immutability, recursion, trampoline techniques, and currying are very well explained, with lots of examples. 
+- [Professor Frisby's Mostly Adequate Guide to Functional Programming](https://github.com/MostlyAdequate/mostly-adequate-guide), by Brian Lonsdorf (AKA Dr. Boolean). It's not finished yet but, hey! it's free!!. It shows a way to develop JavaScript that, in my humble opinion, is closer to what you might expect when working with more purely functional oriented programming languages, like Scala or even Haskell. It's related to the three videos series [Classroom Coding with Prof. Frisby](https://www.youtube.com/watch?v=h_tkIpwbsxY&list=PLK_hdtAJ4KqX0JOs_KMAmUNTNMRYhWEaC) (very interesting too, but also very dense. You might need to watch them twice to get all the concepts). You can also find many other interesting talks on youtube from this author.
+
+If you want to start writing functional routines in your JavaScript applications, in the sense that was explained on "Functional Javascript", [Lodash](https://lodash.com/) (a more performant alternative to Underscore) is a great library.
+
+If you want to explore a more pure functional programming style, [lodash/fp](https://github.com/lodash/lodash/tree/4.17.4-npm/fp), [Ramda](http://ramdajs.com/), [Folktale](http://folktalejs.org/) and [Fantasy Land](https://github.com/fantasyland/fantasy-land) are wonderful resources. 
+
+If that's not functional enough for you, you can give a try at [PureScript](http://www.purescript.org/) or [ClojureScript](https://clojurescript.org/).
+
+### A Bit More Advanced
+
+- [Brian Beckman: Don't fear the Monad](https://www.youtube.com/watch?v=ZhuHCtR3xq8). Brian Beckman (Princeton University, Microsoft, Amazon...) gives you a glimpse about the category theory behind monoids and monads, expressed in practical terms, familiar to an imperative programmer (he also gives C# examples). I find particularly interesting the following ideas:
+    - Functions can be seen as data. You can model (almost) any function as a dictionary table where a lookup is performed.
+    - Short story about the two separated camps created when computing started: the imperative one (tradition that led to languages like Fortran, C, Pascal, Java, etc.), where Math theory was put aside and performance was king, and the functional one (this one led to languages like Algol, Lisp, Smalltalk or Haskell), where they started out with Math theory (lambda calculus) and went from there down to the machine, sometimes at the expense of performance.
+    - Build complexity out of simplicity by composing functions, not by adding ad-hoc features.
