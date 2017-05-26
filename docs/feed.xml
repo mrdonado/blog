@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.4.1">Jekyll</generator>
 <link href="http://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://blog.jdonado.com/" rel="alternate" type="text/html" />
-<updated>2017-03-05T16:45:56+01:00</updated>
+<updated>2017-05-26T19:54:44+02:00</updated>
 <id>http://blog.jdonado.com/</id>
 <title>JDonado's Readme</title>
 <subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle>
@@ -12,6 +12,44 @@
 <email>jdonado@jdonado.com</email>
 <uri>http://www.jdonado.com</uri>
 </author>
+<entry>
+<title>Restore clover using Windows</title>
+<link href="http://blog.jdonado.com/restore-clover/" rel="alternate" type="text/html" title="Restore clover using Windows" />
+<published>2017-03-05T00:00:00+01:00</published>
+<updated>2017-03-05T00:00:00+01:00</updated>
+<id>http://blog.jdonado.com/restore-clover</id>
+<content type="html" xml:base="http://blog.jdonado.com/restore-clover/">&lt;h1 id=&quot;restore-your-configplist&quot;&gt;Restore your config.plist&lt;/h1&gt;
+
+&lt;p&gt;Clover is a boot manager that allows you to select the OS you want to boot with. It is used mostly by Hackintosh users, that is, people that install MacOSX (along with other OSs, like Linux and Windows) on a non-Apple machine.&lt;/p&gt;
+
+&lt;p&gt;The Clover configuration can be quite tricky, and if you’re not lucky you can easily mess it up. That’s why it’s more than advisable to keep a backup of the &lt;code class=&quot;highlighter-rouge&quot;&gt;/EFI/CLOVER/config.plist&lt;/code&gt; configuration file.&lt;/p&gt;
+
+&lt;p&gt;If you happen to break your Clover’s MacOSX boot, but you still have a working Windows boot on the same machine, you can follow these steps in order to restore a backup of &lt;code class=&quot;highlighter-rouge&quot;&gt;config.plist&lt;/code&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Open an administrator console (run &lt;code class=&quot;highlighter-rouge&quot;&gt;cmd.exe&lt;/code&gt; as Administrator) and type the following:&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;diskpart&lt;/code&gt; (open diskpart)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;list disk&lt;/code&gt; (list your hard drives with)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;select disk 1&lt;/code&gt; (select the disk where your Clover EFI boot has been installed. 1 is just an example)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;list partition&lt;/code&gt; (list the partitions available on the selected disk)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;select partition 1&lt;/code&gt; (select the boot EFI partition)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;assign letter=s&lt;/code&gt; (assign a letter. S in this case)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;exit&lt;/code&gt; (exit diskpart)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;s:&lt;/code&gt; (go to the just mounted boot partition)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd EFI\CLOVER\&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;copy c:\backups\config.plist .&lt;/code&gt; (c:\backups is just an example. Replace this path by the path where you have your config.plist backup)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If everything worked fine, you can now restart and use your MacOSX boot again.&lt;/p&gt;
+
+&lt;p&gt;You can find more information about Hackintosh and Clover on &lt;a href=&quot;https://www.tonymacx86.com/&quot;&gt;tonymac86&lt;/a&gt;.&lt;/p&gt;
+</content>
+<category term="clover" />
+<category term="hackintosh" />
+<category term="clover" />
+<category term="windows" />
+<summary>Restore your config.plist</summary>
+</entry>
 <entry>
 <title>About Functional Programming</title>
 <link href="http://blog.jdonado.com/about-fp/" rel="alternate" type="text/html" title="About Functional Programming" />
