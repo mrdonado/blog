@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.4.1">Jekyll</generator>
 <link href="http://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://blog.jdonado.com/" rel="alternate" type="text/html" />
-<updated>2017-05-26T19:54:44+02:00</updated>
+<updated>2017-05-26T20:00:44+02:00</updated>
 <id>http://blog.jdonado.com/</id>
 <title>JDonado's Readme</title>
 <subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle>
@@ -15,8 +15,8 @@
 <entry>
 <title>Restore clover using Windows</title>
 <link href="http://blog.jdonado.com/restore-clover/" rel="alternate" type="text/html" title="Restore clover using Windows" />
-<published>2017-03-05T00:00:00+01:00</published>
-<updated>2017-03-05T00:00:00+01:00</updated>
+<published>2017-05-26T00:00:00+02:00</published>
+<updated>2017-05-26T00:00:00+02:00</updated>
 <id>http://blog.jdonado.com/restore-clover</id>
 <content type="html" xml:base="http://blog.jdonado.com/restore-clover/">&lt;h1 id=&quot;restore-your-configplist&quot;&gt;Restore your config.plist&lt;/h1&gt;
 
@@ -24,7 +24,7 @@
 
 &lt;p&gt;The Clover configuration can be quite tricky, and if you’re not lucky you can easily mess it up. That’s why it’s more than advisable to keep a backup of the &lt;code class=&quot;highlighter-rouge&quot;&gt;/EFI/CLOVER/config.plist&lt;/code&gt; configuration file.&lt;/p&gt;
 
-&lt;p&gt;If you happen to break your Clover’s MacOSX boot, but you still have a working Windows boot on the same machine, you can follow these steps in order to restore a backup of &lt;code class=&quot;highlighter-rouge&quot;&gt;config.plist&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;If you happen to break down your MacOSX boot, but you still have a working Windows boot on the same machine, you can follow these steps in order to restore a backup of &lt;code class=&quot;highlighter-rouge&quot;&gt;config.plist&lt;/code&gt;:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Open an administrator console (run &lt;code class=&quot;highlighter-rouge&quot;&gt;cmd.exe&lt;/code&gt; as Administrator) and type the following:&lt;/li&gt;
@@ -41,6 +41,13 @@
 &lt;/ul&gt;
 
 &lt;p&gt;If everything worked fine, you can now restart and use your MacOSX boot again.&lt;/p&gt;
+
+&lt;p&gt;In addition to that, some Clover prefixes that can help you find out what went wrong are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-x&lt;/code&gt; start using the safe mode&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-v&lt;/code&gt; verbose mode&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;You can find more information about Hackintosh and Clover on &lt;a href=&quot;https://www.tonymacx86.com/&quot;&gt;tonymac86&lt;/a&gt;.&lt;/p&gt;
 </content>
