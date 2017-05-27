@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.4.1">Jekyll</generator>
 <link href="http://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://blog.jdonado.com/" rel="alternate" type="text/html" />
-<updated>2017-05-27T10:32:03+02:00</updated>
+<updated>2017-05-27T10:33:46+02:00</updated>
 <id>http://blog.jdonado.com/</id>
 <title>JDonado's Readme</title>
 <subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle>
@@ -110,14 +110,12 @@
 
 &lt;h3 id=&quot;a-bit-more-advanced&quot;&gt;A Bit More Advanced&lt;/h3&gt;
 
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ZhuHCtR3xq8&quot;&gt;Brian Beckman: Don’t fear the Monad&lt;/a&gt;. Brian Beckman (Princeton University, Microsoft, Amazon…) gives you a glimpse about the category theory behind monoids and monads, expressed in practical terms, familiar to an imperative programmer (he also gives C# examples). I find particularly interesting the following ideas:&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ZhuHCtR3xq8&quot;&gt;Brian Beckman: Don’t fear the Monad&lt;/a&gt;. Brian Beckman (Princeton University, Microsoft, Amazon…) gives you a glimpse about the category theory behind monoids and monads, expressed in practical terms, familiar to an imperative programmer (he also gives C# examples). I find particularly interesting the following ideas:
-    &lt;ul&gt;
-      &lt;li&gt;Functions can be seen as data. You can model (almost) any function as a dictionary table where a lookup is performed.&lt;/li&gt;
-      &lt;li&gt;Short story about the two separated camps created when computing started: the imperative one (tradition that led to languages like Fortran, C, Pascal, Java, etc.), where Math theory was put aside and performance was king, and the functional one (this one led to languages like Algol, Lisp, Smalltalk or Haskell), where they started out with Math theory (lambda calculus) and went from there down to the machine, sometimes at the expense of performance.&lt;/li&gt;
-      &lt;li&gt;Build complexity out of simplicity by composing functions, not by adding ad-hoc features.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Functions can be seen as data. You can model (almost) any function as a dictionary table where a lookup is performed.&lt;/li&gt;
+  &lt;li&gt;Short story about the two separated camps created when computing started: the imperative one (tradition that led to languages like Fortran, C, Pascal, Java, etc.), where Math theory was put aside and performance was king, and the functional one (this one led to languages like Algol, Lisp, Smalltalk or Haskell), where they started out with Math theory (lambda calculus) and went from there down to the machine, sometimes at the expense of performance.&lt;/li&gt;
+  &lt;li&gt;Build complexity out of simplicity by composing functions, not by adding ad-hoc features.&lt;/li&gt;
 &lt;/ul&gt;
 </content>
 <category term="functional-programming" />
