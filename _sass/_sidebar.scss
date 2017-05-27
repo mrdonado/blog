@@ -12,9 +12,9 @@
     width: 54px;
     z-index: 1;
 
-    @include media-query($on-laptop) {
-        position: absolute;
-    }
+    // @include media-query($on-laptop) {
+    //     position: absolute;
+    // }
 
     .nav-icon {
         background: $background-color;
