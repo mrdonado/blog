@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.4.1">Jekyll</generator>
 <link href="http://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://blog.jdonado.com/" rel="alternate" type="text/html" />
-<updated>2017-05-28T12:42:08+02:00</updated>
+<updated>2017-05-28T12:51:50+02:00</updated>
 <id>http://blog.jdonado.com/</id>
 <title>JDonado's Readme</title>
 <subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle>
@@ -20,9 +20,9 @@
 <id>http://blog.jdonado.com/vim-magic</id>
 <content type="html" xml:base="http://blog.jdonado.com/vim-magic/">&lt;h1 id=&quot;vim-magic&quot;&gt;Vim magic&lt;/h1&gt;
 
-&lt;p&gt;I’ve been using the &lt;a href=&quot;http://www.vim.org&quot;&gt;vim editor&lt;/a&gt; for a while now, and I really like it. But it’s true that the learning curve is very steep, and there are so many options, that even after years of using it, you can still discover lots of new tricks.&lt;/p&gt;
+&lt;p&gt;I’ve been using the &lt;a href=&quot;http://www.vim.org&quot;&gt;vim editor&lt;/a&gt; for a while now, and I really like it. But it’s true that the learning curve is very steep. There are so many options, that even after years of using it, you can still discover lots of new tricks.&lt;/p&gt;
 
-&lt;p&gt;This is a compilation of my favorite commands. I will keep updating this post in the future whenever I discover new stuff (this is kind of a personal quick reference).&lt;/p&gt;
+&lt;p&gt;This is a compilation of my favorite commands. I will keep updating this post in the future whenever I discover new interesting stuff (this is kind of a personal quick reference).&lt;/p&gt;
 
 &lt;h2 id=&quot;in-normal-mode&quot;&gt;In normal mode&lt;/h2&gt;
 
@@ -40,6 +40,10 @@
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zz&lt;/code&gt; Scroll the current line to the center of the window&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:b &amp;lt;TAB&amp;gt;&lt;/code&gt; Open a file that has been previously opened (and is still in the buffer)&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:ls&lt;/code&gt; List the previously opened files&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vi&quot;&lt;/code&gt; Select everything &lt;em&gt;inside&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;. It also works with parenthesis, brackets, tags…&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;di&quot;&lt;/code&gt; Delete everything &lt;em&gt;inside&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;. Same as before.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;da&quot;&lt;/code&gt; Delete everything &lt;em&gt;inside&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;, and the surrounding &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt; too.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL+v&lt;/code&gt; Start visual mode, selecting columns&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;custom-settings&quot;&gt;Custom settings&lt;/h2&gt;

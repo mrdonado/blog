@@ -11,9 +11,9 @@ tags: vim
 
 # Vim magic
 
-I've been using the [vim editor](http://www.vim.org) for a while now, and I really like it. But it's true that the learning curve is very steep, and there are so many options, that even after years of using it, you can still discover lots of new tricks.
+I've been using the [vim editor](http://www.vim.org) for a while now, and I really like it. But it's true that the learning curve is very steep. There are so many options, that even after years of using it, you can still discover lots of new tricks.
 
-This is a compilation of my favorite commands. I will keep updating this post in the future whenever I discover new stuff (this is kind of a personal quick reference).
+This is a compilation of my favorite commands. I will keep updating this post in the future whenever I discover new interesting stuff (this is kind of a personal quick reference).
 
 ## In normal mode
 
@@ -30,6 +30,10 @@ This is a compilation of my favorite commands. I will keep updating this post in
 - `zz` Scroll the current line to the center of the window
 - `:b <TAB>` Open a file that has been previously opened (and is still in the buffer)
 - `:ls` List the previously opened files
+- `vi"` Select everything *inside* `"`. It also works with parenthesis, brackets, tags...
+- `di"` Delete everything *inside* `"`. Same as before.
+- `da"` Delete everything *inside* `"`, and the surrounding `"` too.
+- `CTRL+v` Start visual mode, selecting columns
 
 ## Custom settings
 
