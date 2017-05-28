@@ -1,0 +1,54 @@
+---
+layout: post
+title:  "Vim magic"
+date:   2017-05-28
+category: vim
+backgrounds:
+    - http://blog.jdonado.com/assets/images/jsbg.jpg
+thumb: http://blog.jdonado.com/assets/images/vim-icon.png
+tags: vim
+---
+
+# Vim magic
+
+I've been using the [vim editor](http://www.vim.org) for a while now, and I really like it. But it's true that the learning curve is very steep, and there are so many options, that even after years of using it, you can still discover lots of new tricks.
+
+This is a compilation of my favorite commands. I will keep updating this post in the future whenever I discover new stuff (this is kind of a personal quick reference).
+
+## In normal mode
+
+- `:echo $VIM` Show the path to the vimrc configuration file
+- `:!command` Run a unix command
+- `:!!` Swap the selection by the stdout of the last command
+- `:e .` Open the file explorer on the current directory, in order to edit a file
+- `:find *.js <TAB>` Find a file with extension `.js` using autocompletion
+- `:tabfind <TAB>` Find a file with autocompletion and open it in a new tab
+- `gT` Go to the previous tab
+- `gt` Go to the next tab
+- `vsplit` Split vertically
+- `split` Split horizontally
+- `zz` Scroll the current line to the center of the window
+- `:b <TAB>` Open a file that has been previously opened (and is still in the buffer)
+- `:ls` List the previously opened files
+
+## Custom settings
+
+These settings can be saved into the vimrc file.
+
+- `set number` Show the line numbers
+- `set autoindent` Autoindentation
+- `set path+=**` Include subdirectories when finding a file
+- `set wildmenu` Menu helper when using tab finding files or directories
+- `set nocompatible` Ignore compatibility with ancient vi versions
+- `set wildignore+=**/node_modules/**` Ignore directory when finding files
+
+## ...and of course
+
+- `:q!` [Don't get trapped](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/). Leave without saving :)
+
+## References
+
+- [How to do 90% of what plugins do (youtube)](https://www.youtube.com/watch?v=XA2WjJbmmoM)
+- [Mastering the vim language (youtube)](https://www.youtube.com/watch?v=wlR5gYd6um0)
+- [Vim + tmux (youtube)](https://www.youtube.com/watch?v=5r6yzFEXajQ&t=310s)
+- [Vim documentation](http://www.vim.org/docs.php)

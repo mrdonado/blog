@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.4.1">Jekyll</generator>
 <link href="http://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://blog.jdonado.com/" rel="alternate" type="text/html" />
-<updated>2017-05-27T10:40:20+02:00</updated>
+<updated>2017-05-28T12:42:08+02:00</updated>
 <id>http://blog.jdonado.com/</id>
 <title>JDonado's Readme</title>
 <subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle>
@@ -12,6 +12,68 @@
 <email>jdonado@jdonado.com</email>
 <uri>http://www.jdonado.com</uri>
 </author>
+<entry>
+<title>Vim magic</title>
+<link href="http://blog.jdonado.com/vim-magic/" rel="alternate" type="text/html" title="Vim magic" />
+<published>2017-05-28T00:00:00+02:00</published>
+<updated>2017-05-28T00:00:00+02:00</updated>
+<id>http://blog.jdonado.com/vim-magic</id>
+<content type="html" xml:base="http://blog.jdonado.com/vim-magic/">&lt;h1 id=&quot;vim-magic&quot;&gt;Vim magic&lt;/h1&gt;
+
+&lt;p&gt;I’ve been using the &lt;a href=&quot;http://www.vim.org&quot;&gt;vim editor&lt;/a&gt; for a while now, and I really like it. But it’s true that the learning curve is very steep, and there are so many options, that even after years of using it, you can still discover lots of new tricks.&lt;/p&gt;
+
+&lt;p&gt;This is a compilation of my favorite commands. I will keep updating this post in the future whenever I discover new stuff (this is kind of a personal quick reference).&lt;/p&gt;
+
+&lt;h2 id=&quot;in-normal-mode&quot;&gt;In normal mode&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:echo $VIM&lt;/code&gt; Show the path to the vimrc configuration file&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:!command&lt;/code&gt; Run a unix command&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:!!&lt;/code&gt; Swap the selection by the stdout of the last command&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:e .&lt;/code&gt; Open the file explorer on the current directory, in order to edit a file&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:find *.js &amp;lt;TAB&amp;gt;&lt;/code&gt; Find a file with extension &lt;code class=&quot;highlighter-rouge&quot;&gt;.js&lt;/code&gt; using autocompletion&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:tabfind &amp;lt;TAB&amp;gt;&lt;/code&gt; Find a file with autocompletion and open it in a new tab&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gT&lt;/code&gt; Go to the previous tab&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gt&lt;/code&gt; Go to the next tab&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vsplit&lt;/code&gt; Split vertically&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;split&lt;/code&gt; Split horizontally&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zz&lt;/code&gt; Scroll the current line to the center of the window&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:b &amp;lt;TAB&amp;gt;&lt;/code&gt; Open a file that has been previously opened (and is still in the buffer)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:ls&lt;/code&gt; List the previously opened files&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;custom-settings&quot;&gt;Custom settings&lt;/h2&gt;
+
+&lt;p&gt;These settings can be saved into the vimrc file.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set number&lt;/code&gt; Show the line numbers&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set autoindent&lt;/code&gt; Autoindentation&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set path+=**&lt;/code&gt; Include subdirectories when finding a file&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set wildmenu&lt;/code&gt; Menu helper when using tab finding files or directories&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set nocompatible&lt;/code&gt; Ignore compatibility with ancient vi versions&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set wildignore+=**/node_modules/**&lt;/code&gt; Ignore directory when finding files&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;and-of-course&quot;&gt;…and of course&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:q!&lt;/code&gt; &lt;a href=&quot;https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/&quot;&gt;Don’t get trapped&lt;/a&gt;. Leave without saving :)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=XA2WjJbmmoM&quot;&gt;How to do 90% of what plugins do (youtube)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=wlR5gYd6um0&quot;&gt;Mastering the vim language (youtube)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=5r6yzFEXajQ&amp;amp;t=310s&quot;&gt;Vim + tmux (youtube)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vim.org/docs.php&quot;&gt;Vim documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+<category term="vim" />
+<category term="vim" />
+<summary>Vim magic</summary>
+</entry>
 <entry>
 <title>Restore clover using Windows</title>
 <link href="http://blog.jdonado.com/restore-clover/" rel="alternate" type="text/html" title="Restore clover using Windows" />
