@@ -39,6 +39,7 @@ This is a compilation of my favorite commands. I will keep updating this post in
 
 These settings can be saved into the vimrc file.
 
+- `syntax on` Activate the syntax highlighting
 - `set number` Show the line numbers
 - `set autoindent` Autoindentation
 - `set path+=**` Include subdirectories when finding a file
