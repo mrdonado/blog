@@ -32,8 +32,15 @@ This is a compilation of my favorite commands. I will keep updating this post in
 - `:ls` List the previously opened files
 - `vi"` Select everything *inside* `"`. It also works with parenthesis, brackets, tags...
 - `di"` Delete everything *inside* `"`. Same as before.
-- `da"` Delete everything *inside* `"`, and the surrounding `"` too.
+- `da"` Delete everything *inside* `"`, and the surrounding `"` too
 - `CTRL+v` Start visual mode, selecting columns
+- `=<next position>` Indent
+- `:vert diffs otherfile` Diff the current file with `otherfile`
+- `cs"'` Change the surrounding double quotes by simple quotes ([surround.vim](http://www.vim.org/scripts/script.php?script_id=1697) is required)
+
+## In edit mode
+
+- `<CTRL>n` Autocomplete
 
 ## Custom settings
 
