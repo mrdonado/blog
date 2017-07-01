@@ -17,7 +17,7 @@ If you've been using nodeJS npm package manager, chances are, sooner or later yo
 
 Sometimes after running `npm install` you don't get exactly the modules that you need and suddenly things don't work as expected anymore.
 
-This might happen when there's [no specific version](https://docs.npmjs.com/misc/semver) defined of some dependencies in your `package.json`, but rather an approximate one (e.g.: using a tilde, as in `~1.2.3` or a caret, as in `^1.2.3`). 
+This might happen when there's [no specific version](https://docs.npmjs.com/misc/semver) defined of some dependencies in your `package.json`, but rather an approximate one (e.g.: using a tilde, as in `~1.2.3` or a caret, as in `^1.2.3`).
 
 While tildes and carets can be useful if you want to automatically use more recent versions when available, they can sometimes break your project if anything new isn't compatible with your current code.
 
@@ -30,6 +30,10 @@ Sometimes using specific module versions is not enough. Saving a list with the s
 Use the [npm-shrinkwrap](https://docs.npmjs.com/cli/shrinkwrap) command in order to create an `npm-shrinkwrap.json` file that [locks](https://docs.npmjs.com/files/package-locks) all the npm dependencies:
 
 `npm shrinkwrap`
+
+Another (even better alternative) is to use [Yarn](https://yarnpkg.com/en/docs/yarn-lock) to create a `yarn.lock` file, which has the same goal as the `npm-shrinkwrap.json`, but it seems to follow a more deterministic approach, being therefore safer.
+
+Yarn is compatible with the same format of `package.json` of npm, so you can just install it globally `npm install -g yarn` and try it out right away: `yarn`, which will generate the `yarn.lock`. It a very good idea to add this `yarn.lock` to your version control.
 
 ## Remove unneeded dependencies
 
