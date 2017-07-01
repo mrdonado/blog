@@ -97,9 +97,11 @@
 
 <p><code class="highlighter-rouge">npm shrinkwrap</code></p>
 
-<p>Another (even better alternative) is to use <a href="https://yarnpkg.com/en/docs/yarn-lock">Yarn</a> to create a <code class="highlighter-rouge">yarn.lock</code> file, which has the same goal as the <code class="highlighter-rouge">npm-shrinkwrap.json</code>, but it seems to follow a more deterministic approach, being therefore safer.</p>
+<p>Another (even better) alternative is to use <a href="https://yarnpkg.com/en/docs/yarn-lock">Yarn</a> to create a <code class="highlighter-rouge">yarn.lock</code> file, which has the same goal as the <code class="highlighter-rouge">npm-shrinkwrap.json</code>, but it seems to follow a more deterministic approach, being therefore safer.</p>
 
-<p>Yarn is compatible with the same format of <code class="highlighter-rouge">package.json</code> of npm, so you can just install it globally <code class="highlighter-rouge">npm install -g yarn</code> and try it out right away: <code class="highlighter-rouge">yarn</code>, which will generate the <code class="highlighter-rouge">yarn.lock</code>. It a very good idea to add this <code class="highlighter-rouge">yarn.lock</code> to your version control.</p>
+<p>Yarn is compatible with the same <code class="highlighter-rouge">package.json</code> of npm, so you can just install it globally (<code class="highlighter-rouge">npm install -g yarn</code>) and try it out right away by simply running <code class="highlighter-rouge">yarn</code> on your project’s root folder, which will generate the <code class="highlighter-rouge">yarn.lock</code>.</p>
+
+<p>It a very good idea to add this <code class="highlighter-rouge">yarn.lock</code> to your version control.</p>
 
 <h2 id="remove-unneeded-dependencies">Remove unneeded dependencies</h2>
 

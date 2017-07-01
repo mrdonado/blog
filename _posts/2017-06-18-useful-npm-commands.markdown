@@ -31,9 +31,11 @@ Use the [npm-shrinkwrap](https://docs.npmjs.com/cli/shrinkwrap) command in order
 
 `npm shrinkwrap`
 
-Another (even better alternative) is to use [Yarn](https://yarnpkg.com/en/docs/yarn-lock) to create a `yarn.lock` file, which has the same goal as the `npm-shrinkwrap.json`, but it seems to follow a more deterministic approach, being therefore safer.
+Another (even better) alternative is to use [Yarn](https://yarnpkg.com/en/docs/yarn-lock) to create a `yarn.lock` file, which has the same goal as the `npm-shrinkwrap.json`, but it seems to follow a more deterministic approach, being therefore safer.
 
-Yarn is compatible with the same format of `package.json` of npm, so you can just install it globally `npm install -g yarn` and try it out right away: `yarn`, which will generate the `yarn.lock`. It a very good idea to add this `yarn.lock` to your version control.
+Yarn is compatible with the same `package.json` of npm, so you can just install it globally (`npm install -g yarn`) and try it out right away by simply running `yarn` on your project's root folder, which will generate the `yarn.lock`.
+
+It a very good idea to add this `yarn.lock` to your version control.
 
 ## Remove unneeded dependencies
 
