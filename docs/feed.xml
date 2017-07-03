@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.4.1">Jekyll</generator>
 <link href="http://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://blog.jdonado.com/" rel="alternate" type="text/html" />
-<updated>2017-07-01T23:54:08+02:00</updated>
+<updated>2017-07-03T20:53:14+02:00</updated>
 <id>http://blog.jdonado.com/</id>
 <title>JDonado's Readme</title>
 <subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle>
@@ -44,7 +44,7 @@
 
 &lt;p&gt;Yarn is compatible with the same &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; of npm, so you can just install it globally (&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -g yarn&lt;/code&gt;) and try it out right away by simply running &lt;code class=&quot;highlighter-rouge&quot;&gt;yarn&lt;/code&gt; on your project’s root folder, which will generate the &lt;code class=&quot;highlighter-rouge&quot;&gt;yarn.lock&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;It a very good idea to add this &lt;code class=&quot;highlighter-rouge&quot;&gt;yarn.lock&lt;/code&gt; to your version control.&lt;/p&gt;
+&lt;p&gt;It is a very good idea to add this &lt;code class=&quot;highlighter-rouge&quot;&gt;yarn.lock&lt;/code&gt; to your version control.&lt;/p&gt;
 
 &lt;h2 id=&quot;remove-unneeded-dependencies&quot;&gt;Remove unneeded dependencies&lt;/h2&gt;
 

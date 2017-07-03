@@ -35,7 +35,7 @@ Another (even better) alternative is to use [Yarn](https://yarnpkg.com/en/docs/y
 
 Yarn is compatible with the same `package.json` of npm, so you can just install it globally (`npm install -g yarn`) and try it out right away by simply running `yarn` on your project's root folder, which will generate the `yarn.lock`.
 
-It a very good idea to add this `yarn.lock` to your version control.
+It is a very good idea to add this `yarn.lock` to your version control.
 
 ## Remove unneeded dependencies
 
