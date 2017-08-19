@@ -4,8 +4,8 @@ title:  "Inheritance in AngularJS, again"
 date:   2016-10-23
 category: coding
 backgrounds:
-    - http://blog.jdonado.com/assets/images/jsbg.jpg
-thumb: http://blog.jdonado.com/assets/images/inheritance-again.jpg
+    - https://blog.jdonado.com/assets/images/jsbg.jpg
+thumb: https://blog.jdonado.com/assets/images/inheritance-again.jpg
 tags: angularjs inheritance ecmascript5
 ---
 

@@ -4,8 +4,8 @@ title:  "Vim magic"
 date:   2017-05-28
 category: vim
 backgrounds:
-    - http://blog.jdonado.com/assets/images/backgrounds/vim.png
-thumb: http://blog.jdonado.com/assets/images/vim-icon.png
+    - https://blog.jdonado.com/assets/images/backgrounds/vim.png
+thumb: https://blog.jdonado.com/assets/images/vim-icon.png
 tags: vim
 ---
 

@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.4.1">Jekyll</generator>
 <link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" />
 <link href="https://blog.jdonado.com/" rel="alternate" type="text/html" />
-<updated>2017-08-19T22:48:08+02:00</updated>
+<updated>2017-08-19T22:54:12+02:00</updated>
 <id>https://blog.jdonado.com/</id>
 <title>JDonado's Readme</title>
 <subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle>
@@ -870,7 +870,7 @@ angular.module(‘notesApp’)
 <id>https://blog.jdonado.com/special-thanks</id>
 <content type="html" xml:base="https://blog.jdonado.com/special-thanks/">&lt;h1 id=&quot;acknowledgements&quot;&gt;Acknowledgements&lt;/h1&gt;
 
-&lt;p&gt;I have to specially thank the help of the following people when I was developing &lt;a href=&quot;http://www.jdonado.com&quot;&gt;www.jdonado.com&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;I have to specially thank the help of the following people when I was developing &lt;a href=&quot;https://www.jdonado.com&quot;&gt;www.jdonado.com&lt;/a&gt;:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Maria Kouman&lt;/strong&gt;, who is always supportive with me during my long hours in front of the computer, giving also great feedback and wonderful ideas.&lt;/li&gt;
@@ -895,15 +895,15 @@ angular.module(‘notesApp’)
 <id>https://blog.jdonado.com/hello-world</id>
 <content type="html" xml:base="https://blog.jdonado.com/hello-world/">&lt;h2 id=&quot;what-is-jdonadocom&quot;&gt;What is jdonado.com?&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.jdonado.com&quot;&gt;Jdonado.com&lt;/a&gt; is my personal page, &lt;a href=&quot;http://blog.jdonado.com&quot;&gt;blog.jdonado.com&lt;/a&gt; is this blog, and you’re very welcome to them both.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.jdonado.com&quot;&gt;Jdonado.com&lt;/a&gt; is my personal page, &lt;a href=&quot;https://blog.jdonado.com&quot;&gt;blog.jdonado.com&lt;/a&gt; is this blog, and you’re very welcome to them both.&lt;/p&gt;
 
 &lt;p&gt;My name is F. Javier R. Donado, I’m from Madrid (Spain) and I live in Stuttgart (Germany). I’m a software developer, and I also take pictures and record music.&lt;/p&gt;
 
-&lt;p&gt;In my &lt;a href=&quot;http://blog.jdonado.com&quot;&gt;blog&lt;/a&gt; I write mostly about software development. In &lt;a href=&quot;http://www.jdonado.com&quot;&gt;jdonado.com&lt;/a&gt; I describe my experience as a software developer, I show my pictures and my music, and I write about it all.&lt;/p&gt;
+&lt;p&gt;In my &lt;a href=&quot;https://blog.jdonado.com&quot;&gt;blog&lt;/a&gt; I write mostly about software development. In &lt;a href=&quot;https://www.jdonado.com&quot;&gt;jdonado.com&lt;/a&gt; I describe my experience as a software developer, I show my pictures and my music, and I write about it all.&lt;/p&gt;
 
 &lt;h2 id=&quot;how-did-you-do-it&quot;&gt;How did you do it?&lt;/h2&gt;
 
-&lt;p&gt;I used AngularJS to develop &lt;a href=&quot;http://www.jdonado.com&quot;&gt;www.jdonado.com&lt;/a&gt;. So actually, it’s not exactly a just page but a web app.&lt;/p&gt;
+&lt;p&gt;I used AngularJS to develop &lt;a href=&quot;https://www.jdonado.com&quot;&gt;www.jdonado.com&lt;/a&gt;. So actually, it’s not exactly a just page but a web app.&lt;/p&gt;
 
 &lt;p&gt;This blog is based in &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;, and uses a slightly modified &lt;a href=&quot;https://github.com/SalGnt/Travelogue&quot;&gt;Travelogue&lt;/a&gt; template.&lt;/p&gt;
 
@@ -911,7 +911,7 @@ angular.module(‘notesApp’)
 
 &lt;h2 id=&quot;did-you-do-it-all&quot;&gt;Did you do it all?&lt;/h2&gt;
 
-&lt;p&gt;For what you can see in &lt;a href=&quot;http://www.jdonado.com&quot;&gt;www.jdonado.com&lt;/a&gt;, mostly yes. Of course I used some plugins and snippets (I don’t think reinventing the wheel is a good idea), but apart from that, I took care about the rest (code, design, image editing…). I like to use it as a playground to try out new ideas. Check the &lt;a href=&quot;{% link _posts/2016-06-12-special-thanks.markdown %}&quot;&gt;Special Thanks&lt;/a&gt; post for more information.&lt;/p&gt;
+&lt;p&gt;For what you can see in &lt;a href=&quot;https://www.jdonado.com&quot;&gt;www.jdonado.com&lt;/a&gt;, mostly yes. Of course I used some plugins and snippets (I don’t think reinventing the wheel is a good idea), but apart from that, I took care about the rest (code, design, image editing…). I like to use it as a playground to try out new ideas. Check the &lt;a href=&quot;{% link _posts/2016-06-12-special-thanks.markdown %}&quot;&gt;Special Thanks&lt;/a&gt; post for more information.&lt;/p&gt;
 
 </content>
 <category term="coding" />

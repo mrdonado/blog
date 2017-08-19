@@ -13,4 +13,4 @@ In this blog you will find posts about:
 - MeteorJS and NodeJS
 - Some other stuff maybe
 
-For more information, [visit my website](http://www.jdonado.com).
+For more information, [visit my website](https://www.jdonado.com).

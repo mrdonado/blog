@@ -4,8 +4,8 @@ title:  "About Functional Programming"
 date:   2017-03-05
 category: functional-programming 
 backgrounds:
-    - http://blog.jdonado.com/assets/images/jsbg.jpg
-thumb: http://blog.jdonado.com/assets/images/lambda-cover.png
+    - https://blog.jdonado.com/assets/images/jsbg.jpg
+thumb: https://blog.jdonado.com/assets/images/lambda-cover.png
 tags: functional-programming javascript
 ---
 

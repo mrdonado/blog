@@ -1,5 +1,5 @@
 # JDonado blog - JDonado's Readme
-## [blog.jdonado.com](http://blog.jdonado.com)
+## [blog.jdonado.com](https://blog.jdonado.com)
 Blog powered by [Jekyll](https://jekyllrb.com/) with a template based in [Travelogue](https://github.com/SalGnt/Travelogue);
 
 ## Dependencies installation

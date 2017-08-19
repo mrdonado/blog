@@ -4,8 +4,8 @@ title:  "Useful npm commands"
 date:   2017-06-18
 category: vim
 backgrounds:
-    - http://blog.jdonado.com/assets/images/backgrounds/npm-bg.png
-thumb: http://blog.jdonado.com/assets/images/npm-icon.svg
+    - https://blog.jdonado.com/assets/images/backgrounds/npm-bg.png
+thumb: https://blog.jdonado.com/assets/images/npm-icon.svg
 tags: npm nodejs 
 ---
 

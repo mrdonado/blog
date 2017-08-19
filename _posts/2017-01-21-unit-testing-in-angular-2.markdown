@@ -4,8 +4,8 @@ title:  "Unit Testing in Angular 2: Common Exceptions"
 date:   2017-01-21
 category: coding
 backgrounds:
-    - http://blog.jdonado.com/assets/images/jsbg.jpg
-thumb: http://blog.jdonado.com/assets/images/scaffold-parthenon.jpg
+    - https://blog.jdonado.com/assets/images/jsbg.jpg
+thumb: https://blog.jdonado.com/assets/images/scaffold-parthenon.jpg
 tags: angular angular2 unit testing
 ---
 
