@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.4.1">Jekyll</generator>
 <link href="http://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" />
 <link href="http://blog.jdonado.com/" rel="alternate" type="text/html" />
-<updated>2017-07-03T20:53:14+02:00</updated>
+<updated>2017-08-19T20:54:35+02:00</updated>
 <id>http://blog.jdonado.com/</id>
 <title>JDonado's Readme</title>
 <subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle>
@@ -278,72 +278,255 @@
 <published>2017-01-21T00:00:00+01:00</published>
 <updated>2017-01-21T00:00:00+01:00</updated>
 <id>http://blog.jdonado.com/unit-testing-in-angular-2</id>
-<content type="html" xml:base="http://blog.jdonado.com/unit-testing-in-angular-2/">&lt;h3 id=&quot;unit-testing-in-angular-2-common-exceptions&quot;&gt;Unit Testing in Angular 2: Common Exceptions&lt;/h3&gt;
+<content type="html" xml:base="http://blog.jdonado.com/unit-testing-in-angular-2/">&lt;h1 id=&quot;unit-testing-in-angular-2-common-exceptions&quot;&gt;Unit Testing in Angular 2: Common Exceptions&lt;/h1&gt;
 
 &lt;p&gt;I’ve been working on an Angular 2 project (&lt;a href=&quot;http://angularjs.blogspot.de/2016/12/ok-let-me-explain-its-going-to-be.html?utm_content=bufferec238&amp;amp;utm_medium=social&amp;amp;utm_source=facebook.com&amp;amp;utm_campaign=buffer&quot;&gt;or Angular 3, or 4, or whatever…&lt;/a&gt;) during the last couple of months, and I’m still learning how to unit test a project based in this new framework.&lt;/p&gt;
 
 &lt;p&gt;I’d like to share with you some of the most common exceptions I’ve found when first writing unit tests, and the solutions to them.&lt;/p&gt;
 
-&lt;h4 id=&quot;problem-your-directive-name-is-not-a-known-element&quot;&gt;Problem: ‘your-directive-name’ is not a known element&lt;/h4&gt;
-&lt;p&gt;Solution: import the component where &lt;code class=&quot;highlighter-rouge&quot;&gt;your-directive-name&lt;/code&gt; is defined and include it into the &lt;code class=&quot;highlighter-rouge&quot;&gt;declarations&lt;/code&gt; field of the TestBed.&lt;/p&gt;
+&lt;h2 id=&quot;problem-your-directive-name-is-not-a-known-element&quot;&gt;Problem: ‘your-directive-name’ is not a known element&lt;/h2&gt;
 
-&lt;h4 id=&quot;problem-cant-bind-to-ngmodel-since-it-isnt-a-known-property-of-input&quot;&gt;Problem: Can’t bind to ‘ngModel’ since it isn’t a known property of ‘input’&lt;/h4&gt;
-&lt;p&gt;Solution: import &lt;code class=&quot;highlighter-rouge&quot;&gt;FormsModule&lt;/code&gt; and include it into the &lt;code class=&quot;highlighter-rouge&quot;&gt;imports&lt;/code&gt; field of the TestBed.&lt;/p&gt;
+&lt;p&gt;It happens when you use a custom component in a template. You have two options here:&lt;/p&gt;
 
-&lt;h4 id=&quot;problem-no-provider-for-yourservice&quot;&gt;Problem: No provider for YourService!&lt;/h4&gt;
-&lt;p&gt;Solution: import &lt;code class=&quot;highlighter-rouge&quot;&gt;YourService&lt;/code&gt; and include it into the &lt;code class=&quot;highlighter-rouge&quot;&gt;providers&lt;/code&gt; of the TestBed.&lt;/p&gt;
-
-&lt;p&gt;The same error can appear if you need Http: &lt;code class=&quot;highlighter-rouge&quot;&gt;No provider for Http!&lt;/code&gt;. The same solution applies.&lt;/p&gt;
-
-&lt;h4 id=&quot;problem-no-provider-for-connectionbackend&quot;&gt;Problem: No provider for ConnectionBackend!&lt;/h4&gt;
-&lt;p&gt;That appears when you test components or services where Http requests are performed.
-Solution: import &lt;code class=&quot;highlighter-rouge&quot;&gt;ConnectionBackend&lt;/code&gt; and include it together with the rest of providers of the TestBed.&lt;/p&gt;
-
-&lt;h4 id=&quot;problem-no-provider-for-requestoptions&quot;&gt;Problem: No provider for RequestOptions!&lt;/h4&gt;
-&lt;p&gt;Solution: import &lt;code class=&quot;highlighter-rouge&quot;&gt;HttpModule&lt;/code&gt; and include it into the &lt;code class=&quot;highlighter-rouge&quot;&gt;imports&lt;/code&gt; of TestBed.&lt;/p&gt;
-
-&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
-&lt;p&gt;Here’s some code for a &lt;code class=&quot;highlighter-rouge&quot;&gt;HomeComponent&lt;/code&gt; unit test, that uses a &lt;code class=&quot;highlighter-rouge&quot;&gt;LoginComponent&lt;/code&gt; and loads a &lt;code class=&quot;highlighter-rouge&quot;&gt;SessionService&lt;/code&gt;, requiring &lt;code class=&quot;highlighter-rouge&quot;&gt;Http&lt;/code&gt; and all the aforementioned dependencies in a single example.&lt;/p&gt;
-
-&lt;p&gt;I just want to illustrate how to load and specify the dependencies needed in order to bootstrap a test with them and the associated errors if any of these steps are missing.&lt;/p&gt;
-
-&lt;p&gt;It’s not an example about how to test a component (that would be subject for another post). What we test here is just whether the &lt;code class=&quot;highlighter-rouge&quot;&gt;HomeComponent&lt;/code&gt; component is successfully created.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Import &lt;code class=&quot;highlighter-rouge&quot;&gt;CUSTOM_ELEMENTS_SCHEMA&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;@angular/core&lt;/code&gt; and add it to the &lt;code class=&quot;highlighter-rouge&quot;&gt;schemas&lt;/code&gt; array of your &lt;code class=&quot;highlighter-rouge&quot;&gt;TestBed&lt;/code&gt;:&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;{% highlight javascript %}&lt;/p&gt;
 
-&lt;p&gt;/* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from ‘@angular/core/testing’;
-import { By } from ‘@angular/platform-browser’;
-import { DebugElement } from ‘@angular/core’;
-import { FormsModule } from ‘@angular/forms’;
-import { SessionService } from ‘../../services/session.service’;
-import { Http, HttpModule, Headers, RequestMethod, RequestOptions, Response, ConnectionBackend } from ‘@angular/http’;
-import { HomeComponent } from ‘./home.component’;
-import { LoginComponent } from ‘../login/login.component’;&lt;/p&gt;
+&lt;p&gt;TestBed.configureTestingModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  …
+});&lt;/p&gt;
 
-&lt;p&gt;describe(‘HomeComponent’, () =&amp;gt; {
-  let component: HomeComponent;
-  let fixture: ComponentFixture&lt;homecomponent&gt;;&lt;/homecomponent&gt;&lt;/p&gt;
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
+
+&lt;p&gt;This way it will just be ignored, and you can test that custom component in some other test (best practice: keep your unit tests simple and test just one thing at a time).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If you absolutely need to include the actual custom component in your test, you can import it in your spec and include it into the &lt;code class=&quot;highlighter-rouge&quot;&gt;declarations&lt;/code&gt; field of the TestBed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;problem-cant-bind-to-ngmodel-since-it-isnt-a-known-property-of-input&quot;&gt;Problem: Can’t bind to ‘ngModel’ since it isn’t a known property of ‘input’&lt;/h2&gt;
+
+&lt;p&gt;Solution: import &lt;code class=&quot;highlighter-rouge&quot;&gt;FormsModule&lt;/code&gt; and include it into the &lt;code class=&quot;highlighter-rouge&quot;&gt;imports&lt;/code&gt; field of the TestBed.&lt;/p&gt;
+
+&lt;h2 id=&quot;problem-no-provider-for-yourservice&quot;&gt;Problem: No provider for YourService!&lt;/h2&gt;
+
+&lt;p&gt;Solution: import &lt;code class=&quot;highlighter-rouge&quot;&gt;YourService&lt;/code&gt; and include it into the &lt;code class=&quot;highlighter-rouge&quot;&gt;providers&lt;/code&gt; of the TestBed. At best you should include a mocked version, since you probably want to test that service in another specific test.&lt;/p&gt;
+
+&lt;p&gt;{% highlight javascript %}&lt;/p&gt;
+
+&lt;p&gt;const serviceMock = { someKey: ‘someValue’};
+TestBed.configureTestingModule({
+  providers: [
+    {
+      provide: YourService,
+      useValue: serviceMock
+    }
+  ]
+  …
+});&lt;/p&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
+
+&lt;h2 id=&quot;problem-no-provider-for-http&quot;&gt;Problem: No provider for Http!&lt;/h2&gt;
+
+&lt;p&gt;In case of the Http service, testing it requires a bit more of boilerplate. When some part of your code needs to do HTTP requests, you might also get the following errors when testing:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Problem: No provider for ConnectionBackend!&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Problem: No provider for RequestOptions!&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here are the steps needed to properly test a service that uses Angular 2’s &lt;code class=&quot;highlighter-rouge&quot;&gt;Http&lt;/code&gt; service:&lt;/p&gt;
+
+&lt;p&gt;1.- Add the following imports to your spec:&lt;/p&gt;
+
+&lt;p&gt;{% highlight javascript %}&lt;/p&gt;
+
+&lt;p&gt;import {
+  BaseRequestOptions,
+  Http,
+  Response,
+  ResponseOptions,
+  RequestMethod,
+  XHRBackend
+} from ‘@angular/http’;&lt;/p&gt;
+
+&lt;p&gt;import {
+  MockBackend,
+  MockConnection
+} from ‘@angular/http/testing’;&lt;/p&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
+
+&lt;p&gt;2.- Declare a MockBackend type variable in your describe block:&lt;/p&gt;
+
+&lt;p&gt;{% highlight javascript %}
+  let backend: MockBackend;
+{% endhighlight %}&lt;/p&gt;
+
+&lt;p&gt;3.- Add the following lines to the providers of your &lt;code class=&quot;highlighter-rouge&quot;&gt;TestBed&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;{% highlight javascript %}
+providers: [
+  MockBackend,
+  BaseRequestOptions,
+  {
+    provide: Http,
+    useFactory: (backendInstance: MockBackend, defaultOptions: BaseRequestOptions) =&amp;gt; {
+      return new Http(backendInstance, defaultOptions);
+    },
+    deps: [MockBackend, BaseRequestOptions]
+  }
+],
+{% endhighlight %}&lt;/p&gt;
+
+&lt;p&gt;4.- Inject a MockBackend before each test:&lt;/p&gt;
+
+&lt;p&gt;{% highlight javascript %}
+beforeEach(inject([MockBackend],
+  (_mockBackend) =&amp;gt; {
+    backend = _mockBackend;
+  }));
+{% endhighlight %}&lt;/p&gt;
+
+&lt;p&gt;5.- Now you’re ready to test your service with a mocked backend by simply subscribing to it. Here you have an example:&lt;/p&gt;
+
+&lt;p&gt;{% highlight javascript %}
+it(‘should post some key with some value’, (done) =&amp;gt; {
+  backend.connections.subscribe((connection: MockConnection) =&amp;gt; {
+    expect(connection.request.method).toEqual(RequestMethod.Post);
+    const responseBody = JSON.parse(connection.request.getBody());
+    expect(responseBody.someKey).toEqual(‘someValue’);
+    // Mock a response with an empty object
+    connection.mockRespond(new Response(new ResponseOptions({})));
+    done();
+  });
+  yourService.postSomething();
+});
+{% endhighlight %}&lt;/p&gt;
+
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+
+&lt;p&gt;Here’s a working example for an &lt;code class=&quot;highlighter-rouge&quot;&gt;AnalysisFormComponent&lt;/code&gt; unit test, that mocks a &lt;code class=&quot;highlighter-rouge&quot;&gt;LogService&lt;/code&gt; and performs an HTTP POST request.&lt;/p&gt;
+
+&lt;p&gt;{% highlight javascript %}&lt;/p&gt;
+
+&lt;p&gt;import { LogService } from ‘../../../services/log.service’;
+import { async, ComponentFixture, inject, TestBed } from ‘@angular/core/testing’;
+import { AnalysisFormComponent } from ‘./analysis-form.component’;
+import { FormsModule } from ‘@angular/forms’;&lt;/p&gt;
+
+&lt;p&gt;import {
+  BaseRequestOptions,
+  Http,
+  Response,
+  ResponseOptions,
+  RequestMethod,
+  XHRBackend
+} from ‘@angular/http’;&lt;/p&gt;
+
+&lt;p&gt;import {
+  MockBackend,
+  MockConnection
+} from ‘@angular/http/testing’;&lt;/p&gt;
+
+&lt;p&gt;describe(‘AnalysisFormComponent’, () =&amp;gt; {
+  let component: AnalysisFormComponent;
+  let fixture: ComponentFixture&lt;analysisformcomponent&gt;;
+  let backend: MockBackend;&lt;/analysisformcomponent&gt;&lt;/p&gt;
+
+&lt;p&gt;const logServiceSpy = jasmine.createSpyObj(‘logService’, [‘sendMessage’]);&lt;/p&gt;
 
 &lt;p&gt;beforeEach(async(() =&amp;gt; {
     TestBed.configureTestingModule({
-      imports: [FormsModule, HttpModule],
-      providers: [SessionService, Http, ConnectionBackend],
-      declarations: [HomeComponent, LoginComponent]
+      declarations: [AnalysisFormComponent],
+      imports: [FormsModule],
+      providers: [
+        MockBackend,
+        BaseRequestOptions,
+        {
+          provide: LogService,
+          useValue: logServiceSpy
+        },
+        {
+          provide: Http,
+          useFactory: (backendInstance: MockBackend, defaultOptions: BaseRequestOptions) =&amp;gt; {
+            return new Http(backendInstance, defaultOptions);
+          },
+          deps: [MockBackend, BaseRequestOptions]
+        }
+      ],
     })
       .compileComponents();
   }));&lt;/p&gt;
 
 &lt;p&gt;beforeEach(() =&amp;gt; {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(AnalysisFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });&lt;/p&gt;
 
-&lt;p&gt;it(‘exists’, () =&amp;gt; {
+&lt;p&gt;beforeEach(inject([MockBackend],
+    (_mockBackend) =&amp;gt; {
+      backend = _mockBackend;
+    }));&lt;/p&gt;
+
+&lt;p&gt;it(‘should exist’, () =&amp;gt; {
     expect(component).toBeTruthy();
-  });
-});&lt;/p&gt;
+  });&lt;/p&gt;
+
+&lt;p&gt;it(‘should clear the form after closing’, () =&amp;gt; {
+    component.message = ‘someMessage’;
+    component.userName = ‘someUserName’;
+    component.userDescription = ‘someDescription’;
+    expect(component.message).toEqual(‘someMessage’);
+    expect(component.userName).toEqual(‘someUserName’);
+    expect(component.userDescription).toEqual(‘someDescription’);
+    component.closeForm();
+    expect(component.message).toEqual(‘’);
+    expect(component.userName).toEqual(‘’);
+    expect(component.userDescription).toEqual(‘’);
+  });&lt;/p&gt;
+
+&lt;p&gt;it(‘should send a POST request to the server when creating a new job for the analysis engine’, (done) =&amp;gt; {
+    backend.connections.subscribe((connection: MockConnection) =&amp;gt; {
+      expect(connection.request.method).toEqual(RequestMethod.Post);
+      const responseBody = JSON.parse(connection.request.getBody());
+      expect(responseBody.source).toEqual(‘web’);
+      expect(responseBody.user_name).toEqual(‘someUserName’);
+      expect(responseBody.user_description).toEqual(‘someDescription’);
+      expect(responseBody.message).toEqual(‘someMessage’);
+      connection.mockRespond(new Response(new ResponseOptions({})));
+      done();
+    });
+    component.message = ‘someMessage’;
+    component.userName = ‘someUserName’;
+    component.userDescription = ‘someDescription’; component.sendNewJob();
+  });&lt;/p&gt;
+
+&lt;p&gt;it(‘should log an error message when the analysis couldn't be POSTed’, (done) =&amp;gt; {
+    const errorMessage = ‘An error occurred!!!’;
+    backend.connections.subscribe((connection: MockConnection) =&amp;gt; {
+      expect(connection.request.method).toEqual(RequestMethod.Post);
+      const responseBody = JSON.parse(connection.request.getBody());
+      connection.mockError(new Error(errorMessage));
+    });
+    component.message = ‘someMessage’;
+    component.userName = ‘someUserName’;
+    component.userDescription = ‘someDescription’;
+    try {
+      component.sendNewJob();
+    } catch (err) {
+      expect(err.message).toEqual(errorMessage);
+      expect(logServiceSpy.sendMessage).toHaveBeenCalledWith(jasmine.stringMatching(‘a problem’));
+      done();
+    }
+  });&lt;/p&gt;
+
+&lt;p&gt;});&lt;/p&gt;
 
 &lt;p&gt;{% endhighlight %}&lt;/p&gt;
 </content>
