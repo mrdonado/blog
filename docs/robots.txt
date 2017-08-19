@@ -1,1 +1,1 @@
-Sitemap: http://blog.jdonado.com/sitemap.xml
+Sitemap: https://blog.jdonado.com/sitemap.xml

@@ -3,7 +3,7 @@ name: JDonado's Readme
 description: 'Coding in English, thinking in Spanish, living in Germany'
 
 baseurl: '' # the subpath of your site, e.g. /blog
-url: 'http://blog.jdonado.com' # the base hostname & protocol for your site
+url: 'https://blog.jdonado.com' # the base hostname & protocol for your site
 
 # Build settings
 markdown:            kramdown
@@ -17,7 +17,7 @@ paginate_path:       page/:num/
 author:
     name: 'F. Javier R. Donado'
     email: 'jdonado@jdonado.com'
-    uri: 'http://www.jdonado.com'
+    uri: 'https://www.jdonado.com'
 
 sass:
     sass_dir: _sass

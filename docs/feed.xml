@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <generator uri="http://jekyllrb.com" version="3.4.1">Jekyll</generator>
-<link href="http://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" />
-<link href="http://blog.jdonado.com/" rel="alternate" type="text/html" />
-<updated>2017-08-19T20:54:35+02:00</updated>
-<id>http://blog.jdonado.com/</id>
+<link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" />
+<link href="https://blog.jdonado.com/" rel="alternate" type="text/html" />
+<updated>2017-08-19T22:48:08+02:00</updated>
+<id>https://blog.jdonado.com/</id>
 <title>JDonado's Readme</title>
 <subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle>
 <author>
 <name>F. Javier R. Donado</name>
 <email>jdonado@jdonado.com</email>
-<uri>http://www.jdonado.com</uri>
+<uri>https://www.jdonado.com</uri>
 </author>
 <entry>
 <title>Useful npm commands</title>
-<link href="http://blog.jdonado.com/useful-npm-commands/" rel="alternate" type="text/html" title="Useful npm commands" />
+<link href="https://blog.jdonado.com/useful-npm-commands/" rel="alternate" type="text/html" title="Useful npm commands" />
 <published>2017-06-18T00:00:00+02:00</published>
 <updated>2017-06-18T00:00:00+02:00</updated>
-<id>http://blog.jdonado.com/useful-npm-commands</id>
-<content type="html" xml:base="http://blog.jdonado.com/useful-npm-commands/">&lt;h1 id=&quot;quick-reference-of-some-useful-commands&quot;&gt;Quick reference of some useful commands&lt;/h1&gt;
+<id>https://blog.jdonado.com/useful-npm-commands</id>
+<content type="html" xml:base="https://blog.jdonado.com/useful-npm-commands/">&lt;h1 id=&quot;quick-reference-of-some-useful-commands&quot;&gt;Quick reference of some useful commands&lt;/h1&gt;
 
 &lt;h2 id=&quot;avoid-conflicts&quot;&gt;Avoid conflicts&lt;/h2&gt;
 
@@ -87,11 +87,11 @@
 </entry>
 <entry>
 <title>Vim magic</title>
-<link href="http://blog.jdonado.com/vim-magic/" rel="alternate" type="text/html" title="Vim magic" />
+<link href="https://blog.jdonado.com/vim-magic/" rel="alternate" type="text/html" title="Vim magic" />
 <published>2017-05-28T00:00:00+02:00</published>
 <updated>2017-05-28T00:00:00+02:00</updated>
-<id>http://blog.jdonado.com/vim-magic</id>
-<content type="html" xml:base="http://blog.jdonado.com/vim-magic/">&lt;h1 id=&quot;vim-magic&quot;&gt;Vim magic&lt;/h1&gt;
+<id>https://blog.jdonado.com/vim-magic</id>
+<content type="html" xml:base="https://blog.jdonado.com/vim-magic/">&lt;h1 id=&quot;vim-magic&quot;&gt;Vim magic&lt;/h1&gt;
 
 &lt;p&gt;I’ve been using the &lt;a href=&quot;http://www.vim.org&quot;&gt;vim editor&lt;/a&gt; for a while now, and I really like it. But it’s true that the learning curve is very steep. There are so many options, that even after years of using it, you can still discover lots of new tricks.&lt;/p&gt;
 
@@ -163,11 +163,11 @@
 </entry>
 <entry>
 <title>Restore clover using Windows</title>
-<link href="http://blog.jdonado.com/restore-clover/" rel="alternate" type="text/html" title="Restore clover using Windows" />
+<link href="https://blog.jdonado.com/restore-clover/" rel="alternate" type="text/html" title="Restore clover using Windows" />
 <published>2017-05-26T00:00:00+02:00</published>
 <updated>2017-05-26T00:00:00+02:00</updated>
-<id>http://blog.jdonado.com/restore-clover</id>
-<content type="html" xml:base="http://blog.jdonado.com/restore-clover/">&lt;h1 id=&quot;restore-your-configplist&quot;&gt;Restore your config.plist&lt;/h1&gt;
+<id>https://blog.jdonado.com/restore-clover</id>
+<content type="html" xml:base="https://blog.jdonado.com/restore-clover/">&lt;h1 id=&quot;restore-your-configplist&quot;&gt;Restore your config.plist&lt;/h1&gt;
 
 &lt;p&gt;Clover is a boot manager that allows you to select the OS you want to boot with. It is used mostly by Hackintosh users, that is, people that install MacOSX (along with other OSs, like Linux and Windows) on a non-Apple machine.&lt;/p&gt;
 
@@ -208,11 +208,11 @@
 </entry>
 <entry>
 <title>About Functional Programming</title>
-<link href="http://blog.jdonado.com/about-fp/" rel="alternate" type="text/html" title="About Functional Programming" />
+<link href="https://blog.jdonado.com/about-fp/" rel="alternate" type="text/html" title="About Functional Programming" />
 <published>2017-03-05T00:00:00+01:00</published>
 <updated>2017-03-05T00:00:00+01:00</updated>
-<id>http://blog.jdonado.com/about-fp</id>
-<content type="html" xml:base="http://blog.jdonado.com/about-fp/">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+<id>https://blog.jdonado.com/about-fp</id>
+<content type="html" xml:base="https://blog.jdonado.com/about-fp/">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
 
 &lt;p&gt;Recently, I’ve been doing some research on the topic of functional programming. I think it’s a good time to get together some of the resources I’ve found so far, and remark the ideas that motivated me to learn more about it.&lt;/p&gt;
 
@@ -274,11 +274,11 @@
 </entry>
 <entry>
 <title>Unit Testing in Angular 2: Common Exceptions</title>
-<link href="http://blog.jdonado.com/unit-testing-in-angular-2/" rel="alternate" type="text/html" title="Unit Testing in Angular 2: Common Exceptions" />
+<link href="https://blog.jdonado.com/unit-testing-in-angular-2/" rel="alternate" type="text/html" title="Unit Testing in Angular 2: Common Exceptions" />
 <published>2017-01-21T00:00:00+01:00</published>
 <updated>2017-01-21T00:00:00+01:00</updated>
-<id>http://blog.jdonado.com/unit-testing-in-angular-2</id>
-<content type="html" xml:base="http://blog.jdonado.com/unit-testing-in-angular-2/">&lt;h1 id=&quot;unit-testing-in-angular-2-common-exceptions&quot;&gt;Unit Testing in Angular 2: Common Exceptions&lt;/h1&gt;
+<id>https://blog.jdonado.com/unit-testing-in-angular-2</id>
+<content type="html" xml:base="https://blog.jdonado.com/unit-testing-in-angular-2/">&lt;h1 id=&quot;unit-testing-in-angular-2-common-exceptions&quot;&gt;Unit Testing in Angular 2: Common Exceptions&lt;/h1&gt;
 
 &lt;p&gt;I’ve been working on an Angular 2 project (&lt;a href=&quot;http://angularjs.blogspot.de/2016/12/ok-let-me-explain-its-going-to-be.html?utm_content=bufferec238&amp;amp;utm_medium=social&amp;amp;utm_source=facebook.com&amp;amp;utm_campaign=buffer&quot;&gt;or Angular 3, or 4, or whatever…&lt;/a&gt;) during the last couple of months, and I’m still learning how to unit test a project based in this new framework.&lt;/p&gt;
 
@@ -539,11 +539,11 @@ import { FormsModule } from ‘@angular/forms’;&lt;/p&gt;
 </entry>
 <entry>
 <title>Inheritance in AngularJS, again</title>
-<link href="http://blog.jdonado.com/inheritance-in-angularjs-again/" rel="alternate" type="text/html" title="Inheritance in AngularJS, again" />
+<link href="https://blog.jdonado.com/inheritance-in-angularjs-again/" rel="alternate" type="text/html" title="Inheritance in AngularJS, again" />
 <published>2016-10-23T00:00:00+02:00</published>
 <updated>2016-10-23T00:00:00+02:00</updated>
-<id>http://blog.jdonado.com/inheritance-in-angularjs-again</id>
-<content type="html" xml:base="http://blog.jdonado.com/inheritance-in-angularjs-again/">&lt;h3 id=&quot;rethinking-about-inheritance-in-angularjs-15&quot;&gt;Rethinking about inheritance in AngularJS 1.5&lt;/h3&gt;
+<id>https://blog.jdonado.com/inheritance-in-angularjs-again</id>
+<content type="html" xml:base="https://blog.jdonado.com/inheritance-in-angularjs-again/">&lt;h3 id=&quot;rethinking-about-inheritance-in-angularjs-15&quot;&gt;Rethinking about inheritance in AngularJS 1.5&lt;/h3&gt;
 
 &lt;p&gt;In &lt;a href=&quot;{% link _posts/2016-08-06-inheritance-and-observer-pattern-in-angular-js.markdown %}&quot;&gt;a previous post&lt;/a&gt; I showed an example about how could inheritance be implemented in an AngularJS project, using Javascript (ECMAScript 5).&lt;/p&gt;
 
@@ -641,11 +641,11 @@ angular.module(‘exampleApp’, [])
 </entry>
 <entry>
 <title>ng-show and ng-animate</title>
-<link href="http://blog.jdonado.com/ng-show-and-ng-animate/" rel="alternate" type="text/html" title="ng-show and ng-animate" />
+<link href="https://blog.jdonado.com/ng-show-and-ng-animate/" rel="alternate" type="text/html" title="ng-show and ng-animate" />
 <published>2016-08-08T00:00:00+02:00</published>
 <updated>2016-08-08T00:00:00+02:00</updated>
-<id>http://blog.jdonado.com/ng-show-and-ng-animate</id>
-<content type="html" xml:base="http://blog.jdonado.com/ng-show-and-ng-animate/">&lt;h3 id=&quot;if-ng-show-happens-to-be-too-slow-without-an-obvious-reason&quot;&gt;If ng-show happens to be too slow without an obvious reason&lt;/h3&gt;
+<id>https://blog.jdonado.com/ng-show-and-ng-animate</id>
+<content type="html" xml:base="https://blog.jdonado.com/ng-show-and-ng-animate/">&lt;h3 id=&quot;if-ng-show-happens-to-be-too-slow-without-an-obvious-reason&quot;&gt;If ng-show happens to be too slow without an obvious reason&lt;/h3&gt;
 
 &lt;p&gt;It happened to me tonight that ng-show was taking too long to refresh. I’ve read about &lt;a href=&quot;http://stackoverflow.com/questions/19177732/what-is-the-difference-between-ng-if-and-ng-show-ng-hide&quot;&gt;the differences between ng-if and ng-show&lt;/a&gt; and how sometimes ng-show can decrease performance. But in this case it was a pretty straightforward example, and it shouldn’t.&lt;/p&gt;
 
@@ -670,11 +670,11 @@ angular.module(‘exampleApp’, [])
 </entry>
 <entry>
 <title>Inheritance and Observer Pattern in AngularJS 1.4</title>
-<link href="http://blog.jdonado.com/inheritance-and-observer-pattern-in-angular-js/" rel="alternate" type="text/html" title="Inheritance and Observer Pattern in AngularJS 1.4" />
+<link href="https://blog.jdonado.com/inheritance-and-observer-pattern-in-angular-js/" rel="alternate" type="text/html" title="Inheritance and Observer Pattern in AngularJS 1.4" />
 <published>2016-06-12T00:00:00+02:00</published>
 <updated>2016-06-12T00:00:00+02:00</updated>
-<id>http://blog.jdonado.com/inheritance-and-observer-pattern-in-angular-js</id>
-<content type="html" xml:base="http://blog.jdonado.com/inheritance-and-observer-pattern-in-angular-js/">&lt;p&gt;In AngularJS, when designing services, it is well common to return an instance of the &lt;strong&gt;$http&lt;/strong&gt; service. The code that requests it (usually within a controller), must process then the promise and do whatever it is to be done with the data that come from server.&lt;/p&gt;
+<id>https://blog.jdonado.com/inheritance-and-observer-pattern-in-angular-js</id>
+<content type="html" xml:base="https://blog.jdonado.com/inheritance-and-observer-pattern-in-angular-js/">&lt;p&gt;In AngularJS, when designing services, it is well common to return an instance of the &lt;strong&gt;$http&lt;/strong&gt; service. The code that requests it (usually within a controller), must process then the promise and do whatever it is to be done with the data that come from server.&lt;/p&gt;
 
 &lt;p&gt;Like in this example.&lt;/p&gt;
 
@@ -864,11 +864,11 @@ angular.module(‘notesApp’)
 </entry>
 <entry>
 <title>Special Thanks</title>
-<link href="http://blog.jdonado.com/special-thanks/" rel="alternate" type="text/html" title="Special Thanks" />
+<link href="https://blog.jdonado.com/special-thanks/" rel="alternate" type="text/html" title="Special Thanks" />
 <published>2016-06-12T00:00:00+02:00</published>
 <updated>2016-06-12T00:00:00+02:00</updated>
-<id>http://blog.jdonado.com/special-thanks</id>
-<content type="html" xml:base="http://blog.jdonado.com/special-thanks/">&lt;h1 id=&quot;acknowledgements&quot;&gt;Acknowledgements&lt;/h1&gt;
+<id>https://blog.jdonado.com/special-thanks</id>
+<content type="html" xml:base="https://blog.jdonado.com/special-thanks/">&lt;h1 id=&quot;acknowledgements&quot;&gt;Acknowledgements&lt;/h1&gt;
 
 &lt;p&gt;I have to specially thank the help of the following people when I was developing &lt;a href=&quot;http://www.jdonado.com&quot;&gt;www.jdonado.com&lt;/a&gt;:&lt;/p&gt;
 
@@ -889,11 +889,11 @@ angular.module(‘notesApp’)
 </entry>
 <entry>
 <title>Hello World</title>
-<link href="http://blog.jdonado.com/hello-world/" rel="alternate" type="text/html" title="Hello World" />
+<link href="https://blog.jdonado.com/hello-world/" rel="alternate" type="text/html" title="Hello World" />
 <published>2016-03-28T00:00:00+02:00</published>
 <updated>2016-03-28T00:00:00+02:00</updated>
-<id>http://blog.jdonado.com/hello-world</id>
-<content type="html" xml:base="http://blog.jdonado.com/hello-world/">&lt;h2 id=&quot;what-is-jdonadocom&quot;&gt;What is jdonado.com?&lt;/h2&gt;
+<id>https://blog.jdonado.com/hello-world</id>
+<content type="html" xml:base="https://blog.jdonado.com/hello-world/">&lt;h2 id=&quot;what-is-jdonadocom&quot;&gt;What is jdonado.com?&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.jdonado.com&quot;&gt;Jdonado.com&lt;/a&gt; is my personal page, &lt;a href=&quot;http://blog.jdonado.com&quot;&gt;blog.jdonado.com&lt;/a&gt; is this blog, and you’re very welcome to them both.&lt;/p&gt;
 
