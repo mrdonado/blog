@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.4.1">Jekyll</generator>
 <link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" />
 <link href="https://blog.jdonado.com/" rel="alternate" type="text/html" />
-<updated>2017-09-27T21:34:26+02:00</updated>
+<updated>2017-09-27T22:04:50+02:00</updated>
 <id>https://blog.jdonado.com/</id>
 <title>JDonado's Readme</title>
 <subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle>
@@ -13,8 +13,8 @@
 <uri>https://www.jdonado.com</uri>
 </author>
 <entry>
-<title>The lifescope project</title>
-<link href="https://blog.jdonado.com/lifescope-project/" rel="alternate" type="text/html" title="The lifescope project" />
+<title>www.lifescope-project.com</title>
+<link href="https://blog.jdonado.com/lifescope-project/" rel="alternate" type="text/html" title="www.lifescope-project.com" />
 <published>2017-09-27T00:00:00+02:00</published>
 <updated>2017-09-27T00:00:00+02:00</updated>
 <id>https://blog.jdonado.com/lifescope-project</id>
@@ -22,12 +22,19 @@
 
 &lt;h2 id=&quot;some-history&quot;&gt;Some history&lt;/h2&gt;
 
-&lt;p&gt;At some point in March 2017, my friend Juan Fernández proposed me to join him in the development of a small demo software he’s been working on. It was about a Python script, that used &lt;a href=&quot;https://spacy.io/&quot;&gt;spaCy&lt;/a&gt; to analyze messages coming from a twitter stream.&lt;/p&gt;
+&lt;p&gt;At some point in March 2017, my friend &lt;a href=&quot;https://www.linkedin.com/in/juanff/&quot;&gt;Juan Fernández&lt;/a&gt; proposed me to join him in the development of a software he’s been working on. It was a Python script, that used &lt;a href=&quot;https://spacy.io/&quot;&gt;spaCy&lt;/a&gt; to analyze messages coming from a twitter stream.&lt;/p&gt;
+
+&lt;p&gt;The idea was to use the Natural Language Processing (NLP) engine of spaCy to find messages in English where a solution is proposed to a healthcare problem, tagging both problem and solution and discarding irrelevant messages.&lt;/p&gt;
+
+&lt;p&gt;He had a first version of the script working on his computer, but he wanted to find a way to show it to the world, so he asked me to join him and turn his idea into an online web application. I thought that it was an interesting project, so I joined him and now, the first version of our software is online at &lt;a href=&quot;https://www.lifescope-project.com&quot;&gt;www.lifescope-project.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;from-local-script-to-the-cloud&quot;&gt;From local script to the cloud&lt;/h2&gt;
 
 </content>
 <category term="projects" />
 <category term="python" />
 <category term="ai" />
+<category term="nlp" />
 <category term="nodejs" />
 <category term="docker" />
 <category term="architecture" />
