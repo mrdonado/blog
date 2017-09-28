@@ -4,10 +4,9 @@ title:  "www.lifescope-project.com"
 date:   2017-09-27
 category: projects
 backgrounds:
-    - /assets/images/backgrounds/lifescope-bg.jpg
-    - /assets/images/backgrounds/lifescope-bg-2.jpg
-    - /assets/images/backgrounds/lifescope-bg-3.jpg
-   # - https://blog.jdonado.com/assets/images/lifescope.jpg
+    - https://blog.jdonado.com/assets/images/backgrounds/lifescope-bg.jpg
+    - https://blog.jdonado.com/assets/images/backgrounds/lifescope-bg-2.jpg
+    - https://blog.jdonado.com/assets/images/backgrounds/lifescope-bg-3.jpg
 thumb: https://blog.jdonado.com/assets/images/lifescope.jpg
 tags: python ai nlp nodejs docker architecture reactjs redux
 ---
@@ -29,13 +28,15 @@ He had a first version of the script working on his computer, but he wanted to f
 After some playing around with Flask, I decided decided that separating the analyzer from the twitter stream and the backend services was the best solution. We wanted a system that **scales** and that is **easily maintainable**. So I came about with the following **microservices** based architecture:
 
 - [NodeJS service](https://github.com/fjrd84/health-nlp-node), sending messages from the twitter stream to a [beanstalkd](http://kr.github.io/beanstalkd/) jobs queue.
-- The [python analyzer engine](https://github.com/fjrd84/health-nlp-analysis), which now just takes jobs from beanstalkd and sends the results to Firebase and [Elasticsearch](https://www.elastic.co/products/elasticsearch).
+- The [python analysis engine](https://github.com/fjrd84/health-nlp-analysis), which now just takes jobs from beanstalkd and sends the results to Firebase and [Elasticsearch](https://www.elastic.co/products/elasticsearch).
 - [Firebase DB](https://firebase.google.com), serving the analyzed messages in real time to the frontend.
 - A [ReactJS + Redux](https://github.com/fjrd84/health-nlp-react) based frontend, that works as a showcase for the project, with an introduction and a real time timeline.
 
+![Architecture Diagram](https://blog.jdonado.com/assets/images/lifescope-architecture.png "Architecture Diagram")
+
 ## Features
 
-With this architecture, we can show the results of the analysis in **real time**, while they are also saved permanently into the Elasticsearch in order to ease the integration with an **upcoming statistics module**. Firebase takes care of the websockets; so, our services just need to respond to on-demand requests, making scalability less demanding. We clean the Firebase DB from older messages every three hours, so that it loads quickly. Thus, the free version with 2GB of storage is more than enough for our needs.
+With this architecture, we can show the results of the analysis in **real time**, while they are also saved permanently into the Elasticsearch in order to ease the integration with an **upcoming statistics module**. Firebase takes care of the websockets; so, our services just need to respond to on-demand requests, making scalability less demanding. We clean the Firebase DB from older messages every three hours, so that it loads quickly. Thus, the free plan with 2GB of storage is more than enough for our needs.
 
 The analysis engine is now independent of the source: it just processes jobs that come from beanstalkd with a specific JSON format. We can (and we will) extend the streaming services in order to provide more sources, other than twitter (e.g.: specialized news feeds).
 

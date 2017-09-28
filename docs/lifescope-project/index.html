@@ -93,14 +93,16 @@
 
 <ul>
   <li><a href="https://github.com/fjrd84/health-nlp-node">NodeJS service</a>, sending messages from the twitter stream to a <a href="http://kr.github.io/beanstalkd/">beanstalkd</a> jobs queue.</li>
-  <li>The <a href="https://github.com/fjrd84/health-nlp-analysis">python analyzer engine</a>, which now just takes jobs from beanstalkd and sends the results to Firebase and <a href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a>.</li>
+  <li>The <a href="https://github.com/fjrd84/health-nlp-analysis">python analysis engine</a>, which now just takes jobs from beanstalkd and sends the results to Firebase and <a href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a>.</li>
   <li><a href="https://firebase.google.com">Firebase DB</a>, serving the analyzed messages in real time to the frontend.</li>
   <li>A <a href="https://github.com/fjrd84/health-nlp-react">ReactJS + Redux</a> based frontend, that works as a showcase for the project, with an introduction and a real time timeline.</li>
 </ul>
 
+<p><img src="https://blog.jdonado.com/assets/images/lifescope-architecture.png" alt="Architecture Diagram" title="Architecture Diagram" /></p>
+
 <h2 id="features">Features</h2>
 
-<p>With this architecture, we can show the results of the analysis in <strong>real time</strong>, while they are also saved permanently into the Elasticsearch in order to ease the integration with an <strong>upcoming statistics module</strong>. Firebase takes care of the websockets; so, our services just need to respond to on-demand requests, making scalability less demanding. We clean the Firebase DB from older messages every three hours, so that it loads quickly. Thus, the free version with 2GB of storage is more than enough for our needs.</p>
+<p>With this architecture, we can show the results of the analysis in <strong>real time</strong>, while they are also saved permanently into the Elasticsearch in order to ease the integration with an <strong>upcoming statistics module</strong>. Firebase takes care of the websockets; so, our services just need to respond to on-demand requests, making scalability less demanding. We clean the Firebase DB from older messages every three hours, so that it loads quickly. Thus, the free plan with 2GB of storage is more than enough for our needs.</p>
 
 <p>The analysis engine is now independent of the source: it just processes jobs that come from beanstalkd with a specific JSON format. We can (and we will) extend the streaming services in order to provide more sources, other than twitter (e.g.: specialized news feeds).</p>
 
@@ -412,7 +414,7 @@
 
         var steps = [];
         var images = [
-            '/assets/images/backgrounds/lifescope-bg.jpg','/assets/images/backgrounds/lifescope-bg-2.jpg','/assets/images/backgrounds/lifescope-bg-3.jpg',
+            'https://blog.jdonado.com/assets/images/backgrounds/lifescope-bg.jpg','https://blog.jdonado.com/assets/images/backgrounds/lifescope-bg-2.jpg','https://blog.jdonado.com/assets/images/backgrounds/lifescope-bg-3.jpg',
         ];
 
         if (images.length > 0) {

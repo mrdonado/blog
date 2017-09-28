@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.4.1">Jekyll</generator>
 <link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" />
 <link href="https://blog.jdonado.com/" rel="alternate" type="text/html" />
-<updated>2017-09-28T22:24:41+02:00</updated>
+<updated>2017-09-28T22:50:51+02:00</updated>
 <id>https://blog.jdonado.com/</id>
 <title>JDonado's Readme</title>
 <subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle>
@@ -36,14 +36,16 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/fjrd84/health-nlp-node&quot;&gt;NodeJS service&lt;/a&gt;, sending messages from the twitter stream to a &lt;a href=&quot;http://kr.github.io/beanstalkd/&quot;&gt;beanstalkd&lt;/a&gt; jobs queue.&lt;/li&gt;
-  &lt;li&gt;The &lt;a href=&quot;https://github.com/fjrd84/health-nlp-analysis&quot;&gt;python analyzer engine&lt;/a&gt;, which now just takes jobs from beanstalkd and sends the results to Firebase and &lt;a href=&quot;https://www.elastic.co/products/elasticsearch&quot;&gt;Elasticsearch&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;The &lt;a href=&quot;https://github.com/fjrd84/health-nlp-analysis&quot;&gt;python analysis engine&lt;/a&gt;, which now just takes jobs from beanstalkd and sends the results to Firebase and &lt;a href=&quot;https://www.elastic.co/products/elasticsearch&quot;&gt;Elasticsearch&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://firebase.google.com&quot;&gt;Firebase DB&lt;/a&gt;, serving the analyzed messages in real time to the frontend.&lt;/li&gt;
   &lt;li&gt;A &lt;a href=&quot;https://github.com/fjrd84/health-nlp-react&quot;&gt;ReactJS + Redux&lt;/a&gt; based frontend, that works as a showcase for the project, with an introduction and a real time timeline.&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;img src=&quot;https://blog.jdonado.com/assets/images/lifescope-architecture.png&quot; alt=&quot;Architecture Diagram&quot; title=&quot;Architecture Diagram&quot; /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
 
-&lt;p&gt;With this architecture, we can show the results of the analysis in &lt;strong&gt;real time&lt;/strong&gt;, while they are also saved permanently into the Elasticsearch in order to ease the integration with an &lt;strong&gt;upcoming statistics module&lt;/strong&gt;. Firebase takes care of the websockets; so, our services just need to respond to on-demand requests, making scalability less demanding. We clean the Firebase DB from older messages every three hours, so that it loads quickly. Thus, the free version with 2GB of storage is more than enough for our needs.&lt;/p&gt;
+&lt;p&gt;With this architecture, we can show the results of the analysis in &lt;strong&gt;real time&lt;/strong&gt;, while they are also saved permanently into the Elasticsearch in order to ease the integration with an &lt;strong&gt;upcoming statistics module&lt;/strong&gt;. Firebase takes care of the websockets; so, our services just need to respond to on-demand requests, making scalability less demanding. We clean the Firebase DB from older messages every three hours, so that it loads quickly. Thus, the free plan with 2GB of storage is more than enough for our needs.&lt;/p&gt;
 
 &lt;p&gt;The analysis engine is now independent of the source: it just processes jobs that come from beanstalkd with a specific JSON format. We can (and we will) extend the streaming services in order to provide more sources, other than twitter (e.g.: specialized news feeds).&lt;/p&gt;
 
