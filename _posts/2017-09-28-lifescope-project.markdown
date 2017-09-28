@@ -19,7 +19,7 @@ At some point in March 2017, my friend [Juan Fernández](https://www.linkedin.co
 
 The idea was to use the [Natural Language Processing (NLP)](https://en.wikipedia.org/wiki/Natural_language_processing) engine of [spaCy](https://spacy.io/) to find messages in English where a solution is proposed to a healthcare problem, tagging both problem and solution, and discarding irrelevant messages.
 
-The script also analyzed the user, tagging it automatically (e.g.: doctor, news source, patient...).
+The script also analyzed the author of each message, tagging it automatically (e.g.: doctor, news source, patient...).
 
 He had a first version of the script working on his computer, but he wanted to find a way to show it to the world. So I thought we could turn it into an online web application accessible for everyone and make everything Open Source. Now, the first version of our software is available online at [www.lifescope-project.com](https://www.lifescope-project.com).
 

@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.4.1">Jekyll</generator>
 <link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" />
 <link href="https://blog.jdonado.com/" rel="alternate" type="text/html" />
-<updated>2017-09-28T23:15:40+02:00</updated>
+<updated>2017-09-28T23:23:49+02:00</updated>
 <id>https://blog.jdonado.com/</id>
 <title>JDonado's Readme</title>
 <subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle>
@@ -26,7 +26,7 @@
 
 &lt;p&gt;The idea was to use the &lt;a href=&quot;https://en.wikipedia.org/wiki/Natural_language_processing&quot;&gt;Natural Language Processing (NLP)&lt;/a&gt; engine of &lt;a href=&quot;https://spacy.io/&quot;&gt;spaCy&lt;/a&gt; to find messages in English where a solution is proposed to a healthcare problem, tagging both problem and solution, and discarding irrelevant messages.&lt;/p&gt;
 
-&lt;p&gt;The script also analyzed the user, tagging it automatically (e.g.: doctor, news source, patient…).&lt;/p&gt;
+&lt;p&gt;The script also analyzed the author of each message, tagging it automatically (e.g.: doctor, news source, patient…).&lt;/p&gt;
 
 &lt;p&gt;He had a first version of the script working on his computer, but he wanted to find a way to show it to the world. So I thought we could turn it into an online web application accessible for everyone and make everything Open Source. Now, the first version of our software is available online at &lt;a href=&quot;https://www.lifescope-project.com&quot;&gt;www.lifescope-project.com&lt;/a&gt;.&lt;/p&gt;
 
