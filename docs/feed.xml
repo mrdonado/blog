@@ -3,7 +3,7 @@
 <generator uri="http://jekyllrb.com" version="3.4.1">Jekyll</generator>
 <link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" />
 <link href="https://blog.jdonado.com/" rel="alternate" type="text/html" />
-<updated>2017-09-28T22:50:51+02:00</updated>
+<updated>2017-09-28T23:15:40+02:00</updated>
 <id>https://blog.jdonado.com/</id>
 <title>JDonado's Readme</title>
 <subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle>
@@ -13,32 +13,34 @@
 <uri>https://www.jdonado.com</uri>
 </author>
 <entry>
-<title>www.lifescope-project.com</title>
-<link href="https://blog.jdonado.com/lifescope-project/" rel="alternate" type="text/html" title="www.lifescope-project.com" />
+<title>Lifescope Project</title>
+<link href="https://blog.jdonado.com/lifescope-project/" rel="alternate" type="text/html" title="Lifescope Project" />
 <published>2017-09-27T00:00:00+02:00</published>
 <updated>2017-09-27T00:00:00+02:00</updated>
 <id>https://blog.jdonado.com/lifescope-project</id>
-<content type="html" xml:base="https://blog.jdonado.com/lifescope-project/">&lt;h1 id=&quot;artificial-intelligence-software-looking-for-solutions-to-healthcare-problems&quot;&gt;Artificial intelligence software looking for solutions to healthcare problems&lt;/h1&gt;
+<content type="html" xml:base="https://blog.jdonado.com/lifescope-project/">&lt;h1 id=&quot;an-artificial-intelligence-software-looking-for-solutions-to-healthcare-problems&quot;&gt;An artificial intelligence software looking for solutions to healthcare problems&lt;/h1&gt;
 
 &lt;h2 id=&quot;some-history&quot;&gt;Some history&lt;/h2&gt;
 
 &lt;p&gt;At some point in March 2017, my friend &lt;a href=&quot;https://www.linkedin.com/in/juanff/&quot;&gt;Juan Fernández&lt;/a&gt; proposed me to join him in the development of a software he’s been working on as a side project. It was a script written in Python that used &lt;a href=&quot;https://spacy.io/&quot;&gt;spaCy&lt;/a&gt; to analyze messages coming from a twitter stream.&lt;/p&gt;
 
-&lt;p&gt;The idea was to use the &lt;a href=&quot;https://en.wikipedia.org/wiki/Natural_language_processing&quot;&gt;Natural Language Processing (NLP)&lt;/a&gt; engine of &lt;a href=&quot;https://spacy.io/&quot;&gt;spaCy&lt;/a&gt; to find messages in English where a solution is proposed to a healthcare problem, tagging both problem and solution and discarding irrelevant messages.&lt;/p&gt;
+&lt;p&gt;The idea was to use the &lt;a href=&quot;https://en.wikipedia.org/wiki/Natural_language_processing&quot;&gt;Natural Language Processing (NLP)&lt;/a&gt; engine of &lt;a href=&quot;https://spacy.io/&quot;&gt;spaCy&lt;/a&gt; to find messages in English where a solution is proposed to a healthcare problem, tagging both problem and solution, and discarding irrelevant messages.&lt;/p&gt;
 
 &lt;p&gt;The script also analyzed the user, tagging it automatically (e.g.: doctor, news source, patient…).&lt;/p&gt;
 
-&lt;p&gt;He had a first version of the script working on his computer, but he wanted to find a way to show it to the world. So I thought we could turn it into an online web application accessible for everyone and make everything Open Source. Now, the first version of our software is online at &lt;a href=&quot;https://www.lifescope-project.com&quot;&gt;www.lifescope-project.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;He had a first version of the script working on his computer, but he wanted to find a way to show it to the world. So I thought we could turn it into an online web application accessible for everyone and make everything Open Source. Now, the first version of our software is available online at &lt;a href=&quot;https://www.lifescope-project.com&quot;&gt;www.lifescope-project.com&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;from-local-script-to-the-cloud&quot;&gt;From local script to the cloud&lt;/h2&gt;
+&lt;h2 id=&quot;architecture&quot;&gt;Architecture&lt;/h2&gt;
 
-&lt;p&gt;After some playing around with Flask, I decided decided that separating the analyzer from the twitter stream and the backend services was the best solution. We wanted a system that &lt;strong&gt;scales&lt;/strong&gt; and that is &lt;strong&gt;easily maintainable&lt;/strong&gt;. So I came about with the following &lt;strong&gt;microservices&lt;/strong&gt; based architecture:&lt;/p&gt;
+&lt;h3 id=&quot;from-local-script-to-the-cloud&quot;&gt;From local script to the cloud&lt;/h3&gt;
+
+&lt;p&gt;After some playing around with Flask, I decided that separating the analyzer from the twitter stream and the backend services was the best solution. We wanted a system that &lt;strong&gt;scales&lt;/strong&gt; and that is &lt;strong&gt;easily maintainable&lt;/strong&gt;. So I came about with the following &lt;strong&gt;microservices&lt;/strong&gt; based architecture:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/fjrd84/health-nlp-node&quot;&gt;NodeJS service&lt;/a&gt;, sending messages from the twitter stream to a &lt;a href=&quot;http://kr.github.io/beanstalkd/&quot;&gt;beanstalkd&lt;/a&gt; jobs queue.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/fjrd84/health-nlp-node&quot;&gt;A nodeJS service&lt;/a&gt;, sending messages from the twitter stream to a &lt;a href=&quot;http://kr.github.io/beanstalkd/&quot;&gt;beanstalkd&lt;/a&gt; jobs queue.&lt;/li&gt;
   &lt;li&gt;The &lt;a href=&quot;https://github.com/fjrd84/health-nlp-analysis&quot;&gt;python analysis engine&lt;/a&gt;, which now just takes jobs from beanstalkd and sends the results to Firebase and &lt;a href=&quot;https://www.elastic.co/products/elasticsearch&quot;&gt;Elasticsearch&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://firebase.google.com&quot;&gt;Firebase DB&lt;/a&gt;, serving the analyzed messages in real time to the frontend.&lt;/li&gt;
-  &lt;li&gt;A &lt;a href=&quot;https://github.com/fjrd84/health-nlp-react&quot;&gt;ReactJS + Redux&lt;/a&gt; based frontend, that works as a showcase for the project, with an introduction and a real time timeline.&lt;/li&gt;
+  &lt;li&gt;A &lt;a href=&quot;https://github.com/fjrd84/health-nlp-react&quot;&gt;ReactJS + Redux&lt;/a&gt; based frontend, that works as a showcase for the project, with an introduction, a link to &lt;a href=&quot;http://insights.lifescope-project.com/&quot;&gt;the project’s blog&lt;/a&gt;, and a real time timeline of analyzed messages.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://blog.jdonado.com/assets/images/lifescope-architecture.png&quot; alt=&quot;Architecture Diagram&quot; title=&quot;Architecture Diagram&quot; /&gt;&lt;/p&gt;
@@ -47,9 +49,11 @@
 
 &lt;p&gt;With this architecture, we can show the results of the analysis in &lt;strong&gt;real time&lt;/strong&gt;, while they are also saved permanently into the Elasticsearch in order to ease the integration with an &lt;strong&gt;upcoming statistics module&lt;/strong&gt;. Firebase takes care of the websockets; so, our services just need to respond to on-demand requests, making scalability less demanding. We clean the Firebase DB from older messages every three hours, so that it loads quickly. Thus, the free plan with 2GB of storage is more than enough for our needs.&lt;/p&gt;
 
-&lt;p&gt;The analysis engine is now independent of the source: it just processes jobs that come from beanstalkd with a specific JSON format. We can (and we will) extend the streaming services in order to provide more sources, other than twitter (e.g.: specialized news feeds).&lt;/p&gt;
+&lt;p&gt;The analysis engine is now independent of the source: it just processes jobs that come from beanstalkd with a generic JSON format. We can (and we will) extend the streaming services in order to provide more sources, other than twitter (e.g.: specialized news feeds).&lt;/p&gt;
 
-&lt;p&gt;The NodeJS service has also an endpoint to receive jobs from the frontend, so that our visitors can send example messages to the analysis engine, and see the results right away on the timeline.&lt;/p&gt;
+&lt;p&gt;The nodeJS service also has an endpoint to which the frontend can post new messages, so that our visitors can test the analysis engine and see the results right away on the timeline.&lt;/p&gt;
+
+&lt;h2 id=&quot;deployment&quot;&gt;Deployment&lt;/h2&gt;
 
 &lt;p&gt;Everything is &lt;a href=&quot;https://www.docker.com/&quot;&gt;dockerized&lt;/a&gt;, making the installation and deployment of the whole system a piece of cake, allowing us to easily move our services if the demand grows. We deployed it to a &lt;a href=&quot;https://en.wikipedia.org/wiki/Virtual_private_server&quot;&gt;VPS&lt;/a&gt; and it’s working 24/7, creating an interesting database to analyze using &lt;a href=&quot;https://en.wikipedia.org/wiki/Big_data&quot;&gt;Big Data&lt;/a&gt; tools.&lt;/p&gt;
 
@@ -62,7 +66,7 @@
 
 &lt;h2 id=&quot;further-steps&quot;&gt;Further steps&lt;/h2&gt;
 
-&lt;p&gt;Now it’s time to take advantage of the information saved in the Elasticsearch. The next step is to build a new backend service (most likely, &lt;a href=&quot;https://clojure.org/&quot;&gt;Clojure&lt;/a&gt; based) that provides the frontend with queries that will implement the Big Data analysis. &lt;a href=&quot;https://d3js.org/&quot;&gt;D3js&lt;/a&gt; will for certain be a useful tool in order to plot that data on the frontend.&lt;/p&gt;
+&lt;p&gt;Now it’s time to take advantage of the information saved in the Elasticsearch. The next step is to build a new backend service (most likely, &lt;a href=&quot;https://clojure.org/&quot;&gt;Clojure&lt;/a&gt; based) that provides the frontend with results of a &lt;strong&gt;Big Data&lt;/strong&gt; analysis. &lt;a href=&quot;https://d3js.org/&quot;&gt;D3js&lt;/a&gt; will for certain be a useful tool in order to plot that data on the frontend.&lt;/p&gt;
 
 &lt;p&gt;Do you have any questions or remarks? Feel free to ask us anything on the comments section.&lt;/p&gt;
 </content>
@@ -75,7 +79,7 @@
 <category term="architecture" />
 <category term="reactjs" />
 <category term="redux" />
-<summary>Artificial intelligence software looking for solutions to healthcare problems</summary>
+<summary>An artificial intelligence software looking for solutions to healthcare problems</summary>
 </entry>
 <entry>
 <title>Useful npm commands</title>
