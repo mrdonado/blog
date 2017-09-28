@@ -61,6 +61,8 @@
     <p class="post-reading-time">&#126;
         
         
+          2 min
+        
     </p>
     
 
@@ -79,12 +81,28 @@
 
 <p>At some point in March 2017, my friend <a href="https://www.linkedin.com/in/juanff/">Juan Fernández</a> proposed me to join him in the development of a software he’s been working on. It was a Python script, that used <a href="https://spacy.io/">spaCy</a> to analyze messages coming from a twitter stream.</p>
 
-<p>The idea was to use the Natural Language Processing (NLP) engine of spaCy to find messages in English where a solution is proposed to a healthcare problem, tagging both problem and solution and discarding irrelevant messages.</p>
+<p>The idea was to use the <a href="https://en.wikipedia.org/wiki/Natural_language_processing">Natural Language Processing (NLP)</a> engine of <a href="https://spacy.io/">spaCy</a> to find messages in English where a solution is proposed to a healthcare problem, tagging both problem and solution and discarding irrelevant messages.</p>
 
-<p>He had a first version of the script working on his computer, but he wanted to find a way to show it to the world, so he asked me to join him and turn his idea into an online web application. I thought that it was an interesting project, so I joined him and now, the first version of our software is online at <a href="https://www.lifescope-project.com">www.lifescope-project.com</a>.</p>
+<p>He had a first version of the script working on his computer, but he wanted to find a way to show it to the world. So I thought we could turn it into an online web application accessible for everyone and make everything Open Source. Now, the first version of our software is online at <a href="https://www.lifescope-project.com">www.lifescope-project.com</a>.</p>
 
 <h2 id="from-local-script-to-the-cloud">From local script to the cloud</h2>
 
+<p>After some playing around with Flask, I decided decided that separating the analyzer from the twitter stream and the backend services was the best solution. We wanted a system that scales and that is easily maintainable. So I came about with the following microservices based architecture:</p>
+
+<ul>
+  <li><a href="https://github.com/fjrd84/health-nlp-node">NodeJS service</a>, sending messages from the twitter stream to a beanstalkd jobs queue.</li>
+  <li>The <a href="https://github.com/fjrd84/health-nlp-analysis">python analyzer engine</a>, which now just takes jobs from beanstalkd and sends the results to Firebase and Elastic Search.</li>
+  <li>Firebase, serving the analyzed messages in real time to the frontend.</li>
+  <li>A <a href="https://github.com/fjrd84/health-nlp-react">ReactJS + Redux</a> based frontend, that works as a showcase for the project, with an introduction and a real time timeline.</li>
+</ul>
+
+<p>With this architecture, we can show the results of the analysis in real time, while they are also saved into the Elastic Search in order to ease the integration with a new statistics module (still in development). Firebase takes care of the websockets, so, our services just need to respond to on-demand requests, making scalability less demanding.</p>
+
+<p>The analysis engine is now independent of the source: it just processes jobs that come from beanstalkd with a specific JSON format. We can (and we will) extend the streaming services in order to provide more sources, other than twitter (e.g.: specialized news feeds).</p>
+
+<p>The NodeJS service has also an endpoint to receive jobs from the frontend, so that our visitors can send example messages to the analysis engine, and see the results right away on the timeline.</p>
+
+<p>Everything is <a href="https://www.docker.com/">dockerized</a>, making the installation and deployment of the whole system a piece of cake, allowing us to easily move our services if the demand grows.</p>
 
     </article>
 
