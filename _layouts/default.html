@@ -6,10 +6,28 @@
 <body>
 
     {% include loader.html %}
+    <div id="title-wrapper">
+        <a class="icon home-icon"
+            href="{{ site.baseurl }}/">&nbsp;</a>
+        <a class="icon web-icon"
+            target="_blank"
+            href="https://www.jdonado.com">&nbsp;</a>
+         <a class="icon github-icon"
+            target="_blank"
+            href="https://github.com/fjrd84">&nbsp;</a>
+        <a class="icon twitter-icon"
+            target="_blank"
+            href="https://twitter.com/jdonado">&nbsp;</a>
+        <a class="icon linkedin-icon"
+            target="_blank"
+            href="https://www.linkedin.com/in/f-javier-r-donado-6458a815/">&nbsp;</a>
+        <a class="icon email-icon"
+            href="mailto:jdonado@jdonado.com">&nbsp;</a>
+        <a class="icon about-icon"
+            href="{{ site.baseurl }}/about/">&nbsp;</a>
+    </div>
 
-    <main id="sb-site">
-
-        <div class="container">
+    <main id="sb-site">    <div class="container">
             <div class="wrapper">
                 {{ content }}
             </div>

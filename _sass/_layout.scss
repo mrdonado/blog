@@ -4,11 +4,13 @@
 
 #sb-site {
     background-color: transparent;
-    padding: ($spacing-unit * 2) 0;
+    padding: 110px 0;
 
+    /*
     @include media-query($on-laptop) {
         padding: 0;
     }
+    */
 }
 
 #home-button{
@@ -21,6 +23,51 @@
     z-index: 2;
     background-image: url(../images/home.svg);
     background-size: cover;
+}
+
+#title-wrapper {
+    height: 5rem;
+    text-align: right;
+    position: fixed;
+    z-index: 2;
+    right: 1rem;
+    // margin-right: 2rem;
+    padding-top: 2rem;
+    a.icon{
+        height: 34px;
+        left: 30px;
+        margin-top: 8px;
+        width: 34px;
+        z-index: 1;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: inline-block;
+        opacity: 0.3;
+        &:hover{
+            opacity: 1;
+        }
+        &.home-icon {
+          background-image: url(../images/h-icon-home.png);        
+        }
+        &.email-icon {
+          background-image: url(../images/h-icon-email.png);        
+        }
+        &.web-icon {
+          background-image: url(../images/h-icon-web.png);        
+        }
+        &.linkedin-icon {
+          background-image: url(../images/h-icon-linkedin.png);        
+        }
+        &.twitter-icon {
+          background-image: url(../images/h-icon-twitter.png);        
+        }
+        &.github-icon {
+          background-image: url(../images/h-icon-github.png);        
+        }
+        &.about-icon {
+          background-image: url(../images/h-icon-me.png);        
+        }
+    }
 }
 
 .container {
