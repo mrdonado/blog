@@ -46,6 +46,7 @@ exclude:
   - Gemfile.lock
   - run.sh
   - build.sh
+  - icons.psd
   - docs
   - README.md
   - old
