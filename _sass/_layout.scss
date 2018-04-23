@@ -6,11 +6,12 @@
     background-color: transparent;
     padding: 110px 0;
 
-    /*
     @include media-query($on-laptop) {
         padding: 0;
+        .container{
+            padding-top: 40px;
+        }
     }
-    */
 }
 
 #home-button{
