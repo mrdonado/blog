@@ -17,6 +17,8 @@ This is a compilation of my favorite commands. I will keep updating this post in
 
 ## In normal mode
 
+- `:mks ~/.vim/foo.vim` Save the current vim session
+- `:source ~/.vim/foo.vim` Restore the previously saved session
 - `:echo $VIM` Show the path to the vimrc configuration file
 - `:!command` Run a unix command
 - `:!!` Swap the selection by the stdout of the last command
