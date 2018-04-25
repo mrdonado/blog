@@ -19,6 +19,8 @@ This is a compilation of my favorite commands. I will keep updating this post in
 
 - `:mks ~/.vim/foo.vim` Save the current vim session
 - `:source ~/.vim/foo.vim` Restore the previously saved session
+- `/\csearchString` Perform a case insensitive search
+- `/\CsearchString` Perform a case sensitive search
 - `:echo $VIM` Show the path to the vimrc configuration file
 - `:!command` Run a unix command
 - `:!!` Swap the selection by the stdout of the last command
