@@ -54,6 +54,7 @@ These settings can be saved into the vimrc file.
 - `set path+=**` Include subdirectories when finding a file
 - `set wildmenu` Menu helper when using tab finding files or directories
 - `set nocompatible` Ignore compatibility with ancient vi versions
+- `set smartcase` Always perform case insensitive search unless you search for capital letters
 - `set wildignore+=**/node_modules/**` Ignore directory when finding files
 
 ## ...and of course
