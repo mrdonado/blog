@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://blog.jdonado.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2018-04-24T20:11:27+02:00</updated><id>https://blog.jdonado.com//</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">Lifescope Project</title><link href="https://blog.jdonado.com/lifescope-project/" rel="alternate" type="text/html" title="Lifescope Project" /><published>2017-09-27T00:00:00+02:00</published><updated>2017-09-27T00:00:00+02:00</updated><id>https://blog.jdonado.com/lifescope-project</id><content type="html" xml:base="https://blog.jdonado.com/lifescope-project/">&lt;h1 id=&quot;an-artificial-intelligence-software-looking-for-solutions-to-healthcare-problems&quot;&gt;An artificial intelligence software looking for solutions to healthcare problems&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://blog.jdonado.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2018-04-30T18:14:28+02:00</updated><id>https://blog.jdonado.com//</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">Lifescope Project</title><link href="https://blog.jdonado.com/lifescope-project/" rel="alternate" type="text/html" title="Lifescope Project" /><published>2017-09-27T00:00:00+02:00</published><updated>2017-09-27T00:00:00+02:00</updated><id>https://blog.jdonado.com/lifescope-project</id><content type="html" xml:base="https://blog.jdonado.com/lifescope-project/">&lt;h1 id=&quot;an-artificial-intelligence-software-looking-for-solutions-to-healthcare-problems&quot;&gt;An artificial intelligence software looking for solutions to healthcare problems&lt;/h1&gt;
 
 &lt;h2 id=&quot;some-history&quot;&gt;Some history&lt;/h2&gt;
 
@@ -109,35 +109,81 @@
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm dedupe&lt;/code&gt; reduce duplication&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="vim" /><category term="npm" /><category term="nodejs" /><summary type="html">Quick reference of some useful commands</summary></entry><entry><title type="html">Vim magic</title><link href="https://blog.jdonado.com/vim-magic/" rel="alternate" type="text/html" title="Vim magic" /><published>2017-05-28T00:00:00+02:00</published><updated>2017-05-28T00:00:00+02:00</updated><id>https://blog.jdonado.com/vim-magic</id><content type="html" xml:base="https://blog.jdonado.com/vim-magic/">&lt;h1 id=&quot;vim-magic&quot;&gt;Vim magic&lt;/h1&gt;
 
-&lt;p&gt;I’ve been using the &lt;a href=&quot;http://www.vim.org&quot;&gt;vim editor&lt;/a&gt; for a while now, and I really like it. But it’s true that the learning curve is very steep. There are so many options, that even after years of using it, you can still discover lots of new tricks.&lt;/p&gt;
+&lt;p&gt;I’ve been using the &lt;a href=&quot;http://www.vim.org&quot;&gt;vim editor&lt;/a&gt; for a while now, and I really like it.
+But it’s true that the learning curve is very steep. There are so many options, that even
+after years of using it, you can still discover lots of new tricks.&lt;/p&gt;
 
-&lt;p&gt;This is a compilation of my favorite commands. I will keep updating this post in the future whenever I discover new interesting stuff (this is kind of a personal quick reference).&lt;/p&gt;
+&lt;p&gt;This is a compilation of my favorite commands. I will keep updating this post in the future
+whenever I discover new interesting stuff (this is kind of a personal quick reference).&lt;/p&gt;
 
 &lt;h2 id=&quot;in-normal-mode&quot;&gt;In normal mode&lt;/h2&gt;
+
+&lt;h3 id=&quot;edition-magic&quot;&gt;Edition magic&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vi&quot;&lt;/code&gt; Select everything &lt;em&gt;inside&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;. It also works with parenthesis, brackets, tags…&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;di&quot;&lt;/code&gt; Delete everything &lt;em&gt;inside&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;. Same as before.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;da&quot;&lt;/code&gt; Delete everything &lt;em&gt;inside&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;, including the surrounding &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL+v&lt;/code&gt; Start visual mode, selecting columns&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;=&amp;lt;next position&amp;gt;&lt;/code&gt; Indent&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zz&lt;/code&gt; Scroll the current line to the center of the window&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zt&lt;/code&gt; Scroll the current line to the top of the window&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zb&lt;/code&gt; Scroll the current line to the bottom of the window&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cs&quot;'&lt;/code&gt; Change the surrounding double quotes by simple quotes
+(&lt;a href=&quot;http://www.vim.org/scripts/script.php?script_id=1697&quot;&gt;surround.vim&lt;/a&gt; is required)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;marks&quot;&gt;Marks&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mk&lt;/code&gt; mark the current position as &lt;code class=&quot;highlighter-rouge&quot;&gt;k&lt;/code&gt; (any other lowercase letter will do)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mK&lt;/code&gt; mark the current position as &lt;code class=&quot;highlighter-rouge&quot;&gt;K&lt;/code&gt;. Uppercase means that it is a global mark,
+and it will be available even if you currently have a different file opened.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;'k&lt;/code&gt; jump to the position previously marked as &lt;code class=&quot;highlighter-rouge&quot;&gt;k&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;folds&quot;&gt;Folds&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zf'k&lt;/code&gt; fold lines until the &lt;code class=&quot;highlighter-rouge&quot;&gt;k&lt;/code&gt; mark&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zo&lt;/code&gt; open the folded code&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zc&lt;/code&gt; close the folded code&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;za&lt;/code&gt; toggle the folded code&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;sessions&quot;&gt;Sessions&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:mks ~/.vim/foo.vim&lt;/code&gt; Save the current vim session&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:source ~/.vim/foo.vim&lt;/code&gt; Restore the previously saved session&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:echo $VIM&lt;/code&gt; Show the path to the vimrc configuration file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tabs&quot;&gt;Tabs&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gT&lt;/code&gt; Go to the previous tab&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gt&lt;/code&gt; Go to the next tab&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:tabfind &amp;lt;TAB&amp;gt;&lt;/code&gt; Find a file with autocompletion and open it in a new tab&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;splitting&quot;&gt;Splitting&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vsplit&lt;/code&gt; Split vertically&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;split&lt;/code&gt; Split horizontally&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;other-commands&quot;&gt;Other commands&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:echo $VIM&lt;/code&gt; Show the path to the vimrc configuration file (usually just &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.vimrc&lt;/code&gt;)&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:!command&lt;/code&gt; Run a unix command&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:!!&lt;/code&gt; Swap the selection by the stdout of the last command&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:e .&lt;/code&gt; Open the file explorer on the current directory, in order to edit a file&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:find *.js &amp;lt;TAB&amp;gt;&lt;/code&gt; Find a file with extension &lt;code class=&quot;highlighter-rouge&quot;&gt;.js&lt;/code&gt; using autocompletion&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:tabfind &amp;lt;TAB&amp;gt;&lt;/code&gt; Find a file with autocompletion and open it in a new tab&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gT&lt;/code&gt; Go to the previous tab&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gt&lt;/code&gt; Go to the next tab&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vsplit&lt;/code&gt; Split vertically&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;split&lt;/code&gt; Split horizontally&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zz&lt;/code&gt; Scroll the current line to the center of the window&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:b &amp;lt;TAB&amp;gt;&lt;/code&gt; Open a file that has been previously opened (and is still in the buffer)&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:ls&lt;/code&gt; List the previously opened files&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vi&quot;&lt;/code&gt; Select everything &lt;em&gt;inside&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;. It also works with parenthesis, brackets, tags…&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;di&quot;&lt;/code&gt; Delete everything &lt;em&gt;inside&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;. Same as before.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;da&quot;&lt;/code&gt; Delete everything &lt;em&gt;inside&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;, and the surrounding &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt; too&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL+v&lt;/code&gt; Start visual mode, selecting columns&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;=&amp;lt;next position&amp;gt;&lt;/code&gt; Indent&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:vert diffs otherfile&lt;/code&gt; Diff the current file with &lt;code class=&quot;highlighter-rouge&quot;&gt;otherfile&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cs&quot;'&lt;/code&gt; Change the surrounding double quotes by simple quotes (&lt;a href=&quot;http://www.vim.org/scripts/script.php?script_id=1697&quot;&gt;surround.vim&lt;/a&gt; is required)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;in-edit-mode&quot;&gt;In edit mode&lt;/h2&gt;
@@ -160,10 +206,20 @@
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set wildignore+=**/node_modules/**&lt;/code&gt; Ignore directory when finding files&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h2 id=&quot;exporting-your-configuration&quot;&gt;Exporting your configuration&lt;/h2&gt;
+
+&lt;p&gt;You can save your custom vim configuration to a repository and synchronize it with
+any other machine.&lt;/p&gt;
+
+&lt;p&gt;In order to do that, just initialize your &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.vim&lt;/code&gt; directory as a git repository,
+and push it to the cloud (e.g.: to GitHub). You can find &lt;a href=&quot;https://github.com/fjrd84/.vim&quot;&gt;mine here&lt;/a&gt;
+(follow the instructions on the README in order to set it up).&lt;/p&gt;
+
 &lt;h2 id=&quot;and-of-course&quot;&gt;…and of course&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:q!&lt;/code&gt; &lt;a href=&quot;https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/&quot;&gt;Don’t get trapped&lt;/a&gt;. Leave without saving :)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:q!&lt;/code&gt; &lt;a href=&quot;https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/&quot;&gt;Don’t get trapped&lt;/a&gt;.
+Leave without saving :)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
@@ -173,6 +229,7 @@
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=wlR5gYd6um0&quot;&gt;Mastering the vim language (youtube)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=5r6yzFEXajQ&amp;amp;t=310s&quot;&gt;Vim + tmux (youtube)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.vim.org/docs.php&quot;&gt;Vim documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.freecodecamp.org/learn-linux-vim-basic-features-19134461ab85&quot;&gt;Why I love Vim: It’s the lesser known features…&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="vim" /><category term="vim" /><summary type="html">Vim magic</summary></entry><entry><title type="html">Restore clover using Windows</title><link href="https://blog.jdonado.com/restore-clover/" rel="alternate" type="text/html" title="Restore clover using Windows" /><published>2017-05-26T00:00:00+02:00</published><updated>2017-05-26T00:00:00+02:00</updated><id>https://blog.jdonado.com/restore-clover</id><content type="html" xml:base="https://blog.jdonado.com/restore-clover/">&lt;h1 id=&quot;restore-your-configplist&quot;&gt;Restore your config.plist&lt;/h1&gt;
 
 &lt;p&gt;Clover is a boot manager that allows you to select the OS you want to boot with. It is used mostly by Hackintosh users, that is, people that install MacOSX (along with other OSs, like Linux and Windows) on a non-Apple machine.&lt;/p&gt;

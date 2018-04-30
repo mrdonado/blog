@@ -79,7 +79,7 @@
     <p class="post-reading-time">&#126;
         
         
-          2 min
+          3 min
         
     </p>
     
@@ -95,35 +95,81 @@
     <article class="post-content">
         <h1 id="vim-magic">Vim magic</h1>
 
-<p>I’ve been using the <a href="http://www.vim.org">vim editor</a> for a while now, and I really like it. But it’s true that the learning curve is very steep. There are so many options, that even after years of using it, you can still discover lots of new tricks.</p>
+<p>I’ve been using the <a href="http://www.vim.org">vim editor</a> for a while now, and I really like it.
+But it’s true that the learning curve is very steep. There are so many options, that even
+after years of using it, you can still discover lots of new tricks.</p>
 
-<p>This is a compilation of my favorite commands. I will keep updating this post in the future whenever I discover new interesting stuff (this is kind of a personal quick reference).</p>
+<p>This is a compilation of my favorite commands. I will keep updating this post in the future
+whenever I discover new interesting stuff (this is kind of a personal quick reference).</p>
 
 <h2 id="in-normal-mode">In normal mode</h2>
+
+<h3 id="edition-magic">Edition magic</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">vi"</code> Select everything <em>inside</em> <code class="highlighter-rouge">"</code>. It also works with parenthesis, brackets, tags…</li>
+  <li><code class="highlighter-rouge">di"</code> Delete everything <em>inside</em> <code class="highlighter-rouge">"</code>. Same as before.</li>
+  <li><code class="highlighter-rouge">da"</code> Delete everything <em>inside</em> <code class="highlighter-rouge">"</code>, including the surrounding <code class="highlighter-rouge">"</code></li>
+  <li><code class="highlighter-rouge">CTRL+v</code> Start visual mode, selecting columns</li>
+  <li><code class="highlighter-rouge">=&lt;next position&gt;</code> Indent</li>
+  <li><code class="highlighter-rouge">zz</code> Scroll the current line to the center of the window</li>
+  <li><code class="highlighter-rouge">zt</code> Scroll the current line to the top of the window</li>
+  <li><code class="highlighter-rouge">zb</code> Scroll the current line to the bottom of the window</li>
+  <li><code class="highlighter-rouge">cs"'</code> Change the surrounding double quotes by simple quotes
+(<a href="http://www.vim.org/scripts/script.php?script_id=1697">surround.vim</a> is required)</li>
+</ul>
+
+<h3 id="marks">Marks</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">mk</code> mark the current position as <code class="highlighter-rouge">k</code> (any other lowercase letter will do)</li>
+  <li><code class="highlighter-rouge">mK</code> mark the current position as <code class="highlighter-rouge">K</code>. Uppercase means that it is a global mark,
+and it will be available even if you currently have a different file opened.</li>
+  <li><code class="highlighter-rouge">'k</code> jump to the position previously marked as <code class="highlighter-rouge">k</code></li>
+</ul>
+
+<h3 id="folds">Folds</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">zf'k</code> fold lines until the <code class="highlighter-rouge">k</code> mark</li>
+  <li><code class="highlighter-rouge">zo</code> open the folded code</li>
+  <li><code class="highlighter-rouge">zc</code> close the folded code</li>
+  <li><code class="highlighter-rouge">za</code> toggle the folded code</li>
+</ul>
+
+<h3 id="sessions">Sessions</h3>
 
 <ul>
   <li><code class="highlighter-rouge">:mks ~/.vim/foo.vim</code> Save the current vim session</li>
   <li><code class="highlighter-rouge">:source ~/.vim/foo.vim</code> Restore the previously saved session</li>
-  <li><code class="highlighter-rouge">:echo $VIM</code> Show the path to the vimrc configuration file</li>
+</ul>
+
+<h3 id="tabs">Tabs</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">gT</code> Go to the previous tab</li>
+  <li><code class="highlighter-rouge">gt</code> Go to the next tab</li>
+  <li><code class="highlighter-rouge">:tabfind &lt;TAB&gt;</code> Find a file with autocompletion and open it in a new tab</li>
+</ul>
+
+<h3 id="splitting">Splitting</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">vsplit</code> Split vertically</li>
+  <li><code class="highlighter-rouge">split</code> Split horizontally</li>
+</ul>
+
+<h3 id="other-commands">Other commands</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">:echo $VIM</code> Show the path to the vimrc configuration file (usually just <code class="highlighter-rouge">~/.vimrc</code>)</li>
   <li><code class="highlighter-rouge">:!command</code> Run a unix command</li>
   <li><code class="highlighter-rouge">:!!</code> Swap the selection by the stdout of the last command</li>
   <li><code class="highlighter-rouge">:e .</code> Open the file explorer on the current directory, in order to edit a file</li>
   <li><code class="highlighter-rouge">:find *.js &lt;TAB&gt;</code> Find a file with extension <code class="highlighter-rouge">.js</code> using autocompletion</li>
-  <li><code class="highlighter-rouge">:tabfind &lt;TAB&gt;</code> Find a file with autocompletion and open it in a new tab</li>
-  <li><code class="highlighter-rouge">gT</code> Go to the previous tab</li>
-  <li><code class="highlighter-rouge">gt</code> Go to the next tab</li>
-  <li><code class="highlighter-rouge">vsplit</code> Split vertically</li>
-  <li><code class="highlighter-rouge">split</code> Split horizontally</li>
-  <li><code class="highlighter-rouge">zz</code> Scroll the current line to the center of the window</li>
   <li><code class="highlighter-rouge">:b &lt;TAB&gt;</code> Open a file that has been previously opened (and is still in the buffer)</li>
   <li><code class="highlighter-rouge">:ls</code> List the previously opened files</li>
-  <li><code class="highlighter-rouge">vi"</code> Select everything <em>inside</em> <code class="highlighter-rouge">"</code>. It also works with parenthesis, brackets, tags…</li>
-  <li><code class="highlighter-rouge">di"</code> Delete everything <em>inside</em> <code class="highlighter-rouge">"</code>. Same as before.</li>
-  <li><code class="highlighter-rouge">da"</code> Delete everything <em>inside</em> <code class="highlighter-rouge">"</code>, and the surrounding <code class="highlighter-rouge">"</code> too</li>
-  <li><code class="highlighter-rouge">CTRL+v</code> Start visual mode, selecting columns</li>
-  <li><code class="highlighter-rouge">=&lt;next position&gt;</code> Indent</li>
   <li><code class="highlighter-rouge">:vert diffs otherfile</code> Diff the current file with <code class="highlighter-rouge">otherfile</code></li>
-  <li><code class="highlighter-rouge">cs"'</code> Change the surrounding double quotes by simple quotes (<a href="http://www.vim.org/scripts/script.php?script_id=1697">surround.vim</a> is required)</li>
 </ul>
 
 <h2 id="in-edit-mode">In edit mode</h2>
@@ -146,10 +192,20 @@
   <li><code class="highlighter-rouge">set wildignore+=**/node_modules/**</code> Ignore directory when finding files</li>
 </ul>
 
+<h2 id="exporting-your-configuration">Exporting your configuration</h2>
+
+<p>You can save your custom vim configuration to a repository and synchronize it with
+any other machine.</p>
+
+<p>In order to do that, just initialize your <code class="highlighter-rouge">~/.vim</code> directory as a git repository,
+and push it to the cloud (e.g.: to GitHub). You can find <a href="https://github.com/fjrd84/.vim">mine here</a>
+(follow the instructions on the README in order to set it up).</p>
+
 <h2 id="and-of-course">…and of course</h2>
 
 <ul>
-  <li><code class="highlighter-rouge">:q!</code> <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">Don’t get trapped</a>. Leave without saving :)</li>
+  <li><code class="highlighter-rouge">:q!</code> <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">Don’t get trapped</a>.
+Leave without saving :)</li>
 </ul>
 
 <h2 id="references">References</h2>
@@ -159,6 +215,7 @@
   <li><a href="https://www.youtube.com/watch?v=wlR5gYd6um0">Mastering the vim language (youtube)</a></li>
   <li><a href="https://www.youtube.com/watch?v=5r6yzFEXajQ&amp;t=310s">Vim + tmux (youtube)</a></li>
   <li><a href="http://www.vim.org/docs.php">Vim documentation</a></li>
+  <li><a href="https://medium.freecodecamp.org/learn-linux-vim-basic-features-19134461ab85">Why I love Vim: It’s the lesser known features…</a></li>
 </ul>
 
     </article>
