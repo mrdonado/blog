@@ -117,6 +117,8 @@ whenever I discover new interesting stuff (this is kind of a personal quick refe
   <li><code class="highlighter-rouge">zb</code> Scroll the current line to the bottom of the window</li>
   <li><code class="highlighter-rouge">cs"'</code> Change the surrounding double quotes by simple quotes
 (<a href="http://www.vim.org/scripts/script.php?script_id=1697">surround.vim</a> is required)</li>
+  <li><code class="highlighter-rouge">/\csearchString</code> Perform a case insensitive search</li>
+  <li><code class="highlighter-rouge">/\CsearchString</code> Perform a case sensitive search</li>
 </ul>
 
 <h3 id="marks">Marks</h3>
@@ -189,6 +191,7 @@ and it will be available even if you currently have a different file opened.</li
   <li><code class="highlighter-rouge">set path+=**</code> Include subdirectories when finding a file</li>
   <li><code class="highlighter-rouge">set wildmenu</code> Menu helper when using tab finding files or directories</li>
   <li><code class="highlighter-rouge">set nocompatible</code> Ignore compatibility with ancient vi versions</li>
+  <li><code class="highlighter-rouge">set smartcase</code> Always perform case insensitive search unless you search for capital letters</li>
   <li><code class="highlighter-rouge">set wildignore+=**/node_modules/**</code> Ignore directory when finding files</li>
 </ul>
 

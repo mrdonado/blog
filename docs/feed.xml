@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://blog.jdonado.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2018-04-30T18:14:28+02:00</updated><id>https://blog.jdonado.com//</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">Lifescope Project</title><link href="https://blog.jdonado.com/lifescope-project/" rel="alternate" type="text/html" title="Lifescope Project" /><published>2017-09-27T00:00:00+02:00</published><updated>2017-09-27T00:00:00+02:00</updated><id>https://blog.jdonado.com/lifescope-project</id><content type="html" xml:base="https://blog.jdonado.com/lifescope-project/">&lt;h1 id=&quot;an-artificial-intelligence-software-looking-for-solutions-to-healthcare-problems&quot;&gt;An artificial intelligence software looking for solutions to healthcare problems&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://blog.jdonado.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2018-04-30T18:20:13+02:00</updated><id>https://blog.jdonado.com//</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">Lifescope Project</title><link href="https://blog.jdonado.com/lifescope-project/" rel="alternate" type="text/html" title="Lifescope Project" /><published>2017-09-27T00:00:00+02:00</published><updated>2017-09-27T00:00:00+02:00</updated><id>https://blog.jdonado.com/lifescope-project</id><content type="html" xml:base="https://blog.jdonado.com/lifescope-project/">&lt;h1 id=&quot;an-artificial-intelligence-software-looking-for-solutions-to-healthcare-problems&quot;&gt;An artificial intelligence software looking for solutions to healthcare problems&lt;/h1&gt;
 
 &lt;h2 id=&quot;some-history&quot;&gt;Some history&lt;/h2&gt;
 
@@ -131,6 +131,8 @@ whenever I discover new interesting stuff (this is kind of a personal quick refe
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zb&lt;/code&gt; Scroll the current line to the bottom of the window&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cs&quot;'&lt;/code&gt; Change the surrounding double quotes by simple quotes
 (&lt;a href=&quot;http://www.vim.org/scripts/script.php?script_id=1697&quot;&gt;surround.vim&lt;/a&gt; is required)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/\csearchString&lt;/code&gt; Perform a case insensitive search&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/\CsearchString&lt;/code&gt; Perform a case sensitive search&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;marks&quot;&gt;Marks&lt;/h3&gt;
@@ -203,6 +205,7 @@ and it will be available even if you currently have a different file opened.&lt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set path+=**&lt;/code&gt; Include subdirectories when finding a file&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set wildmenu&lt;/code&gt; Menu helper when using tab finding files or directories&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set nocompatible&lt;/code&gt; Ignore compatibility with ancient vi versions&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set smartcase&lt;/code&gt; Always perform case insensitive search unless you search for capital letters&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set wildignore+=**/node_modules/**&lt;/code&gt; Ignore directory when finding files&lt;/li&gt;
 &lt;/ul&gt;
 
