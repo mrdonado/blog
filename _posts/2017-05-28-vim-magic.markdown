@@ -11,34 +11,68 @@ tags: vim
 
 # Vim magic
 
-I've been using the [vim editor](http://www.vim.org) for a while now, and I really like it. But it's true that the learning curve is very steep. There are so many options, that even after years of using it, you can still discover lots of new tricks.
+I've been using the [vim editor](http://www.vim.org) for a while now, and I really like it.
+But it's true that the learning curve is very steep. There are so many options, that even
+after years of using it, you can still discover lots of new tricks.
 
-This is a compilation of my favorite commands. I will keep updating this post in the future whenever I discover new interesting stuff (this is kind of a personal quick reference).
+This is a compilation of my favorite commands. I will keep updating this post in the future
+whenever I discover new interesting stuff (this is kind of a personal quick reference).
 
 ## In normal mode
 
+### Edition magic
+
+- `vi"` Select everything *inside* `"`. It also works with parenthesis, brackets, tags...
+- `di"` Delete everything *inside* `"`. Same as before.
+- `da"` Delete everything *inside* `"`, including the surrounding `"`
+- `CTRL+v` Start visual mode, selecting columns
+- `=<next position>` Indent
+- `zz` Scroll the current line to the center of the window
+- `zt` Scroll the current line to the top of the window
+- `zb` Scroll the current line to the bottom of the window
+- `cs"'` Change the surrounding double quotes by simple quotes
+([surround.vim](http://www.vim.org/scripts/script.php?script_id=1697) is required)
+
+### Marks
+
+- `mk` mark the current position as `k` (any other lowercase letter will do)
+- `mK` mark the current position as `K`. Uppercase means that it is a global mark,
+and it will be available even if you currently have a different file opened.
+- `'k` jump to the position previously marked as `k`
+
+### Folds
+
+- `zf'k` fold lines until the `k` mark
+- `zo` open the folded code
+- `zc` close the folded code
+- `za` toggle the folded code
+
+### Sessions
+
 - `:mks ~/.vim/foo.vim` Save the current vim session
 - `:source ~/.vim/foo.vim` Restore the previously saved session
-- `:echo $VIM` Show the path to the vimrc configuration file
+
+### Tabs
+
+- `gT` Go to the previous tab
+- `gt` Go to the next tab
+- `:tabfind <TAB>` Find a file with autocompletion and open it in a new tab
+
+### Splitting
+
+- `vsplit` Split vertically
+- `split` Split horizontally
+
+### Other commands
+
+- `:echo $VIM` Show the path to the vimrc configuration file (usually just `~/.vimrc`)
 - `:!command` Run a unix command
 - `:!!` Swap the selection by the stdout of the last command
 - `:e .` Open the file explorer on the current directory, in order to edit a file
 - `:find *.js <TAB>` Find a file with extension `.js` using autocompletion
-- `:tabfind <TAB>` Find a file with autocompletion and open it in a new tab
-- `gT` Go to the previous tab
-- `gt` Go to the next tab
-- `vsplit` Split vertically
-- `split` Split horizontally
-- `zz` Scroll the current line to the center of the window
 - `:b <TAB>` Open a file that has been previously opened (and is still in the buffer)
 - `:ls` List the previously opened files
-- `vi"` Select everything *inside* `"`. It also works with parenthesis, brackets, tags...
-- `di"` Delete everything *inside* `"`. Same as before.
-- `da"` Delete everything *inside* `"`, and the surrounding `"` too
-- `CTRL+v` Start visual mode, selecting columns
-- `=<next position>` Indent
 - `:vert diffs otherfile` Diff the current file with `otherfile`
-- `cs"'` Change the surrounding double quotes by simple quotes ([surround.vim](http://www.vim.org/scripts/script.php?script_id=1697) is required)
 
 ## In edit mode
 
@@ -56,9 +90,19 @@ These settings can be saved into the vimrc file.
 - `set nocompatible` Ignore compatibility with ancient vi versions
 - `set wildignore+=**/node_modules/**` Ignore directory when finding files
 
+## Exporting your configuration
+
+You can save your custom vim configuration to a repository and synchronize it with
+any other machine.
+
+In order to do that, just initialize your `~/.vim` directory as a git repository,
+and push it to the cloud (e.g.: to GitHub). You can find [mine here](https://github.com/fjrd84/.vim)
+(follow the instructions on the README in order to set it up).
+
 ## ...and of course
 
-- `:q!` [Don't get trapped](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/). Leave without saving :)
+- `:q!` [Don't get trapped](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/).
+Leave without saving :)
 
 ## References
 
@@ -66,3 +110,4 @@ These settings can be saved into the vimrc file.
 - [Mastering the vim language (youtube)](https://www.youtube.com/watch?v=wlR5gYd6um0)
 - [Vim + tmux (youtube)](https://www.youtube.com/watch?v=5r6yzFEXajQ&t=310s)
 - [Vim documentation](http://www.vim.org/docs.php)
+- [Why I love Vim: It's the lesser known features...](https://medium.freecodecamp.org/learn-linux-vim-basic-features-19134461ab85)
