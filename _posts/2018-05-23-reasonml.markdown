@@ -1,0 +1,47 @@
+# ReasonML Programming Language
+
+## What is ReasonML?
+
+ReasonML is an object-functional programming language created at Facebook. You can find more details on [What is ReasonML?](http://2ality.com/2017/11/about-reasonml.html).
+
+## What I like and dislike so far
+
+I like:
+
+- Inferred types
+- Code suggestions underneath the command line
+- Compatibility with JS and OCaml
+- Lexical scoping
+- `If` is an expression that can be evaluated into a value (in other languages it is only an statement)
+- Syntax of switch expressions
+
+I dislike:
+
+- Shadowing is allowed (let variables can be redefined)
+- Operator ++ for concatenating strings
+- Underscores
+
+## Examples
+
+```reason
+
+let foo = {
+  let a = 40;
+  let b = 1;
+  a + b + 1;
+}; // this will bind 42 to the name `foo`
+
+let isMorning = true;
+// This binds "Good Morning" to the name `greeting`
+let greeting = if (isMorning) {"Good Morning"} else {"Hello"};
+
+// A switch expression
+let greeting = stranger =>
+  switch (stranger) {
+    | Teacher => "Hey professor"
+    | Director => "Hello director"
+    | Student("Richard") => "Still here Ricky?"
+    | Student(anyOtherName) => "Hey, " ++ anyOtherName ++ "."
+  };
+
+```
