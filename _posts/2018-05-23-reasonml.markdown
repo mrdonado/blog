@@ -14,6 +14,8 @@ I like:
 - Lexical scoping
 - `If` is an expression that can be evaluated into a value (in other languages it is only an statement)
 - Syntax of switch expressions
+- Objects in a similar way as in TypeScript
+- How to destructure objects
 
 I dislike:
 
@@ -42,6 +44,22 @@ let greeting = stranger =>
     | Director => "Hello director"
     | Student("Richard") => "Still here Ricky?"
     | Student(anyOtherName) => "Hey, " ++ anyOtherName ++ "."
+    | _ => "unknown"
   };
+
+// A person type definition
+type person = {
+  name: string,
+  age: int,
+};
+
+// An object of type person
+let tim = {
+  name: "Tim",
+  age: 52,
+};
+
+// Destructuring a person type into variables timsAge and timsName
+let {age: timsAge, name: timsName} = tim;
 
 ```
