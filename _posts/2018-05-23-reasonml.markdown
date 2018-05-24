@@ -1,21 +1,27 @@
 # ReasonML Programming Language
 
+These are some notes about the ReasonML programming language that I've taken while watching the (free) course [Get Started with Reason](https://egghead.io/courses/get-started-with-reason) of [Nik Graf](https://twitter.com/nikgraf).
+
 ## What is ReasonML?
 
 ReasonML is an object-functional programming language created at Facebook. You can find more details on [What is ReasonML?](http://2ality.com/2017/11/about-reasonml.html).
 
-## What I like and dislike so far
+## What I Like and Dislike so Far
 
 I like:
 
 - Inferred types
-- Code suggestions underneath the command line
+- The possibility of creating custom types and variants
+- The compiler warns you if your switches are not exhaustive (if you're forgetting cases)
+- Code suggestions underneath the command line are cool
 - Compatibility with JS and OCaml
 - Lexical scoping
 - `If` is an expression that can be evaluated into a value (in other languages it is only an statement)
 - Syntax of switch expressions
 - Objects in a similar way as in TypeScript
 - How to destructure objects
+- Spread operator as in JavaScript
+- Combinations of variants with switch expressions are great
 
 I dislike:
 
@@ -23,7 +29,7 @@ I dislike:
 - Operator ++ for concatenating strings
 - Underscores
 
-## Examples
+## Code Examples
 
 ```reason
 
@@ -51,15 +57,26 @@ let greeting = stranger =>
 type person = {
   name: string,
   age: int,
+  mutable mood: string, // mood is the only mutable field in this type
 };
 
-// An object of type person
+// A record of type person
 let tim = {
   name: "Tim",
   age: 52,
+  mood: "happy"
 };
 
 // Destructuring a person type into variables timsAge and timsName
 let {age: timsAge, name: timsName} = tim;
+
+// Custom type answer (tagged union or variant)
+type answer =
+  | Yes
+  | No
+  | Maybe;
+
+// Further assignments automatically infer the type
+let isItRaining = Maybe; // It infers type `answer`
 
 ```
