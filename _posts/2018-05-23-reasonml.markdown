@@ -19,15 +19,22 @@ I like:
 - `If` is an expression that can be evaluated into a value (in other languages it is only an statement)
 - Syntax of switch expressions
 - Objects in a similar way as in TypeScript
-- How to destructure objects
-- Spread operator as in JavaScript
+- How to destructure objects in a similar way as in Javascript
+- Spread operator as in Javascript
 - Combinations of variants with switch expressions are great
+- You can match specific cases in a switch
+- There's no null: variants None and Some can be used instead
+- You can partially apply arguments in functions (automatic currying)
+- Labeled parameters (you can apply then in any order you want)
+- Optional parameters
+- Pipe operator for function composition
 
 I dislike:
 
 - Shadowing is allowed (let variables can be redefined)
 - Operator ++ for concatenating strings
-- Underscores
+- Underscores in the built-in functions' names
+- Too many semicolons
 
 ## Code Examples
 
@@ -78,5 +85,37 @@ type answer =
 
 // Further assignments automatically infer the type
 let isItRaining = Maybe; // It infers type `answer`
+
+// You can define functions like this (in this case, types are optional, since they
+// can be inferred
+let add: (x: int, y: int) : int => x + y;
+
+// A function with labelled and optional parameters
+let name = (~firstName="Defaultname", ~middleName=?, ~lastName, ()) => {
+  switch (middleName) {
+  | Some(value) => firstName ++ " " ++ value ++ " " ++ lastName
+  | None => firstName ++ " " ++ lastName
+  };
+};
+
+// Pipe operators example: find the largest element smaller than 4
+[8, 3, 6, 1]
+  |> List.sort(compare)
+  |> List.rev
+  |> List.find(x => x < 4);
+
+// Recursive functions (without rec, the function cannot call itself)
+let rec countBack = x => {
+  if (x > 1) {
+    print_int(x);
+    countBack(x - 1);
+  };
+};
+
+// There are tuples too (unlike lists, they can contain elements of different types)
+("this is", 1, "tuple", "of four elements")
+
+// And there are arrays. Unlike lists, they're mutable
+[|3, 4|]
 
 ```
