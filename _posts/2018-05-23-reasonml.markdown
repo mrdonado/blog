@@ -18,7 +18,7 @@ I like:
 - Lexical scoping
 - `If` is an expression that can be evaluated into a value (in other languages it is only an statement)
 - Syntax of switch expressions
-- Objects in a similar way as in TypeScript
+- Objects (or records) defined in a similar way as in TypeScript
 - How to destructure objects in a similar way as in Javascript
 - Spread operator as in Javascript
 - Combinations of variants with switch expressions are great
@@ -28,6 +28,9 @@ I like:
 - Labeled parameters (you can apply then in any order you want)
 - Optional parameters
 - Pipe operator for function composition
+- Nested structures can directly be compared for equality
+- Structural `==` and referential equality `===` operators
+- Powerful pattern matching
 
 I dislike:
 
@@ -117,5 +120,12 @@ let rec countBack = x => {
 
 // And there are arrays. Unlike lists, they're mutable
 [|3, 4|]
+
+// A pattern matching example
+switch ([|"a", "b", "c"|]) {
+| [|"a", "b", _|] => print_endline("a, b and something")
+| [|_, x, y|] => print_endline("something and " ++ x ++ " " ++ y)
+| _ => print_endline("An Array")
+};
 
 ```
