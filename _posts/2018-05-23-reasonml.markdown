@@ -1,14 +1,29 @@
+---
+layout: post
+title:  "ReasonML"
+date:   2018-05-26
+category: programming-language
+backgrounds:
+    - ../assets/images/backgrounds/reasonml.png
+#    - https://blog.jdonado.com/assets/images/backgrounds/reasonml.png
+thumb: ../assets/images/reasonml.jpg
+#thumb: https://blog.jdonado.com/assets/images/reasonml.jpg
+tags: functional-programming programming-language javascript ocaml reasonml
+---
+
 # ReasonML Programming Language
 
-These are some notes about the ReasonML programming language that I've taken while watching the (free) course [Get Started with Reason](https://egghead.io/courses/get-started-with-reason) of [Nik Graf](https://twitter.com/nikgraf).
+## What is ReasonML? Where does it come from? What can I do with it?
 
-## What is ReasonML?
+ReasonML is an object-functional programming language that provides a different syntax for writing [OCaml](https://ocaml.org/) code and can be transpiled into JavaScript code using [BuckleScript](https://bucklescript.github.io/). A comparison between OCaml and ReasonML can be found on [ReasonML's official documentation](https://reasonml.github.io/docs/en/comparison-to-ocaml.html).
 
-ReasonML is an object-functional programming language created at Facebook. You can find more details on [What is ReasonML?](http://2ality.com/2017/11/about-reasonml.html).
+The ReasonML programming language was created at Facebook and I found out about it thanks to [Nick Graf](https://twitter.com/nikgraf)'s Egghead course [Get Started with Reason](https://egghead.io/courses/get-started-with-reason). I started taking notes while watching the course and I ended up with this post (so thank him for the code examples).
+
+If you want to know more about the language, Dr. Axel Rauschmayer has written a wonderful book about it that you can read online for free: [Exploring ReasonML and functional programming](http://reasonmlhub.com/exploring-reasonml/).
 
 ## What I Like and Dislike so Far
 
-I like:
+I like...
 
 - Inferred types
 - The possibility of creating custom types and variants
@@ -19,8 +34,8 @@ I like:
 - `If` is an expression that can be evaluated into a value (in other languages it is only an statement)
 - Syntax of switch expressions
 - Objects (or records) defined in a similar way as in TypeScript
-- How to destructure objects in a similar way as in Javascript
-- Spread operator as in Javascript
+- Destructuring objects (records) in a similar way as in JavaScript
+- Spread operator as in JavaScript
 - Combinations of variants with switch expressions are great
 - You can match specific cases in a switch
 - There's no null: variants None and Some can be used instead
@@ -32,7 +47,7 @@ I like:
 - Structural `==` and referential equality `===` operators
 - Powerful pattern matching
 
-I dislike:
+I dislike...
 
 - Shadowing is allowed (let variables can be redefined)
 - Operator ++ for concatenating strings
@@ -41,7 +56,7 @@ I dislike:
 
 ## Code Examples
 
-```reason
+{% highlight javascript %}
 
 let foo = {
   let a = 40;
@@ -128,4 +143,13 @@ switch ([|"a", "b", "c"|]) {
 | _ => print_endline("An Array")
 };
 
-```
+// Example Math module
+module Math = {
+  let pi = 3.1415;
+  let add = (x, y) => x + y;
+};
+
+// Then access everything using dot notation
+Math.pi; // Returns 3.1415
+
+{% endhighlight %}
