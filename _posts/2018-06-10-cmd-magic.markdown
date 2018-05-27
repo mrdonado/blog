@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "CMD Magic"
+date:   2018-06-10
+category: command-line
+backgrounds:
+    - https://blog.jdonado.com/assets/images/backgrounds/reasonml.png
+thumb: https://blog.jdonado.com/assets/images/reasonml.jpg
+tags: linux command-line shell
+---
+
+# Command Line Magic
+
+Last year I published [Vim Magic]({% link _posts/2017-05-28-vim-magic.markdown %}), where I gathered all the commands that I find particularly useful when using the Vim editor. I've kept updating it ever since whenever I've found new useful tricks. It's been so far helpful to me as a reference and hopefully to somebodyelse out there too. This post is the same but for the command line in Linux/Unix.
+
+This is not intended to be a tutorial with the basics for you to learn how to use the command line. Instead, it's more like a reference for somebody that's been using the shell for some time now and wants to learn some new tricks.
+
+## What is the Command Line?
+
+{% highlight bash %}
+{% endhighlight %}
