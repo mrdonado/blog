@@ -1,11 +1,13 @@
 ---
 layout: post
 title:  "CMD Magic"
-date:   2018-06-10
+date:   2018-05-27
 category: command-line
 backgrounds:
-    - https://blog.jdonado.com/assets/images/backgrounds/reasonml.png
-thumb: https://blog.jdonado.com/assets/images/reasonml.jpg
+    - ../assets/images/backgrounds/matrix.jpg
+#    - https://blog.jdonado.com/assets/images/backgrounds/reasonml.png
+#thumb: https://blog.jdonado.com/assets/images/reasonml.jpg
+thumb: ../assets/images/terminal.jpg
 tags: linux command-line shell
 ---
 
@@ -13,9 +15,37 @@ tags: linux command-line shell
 
 Last year I published [Vim Magic]({% link _posts/2017-05-28-vim-magic.markdown %}), where I gathered all the commands that I find particularly useful when using the Vim editor. I've kept updating it ever since whenever I've found new useful tricks. It's been so far helpful to me as a reference and hopefully to somebodyelse out there too. This post is the same but for the command line in Linux/Unix.
 
-This is not intended to be a tutorial with the basics for you to learn how to use the command line. Instead, it's more like a reference for somebody that's been using the shell for some time now and wants to learn some new tricks.
+This is not intended to be a tutorial with the basics for you to learn how to use the command line. Instead, it's more like a reference for somebody that's been using the terminal for some time now and wants to learn some new tricks.
 
 ## What is the Command Line?
 
 {% highlight bash %}
 {% endhighlight %}
+
+## Scripts
+
+- `#!/bin/bash` use this as the first line of a bash script, for the interpreter to know how to handle it
+- `for i in *.png ; do convert "$i" "${i%.*}.jpg" ; done` convert all **png** files into **jpg**
+
+## Dependencies
+
+- `sudo apt-get install build-essential checkinstall` in debian-based distros, install the essentials for building packages (make; make install)
+
+## Networking
+
+- `lsof -nP | grep 9092` show which process is blocking the port 9092
+
+## Random Magic
+
+- `<ctrl>+r` reverse search: in order to search for a command you previously used
+- `cal` print the current month
+- `wdiff one.txt two.txt | colordiff` color the differences between **one.txt** and **two.txt**
+- `openssl base64 -in input.txt -out encoded.b64` encode **input.txt** in base64 and save it to the file **encoded.b64**
+- `cat oldfile.txt | tr -d '\n' > newfile.txt` create newfile.txt as a copy of oldfile where all newlines have been removed
+- `SOME_FILE=$(<some-file.txt)` load the contents of **some-file.txt** into the variable **SOME_FILE**
+- `convert file.{jpg,png}` equivalent to `convert file.jpg file.png`
+- `sudo !!` run the last command with sudo
+- ` `+any command: it won't go to the history
+- `$( command )` it gives the output of command
+
+
