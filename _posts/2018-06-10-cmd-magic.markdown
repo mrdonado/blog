@@ -1,21 +1,21 @@
 ---
 layout: post
 title:  "CMD Magic"
-date:   2018-05-27
+date:   2018-07-04
 category: command-line
 backgrounds:
     - ../assets/images/backgrounds/matrix.jpg
 #    - https://blog.jdonado.com/assets/images/backgrounds/reasonml.png
 #thumb: https://blog.jdonado.com/assets/images/reasonml.jpg
 thumb: ../assets/images/terminal.jpg
-tags: linux command-line shell
+tags: linux command-line shell macosx
 ---
 
 # Command Line Magic
 
-Last year I published [Vim Magic]({% link _posts/2017-05-28-vim-magic.markdown %}), where I gathered all the commands that I find particularly useful when using the Vim editor. I've kept updating it ever since whenever I've found new useful tricks. It's been so far helpful to me as a reference and hopefully to somebodyelse out there too. This post is the same but for the command line in Linux/Unix.
+Last year I published [Vim Magic]({% link _posts/2017-05-28-vim-magic.markdown %}), where I gathered all the commands that I fond particularly useful when using the Vim editor. I've kept updating it ever since whenever I've found new useful tricks. It's been so far helpful to me as a reference and hopefully to somebodyelse out there too. This post is the same but for the command line in Linux/Unix.
 
-This is not intended to be a tutorial with the basics for you to learn how to use the command line. Instead, it's more like a reference for somebody that's been using the terminal for some time now and wants to learn some new tricks.
+This is not intended to be a tutorial with the basics for you to learn how to use the command line. Instead, it's more like a reference for somebody that's been using the terminal for some time now and wants to learn some new tricks or remember older ones.
 
 ## What is the Command Line?
 
@@ -25,7 +25,21 @@ This is not intended to be a tutorial with the basics for you to learn how to us
 ## Scripts
 
 - `#!/bin/bash` use this as the first line of a bash script, for the interpreter to know how to handle it
+
+## Files
+
 - `for i in *.png ; do convert "$i" "${i%.*}.jpg" ; done` convert all **png** files into **jpg**
+- `find /path/to/files* -mtime +5 -exec rm {} \;` delete files older than X days
+- `find . -name  '*.zip' -exec unzip {} \;` unzip all the zip files in the current directory
+
+## Users and Groups
+
+- `cat /etc/passwd | cut -d: -f1` list all users
+- `cat /etc/group | cut -d: -f1` list all groups
+- `chown user file` change the owner of a file
+- `chgrp group file` change the group of a file
+- `chown user:group file` change the owner and group of a file
+
 
 ## Dependencies
 
@@ -47,5 +61,8 @@ This is not intended to be a tutorial with the basics for you to learn how to us
 - `sudo !!` run the last command with sudo
 - ` `+any command: it won't go to the history
 - `$( command )` it gives the output of command
+- `rsync -avz --remove-source-files -e ssh /local/dir remoteuser@remotehost:/remote/dir` SSH copy files and remove source
+- `ssh user@personal-server.com -L 2000:25` SSH session and port tunneling
+- `service --status-all` status of services
 
 
