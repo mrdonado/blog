@@ -17,8 +17,6 @@ Last year I published [Vim Magic]({% link _posts/2017-05-28-vim-magic.markdown %
 
 This is not intended to be a tutorial with the basics for you to learn how to use the command line. Instead, it's more like a reference for somebody that's been using the terminal for some time now and wants to learn some new tricks or remember older ones.
 
-## What is the Command Line?
-
 {% highlight bash %}
 {% endhighlight %}
 
@@ -29,8 +27,15 @@ This is not intended to be a tutorial with the basics for you to learn how to us
 ## Files
 
 - `for i in *.png ; do convert "$i" "${i%.*}.jpg" ; done` convert all **png** files into **jpg**
+- `find . -type f -exec grep -bl someWord {} \;` find all files in the current directory (and above) that contain `someWord`
 - `find /path/to/files* -mtime +5 -exec rm {} \;` delete files older than X days
 - `find . -name  '*.zip' -exec unzip {} \;` unzip all the zip files in the current directory
+- `find . -type d | egrep -o '.*src$'` find `src` directories and none of their subdirectories
+- `find . 2>/dev/null` find without showing `permission denied` messages
+- `wdiff one.txt two.txt | colordiff` color the differences between **one.txt** and **two.txt**
+- `SOME_FILE=$(<some-file.txt)` load the contents of **some-file.txt** into the variable **SOME_FILE**
+- `cat oldfile.txt | tr -d '\n' > newfile.txt` create newfile.txt as a copy of oldfile where all newlines have been removed
+- `convert file.{jpg,png}` equivalent to `convert file.jpg file.png`
 
 ## Users and Groups
 
@@ -40,29 +45,24 @@ This is not intended to be a tutorial with the basics for you to learn how to us
 - `chgrp group file` change the group of a file
 - `chown user:group file` change the owner and group of a file
 
-
-## Dependencies
-
-- `sudo apt-get install build-essential checkinstall` in debian-based distros, install the essentials for building packages (make; make install)
-
-## Networking
+## Networking and SSH
 
 - `lsof -nP | grep 9092` show which process is blocking the port 9092
+- `rsync -avz --remove-source-files -e ssh /local/dir remoteuser@remotehost:/remote/dir` SSH copy files and remove source
+- `ssh user@personal-server.com -L 2000:25` SSH session and port tunneling
 
 ## Random Magic
 
 - `<ctrl>+r` reverse search: in order to search for a command you previously used
 - `cal` print the current month
-- `wdiff one.txt two.txt | colordiff` color the differences between **one.txt** and **two.txt**
+- `sudo apt-get install build-essential checkinstall` in debian-based distros, install the essentials for building packages (make; make install)
 - `openssl base64 -in input.txt -out encoded.b64` encode **input.txt** in base64 and save it to the file **encoded.b64**
-- `cat oldfile.txt | tr -d '\n' > newfile.txt` create newfile.txt as a copy of oldfile where all newlines have been removed
-- `SOME_FILE=$(<some-file.txt)` load the contents of **some-file.txt** into the variable **SOME_FILE**
-- `convert file.{jpg,png}` equivalent to `convert file.jpg file.png`
 - `sudo !!` run the last command with sudo
 - ` `+any command: it won't go to the history
 - `$( command )` it gives the output of command
-- `rsync -avz --remove-source-files -e ssh /local/dir remoteuser@remotehost:/remote/dir` SSH copy files and remove source
-- `ssh user@personal-server.com -L 2000:25` SSH session and port tunneling
 - `service --status-all` status of services
+- `echo "hello world" | sed -e "s/e/o/g" | sed -e "s/lo/a/g" | sed -e "s/world/mundo/g"` translate "hello world" to spanish
+- `docker ps | awk '{print $8}'` print only the names of the current containers
+
 
 
