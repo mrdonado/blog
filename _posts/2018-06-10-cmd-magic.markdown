@@ -1,13 +1,11 @@
 ---
 layout: post
 title:  "CMD Magic"
-date:   2018-07-04
+date:   2018-07-06
 category: command-line
 backgrounds:
-    - ../assets/images/backgrounds/matrix.jpg
-#    - https://blog.jdonado.com/assets/images/backgrounds/reasonml.png
-#thumb: https://blog.jdonado.com/assets/images/reasonml.jpg
-thumb: ../assets/images/terminal.jpg
+    - https://blog.jdonado.com/assets/images/backgrounds/matrix.jpg
+thumb: https://blog.jdonado.com/assets/images/terminal.jpg
 tags: linux command-line shell macosx
 ---
 
