@@ -101,17 +101,17 @@
 <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'exampleApp'</span><span class="p">,</span> <span class="p">[])</span>
   <span class="p">.</span><span class="nx">service</span><span class="p">(</span><span class="s1">'ItemsService'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'$http'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$http</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">getItems</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">$http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'www.myapi-url.com/items'</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">$http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'www.myapi-url.com/items'</span><span class="p">);</span>
     <span class="p">};</span>
   <span class="p">}])</span>
   <span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'ExampleController'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'ItemsService'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ItemsService</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nb">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
 
     <span class="k">this</span><span class="p">.</span><span class="nx">itemsList</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// A property of the controller stores an array with items, initially empty.</span>
 
     <span class="nx">ItemsService</span><span class="p">.</span><span class="nx">getItems</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span>
       <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">itemsList</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+        <span class="nb">self</span><span class="p">.</span><span class="nx">itemsList</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
       <span class="p">},</span>
       <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"There has been an error"</span> <span class="o">+</span> <span class="nx">error</span><span class="p">);</span>
@@ -208,8 +208,8 @@
       <span class="c1">// The function you return works as the constructor of your class</span>
       <span class="nx">basicResource</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="c1">// In your new constructor, you apply the constructor of the class you want to inherit</span>
-        <span class="nx">observableService</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
-        <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+        <span class="nx">observableService</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kr">arguments</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nb">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
 
         <span class="c1">// here you define the properties of the service</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">allElements</span> <span class="o">=</span> <span class="p">[];</span>
@@ -234,7 +234,7 @@
     <span class="kd">function</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">configurationService</span><span class="p">,</span> <span class="nx">notesService</span><span class="p">)</span> <span class="p">{</span>
       <span class="s1">'use strict'</span><span class="p">;</span>
 
-      <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="nb">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
 
       <span class="c1">// Callback to be run when the configuration is ready</span>
       <span class="kd">var</span> <span class="nx">configurationReady</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
@@ -243,7 +243,7 @@
 
       <span class="c1">// Callbacks to update the scope when new elements are available</span>
       <span class="kd">var</span> <span class="nx">updateNotes</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">notes</span> <span class="o">=</span> <span class="nx">notesService</span><span class="p">.</span><span class="nx">allElements</span><span class="p">;</span>
+        <span class="nb">self</span><span class="p">.</span><span class="nx">notes</span> <span class="o">=</span> <span class="nx">notesService</span><span class="p">.</span><span class="nx">allElements</span><span class="p">;</span>
       <span class="p">};</span>
 
       <span class="c1">// Register observer callbacks</span>
@@ -507,6 +507,8 @@
                     <a href="/archive/">Archive</a>
                 </li>
                 
+            
+        
             
         
             
