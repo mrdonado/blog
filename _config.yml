@@ -37,7 +37,7 @@ defaults:
         share_buttons: true
         disqus: true
 
-gems:
+plugins:
     - jekyll-feed
     - jekyll-sitemap
     - jekyll-paginate
