@@ -52,6 +52,8 @@ This is not intended to be a tutorial with the basics for you to learn how to us
 - `ssh -Y user@your-server.com` start an xterm
 - `sudo route delete default gw 10.0.2.2 eth0` remove the default gateway on `eth0`
 - `sudo route add default gw 192.168.1.254 eth0` add the default gateway on `eth0`
+- `wget -c -t 0 --timeout=60 --waitretry=60 http://example.com/file.mkv` download the file using the partially downloaded file (resume `-c`) retrying ad infinitum (`-t 0`) with 60s timeout and 60s wait between attempts
+- `wget -r -np -nH -R index.html http://hostname/aaa/bbb/ccc/ddd/` download all files and subfolders of the `ddd` directory, recursively (`-r`), without going to upper directories (`-np`), not saving to the hostname folder (`-nH`), exclude `index.html` files (`-r index.html`)
 
 ## Random Magic
 
