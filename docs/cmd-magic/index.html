@@ -121,6 +121,12 @@
   <li><code class="highlighter-rouge">convert file.{jpg,png}</code> equivalent to <code class="highlighter-rouge">convert file.jpg file.png</code></li>
 </ul>
 
+<p>With <code class="highlighter-rouge">xargs</code> you can avoid loops (it passes the stdout as input to the specified command):</p>
+
+<ul>
+  <li><code class="highlighter-rouge">find . -name *.png | xargs rm -rf</code> remove recursively all png files</li>
+</ul>
+
 <h2 id="users-and-groups">Users and Groups</h2>
 
 <ul>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2018-07-15T10:26:15+02:00</updated><id>https://blog.jdonado.com/</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">CMD Magic</title><link href="https://blog.jdonado.com/cmd-magic/" rel="alternate" type="text/html" title="CMD Magic" /><published>2018-07-06T00:00:00+02:00</published><updated>2018-07-06T00:00:00+02:00</updated><id>https://blog.jdonado.com/cmd-magic</id><content type="html" xml:base="https://blog.jdonado.com/cmd-magic/">&lt;h1 id=&quot;command-line-magic&quot;&gt;Command Line Magic&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2018-07-27T21:08:17+02:00</updated><id>https://blog.jdonado.com/</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">CMD Magic</title><link href="https://blog.jdonado.com/cmd-magic/" rel="alternate" type="text/html" title="CMD Magic" /><published>2018-07-06T00:00:00+02:00</published><updated>2018-07-06T00:00:00+02:00</updated><id>https://blog.jdonado.com/cmd-magic</id><content type="html" xml:base="https://blog.jdonado.com/cmd-magic/">&lt;h1 id=&quot;command-line-magic&quot;&gt;Command Line Magic&lt;/h1&gt;
 
 &lt;p&gt;Last year I published &lt;a href=&quot;/vim-magic/&quot;&gt;Vim Magic&lt;/a&gt;, where I gathered all the commands that I fond particularly useful when using the Vim editor. I’ve kept updating it ever since whenever I’ve found new useful tricks. It’s been so far helpful to me as a reference and hopefully to somebodyelse out there too. This post is the same but for the command line in Linux/Unix.&lt;/p&gt;
 
@@ -24,6 +24,12 @@
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SOME_FILE=$(&amp;lt;some-file.txt)&lt;/code&gt; load the contents of &lt;strong&gt;some-file.txt&lt;/strong&gt; into the variable &lt;strong&gt;SOME_FILE&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cat oldfile.txt | tr -d '\n' &amp;gt; newfile.txt&lt;/code&gt; create newfile.txt as a copy of oldfile where all newlines have been removed&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;convert file.{jpg,png}&lt;/code&gt; equivalent to &lt;code class=&quot;highlighter-rouge&quot;&gt;convert file.jpg file.png&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With &lt;code class=&quot;highlighter-rouge&quot;&gt;xargs&lt;/code&gt; you can avoid loops (it passes the stdout as input to the specified command):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find . -name *.png | xargs rm -rf&lt;/code&gt; remove recursively all png files&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;users-and-groups&quot;&gt;Users and Groups&lt;/h2&gt;
