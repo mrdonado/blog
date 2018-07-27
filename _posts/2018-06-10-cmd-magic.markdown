@@ -36,6 +36,10 @@ This is not intended to be a tutorial with the basics for you to learn how to us
 - `cat oldfile.txt | tr -d '\n' > newfile.txt` create newfile.txt as a copy of oldfile where all newlines have been removed
 - `convert file.{jpg,png}` equivalent to `convert file.jpg file.png`
 
+With `xargs` you can avoid loops (it passes the stdout as input to the specified command):
+
+- `find . -name *.png | xargs rm -rf` remove recursively all png files
+
 ## Users and Groups
 
 - `cat /etc/passwd | cut -d: -f1` list all users
