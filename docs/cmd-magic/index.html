@@ -79,7 +79,7 @@
     <p class="post-reading-time">&#126;
         
         
-          3 min
+          4 min
         
     </p>
     
@@ -95,9 +95,9 @@
     <article class="post-content">
         <h1 id="command-line-magic">Command Line Magic</h1>
 
-<p>Last year I published <a href="/vim-magic/">Vim Magic</a>, where I gathered all the commands that I fond particularly useful when using the Vim editor. I’ve kept updating it ever since whenever I’ve found new useful tricks. It’s been so far helpful to me as a reference and hopefully to somebodyelse out there too. This post is the same but for the command line in Linux/Unix.</p>
+<p>Last year I published <a href="/vim-magic/">Vim Magic</a>, where I gathered all the commands that I found particularly useful when using the Vim editor. I’ve kept updating it ever since whenever I’ve found new useful tricks. It’s been so far helpful to me as a reference and hopefully to somebody else out there too. This post is the same but for the command line in Linux/Unix.</p>
 
-<p>This is not intended to be a tutorial with the basics for you to learn how to use the command line. Instead, it’s more like a reference for somebody that’s been using the terminal for some time now and wants to learn some new tricks or remember older ones.</p>
+<p>This is not intended to be a tutorial with the basics for you to learn how to use the command line. Instead, it’s more like a reference for somebody who’s been using the terminal for some time now and wants to learn some new tricks or remember older ones.</p>
 
 <h2 id="scripts">Scripts</h2>
 
@@ -115,7 +115,7 @@
   <li><code class="highlighter-rouge">find . -type d | egrep -o '.*src$'</code> find <code class="highlighter-rouge">src</code> directories and none of their subdirectories</li>
   <li><code class="highlighter-rouge">find . 2&gt;/dev/null</code> find without showing <code class="highlighter-rouge">permission denied</code> messages</li>
   <li><code class="highlighter-rouge">wdiff one.txt two.txt | colordiff</code> color the differences between <strong>one.txt</strong> and <strong>two.txt</strong></li>
-  <li><code class="highlighter-rouge">diff -rq(w) dir1 dir2</code> compare two directory structures</li>
+  <li><code class="highlighter-rouge"><span class="gh">diff -rq(w) dir1 dir2</span></code> compare two directory structures</li>
   <li><code class="highlighter-rouge">SOME_FILE=$(&lt;some-file.txt)</code> load the contents of <strong>some-file.txt</strong> into the variable <strong>SOME_FILE</strong></li>
   <li><code class="highlighter-rouge">cat oldfile.txt | tr -d '\n' &gt; newfile.txt</code> create newfile.txt as a copy of oldfile where all newlines have been removed</li>
   <li><code class="highlighter-rouge">convert file.{jpg,png}</code> equivalent to <code class="highlighter-rouge">convert file.jpg file.png</code></li>
@@ -125,6 +125,7 @@
 
 <ul>
   <li><code class="highlighter-rouge">find . -name *.png | xargs rm -rf</code> remove recursively all png files</li>
+  <li><code class="highlighter-rouge">git branch --merged | grep -v \* | xargs git branch -D</code> remove all local git branches that have already been merged</li>
 </ul>
 
 <h2 id="users-and-groups">Users and Groups</h2>

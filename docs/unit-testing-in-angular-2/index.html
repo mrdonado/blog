@@ -126,7 +126,7 @@
 
 <p>Solution: import <code class="highlighter-rouge">YourService</code> and include it into the <code class="highlighter-rouge">providers</code> of the TestBed. At best you should include a mocked version, since you probably want to test that service in another specific test.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">serviceMock</span> <span class="o">=</span> <span class="p">{</span> <span class="na">someKey</span><span class="p">:</span> <span class="s1">'someValue'</span><span class="p">};</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">serviceMock</span> <span class="o">=</span> <span class="p">{</span> <span class="na">someKey</span><span class="p">:</span> <span class="s1">'someValue'</span><span class="p">};</span>
 <span class="nx">TestBed</span><span class="p">.</span><span class="nx">configureTestingModule</span><span class="p">({</span>
   <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -150,19 +150,19 @@
 
 <p>1.- Add the following imports to your spec:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">import</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="p">{</span>
   <span class="nx">BaseRequestOptions</span><span class="p">,</span>
   <span class="nx">Http</span><span class="p">,</span>
   <span class="nx">Response</span><span class="p">,</span>
   <span class="nx">ResponseOptions</span><span class="p">,</span>
   <span class="nx">RequestMethod</span><span class="p">,</span>
   <span class="nx">XHRBackend</span>
-<span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/http'</span><span class="p">;</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/http'</span><span class="p">;</span>
 
-<span class="k">import</span> <span class="p">{</span>
+<span class="kr">import</span> <span class="p">{</span>
   <span class="nx">MockBackend</span><span class="p">,</span>
   <span class="nx">MockConnection</span>
-<span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/http/testing'</span><span class="p">;</span></code></pre></figure>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/http/testing'</span><span class="p">;</span></code></pre></figure>
 
 <p>2.- Declare a MockBackend type variable in your describe block:</p>
 
@@ -194,7 +194,7 @@
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">'should post some key with some value'</span><span class="p">,</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">backend</span><span class="p">.</span><span class="nx">connections</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="na">connection</span><span class="p">:</span> <span class="nx">MockConnection</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">expect</span><span class="p">(</span><span class="nx">connection</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">method</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">RequestMethod</span><span class="p">.</span><span class="nx">Post</span><span class="p">);</span>
-    <span class="kd">const</span> <span class="nx">responseBody</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">connection</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">getBody</span><span class="p">());</span>
+    <span class="kr">const</span> <span class="nx">responseBody</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">connection</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">getBody</span><span class="p">());</span>
     <span class="nx">expect</span><span class="p">(</span><span class="nx">responseBody</span><span class="p">.</span><span class="nx">someKey</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">'someValue'</span><span class="p">);</span>
     <span class="c1">// Mock a response with an empty object</span>
     <span class="nx">connection</span><span class="p">.</span><span class="nx">mockRespond</span><span class="p">(</span><span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="k">new</span> <span class="nx">ResponseOptions</span><span class="p">({})));</span>
@@ -207,33 +207,33 @@
 
 <p>Here’s a working example for an <code class="highlighter-rouge">AnalysisFormComponent</code> unit test, that mocks a <code class="highlighter-rouge">LogService</code> and performs an HTTP POST request.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">import</span> <span class="p">{</span> <span class="nx">LogService</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'../../../services/log.service'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="k">async</span><span class="p">,</span> <span class="nx">ComponentFixture</span><span class="p">,</span> <span class="nx">inject</span><span class="p">,</span> <span class="nx">TestBed</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core/testing'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">AnalysisFormComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./analysis-form.component'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">FormsModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/forms'</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="p">{</span> <span class="nx">LogService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'../../../services/log.service'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">async</span><span class="p">,</span> <span class="nx">ComponentFixture</span><span class="p">,</span> <span class="nx">inject</span><span class="p">,</span> <span class="nx">TestBed</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/core/testing'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">AnalysisFormComponent</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'./analysis-form.component'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">FormsModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/forms'</span><span class="p">;</span>
 
-<span class="k">import</span> <span class="p">{</span>
+<span class="kr">import</span> <span class="p">{</span>
   <span class="nx">BaseRequestOptions</span><span class="p">,</span>
   <span class="nx">Http</span><span class="p">,</span>
   <span class="nx">Response</span><span class="p">,</span>
   <span class="nx">ResponseOptions</span><span class="p">,</span>
   <span class="nx">RequestMethod</span><span class="p">,</span>
   <span class="nx">XHRBackend</span>
-<span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/http'</span><span class="p">;</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/http'</span><span class="p">;</span>
 
-<span class="k">import</span> <span class="p">{</span>
+<span class="kr">import</span> <span class="p">{</span>
   <span class="nx">MockBackend</span><span class="p">,</span>
   <span class="nx">MockConnection</span>
-<span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/http/testing'</span><span class="p">;</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/http/testing'</span><span class="p">;</span>
 
 <span class="nx">describe</span><span class="p">(</span><span class="s1">'AnalysisFormComponent'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="na">component</span><span class="p">:</span> <span class="nx">AnalysisFormComponent</span><span class="p">;</span>
   <span class="kd">let</span> <span class="na">fixture</span><span class="p">:</span> <span class="nx">ComponentFixture</span><span class="o">&lt;</span><span class="nx">AnalysisFormComponent</span><span class="o">&gt;</span><span class="p">;</span>
   <span class="kd">let</span> <span class="na">backend</span><span class="p">:</span> <span class="nx">MockBackend</span><span class="p">;</span>
 
-  <span class="kd">const</span> <span class="nx">logServiceSpy</span> <span class="o">=</span> <span class="nx">jasmine</span><span class="p">.</span><span class="nx">createSpyObj</span><span class="p">(</span><span class="s1">'logService'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'sendMessage'</span><span class="p">]);</span>
+  <span class="kr">const</span> <span class="nx">logServiceSpy</span> <span class="o">=</span> <span class="nx">jasmine</span><span class="p">.</span><span class="nx">createSpyObj</span><span class="p">(</span><span class="s1">'logService'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'sendMessage'</span><span class="p">]);</span>
 
-  <span class="nx">beforeEach</span><span class="p">(</span><span class="k">async</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">beforeEach</span><span class="p">(</span><span class="nx">async</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">TestBed</span><span class="p">.</span><span class="nx">configureTestingModule</span><span class="p">({</span>
       <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span><span class="nx">AnalysisFormComponent</span><span class="p">],</span>
       <span class="na">imports</span><span class="p">:</span> <span class="p">[</span><span class="nx">FormsModule</span><span class="p">],</span>
@@ -287,7 +287,7 @@
   <span class="nx">it</span><span class="p">(</span><span class="s1">'should send a POST request to the server when creating a new job for the analysis engine'</span><span class="p">,</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">backend</span><span class="p">.</span><span class="nx">connections</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="na">connection</span><span class="p">:</span> <span class="nx">MockConnection</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="nx">expect</span><span class="p">(</span><span class="nx">connection</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">method</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">RequestMethod</span><span class="p">.</span><span class="nx">Post</span><span class="p">);</span>
-      <span class="kd">const</span> <span class="nx">responseBody</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">connection</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">getBody</span><span class="p">());</span>
+      <span class="kr">const</span> <span class="nx">responseBody</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">connection</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">getBody</span><span class="p">());</span>
       <span class="nx">expect</span><span class="p">(</span><span class="nx">responseBody</span><span class="p">.</span><span class="nx">source</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">'web'</span><span class="p">);</span>
       <span class="nx">expect</span><span class="p">(</span><span class="nx">responseBody</span><span class="p">.</span><span class="nx">user_name</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">'someUserName'</span><span class="p">);</span>
       <span class="nx">expect</span><span class="p">(</span><span class="nx">responseBody</span><span class="p">.</span><span class="nx">user_description</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">'someDescription'</span><span class="p">);</span>
@@ -300,11 +300,11 @@
     <span class="nx">component</span><span class="p">.</span><span class="nx">userDescription</span> <span class="o">=</span> <span class="s1">'someDescription'</span><span class="p">;</span> <span class="nx">component</span><span class="p">.</span><span class="nx">sendNewJob</span><span class="p">();</span>
   <span class="p">});</span>
 
-  <span class="nx">it</span><span class="p">(</span><span class="s1">'should log an error message when the analysis couldn</span><span class="se">\'</span><span class="s1">t be POSTed'</span><span class="p">,</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="s1">'An error occurred!!!'</span><span class="p">;</span>
+  <span class="nx">it</span><span class="p">(</span><span class="s1">'should log an error message when the analysis couldn\'t be POSTed'</span><span class="p">,</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="s1">'An error occurred!!!'</span><span class="p">;</span>
     <span class="nx">backend</span><span class="p">.</span><span class="nx">connections</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="na">connection</span><span class="p">:</span> <span class="nx">MockConnection</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="nx">expect</span><span class="p">(</span><span class="nx">connection</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">method</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">RequestMethod</span><span class="p">.</span><span class="nx">Post</span><span class="p">);</span>
-      <span class="kd">const</span> <span class="nx">responseBody</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">connection</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">getBody</span><span class="p">());</span>
+      <span class="kr">const</span> <span class="nx">responseBody</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">connection</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">getBody</span><span class="p">());</span>
       <span class="nx">connection</span><span class="p">.</span><span class="nx">mockError</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">));</span>
     <span class="p">});</span>
     <span class="nx">component</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">'someMessage'</span><span class="p">;</span>
