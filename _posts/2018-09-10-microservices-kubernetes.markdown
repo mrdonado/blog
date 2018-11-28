@@ -16,15 +16,22 @@ tags: linux kubernetes docker microservices architecture
 {% highlight bash %}
 {% endhighlight %}
 
-## Configuration
+## Key Issues
 
-- Repository
-
-## Gateway
-
-- Traefik
+- 12 factor https://12factor.net/
+- Configuration Repository
+- Blue/Green deployments
+- Monitoring & Tracing
+- Architecture (auto)documentation
+- Authentication
+- Gateway
+  - Traefik
 
 # Kubernetes
+
+Resources
+
+- Tutorials https://kubernetes.io/docs/tutorials/
 
 ## Commands
 
