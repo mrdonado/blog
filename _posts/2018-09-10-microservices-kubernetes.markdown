@@ -38,7 +38,9 @@ Resources
 Types of [resources in Kubernetes](https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/)
 
 - Master: it coordinates all activities in the cluster (scheduling, apps maintenance, scaling, updating...).
-- Nodes: workers that run applications. They have a Kubelet (an agent managing the node and communicating with the master via the Kubernetes API). They have a container engine, such as docker or rkt.
+- Nodes: workers that run applications. They have:
+  - A Kubelet: an agent responsible for communication between the node and the Kubernetes Master (communicating via the Kubernetes API). It manages the pods and the containers running on a machine.
+  - A container runtime, such as docker or rkt, responsible for pulling container images, unpacking the container and running an application.
 
 The minimum of nodes in production is 3.
 
@@ -50,7 +52,7 @@ The command `kubectl run` creates a new deployment. E.g.: `kubectl run kubernete
 
 Kubectl is the Kubernetes CLI, that uses the Kubernetes API in order to interact with the cluster. 
 
-Pods in an private, isolated network. Pods are visible from other pods and services within the same cluster, but not outside. 
+Pods are in an private, isolated network. Pods are visible from other pods and services within the same cluster, but not outside. A pod is an abstraction that represents a group of one or more containers and some shared resources for those containers, such as volumes, networking and container specific information (image version or ports).
 
 The command `kubectl proxy` creates a proxy that forwards communications into the cluster-wide private network.
 
@@ -72,41 +74,36 @@ curl http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/
 
 ### Apply dashboard
 
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
-kubectl proxy
-kubectl create serviceaccount cluster-admin-dashboard-sa
-kubectl create clusterrolebinding cluster-admin-dashboard-sa \\n  --clusterrole=cluster-admin \\n  --serviceaccount=default:cluster-admin-dashboard-sa
+`kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml`
+`kubectl proxy`
+`kubectl create serviceaccount cluster-admin-dashboard-sa`
+`kubectl create clusterrolebinding cluster-admin-dashboard-sa \\n  --clusterrole=cluster-admin \\n  --serviceaccount=default:cluster-admin-dashboard-sa`
 
 ### Get secret to connect to the dashboard
 
-kubectl get secret | grep cluster-admin-dashboard-sa
-kubectl describe secret cluster-admin-dashboard-sa-token-sblqz
+`kubectl get secret | grep cluster-admin-dashboard-sa`
+`kubectl describe secret cluster-admin-dashboard-sa-token-sblqz`
 
 ### Run a new image
 
-kubectl run nginx --image=nginx:1.10.0
+`kubectl run nginx --image=nginx:1.10.0`
 
 ### Get information
 
-kubectl version
-kubectl cluster-info
-kubectl get nodes
-kubectl get all
-kubectl get pods
-kubectl get deployments
-kubectl get services
-kubectl get replicasets
-kubectl describe pods nginx-68c5b54745-hxn8r
-kubectl logs nginx-68c5b54745-hxn8r -f
+`kubectl version`
+`kubectl cluster-info`
+`kubectl get [all|nodes|pods|deployments|services|replicasets]`
+`kubectl describe pods nginx-68c5b54745-hxn8r`
+`kubectl logs nginx-68c5b54745-hxn8r -f`
 
 ### Expose a deployment
 
-kubectl expose deployments nginx --port 80 --type LoadBalancer
+`kubectl expose deployments nginx --port 80 --type LoadBalancer`
 
 ### Forward ports
 
-kubectl port-forward nginx-68c5b54745-hxn8r 10080:80
+`kubectl port-forward nginx-68c5b54745-hxn8r 10080:80`
 
-### Connect to a container's console
+### Execute commands on a container in a pod
 
-kubectl exec nginx-68c5b54745-hxn8r --stdin --tty /bin/sh
+`kubectl exec nginx-68c5b54745-hxn8r --stdin --tty /bin/sh` Connect to a container's console
