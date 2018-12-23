@@ -1,33 +1,35 @@
 ---
 layout: post
-title:  "Microservices and Kubernetes"
+title:  "Kubernetes: beyond docker compose"
 date:   2018-09-10
-category: command-line
+category: cloud
 backgrounds:
     - https://blog.jdonado.com/assets/images/backgrounds/matrix.jpg
 thumb: https://blog.jdonado.com/assets/images/terminal.jpg
-tags: linux kubernetes docker microservices architecture
+tags: kubernetes docker docker-compose linux
 ---
 
-# Microservices
+# Beyond docker compose
 
-[Some link]({% link _posts/2017-05-28-vim-magic.markdown %})
+Right after I started using docker to containerize my applications, I used to define a `docker-compose.yml` together with them (sometimes in a separate repository) in order to define an example local deployment. With [docker-compose](https://docs.docker.com/compose/) you could:
 
-{% highlight bash %}
-{% endhighlight %}
+- Define which services and applications were necessary to run a specific solution and how they could interact with each other
+- Specify in which order they should start
+- Describe the network in which the services were going to be deployed
+- Setup the environment for everything to work in harmony
 
-## Key Issues
+After a while I got used to the simplicity and usefulnes of docker compose. However, deploying services with docker compose like this (that is: without [Swarm mode](https://docs.docker.com/engine/swarm/) had an important limitation: you could only deploy to a single machine.
 
-- 12 factor https://12factor.net/
-- Configuration Repository
-- Blue/Green deployments
-- Monitoring & Tracing
-- Architecture (auto)documentation
-- Authentication
-- Gateway
-  - Traefik
+If you need to define a more advanced deployment, e.g.:
 
-# Kubernetes
+- Deploy services on a cluster with various nodes
+- Define a scaling strategy
+- Coordinate updates with zero-downtime deployment
+
+
+
+
+Kubernetes is an open source container orchestrator created by Google.
 
 Resources
 
@@ -50,7 +52,7 @@ A deployment configuration instructs Kubernetes how to create and update instanc
 
 The command `kubectl run` creates a new deployment. E.g.: `kubectl run kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --port=8080`.
 
-Kubectl is the Kubernetes CLI, that uses the Kubernetes API in order to interact with the cluster. 
+Kubectl is the Kubernetes CLI, that uses the Kubernetes API in order to interact with the cluster.
 
 Pods are in an private, isolated network. Pods are visible from other pods and services within the same cluster, but not outside. A pod is an abstraction that represents a group of one or more containers and some shared resources for those containers, such as volumes, networking and container specific information (image version or ports).
 
