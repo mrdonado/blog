@@ -11,31 +11,40 @@ tags: kubernetes docker docker-compose linux
 
 # Beyond docker compose
 
-Right after I started using docker to containerize my applications, I used to define a `docker-compose.yml` together with them (sometimes in a separate repository) in order to define an example local deployment. With [docker-compose](https://docs.docker.com/compose/) you could:
+Right after I started using docker to containerize my applications, I used to define a `docker-compose.yml` file together with them (sometimes in a separate repository) in order to define an example local deployment. With [docker-compose](https://docs.docker.com/compose/) you could:
 
-- Define which services and applications were necessary to run a specific solution and how they could interact with each other
+- Define which services and applications were necessary to run a specific solution
+- Define how they could interact with each other
 - Specify in which order they should start
 - Describe the network in which the services were going to be deployed
 - Setup the environment for everything to work in harmony
 
-After a while I got used to the simplicity and usefulnes of docker compose. However, deploying services with docker compose like this (that is: without [Swarm mode](https://docs.docker.com/engine/swarm/) had an important limitation: you could only deploy to a single machine.
+After a while I got used to the simplicity and usefulness of docker compose. However, deploying services with docker compose like this (that is: without [Swarm mode](https://docs.docker.com/engine/swarm/) had an important limitation: **you could only deploy to a single machine**.
 
-If you need to define a more advanced deployment, e.g.:
+If you have more advanced deployment needs, e.g.:
 
-- Deploy services on a cluster with various nodes
-- Define a scaling strategy
+- Deployment of services on a cluster with various nodes
+- Use of a scaling strategy
 - Coordinate updates with zero-downtime deployment
 
+then you need a container orchestrator. There are a number of solutions for orchestration of containers in the cloud: Docker Swarm, Kubernetes, Apache Mesos, CloudFoundry's Diego...
 
+Depending on your needs, the right tool might vary. For me, Kubernetes seemed like a very good compromise between features and ease of use. Some of the reasons why I think it's a good choice are:
 
+- It's perfectly integrated with docker. If you're already using docker containers, then you're halfway there.
+- It is open source. That means (among other things) that you're not attached to a specific provider. There are currently a number of providers of Kubernetes as a service in the cloud and you're always free to deploy Kubernetes clusters yourself on whatever your cloud infrastructure is.
+- The [documentation](https://kubernetes.io/docs/home/?path=users&persona=app-developer&level=foundational) is very good and the [adoption rate](https://thenewstack.io/data-says-kubernetes-deployment-patterns/) is increasing a lot. If you have any problem, there's a good chance that you'll find help on [StackOverflow](https://stackoverflow.com/questions/tagged/kubernetes).
+- You can install minikube on your machine and test your complete solution even before it reaches the cloud. If something goes wrong, you can try to find out what's happening directly on your machine without having to wait for things to upload and deploy to the cloud.
+
+## Learn Kubernetes
+
+If you want to learn Kubernetes, the [tutorials](https://kubernetes.io/docs/tutorials/) section of the official Kubernetes website is a great starting point. I myself followed it and then I did a couple of the [online training](https://kubernetes.io/docs/tutorials/online-training/overview/) courses that they link to.
+
+What follows are the notes I took while learning about it.
+
+# Kubernetes
 
 Kubernetes is an open source container orchestrator created by Google.
-
-Resources
-
-- Tutorials https://kubernetes.io/docs/tutorials/
-
-## Overview
 
 Types of [resources in Kubernetes](https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/)
 
