@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "Kubernetes: beyond docker compose"
-date:   2018-09-10
+date:   2018-12-26
 category: cloud
 backgrounds:
-    - https://blog.jdonado.com/assets/images/backgrounds/matrix.jpg
-thumb: https://blog.jdonado.com/assets/images/terminal.jpg
+    - https://blog.jdonado.com/assets/images/backgrounds/google-bg.png
+thumb: https://blog.jdonado.com/assets/images/kubernetes-logo.png
 tags: kubernetes docker docker-compose linux
 ---
 
@@ -66,9 +66,11 @@ In order to deploy an application in Kubernetes, you can define a deployment con
 
 In case a node goes down, the KDC will start the required containers in the remaining working nodes (self-healing mechanism).
 
-The command `kubectl run` creates a new deployment. E.g.: `kubectl run kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --port=8080`.
-
 **Pods** are the smallest deployable units of computing that can be created and managed in Kubernetes. Pods are in an private, isolated network. They are visible from other pods and services within the same cluster, but not from outside. A pod is an abstraction that represents a group of one or more containers and some shared resources for those containers, such as volumes, networking and container specific information (image version or ports).
+
+- There's one IP per pod
+- Pods share namespaces
+- Pods may have one or more containers and volumes
 
 A **service** defines a logical set of pods and a policy to determine how to access them. It is defined by `yaml` or `json`. Services allow applications to receive traffic. You can define the following types of services (in the `type` field of the `yaml` file):
 
@@ -79,9 +81,16 @@ A **service** defines a logical set of pods and a policy to determine how to acc
 
 A service routes traffic across a set of Pods. They allow pods to die and replicate without impacting the application. Kubernetes Services handle discovery and routing. In order to match a set of pods, services use labels and selectors.
 
+In this image you can see a representation of the aforementioned elements: nodes, pods, services and how they relate to each other.
+
+![Architecture Diagram](https://blog.jdonado.com/assets/images/pods-nodes-services.png "Architecture Diagram")
+
 ## Kubectl quick reference
 
 ```sh
+# Note: each line is a specific example
+# Don't copy paste this on the terminal!!
+
 # Create a proxy that forwards communications into the cluster-wide
 # private network.
 kubectl proxy
@@ -97,7 +106,7 @@ curl http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/
 minikube version
 minikube start
 
-# Apply dashboard
+# Deploy a dashboard
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
 kubectl proxy
 kubectl create serviceaccount cluster-admin-dashboard-sa
@@ -107,8 +116,16 @@ kubectl create clusterrolebinding cluster-admin-dashboard-sa \\n  --clusterrole=
 kubectl get secret | grep cluster-admin-dashboard-sa
 kubectl describe secret cluster-admin-dashboard-sa-token-sblqz
 
-# Run a new image
-kubectl run nginx --image=nginx:1.10.0
+# Run a new image / create a new deployment
+kubectl run nginx --image=nginx:1.10.0 # deploy nginx
+kubectl run kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --port=8080
+
+# Apply whatever it is described in a file (deployment, service, secret...)
+kubectl apply -f your-file.yml
+
+# Delete
+kubectl delete -f your-file.yml
+kubectl delete service -l run=some-app # Remove services labeled with `run=some-app`
 
 # Get information
 kubectl version
@@ -125,9 +142,6 @@ kubectl port-forward nginx-68c5b54745-hxn8r 10080:80
 
 # Label
 kubectl label pod $POD_NAME app=v1 # Add the label `app=v1` to the pod `$POD_NAME`
-
-# Delete
-kubectl delete service -l run=some-app # Remove services labeled with `run=some-app`
 
 # Scale
 kubectl scale deployments/kubernetes-bootcamp --replicas=4
