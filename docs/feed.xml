@@ -1,8 +1,205 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2018-08-20T14:57:31+02:00</updated><id>https://blog.jdonado.com/</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">CMD Magic</title><link href="https://blog.jdonado.com/cmd-magic/" rel="alternate" type="text/html" title="CMD Magic" /><published>2018-07-06T00:00:00+02:00</published><updated>2018-07-06T00:00:00+02:00</updated><id>https://blog.jdonado.com/cmd-magic</id><content type="html" xml:base="https://blog.jdonado.com/cmd-magic/">&lt;h1 id=&quot;command-line-magic&quot;&gt;Command Line Magic&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<generator uri="http://jekyllrb.com" version="3.8.5">Jekyll</generator>
+<link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" />
+<link href="https://blog.jdonado.com/" rel="alternate" type="text/html" />
+<updated>2018-12-26T15:16:25+01:00</updated>
+<id>https://blog.jdonado.com/</id>
+<title>JDonado's README</title>
+<subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle>
+<author>
+<name>F. Javier R. Donado</name>
+<email>jdonado@jdonado.com</email>
+<uri>https://www.jdonado.com</uri>
+</author>
+<entry>
+<title>Kubernetes: beyond docker compose</title>
+<link href="https://blog.jdonado.com/kubernetes/" rel="alternate" type="text/html" title="Kubernetes: beyond docker compose" />
+<published>2018-12-26T00:00:00+01:00</published>
+<updated>2018-12-26T00:00:00+01:00</updated>
+<id>https://blog.jdonado.com/kubernetes</id>
+<content type="html" xml:base="https://blog.jdonado.com/kubernetes/">&lt;h1 id=&quot;beyond-docker-compose&quot;&gt;Beyond docker compose&lt;/h1&gt;
 
-&lt;p&gt;Last year I published &lt;a href=&quot;/vim-magic/&quot;&gt;Vim Magic&lt;/a&gt;, where I gathered all the commands that I found particularly useful when using the Vim editor. I’ve kept updating it ever since whenever I’ve found new useful tricks. It’s been so far helpful to me as a reference and hopefully to somebody else out there too. This post is the same but for the command line in Linux/Unix.&lt;/p&gt;
+&lt;p&gt;Right after I started using docker to containerize my applications, I used to include a &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file together with them (sometimes in a separate repository) in order to illustrate how a local deployment could work. With &lt;a href=&quot;https://docs.docker.com/compose/&quot;&gt;docker-compose&lt;/a&gt; you can:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Define which services and applications are necessary to run a specific solution&lt;/li&gt;
+  &lt;li&gt;Detail how they may interact with each other&lt;/li&gt;
+  &lt;li&gt;Specify in which order they should start&lt;/li&gt;
+  &lt;li&gt;Describe the network in which the containers are going to be deployed&lt;/li&gt;
+  &lt;li&gt;Setup the environment for everything to work in harmony&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After a while I got used to the simplicity and usefulness of docker compose. However, deploying services with docker compose like this (that is: without &lt;a href=&quot;https://docs.docker.com/engine/swarm/&quot;&gt;swarm mode&lt;/a&gt;) had an important limitation: &lt;strong&gt;you could only deploy to a single machine&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you have more advanced deployment needs, e.g.:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Deployment of services on a cluster with various nodes&lt;/li&gt;
+  &lt;li&gt;Need of a scaling strategy&lt;/li&gt;
+  &lt;li&gt;Coordinate updates with zero-downtime deployment&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;then you need a container orchestrator. There are a number of solutions for orchestration of containers in the cloud: Docker Swarm, Kubernetes, Apache Mesos, CloudFoundry’s Diego…&lt;/p&gt;
+
+&lt;p&gt;Depending on your needs, the right tool might vary. For me, Kubernetes seemed like a very good compromise between features and ease of use. Some of the reasons why I think it’s a good choice are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It’s perfectly integrated with docker. If you’re already using docker containers, then you’re halfway there&lt;/li&gt;
+  &lt;li&gt;It is open source. That means (among other things) that you’re not attached to a specific provider. There are currently a number of providers of Kubernetes as a service in the cloud and you’re always free to deploy Kubernetes clusters yourself on whichever your cloud infrastructure is&lt;/li&gt;
+  &lt;li&gt;The &lt;a href=&quot;https://kubernetes.io/docs/home/?path=users&amp;amp;persona=app-developer&amp;amp;level=foundational&quot;&gt;documentation&lt;/a&gt; is very good&lt;/li&gt;
+  &lt;li&gt;It’s currently &lt;a href=&quot;https://thenewstack.io/data-says-kubernetes-deployment-patterns/&quot;&gt;by far the most popular&lt;/a&gt; container orchestration technology. If you have any problem, there’s a good chance that you’ll find help on &lt;a href=&quot;https://stackoverflow.com/questions/tagged/kubernetes&quot;&gt;StackOverflow&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;You can install minikube on your machine and test your complete solution even before it reaches the cloud. If something goes wrong, you can try to find out what’s happening directly on your machine without having to wait for things to upload and deploy to the cloud&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For me this last point is a game changer as compared to other cloud technologies. The ability to try and run everything locally makes everything easier. Forget about small changes on a &lt;code class=&quot;highlighter-rouge&quot;&gt;yml&lt;/code&gt; file and trigger the CI pipelines to (pray and) see if a deployment works. Instead of that just make sure that your configuration is up and running locally on your minikube and chances are everything will work out just like that on the cloud.&lt;/p&gt;
+
+&lt;h2 id=&quot;learn-kubernetes&quot;&gt;Learn Kubernetes&lt;/h2&gt;
+
+&lt;p&gt;If you want to learn Kubernetes, the &lt;a href=&quot;https://kubernetes.io/docs/tutorials/&quot;&gt;tutorials&lt;/a&gt; section of the official Kubernetes website is a great starting point. I myself followed it and then I completed a couple of the &lt;a href=&quot;https://kubernetes.io/docs/tutorials/online-training/overview/&quot;&gt;online training&lt;/a&gt; courses that they link to.&lt;/p&gt;
+
+&lt;p&gt;What follows are the notes I took while learning about it.&lt;/p&gt;
+
+&lt;h1 id=&quot;kubernetes-a-quick-overview-for-developers&quot;&gt;Kubernetes: a quick overview for developers&lt;/h1&gt;
+
+&lt;p&gt;Kubernetes is an open source container orchestrator created by Google and now maintained by the &lt;a href=&quot;https://en.wikipedia.org/wiki/Linux_Foundation#Cloud_Native_Computing_Foundation&quot;&gt;Cloud Native Computing Foundation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Every Kubernetes infrastructure has the following components:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Master: it coordinates all activities in the cluster (scheduling, apps maintenance, scaling, updating…)&lt;/li&gt;
+  &lt;li&gt;Nodes: workers that run applications. They have:
+    &lt;ul&gt;
+      &lt;li&gt;A Kubelet: an agent responsible for communication between the node and the Kubernetes Master (communicating via the Kubernetes API). It manages the pods and the containers running on a machine&lt;/li&gt;
+      &lt;li&gt;A container runtime, such as docker or rkt, responsible for pulling container images, unpacking the container and running an application&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The minimum of nodes in a production infrastructure is 3.&lt;/p&gt;
+
+&lt;p&gt;You can run Kubernetes locally on your machine by installing &lt;strong&gt;minikube&lt;/strong&gt;. Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one node.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Kubectl&lt;/strong&gt; is the Kubernetes CLI, that uses the Kubernetes API in order to interact with the cluster. You can use it to connect to your minikube and handle your deployments locally, and you can also connect to your cloud provider and handle your deployments remotely. It is kind of an equivalent to the &lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt; command for docker.&lt;/p&gt;
+
+&lt;p&gt;In order to deploy an application in Kubernetes, you can define a deployment configuration in a &lt;code class=&quot;highlighter-rouge&quot;&gt;yml&lt;/code&gt; (preferred) or in a &lt;code class=&quot;highlighter-rouge&quot;&gt;json&lt;/code&gt; file. A deployment configuration instructs Kubernetes how to create and update instances of an application. The Kubernetes Deployment Controller (KDC) makes sure that the instances are up an running. NOTE: my next blog post will show a simple example of a microservices deployment in kubernetes. Here I will continue defining the basic concepts and commands for future quick reference.&lt;/p&gt;
+
+&lt;p&gt;In case a node goes down, the KDC will start the required containers in the remaining working nodes (self-healing mechanism).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Pods&lt;/strong&gt; are the smallest deployable units of computing that can be created and managed in Kubernetes. Pods are in an private, isolated network. They are visible from other pods and services within the same cluster, but not from outside. A pod is an abstraction that represents a group of one or more containers and some shared resources for those containers, such as volumes, networking and container specific information (image version or ports).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;There’s one IP per pod&lt;/li&gt;
+  &lt;li&gt;Pods share namespaces&lt;/li&gt;
+  &lt;li&gt;Pods may have one or more containers and volumes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A &lt;strong&gt;service&lt;/strong&gt; defines a logical set of pods and a policy to determine how to access them. It is defined by &lt;code class=&quot;highlighter-rouge&quot;&gt;yaml&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;json&lt;/code&gt;. Services allow applications to receive traffic. You can define the following types of services (in the &lt;code class=&quot;highlighter-rouge&quot;&gt;type&lt;/code&gt; field of the &lt;code class=&quot;highlighter-rouge&quot;&gt;yaml&lt;/code&gt; file):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;ClusterIP&lt;/strong&gt; (default): it makes the service only reachable within the cluster.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;NodePort&lt;/strong&gt;: it exposes the service on the same port of each selected node in the cluster using NAT, making thus the service accessible from outide the cluster via &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;NodeIP&amp;gt;:&amp;lt;NodePort&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;LoadBalancer&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ExternalName&lt;/strong&gt;: it exposes the service using an arbitrary name via &lt;code class=&quot;highlighter-rouge&quot;&gt;externalName&lt;/code&gt; by returning a CNAME record. &lt;code class=&quot;highlighter-rouge&quot;&gt;kube-dns&lt;/code&gt; v1.7 or higher is required.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A service routes traffic across a set of Pods. They allow pods to die and replicate without impacting the application. Kubernetes Services handle discovery and routing. In order to match a set of pods, services use labels and selectors.&lt;/p&gt;
+
+&lt;p&gt;In this image you can see a representation of the aforementioned elements: nodes, pods, services and how they relate to each other.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://blog.jdonado.com/assets/images/pods-nodes-services.png&quot; alt=&quot;Architecture Diagram&quot; title=&quot;Architecture Diagram&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;kubectl-quick-reference&quot;&gt;Kubectl quick reference&lt;/h2&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Note: each line is a specific example&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Don't copy paste this on the terminal!!&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Create a proxy that forwards communications into the cluster-wide&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# private network.&lt;/span&gt;
+kubectl proxy
+
+&lt;span class=&quot;c&quot;&gt;# Save the current pod name in an environment variable&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# and access it through the proxy&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;POD_NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;kubectl get pods &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; go-template &lt;span class=&quot;nt&quot;&gt;--template&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{{range .items}}{{.metadata.name}}{{&quot;\n&quot;}}{{end}}'&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Test the pod access via proxy&lt;/span&gt;
+curl http://localhost:8001/api/v1/namespaces/default/pods/&lt;span class=&quot;nv&quot;&gt;$POD_NAME&lt;/span&gt;/proxy/
+
+&lt;span class=&quot;c&quot;&gt;# Minikube&lt;/span&gt;
+minikube version
+minikube start
+
+&lt;span class=&quot;c&quot;&gt;# Deploy a dashboard&lt;/span&gt;
+kubectl apply &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+kubectl proxy
+kubectl create serviceaccount cluster-admin-dashboard-sa
+kubectl create clusterrolebinding cluster-admin-dashboard-sa &lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;n  &lt;span class=&quot;nt&quot;&gt;--clusterrole&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;cluster-admin &lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;n  &lt;span class=&quot;nt&quot;&gt;--serviceaccount&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;default:cluster-admin-dashboard-sa
+
+&lt;span class=&quot;c&quot;&gt;# Get secret to connect to the dashboard&lt;/span&gt;
+kubectl get secret | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;cluster-admin-dashboard-sa
+kubectl describe secret cluster-admin-dashboard-sa-token-sblqz
+
+&lt;span class=&quot;c&quot;&gt;# Run a new image / create a new deployment&lt;/span&gt;
+kubectl run nginx &lt;span class=&quot;nt&quot;&gt;--image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;nginx:1.10.0 &lt;span class=&quot;c&quot;&gt;# deploy nginx&lt;/span&gt;
+kubectl run kubernetes-bootcamp &lt;span class=&quot;nt&quot;&gt;--image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;gcr.io/google-samples/kubernetes-bootcamp:v1 &lt;span class=&quot;nt&quot;&gt;--port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8080
+
+&lt;span class=&quot;c&quot;&gt;# Apply whatever it is described in a file (deployment, service, secret...)&lt;/span&gt;
+kubectl apply &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; your-file.yml
+
+&lt;span class=&quot;c&quot;&gt;# Delete&lt;/span&gt;
+kubectl delete &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; your-file.yml
+kubectl delete service &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;some-app &lt;span class=&quot;c&quot;&gt;# Remove services labeled with `run=some-app`&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Get information&lt;/span&gt;
+kubectl version
+kubectl cluster-info
+kubectl get &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;all|nodes|pods|deployments|services|replicasets]
+kubectl describe pods nginx-68c5b54745-hxn8r
+kubectl logs nginx-68c5b54745-hxn8r &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Expose a deployment&lt;/span&gt;
+kubectl expose deployments nginx &lt;span class=&quot;nt&quot;&gt;--port&lt;/span&gt; 80 &lt;span class=&quot;nt&quot;&gt;--type&lt;/span&gt; LoadBalancer
+
+&lt;span class=&quot;c&quot;&gt;# Forward ports&lt;/span&gt;
+kubectl port-forward nginx-68c5b54745-hxn8r 10080:80
+
+&lt;span class=&quot;c&quot;&gt;# Label&lt;/span&gt;
+kubectl label pod &lt;span class=&quot;nv&quot;&gt;$POD_NAME&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;v1 &lt;span class=&quot;c&quot;&gt;# Add the label `app=v1` to the pod `$POD_NAME`&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Scale&lt;/span&gt;
+kubectl scale deployments/kubernetes-bootcamp &lt;span class=&quot;nt&quot;&gt;--replicas&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4
+
+&lt;span class=&quot;c&quot;&gt;# Update/Rollback and undo&lt;/span&gt;
+kubecel &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;image deployments/your-app&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;you/your-app:v2
+kubectl rollout status deployments/your-app
+kubectl rollout undo deployments/your-app
+
+&lt;span class=&quot;c&quot;&gt;# Execute commands on a container in a pod&lt;/span&gt;
+kubectl &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;nginx-68c5b54745-hxn8r &lt;span class=&quot;nt&quot;&gt;--stdin&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--tty&lt;/span&gt; /bin/sh
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</content>
+<category term="cloud" />
+<category term="kubernetes" />
+<category term="docker" />
+<category term="docker-compose" />
+<category term="linux" />
+<summary>Beyond docker compose</summary>
+</entry>
+<entry>
+<title>CMD Magic</title>
+<link href="https://blog.jdonado.com/cmd-magic/" rel="alternate" type="text/html" title="CMD Magic" />
+<published>2018-07-06T00:00:00+02:00</published>
+<updated>2018-07-06T00:00:00+02:00</updated>
+<id>https://blog.jdonado.com/cmd-magic</id>
+<content type="html" xml:base="https://blog.jdonado.com/cmd-magic/">&lt;h1 id=&quot;command-line-magic&quot;&gt;Command Line Magic&lt;/h1&gt;
+
+&lt;p&gt;Last year I published &lt;a href=&quot;{% link _posts/2017-05-28-vim-magic.markdown %}&quot;&gt;Vim Magic&lt;/a&gt;, where I gathered all the commands that I found particularly useful when using the Vim editor. I’ve kept updating it ever since whenever I’ve found new useful tricks. It’s been so far helpful to me as a reference and hopefully to somebody else out there too. This post is the same but for the command line in Linux/Unix.&lt;/p&gt;
 
 &lt;p&gt;This is not intended to be a tutorial with the basics for you to learn how to use the command line. Instead, it’s more like a reference for somebody who’s been using the terminal for some time now and wants to learn some new tricks or remember older ones.&lt;/p&gt;
+
+&lt;p&gt;{% highlight bash %}
+{% endhighlight %}&lt;/p&gt;
 
 &lt;h2 id=&quot;scripts&quot;&gt;Scripts&lt;/h2&gt;
 
@@ -69,7 +266,23 @@
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;service --status-all&lt;/code&gt; status of services&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;echo &quot;hello world&quot; | sed -e &quot;s/e/o/g&quot; | sed -e &quot;s/lo/a/g&quot; | sed -e &quot;s/world/mundo/g&quot;&lt;/code&gt; translate “hello world” to spanish&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps | awk '{print $8}'&lt;/code&gt; print only the names of the current containers&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="command-line" /><category term="linux" /><category term="command-line" /><category term="shell" /><category term="macosx" /><summary type="html">Command Line Magic</summary></entry><entry><title type="html">ReasonML</title><link href="https://blog.jdonado.com/reasonml/" rel="alternate" type="text/html" title="ReasonML" /><published>2018-05-26T00:00:00+02:00</published><updated>2018-05-26T00:00:00+02:00</updated><id>https://blog.jdonado.com/reasonml</id><content type="html" xml:base="https://blog.jdonado.com/reasonml/">&lt;h1 id=&quot;reasonml-programming-language&quot;&gt;ReasonML Programming Language&lt;/h1&gt;
+&lt;/ul&gt;
+
+</content>
+<category term="command-line" />
+<category term="linux" />
+<category term="command-line" />
+<category term="shell" />
+<category term="macosx" />
+<summary>Command Line Magic</summary>
+</entry>
+<entry>
+<title>ReasonML</title>
+<link href="https://blog.jdonado.com/reasonml/" rel="alternate" type="text/html" title="ReasonML" />
+<published>2018-05-26T00:00:00+02:00</published>
+<updated>2018-05-26T00:00:00+02:00</updated>
+<id>https://blog.jdonado.com/reasonml</id>
+<content type="html" xml:base="https://blog.jdonado.com/reasonml/">&lt;h1 id=&quot;reasonml-programming-language&quot;&gt;ReasonML Programming Language&lt;/h1&gt;
 
 &lt;h2 id=&quot;what-is-reasonml-where-does-it-come-from-what-can-i-do-with-it&quot;&gt;What is ReasonML? Where does it come from? What can I do with it?&lt;/h2&gt;
 
@@ -118,99 +331,119 @@
 
 &lt;h2 id=&quot;code-examples&quot;&gt;Code Examples&lt;/h2&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// this will bind 42 to the name `foo`&lt;/span&gt;
+&lt;p&gt;{% highlight javascript %}&lt;/p&gt;
 
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isMorning&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// This binds &quot;Good Morning&quot; to the name `greeting`&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isMorning&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Good Morning&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;p&gt;let foo = {
+  let a = 40;
+  let b = 1;
+  a + b + 1;
+}; // this will bind 42 to the name &lt;code class=&quot;highlighter-rouge&quot;&gt;foo&lt;/code&gt;&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// A switch expression&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;stranger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stranger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Teacher&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hey professor&quot;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Director&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello director&quot;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Richard&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Still here Ricky?&quot;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;anyOtherName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hey, &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;anyOtherName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;.&quot;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;unknown&quot;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;p&gt;let isMorning = true;
+// This binds “Good Morning” to the name &lt;code class=&quot;highlighter-rouge&quot;&gt;greeting&lt;/code&gt;
+let greeting = if (isMorning) {“Good Morning”} else {“Hello”};&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// A person type definition&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;mutable&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;mood&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// mood is the only mutable field in this type&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;p&gt;// A switch expression
+let greeting = stranger =&amp;gt;
+  switch (stranger) {
+    | Teacher =&amp;gt; “Hey professor”
+    | Director =&amp;gt; “Hello director”
+    | Student(“Richard”) =&amp;gt; “Still here Ricky?”
+    | Student(anyOtherName) =&amp;gt; “Hey, “ ++ anyOtherName ++ “.”
+    | _ =&amp;gt; “unknown”
+  };&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// A record of type person&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tim&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Tim&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;52&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;mood&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;happy&quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;p&gt;// A person type definition
+type person = {
+  name: string,
+  age: int,
+  mutable mood: string, // mood is the only mutable field in this type
+};&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// Destructuring a person type into variables timsAge and timsName&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timsAge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timsName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;// A record of type person
+let tim = {
+  name: “Tim”,
+  age: 52,
+  mood: “happy”
+};&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// Custom type answer (tagged union or variant)&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Yes&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;No&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Maybe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;// Destructuring a person type into variables timsAge and timsName
+let {age: timsAge, name: timsName} = tim;&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// Further assignments automatically infer the type&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isItRaining&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Maybe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// It infers type `answer`&lt;/span&gt;
+&lt;p&gt;// Custom type answer (tagged union or variant)
+type answer =
+  | Yes
+  | No
+  | Maybe;&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// You can define functions like this (in this case, types are optional, since they&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// can be inferred&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;// Further assignments automatically infer the type
+let isItRaining = Maybe; // It infers type &lt;code class=&quot;highlighter-rouge&quot;&gt;answer&lt;/code&gt;&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// A function with labelled and optional parameters&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Defaultname&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;middleName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;middleName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Some&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firstName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lastName&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;None&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firstName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lastName&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;p&gt;// You can define functions like this (in this case, types are optional, since they
+// can be inferred
+let add: (x: int, y: int) : int =&amp;gt; x + y;&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// Pipe operators example: find the largest element smaller than 4&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;|&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;compare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;|&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rev&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;|&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;p&gt;// A function with labelled and optional parameters
+let name = (~firstName=”Defaultname”, ~middleName=?, ~lastName, ()) =&amp;gt; {
+  switch (middleName) {
+  | Some(value) =&amp;gt; firstName ++ “ “ ++ value ++ “ “ ++ lastName
+  | None =&amp;gt; firstName ++ “ “ ++ lastName
+  };
+};&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// Recursive functions (without rec, the function cannot call itself)&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rec&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;countBack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;print_int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;countBack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;p&gt;// Pipe operators example: find the largest element smaller than 4
+[8, 3, 6, 1]
+  |&amp;gt; List.sort(compare)
+  |&amp;gt; List.rev
+  |&amp;gt; List.find(x =&amp;gt; x &amp;lt; 4);&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// There are tuples too (unlike lists, they can contain elements of different types)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;this is&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;tuple&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;of four elements&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;p&gt;// Recursive functions (without rec, the function cannot call itself)
+let rec countBack = x =&amp;gt; {
+  if (x &amp;gt; 1) {
+    print_int(x);
+    countBack(x - 1);
+  };
+};&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// And there are arrays. Unlike lists, they're mutable&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;p&gt;// There are tuples too (unlike lists, they can contain elements of different types)
+(“this is”, 1, “tuple”, “of four elements”)&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// A pattern matching example&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;b&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;c&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;b&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;print_endline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;a, b and something&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;print_endline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;something and &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;print_endline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;An Array&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;p&gt;// And there are arrays. Unlike lists, they’re mutable
+[|3, 4|]&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// Example Math module&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.1415&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;p&gt;// A pattern matching example
+switch ([|”a”, “b”, “c”|]) {
+| [|”a”, “b”, &lt;em&gt;|] =&amp;gt; print_endline(“a, b and something”)
+| [|&lt;/em&gt;, x, y|] =&amp;gt; print_endline(“something and “ ++ x ++ “ “ ++ y)
+| _ =&amp;gt; print_endline(“An Array”)
+};&lt;/p&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// Then access everything using dot notation&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Returns 3.1415&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="programming-language" /><category term="functional-programming" /><category term="programming-language" /><category term="javascript" /><category term="ocaml" /><category term="reasonml" /><summary type="html">ReasonML Programming Language</summary></entry><entry><title type="html">Lifescope Project</title><link href="https://blog.jdonado.com/lifescope-project/" rel="alternate" type="text/html" title="Lifescope Project" /><published>2017-09-27T00:00:00+02:00</published><updated>2017-09-27T00:00:00+02:00</updated><id>https://blog.jdonado.com/lifescope-project</id><content type="html" xml:base="https://blog.jdonado.com/lifescope-project/">&lt;h1 id=&quot;an-artificial-intelligence-software-looking-for-solutions-to-healthcare-problems&quot;&gt;An artificial intelligence software looking for solutions to healthcare problems&lt;/h1&gt;
+&lt;p&gt;// Example Math module
+module Math = {
+  let pi = 3.1415;
+  let add = (x, y) =&amp;gt; x + y;
+};&lt;/p&gt;
+
+&lt;p&gt;// Then access everything using dot notation
+Math.pi; // Returns 3.1415&lt;/p&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
+</content>
+<category term="programming-language" />
+<category term="functional-programming" />
+<category term="programming-language" />
+<category term="javascript" />
+<category term="ocaml" />
+<category term="reasonml" />
+<summary>ReasonML Programming Language</summary>
+</entry>
+<entry>
+<title>Lifescope Project</title>
+<link href="https://blog.jdonado.com/lifescope-project/" rel="alternate" type="text/html" title="Lifescope Project" />
+<published>2017-09-27T00:00:00+02:00</published>
+<updated>2017-09-27T00:00:00+02:00</updated>
+<id>https://blog.jdonado.com/lifescope-project</id>
+<content type="html" xml:base="https://blog.jdonado.com/lifescope-project/">&lt;h1 id=&quot;an-artificial-intelligence-software-looking-for-solutions-to-healthcare-problems&quot;&gt;An artificial intelligence software looking for solutions to healthcare problems&lt;/h1&gt;
 
 &lt;h2 id=&quot;some-history&quot;&gt;Some history&lt;/h2&gt;
 
@@ -260,7 +493,26 @@
 
 &lt;p&gt;Now it’s time to take advantage of the information saved in the Elasticsearch. The next step is to build a new backend service (most likely, &lt;a href=&quot;https://clojure.org/&quot;&gt;Clojure&lt;/a&gt; based) that provides the frontend with results of a &lt;strong&gt;Big Data&lt;/strong&gt; analysis. &lt;a href=&quot;https://d3js.org/&quot;&gt;D3js&lt;/a&gt; will for certain be a useful tool in order to plot that data on the frontend.&lt;/p&gt;
 
-&lt;p&gt;Do you have any questions or remarks? Feel free to ask us anything on the comments section.&lt;/p&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="projects" /><category term="python" /><category term="ai" /><category term="nlp" /><category term="nodejs" /><category term="docker" /><category term="architecture" /><category term="reactjs" /><category term="redux" /><summary type="html">An artificial intelligence software looking for solutions to healthcare problems</summary></entry><entry><title type="html">Useful npm commands</title><link href="https://blog.jdonado.com/useful-npm-commands/" rel="alternate" type="text/html" title="Useful npm commands" /><published>2017-06-18T00:00:00+02:00</published><updated>2017-06-18T00:00:00+02:00</updated><id>https://blog.jdonado.com/useful-npm-commands</id><content type="html" xml:base="https://blog.jdonado.com/useful-npm-commands/">&lt;h1 id=&quot;quick-reference-of-some-useful-commands&quot;&gt;Quick reference of some useful commands&lt;/h1&gt;
+&lt;p&gt;Do you have any questions or remarks? Feel free to ask us anything on the comments section.&lt;/p&gt;
+</content>
+<category term="projects" />
+<category term="python" />
+<category term="ai" />
+<category term="nlp" />
+<category term="nodejs" />
+<category term="docker" />
+<category term="architecture" />
+<category term="reactjs" />
+<category term="redux" />
+<summary>An artificial intelligence software looking for solutions to healthcare problems</summary>
+</entry>
+<entry>
+<title>Useful npm commands</title>
+<link href="https://blog.jdonado.com/useful-npm-commands/" rel="alternate" type="text/html" title="Useful npm commands" />
+<published>2017-06-18T00:00:00+02:00</published>
+<updated>2017-06-18T00:00:00+02:00</updated>
+<id>https://blog.jdonado.com/useful-npm-commands</id>
+<content type="html" xml:base="https://blog.jdonado.com/useful-npm-commands/">&lt;h1 id=&quot;quick-reference-of-some-useful-commands&quot;&gt;Quick reference of some useful commands&lt;/h1&gt;
 
 &lt;h2 id=&quot;avoid-conflicts&quot;&gt;Avoid conflicts&lt;/h2&gt;
 
@@ -319,7 +571,21 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm ls&lt;/code&gt; list the installed packages&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm dedupe&lt;/code&gt; reduce duplication&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="vim" /><category term="npm" /><category term="nodejs" /><summary type="html">Quick reference of some useful commands</summary></entry><entry><title type="html">Vim magic</title><link href="https://blog.jdonado.com/vim-magic/" rel="alternate" type="text/html" title="Vim magic" /><published>2017-05-28T00:00:00+02:00</published><updated>2017-05-28T00:00:00+02:00</updated><id>https://blog.jdonado.com/vim-magic</id><content type="html" xml:base="https://blog.jdonado.com/vim-magic/">&lt;h1 id=&quot;vim-magic&quot;&gt;Vim magic&lt;/h1&gt;
+&lt;/ul&gt;
+
+</content>
+<category term="vim" />
+<category term="npm" />
+<category term="nodejs" />
+<summary>Quick reference of some useful commands</summary>
+</entry>
+<entry>
+<title>Vim magic</title>
+<link href="https://blog.jdonado.com/vim-magic/" rel="alternate" type="text/html" title="Vim magic" />
+<published>2017-05-28T00:00:00+02:00</published>
+<updated>2017-05-28T00:00:00+02:00</updated>
+<id>https://blog.jdonado.com/vim-magic</id>
+<content type="html" xml:base="https://blog.jdonado.com/vim-magic/">&lt;h1 id=&quot;vim-magic&quot;&gt;Vim magic&lt;/h1&gt;
 
 &lt;p&gt;I’ve been using the &lt;a href=&quot;http://www.vim.org&quot;&gt;vim editor&lt;/a&gt; for a while now, and I really like it.
 But it’s true that the learning curve is very steep. There are so many options, that even
@@ -445,7 +711,19 @@ Leave without saving :)&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=5r6yzFEXajQ&amp;amp;t=310s&quot;&gt;Vim + tmux (youtube)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.vim.org/docs.php&quot;&gt;Vim documentation&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://medium.freecodecamp.org/learn-linux-vim-basic-features-19134461ab85&quot;&gt;Why I love Vim: It’s the lesser known features…&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="vim" /><category term="vim" /><summary type="html">Vim magic</summary></entry><entry><title type="html">Restore clover using Windows</title><link href="https://blog.jdonado.com/restore-clover/" rel="alternate" type="text/html" title="Restore clover using Windows" /><published>2017-05-26T00:00:00+02:00</published><updated>2017-05-26T00:00:00+02:00</updated><id>https://blog.jdonado.com/restore-clover</id><content type="html" xml:base="https://blog.jdonado.com/restore-clover/">&lt;h1 id=&quot;restore-your-configplist&quot;&gt;Restore your config.plist&lt;/h1&gt;
+&lt;/ul&gt;
+</content>
+<category term="vim" />
+<category term="vim" />
+<summary>Vim magic</summary>
+</entry>
+<entry>
+<title>Restore clover using Windows</title>
+<link href="https://blog.jdonado.com/restore-clover/" rel="alternate" type="text/html" title="Restore clover using Windows" />
+<published>2017-05-26T00:00:00+02:00</published>
+<updated>2017-05-26T00:00:00+02:00</updated>
+<id>https://blog.jdonado.com/restore-clover</id>
+<content type="html" xml:base="https://blog.jdonado.com/restore-clover/">&lt;h1 id=&quot;restore-your-configplist&quot;&gt;Restore your config.plist&lt;/h1&gt;
 
 &lt;p&gt;Clover is a boot manager that allows you to select the OS you want to boot with. It is used mostly by Hackintosh users, that is, people that install MacOSX (along with other OSs, like Linux and Windows) on a non-Apple machine.&lt;/p&gt;
 
@@ -476,7 +754,21 @@ Leave without saving :)&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-v&lt;/code&gt; verbose mode&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;You can find more information about Hackintosh and Clover on &lt;a href=&quot;https://www.tonymacx86.com/&quot;&gt;tonymac86&lt;/a&gt;.&lt;/p&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="clover" /><category term="hackintosh" /><category term="clover" /><category term="windows" /><summary type="html">Restore your config.plist</summary></entry><entry><title type="html">About Functional Programming</title><link href="https://blog.jdonado.com/about-fp/" rel="alternate" type="text/html" title="About Functional Programming" /><published>2017-03-05T00:00:00+01:00</published><updated>2017-03-05T00:00:00+01:00</updated><id>https://blog.jdonado.com/about-fp</id><content type="html" xml:base="https://blog.jdonado.com/about-fp/">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;You can find more information about Hackintosh and Clover on &lt;a href=&quot;https://www.tonymacx86.com/&quot;&gt;tonymac86&lt;/a&gt;.&lt;/p&gt;
+</content>
+<category term="clover" />
+<category term="hackintosh" />
+<category term="clover" />
+<category term="windows" />
+<summary>Restore your config.plist</summary>
+</entry>
+<entry>
+<title>About Functional Programming</title>
+<link href="https://blog.jdonado.com/about-fp/" rel="alternate" type="text/html" title="About Functional Programming" />
+<published>2017-03-05T00:00:00+01:00</published>
+<updated>2017-03-05T00:00:00+01:00</updated>
+<id>https://blog.jdonado.com/about-fp</id>
+<content type="html" xml:base="https://blog.jdonado.com/about-fp/">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
 
 &lt;p&gt;Recently, I’ve been doing some research on the topic of functional programming. I think it’s a good time to get together some of the resources I’ve found so far, and remark the ideas that motivated me to learn more about it.&lt;/p&gt;
 
@@ -529,7 +821,20 @@ Leave without saving :)&lt;/li&gt;
   &lt;li&gt;Functions can be seen as data. You can model (almost) any function as a dictionary table where a lookup is performed.&lt;/li&gt;
   &lt;li&gt;Short story about the two separated camps created when computing started: the imperative one (tradition that led to languages like Fortran, C, Pascal, Java, etc.), where Math theory was put aside and performance was king, and the functional one (this one led to languages like Algol, Lisp, Smalltalk or Haskell), where they started out with Math theory (lambda calculus) and went from there down to the machine, sometimes at the expense of performance.&lt;/li&gt;
   &lt;li&gt;Build complexity out of simplicity by composing functions, not by adding ad-hoc features.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="functional-programming" /><category term="functional-programming" /><category term="javascript" /><summary type="html">Introduction</summary></entry><entry><title type="html">Unit Testing in Angular 2: Common Exceptions</title><link href="https://blog.jdonado.com/unit-testing-in-angular-2/" rel="alternate" type="text/html" title="Unit Testing in Angular 2: Common Exceptions" /><published>2017-01-21T00:00:00+01:00</published><updated>2017-01-21T00:00:00+01:00</updated><id>https://blog.jdonado.com/unit-testing-in-angular-2</id><content type="html" xml:base="https://blog.jdonado.com/unit-testing-in-angular-2/">&lt;h1 id=&quot;unit-testing-in-angular-2-common-exceptions&quot;&gt;Unit Testing in Angular 2: Common Exceptions&lt;/h1&gt;
+&lt;/ul&gt;
+</content>
+<category term="functional-programming" />
+<category term="functional-programming" />
+<category term="javascript" />
+<summary>Introduction</summary>
+</entry>
+<entry>
+<title>Unit Testing in Angular 2: Common Exceptions</title>
+<link href="https://blog.jdonado.com/unit-testing-in-angular-2/" rel="alternate" type="text/html" title="Unit Testing in Angular 2: Common Exceptions" />
+<published>2017-01-21T00:00:00+01:00</published>
+<updated>2017-01-21T00:00:00+01:00</updated>
+<id>https://blog.jdonado.com/unit-testing-in-angular-2</id>
+<content type="html" xml:base="https://blog.jdonado.com/unit-testing-in-angular-2/">&lt;h1 id=&quot;unit-testing-in-angular-2-common-exceptions&quot;&gt;Unit Testing in Angular 2: Common Exceptions&lt;/h1&gt;
 
 &lt;p&gt;I’ve been working on an Angular 2 project (&lt;a href=&quot;http://angularjs.blogspot.de/2016/12/ok-let-me-explain-its-going-to-be.html?utm_content=bufferec238&amp;amp;utm_medium=social&amp;amp;utm_source=facebook.com&amp;amp;utm_campaign=buffer&quot;&gt;or Angular 3, or 4, or whatever…&lt;/a&gt;) during the last couple of months, and I’m still learning how to unit test a project based in this new framework.&lt;/p&gt;
 
@@ -543,10 +848,14 @@ Leave without saving :)&lt;/li&gt;
   &lt;li&gt;Import &lt;code class=&quot;highlighter-rouge&quot;&gt;CUSTOM_ELEMENTS_SCHEMA&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;@angular/core&lt;/code&gt; and add it to the &lt;code class=&quot;highlighter-rouge&quot;&gt;schemas&lt;/code&gt; array of your &lt;code class=&quot;highlighter-rouge&quot;&gt;TestBed&lt;/code&gt;:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;TestBed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;configureTestingModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;schemas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CUSTOM_ELEMENTS_SCHEMA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;{% highlight javascript %}&lt;/p&gt;
+
+&lt;p&gt;TestBed.configureTestingModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  …
+});&lt;/p&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
 
 &lt;p&gt;This way it will just be ignored, and you can test that custom component in some other test (best practice: keep your unit tests simple and test just one thing at a time).&lt;/p&gt;
 
@@ -562,16 +871,20 @@ Leave without saving :)&lt;/li&gt;
 
 &lt;p&gt;Solution: import &lt;code class=&quot;highlighter-rouge&quot;&gt;YourService&lt;/code&gt; and include it into the &lt;code class=&quot;highlighter-rouge&quot;&gt;providers&lt;/code&gt; of the TestBed. At best you should include a mocked version, since you probably want to test that service in another specific test.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;serviceMock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;someKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'someValue'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;TestBed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;configureTestingModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;providers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;provide&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;YourService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;useValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;serviceMock&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;{% highlight javascript %}&lt;/p&gt;
+
+&lt;p&gt;const serviceMock = { someKey: ‘someValue’};
+TestBed.configureTestingModule({
+  providers: [
+    {
+      provide: YourService,
+      useValue: serviceMock
+    }
+  ]
+  …
+});&lt;/p&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
 
 &lt;h2 id=&quot;problem-no-provider-for-http&quot;&gt;Problem: No provider for Http!&lt;/h2&gt;
 
@@ -586,178 +899,209 @@ Leave without saving :)&lt;/li&gt;
 
 &lt;p&gt;1.- Add the following imports to your spec:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;BaseRequestOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;Http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;Response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;ResponseOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;RequestMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;XHRBackend&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/http'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;{% highlight javascript %}&lt;/p&gt;
 
-&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;MockBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;MockConnection&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/http/testing'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;import {
+  BaseRequestOptions,
+  Http,
+  Response,
+  ResponseOptions,
+  RequestMethod,
+  XHRBackend
+} from ‘@angular/http’;&lt;/p&gt;
+
+&lt;p&gt;import {
+  MockBackend,
+  MockConnection
+} from ‘@angular/http/testing’;&lt;/p&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
 
 &lt;p&gt;2.- Declare a MockBackend type variable in your describe block:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;backend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MockBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;{% highlight javascript %}
+  let backend: MockBackend;
+{% endhighlight %}&lt;/p&gt;
 
 &lt;p&gt;3.- Add the following lines to the providers of your &lt;code class=&quot;highlighter-rouge&quot;&gt;TestBed&lt;/code&gt;:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;providers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;MockBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;BaseRequestOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;provide&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;useFactory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;backendInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MockBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;defaultOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BaseRequestOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;backendInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;defaultOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;deps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MockBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BaseRequestOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;{% highlight javascript %}
+providers: [
+  MockBackend,
+  BaseRequestOptions,
+  {
+    provide: Http,
+    useFactory: (backendInstance: MockBackend, defaultOptions: BaseRequestOptions) =&amp;gt; {
+      return new Http(backendInstance, defaultOptions);
+    },
+    deps: [MockBackend, BaseRequestOptions]
+  }
+],
+{% endhighlight %}&lt;/p&gt;
 
 &lt;p&gt;4.- Inject a MockBackend before each test:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;beforeEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;inject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MockBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_mockBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;backend&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_mockBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;{% highlight javascript %}
+beforeEach(inject([MockBackend],
+  (_mockBackend) =&amp;gt; {
+    backend = _mockBackend;
+  }));
+{% endhighlight %}&lt;/p&gt;
 
 &lt;p&gt;5.- Now you’re ready to test your service with a mocked backend by simply subscribing to it. Here you have an example:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'should post some key with some value'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;backend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;connections&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;subscribe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MockConnection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;RequestMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;responseBody&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getBody&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;responseBody&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;someKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'someValue'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// Mock a response with an empty object&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mockRespond&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ResponseOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({})));&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;yourService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;postSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;{% highlight javascript %}
+it(‘should post some key with some value’, (done) =&amp;gt; {
+  backend.connections.subscribe((connection: MockConnection) =&amp;gt; {
+    expect(connection.request.method).toEqual(RequestMethod.Post);
+    const responseBody = JSON.parse(connection.request.getBody());
+    expect(responseBody.someKey).toEqual(‘someValue’);
+    // Mock a response with an empty object
+    connection.mockRespond(new Response(new ResponseOptions({})));
+    done();
+  });
+  yourService.postSomething();
+});
+{% endhighlight %}&lt;/p&gt;
 
 &lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
 
 &lt;p&gt;Here’s a working example for an &lt;code class=&quot;highlighter-rouge&quot;&gt;AnalysisFormComponent&lt;/code&gt; unit test, that mocks a &lt;code class=&quot;highlighter-rouge&quot;&gt;LogService&lt;/code&gt; and performs an HTTP POST request.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;LogService&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'../../../services/log.service'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ComponentFixture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;inject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TestBed&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/core/testing'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AnalysisFormComponent&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./analysis-form.component'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;FormsModule&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/forms'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;{% highlight javascript %}&lt;/p&gt;
 
-&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;BaseRequestOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;Http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;Response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;ResponseOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;RequestMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;XHRBackend&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/http'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;import { LogService } from ‘../../../services/log.service’;
+import { async, ComponentFixture, inject, TestBed } from ‘@angular/core/testing’;
+import { AnalysisFormComponent } from ‘./analysis-form.component’;
+import { FormsModule } from ‘@angular/forms’;&lt;/p&gt;
 
-&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;MockBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;MockConnection&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/http/testing'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;import {
+  BaseRequestOptions,
+  Http,
+  Response,
+  ResponseOptions,
+  RequestMethod,
+  XHRBackend
+} from ‘@angular/http’;&lt;/p&gt;
 
-&lt;span class=&quot;nx&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'AnalysisFormComponent'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AnalysisFormComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fixture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ComponentFixture&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AnalysisFormComponent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;backend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MockBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;import {
+  MockBackend,
+  MockConnection
+} from ‘@angular/http/testing’;&lt;/p&gt;
 
-  &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;logServiceSpy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;jasmine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createSpyObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'logService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'sendMessage'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;p&gt;describe(‘AnalysisFormComponent’, () =&amp;gt; {
+  let component: AnalysisFormComponent;
+  let fixture: ComponentFixture&lt;AnalysisFormComponent&gt;;
+  let backend: MockBackend;&lt;/AnalysisFormComponent&gt;&lt;/p&gt;
 
-  &lt;span class=&quot;nx&quot;&gt;beforeEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;TestBed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;configureTestingModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;declarations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AnalysisFormComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;imports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FormsModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;providers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;MockBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;BaseRequestOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;na&quot;&gt;provide&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;LogService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;na&quot;&gt;useValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;logServiceSpy&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;na&quot;&gt;provide&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;na&quot;&gt;useFactory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;backendInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MockBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;defaultOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BaseRequestOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;backendInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;defaultOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-          &lt;span class=&quot;na&quot;&gt;deps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MockBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BaseRequestOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;compileComponents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}));&lt;/span&gt;
+&lt;p&gt;const logServiceSpy = jasmine.createSpyObj(‘logService’, [‘sendMessage’]);&lt;/p&gt;
 
-  &lt;span class=&quot;nx&quot;&gt;beforeEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;fixture&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TestBed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AnalysisFormComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fixture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;componentInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;fixture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;detectChanges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;p&gt;beforeEach(async(() =&amp;gt; {
+    TestBed.configureTestingModule({
+      declarations: [AnalysisFormComponent],
+      imports: [FormsModule],
+      providers: [
+        MockBackend,
+        BaseRequestOptions,
+        {
+          provide: LogService,
+          useValue: logServiceSpy
+        },
+        {
+          provide: Http,
+          useFactory: (backendInstance: MockBackend, defaultOptions: BaseRequestOptions) =&amp;gt; {
+            return new Http(backendInstance, defaultOptions);
+          },
+          deps: [MockBackend, BaseRequestOptions]
+        }
+      ],
+    })
+      .compileComponents();
+  }));&lt;/p&gt;
 
-  &lt;span class=&quot;nx&quot;&gt;beforeEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;inject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MockBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_mockBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;backend&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_mockBackend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}));&lt;/span&gt;
+&lt;p&gt;beforeEach(() =&amp;gt; {
+    fixture = TestBed.createComponent(AnalysisFormComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });&lt;/p&gt;
 
-  &lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'should exist'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toBeTruthy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;p&gt;beforeEach(inject([MockBackend],
+    (_mockBackend) =&amp;gt; {
+      backend = _mockBackend;
+    }));&lt;/p&gt;
 
-  &lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'should clear the form after closing'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'someMessage'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'someUserName'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userDescription&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'someDescription'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'someMessage'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'someUserName'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userDescription&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'someDescription'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;closeForm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userDescription&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;p&gt;it(‘should exist’, () =&amp;gt; {
+    expect(component).toBeTruthy();
+  });&lt;/p&gt;
 
-  &lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'should send a POST request to the server when creating a new job for the analysis engine'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;backend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;connections&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;subscribe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MockConnection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;RequestMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;responseBody&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getBody&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;responseBody&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'web'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;responseBody&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'someUserName'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;responseBody&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user_description&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'someDescription'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;responseBody&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'someMessage'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mockRespond&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ResponseOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({})));&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'someMessage'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'someUserName'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userDescription&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'someDescription'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sendNewJob&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;p&gt;it(‘should clear the form after closing’, () =&amp;gt; {
+    component.message = ‘someMessage’;
+    component.userName = ‘someUserName’;
+    component.userDescription = ‘someDescription’;
+    expect(component.message).toEqual(‘someMessage’);
+    expect(component.userName).toEqual(‘someUserName’);
+    expect(component.userDescription).toEqual(‘someDescription’);
+    component.closeForm();
+    expect(component.message).toEqual(‘’);
+    expect(component.userName).toEqual(‘’);
+    expect(component.userDescription).toEqual(‘’);
+  });&lt;/p&gt;
 
-  &lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'should log an error message when the analysis couldn\'t be POSTed'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;errorMessage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'An error occurred!!!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;backend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;connections&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;subscribe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MockConnection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;RequestMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;responseBody&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getBody&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mockError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;errorMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'someMessage'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'someUserName'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userDescription&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'someDescription'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sendNewJob&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;errorMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;logServiceSpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sendMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toHaveBeenCalledWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jasmine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringMatching&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'a problem'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;p&gt;it(‘should send a POST request to the server when creating a new job for the analysis engine’, (done) =&amp;gt; {
+    backend.connections.subscribe((connection: MockConnection) =&amp;gt; {
+      expect(connection.request.method).toEqual(RequestMethod.Post);
+      const responseBody = JSON.parse(connection.request.getBody());
+      expect(responseBody.source).toEqual(‘web’);
+      expect(responseBody.user_name).toEqual(‘someUserName’);
+      expect(responseBody.user_description).toEqual(‘someDescription’);
+      expect(responseBody.message).toEqual(‘someMessage’);
+      connection.mockRespond(new Response(new ResponseOptions({})));
+      done();
+    });
+    component.message = ‘someMessage’;
+    component.userName = ‘someUserName’;
+    component.userDescription = ‘someDescription’; component.sendNewJob();
+  });&lt;/p&gt;
 
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="coding" /><category term="angular" /><category term="angular2" /><category term="unit" /><category term="testing" /><summary type="html">Unit Testing in Angular 2: Common Exceptions</summary></entry><entry><title type="html">Inheritance in AngularJS, again</title><link href="https://blog.jdonado.com/inheritance-in-angularjs-again/" rel="alternate" type="text/html" title="Inheritance in AngularJS, again" /><published>2016-10-23T00:00:00+02:00</published><updated>2016-10-23T00:00:00+02:00</updated><id>https://blog.jdonado.com/inheritance-in-angularjs-again</id><content type="html" xml:base="https://blog.jdonado.com/inheritance-in-angularjs-again/">&lt;h3 id=&quot;rethinking-about-inheritance-in-angularjs-15&quot;&gt;Rethinking about inheritance in AngularJS 1.5&lt;/h3&gt;
+&lt;p&gt;it(‘should log an error message when the analysis couldn't be POSTed’, (done) =&amp;gt; {
+    const errorMessage = ‘An error occurred!!!’;
+    backend.connections.subscribe((connection: MockConnection) =&amp;gt; {
+      expect(connection.request.method).toEqual(RequestMethod.Post);
+      const responseBody = JSON.parse(connection.request.getBody());
+      connection.mockError(new Error(errorMessage));
+    });
+    component.message = ‘someMessage’;
+    component.userName = ‘someUserName’;
+    component.userDescription = ‘someDescription’;
+    try {
+      component.sendNewJob();
+    } catch (err) {
+      expect(err.message).toEqual(errorMessage);
+      expect(logServiceSpy.sendMessage).toHaveBeenCalledWith(jasmine.stringMatching(‘a problem’));
+      done();
+    }
+  });&lt;/p&gt;
 
-&lt;p&gt;In &lt;a href=&quot;/inheritance-and-observer-pattern-in-angular-js/&quot;&gt;a previous post&lt;/a&gt; I showed an example about how could inheritance be implemented in an AngularJS project, using Javascript (ECMAScript 5).&lt;/p&gt;
+&lt;p&gt;});&lt;/p&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
+</content>
+<category term="coding" />
+<category term="angular" />
+<category term="angular2" />
+<category term="unit" />
+<category term="testing" />
+<summary>Unit Testing in Angular 2: Common Exceptions</summary>
+</entry>
+<entry>
+<title>Inheritance in AngularJS, again</title>
+<link href="https://blog.jdonado.com/inheritance-in-angularjs-again/" rel="alternate" type="text/html" title="Inheritance in AngularJS, again" />
+<published>2016-10-23T00:00:00+02:00</published>
+<updated>2016-10-23T00:00:00+02:00</updated>
+<id>https://blog.jdonado.com/inheritance-in-angularjs-again</id>
+<content type="html" xml:base="https://blog.jdonado.com/inheritance-in-angularjs-again/">&lt;h3 id=&quot;rethinking-about-inheritance-in-angularjs-15&quot;&gt;Rethinking about inheritance in AngularJS 1.5&lt;/h3&gt;
+
+&lt;p&gt;In &lt;a href=&quot;{% link _posts/2016-08-06-inheritance-and-observer-pattern-in-angular-js.markdown %}&quot;&gt;a previous post&lt;/a&gt; I showed an example about how could inheritance be implemented in an AngularJS project, using Javascript (ECMAScript 5).&lt;/p&gt;
 
 &lt;p&gt;In that example I used it to implement the &lt;a href=&quot;https://en.wikipedia.org/wiki/Observer_pattern&quot;&gt;observer pattern&lt;/a&gt; in different services without having to define the same functions again and again.&lt;/p&gt;
 
@@ -775,78 +1119,79 @@ Leave without saving :)&lt;/li&gt;
 
 &lt;p&gt;Here I come with an alternative solution that worked for me with AngularJS services. The idea is a service with a toolset of constructors, implementing the code of the objects we may want to use again and again. Something like a &lt;a href=&quot;https://en.wikipedia.org/wiki/Factory_method_pattern&quot;&gt;factory&lt;/a&gt;.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;s1&quot;&gt;'use strict'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'exampleApp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'factoryService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// Observer is going to be our constructor&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;Observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;observer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;
-          &lt;span class=&quot;nx&quot;&gt;observerCallbacks&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+&lt;p&gt;{% highlight javascript %}&lt;/p&gt;
 
-        &lt;span class=&quot;nx&quot;&gt;observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;registerObserverCallback&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;function&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-          &lt;span class=&quot;nx&quot;&gt;observerCallbacks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;p&gt;‘use strict’;
+angular.module(‘exampleApp’, [])
+  .service(‘factoryService’, [function () {
+    return {
+      // Observer is going to be our constructor
+      Observer: function () {
+        var observer = {},
+          observerCallbacks = [];&lt;/p&gt;
 
-        &lt;span class=&quot;nx&quot;&gt;observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;unregisterObserverCallback&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;found&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-          &lt;span class=&quot;nx&quot;&gt;observerCallbacks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-              &lt;span class=&quot;nx&quot;&gt;found&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-          &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;found&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;observerCallbacks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;found&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    observer.registerObserverCallback = function (callback) {
+      if (typeof callback !== &quot;function&quot;) {
+        return;
+      }
+      observerCallbacks.push(callback);
+    };
 
-        &lt;span class=&quot;nx&quot;&gt;observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;notifyObservers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;oberverCallbacks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+    observer.unregisterObserverCallback = function (callback) {
+      var found = -1;
+      observerCallbacks.forEach(function (element, idx) {
+        if ((element + '') === (callback + '')) {
+          found = idx;
+        }
+      });
+      if (found !== -1) {
+        this.observerCallbacks.splice(found, 1);
+      }
+    };
 
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// end: Observer constructor&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}]);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    observer.notifyObservers = function () {
+      angular.forEach(this.oberverCallbacks, function (callback) {
+        callback();
+      });
+    };
+
+    return observer;
+  } // end: Observer constructor
+};   }]);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
 
 &lt;p&gt;Depending on how many constructors you want to define, you can have different factory services.&lt;/p&gt;
 
 &lt;p&gt;Now, if you want to create a new service that implements the functions defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;Observer&lt;/code&gt;, you can do something like this:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'exampleApp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'NewService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'factoryService'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;factoryService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// New object using the constructor defined in the factory&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;observable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;factoryService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;observable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;observable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;otherStuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'service'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'specific'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'things'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}]);&lt;/span&gt;   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;{% highlight javascript %}&lt;/p&gt;
+
+&lt;p&gt;angular.module(‘exampleApp’, [])
+  .service(‘NewService’, [‘factoryService’, function (factoryService) {
+    // New object using the constructor defined in the factory
+    var observable = new factoryService.Observer();
+    return {
+      observable: observable,
+      otherStuff: [‘service’, ‘specific’, ‘things’]
+    };
+  }]);&lt;/p&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
 
 &lt;p&gt;This way, you will have a property in the &lt;code class=&quot;highlighter-rouge&quot;&gt;NewService&lt;/code&gt; that’s called &lt;code class=&quot;highlighter-rouge&quot;&gt;observable&lt;/code&gt;, on which you can call the functions of an &lt;code class=&quot;highlighter-rouge&quot;&gt;Observer&lt;/code&gt; object that only exists in &lt;code class=&quot;highlighter-rouge&quot;&gt;NewService&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;You have not repeated the code of the functions defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;Observable&lt;/code&gt; and the code is easier to understand and maintain.&lt;/p&gt;
 
-&lt;p&gt;What do you think about this approach? Would you prefer &lt;a href=&quot;/inheritance-and-observer-pattern-in-angular-js/&quot;&gt;the other one&lt;/a&gt;? Do you see any potential problems when doing something like this?&lt;/p&gt;
+&lt;p&gt;What do you think about this approach? Would you prefer &lt;a href=&quot;{% link _posts/2016-08-06-inheritance-and-observer-pattern-in-angular-js.markdown %}&quot;&gt;the other one&lt;/a&gt;? Do you see any potential problems when doing something like this?&lt;/p&gt;
 
-&lt;p&gt;Let me know!&lt;/p&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="coding" /><category term="angularjs" /><category term="inheritance" /><category term="ecmascript5" /><summary type="html">Rethinking about inheritance in AngularJS 1.5</summary></entry><entry><title type="html">ng-show and ng-animate</title><link href="https://blog.jdonado.com/ng-show-and-ng-animate/" rel="alternate" type="text/html" title="ng-show and ng-animate" /><published>2016-08-08T00:00:00+02:00</published><updated>2016-08-08T00:00:00+02:00</updated><id>https://blog.jdonado.com/ng-show-and-ng-animate</id><content type="html" xml:base="https://blog.jdonado.com/ng-show-and-ng-animate/">&lt;h3 id=&quot;if-ng-show-happens-to-be-too-slow-without-an-obvious-reason&quot;&gt;If ng-show happens to be too slow without an obvious reason&lt;/h3&gt;
-
-&lt;p&gt;It happened to me tonight that ng-show was taking too long to refresh. I’ve read about &lt;a href=&quot;http://stackoverflow.com/questions/19177732/what-is-the-difference-between-ng-if-and-ng-show-ng-hide&quot;&gt;the differences between ng-if and ng-show&lt;/a&gt; and how sometimes ng-show can decrease performance. But in this case it was a pretty straightforward example, and it shouldn’t.&lt;/p&gt;
-
-&lt;p&gt;In the end it turned out to be the combination of ng-show and ng-animate. I wasn’t using any animation, but there was a css transition running anyway, and making things look slower than they were.&lt;/p&gt;
-
-&lt;p&gt;If any of this ever happens to you, and you don’t want to remove ng-animate from your project, simply add the .no-animate class to the element where ng-show or ng-hide is used, and update your css with the following lines.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.ng-animate.no-animate&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0s&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;-webkit-transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0s&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;animation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0s&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;-webkit-animation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0s&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;As simple as that.&lt;/p&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="coding" /><category term="angularjs" /><summary type="html">If ng-show happens to be too slow without an obvious reason</summary></entry></feed>
+&lt;p&gt;Let me know!&lt;/p&gt;
+</content>
+<category term="coding" />
+<category term="angularjs" />
+<category term="inheritance" />
+<category term="ecmascript5" />
+<summary>Rethinking about inheritance in AngularJS 1.5</summary>
+</entry>
+</feed>
