@@ -73,5 +73,11 @@ With `xargs` you can avoid loops (it passes the stdout as input to the specified
 - `echo "hello world" | sed -e "s/e/o/g" | sed -e "s/lo/a/g" | sed -e "s/world/mundo/g"` translate "hello world" to spanish
 - `docker ps | awk '{print $8}'` print only the names of the current containers
 
+## Remote SSH session without a password
+
+- `ssh-keygen -t rsa -b 2048` # Generate an rsa key pair
+- `ssh-copy-id youruser@yourserver` # Authorize your key in the remote server
+- `ssh youruser@yourserver` # Login without entering a password
+
 
 
