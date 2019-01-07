@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2019-01-07T11:32:28+01:00</updated><id>https://blog.jdonado.com/</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">Kubernetes: beyond docker compose</title><link href="https://blog.jdonado.com/kubernetes/" rel="alternate" type="text/html" title="Kubernetes: beyond docker compose" /><published>2018-12-26T00:00:00+01:00</published><updated>2018-12-26T00:00:00+01:00</updated><id>https://blog.jdonado.com/kubernetes</id><content type="html" xml:base="https://blog.jdonado.com/kubernetes/">&lt;h1 id=&quot;beyond-docker-compose&quot;&gt;Beyond docker compose&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2019-01-07T17:16:25+01:00</updated><id>https://blog.jdonado.com/</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">Kubernetes: beyond docker compose</title><link href="https://blog.jdonado.com/kubernetes/" rel="alternate" type="text/html" title="Kubernetes: beyond docker compose" /><published>2018-12-26T00:00:00+01:00</published><updated>2018-12-26T00:00:00+01:00</updated><id>https://blog.jdonado.com/kubernetes</id><content type="html" xml:base="https://blog.jdonado.com/kubernetes/">&lt;h1 id=&quot;beyond-docker-compose&quot;&gt;Beyond docker compose&lt;/h1&gt;
 
 &lt;p&gt;Right after I started using docker to containerize my applications, I used to include a &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file together with them (sometimes in a separate repository) in order to illustrate how a local deployment could work. With &lt;a href=&quot;https://docs.docker.com/compose/&quot;&gt;docker-compose&lt;/a&gt; you can:&lt;/p&gt;
 
@@ -157,26 +157,23 @@ kubectl rollout undo deployments/your-app
 &lt;span class=&quot;c&quot;&gt;# Execute commands on a container in a pod&lt;/span&gt;
 kubectl &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;nginx-68c5b54745-hxn8r &lt;span class=&quot;nt&quot;&gt;--stdin&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--tty&lt;/span&gt; /bin/sh
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="cloud" /><category term="kubernetes" /><category term="docker" /><category term="docker-compose" /><category term="linux" /><summary type="html">Beyond docker compose</summary></entry><entry><title type="html">Microservices on Kubernetes</title><link href="https://blog.jdonado.com/microservices-on-kubernetes/" rel="alternate" type="text/html" title="Microservices on Kubernetes" /><published>2018-09-10T00:00:00+02:00</published><updated>2018-09-10T00:00:00+02:00</updated><id>https://blog.jdonado.com/microservices-on-kubernetes</id><content type="html" xml:base="https://blog.jdonado.com/microservices-on-kubernetes/">&lt;h1 id=&quot;microservices&quot;&gt;Microservices&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="cloud" /><category term="kubernetes" /><category term="docker" /><category term="docker-compose" /><category term="linux" /><summary type="html">Beyond docker compose</summary></entry><entry><title type="html">Microservices on Kubernetes</title><link href="https://blog.jdonado.com/microservices-on-kubernetes.markdown/" rel="alternate" type="text/html" title="Microservices on Kubernetes" /><published>2018-09-10T00:00:00+02:00</published><updated>2018-09-10T00:00:00+02:00</updated><id>https://blog.jdonado.com/microservices-on-kubernetes.markdown</id><content type="html" xml:base="https://blog.jdonado.com/microservices-on-kubernetes.markdown/"># Microservices
 
-&lt;p&gt;&lt;a href=&quot;/vim-magic/&quot;&gt;Some link&lt;/a&gt;&lt;/p&gt;
+[Some link](/vim-magic/)
 
-&lt;h2 id=&quot;key-issues&quot;&gt;Key Issues&lt;/h2&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;12 factor https://12factor.net/&lt;/li&gt;
-  &lt;li&gt;Configuration Repository&lt;/li&gt;
-  &lt;li&gt;Blue/Green deployments&lt;/li&gt;
-  &lt;li&gt;Monitoring &amp;amp; Tracing&lt;/li&gt;
-  &lt;li&gt;Architecture (auto)documentation&lt;/li&gt;
-  &lt;li&gt;Authentication&lt;/li&gt;
-  &lt;li&gt;Gateway
-    &lt;ul&gt;
-      &lt;li&gt;Traefik&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;JHipster&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="command-line" /><category term="linux" /><category term="kubernetes" /><category term="docker" /><category term="microservices" /><category term="architecture" /><summary type="html">Microservices</summary></entry><entry><title type="html">CMD Magic</title><link href="https://blog.jdonado.com/cmd-magic/" rel="alternate" type="text/html" title="CMD Magic" /><published>2018-07-06T00:00:00+02:00</published><updated>2018-07-06T00:00:00+02:00</updated><id>https://blog.jdonado.com/cmd-magic</id><content type="html" xml:base="https://blog.jdonado.com/cmd-magic/">&lt;h1 id=&quot;command-line-magic&quot;&gt;Command Line Magic&lt;/h1&gt;
+
+## Key Issues
+
+- 12 factor https://12factor.net/
+- Configuration Repository
+- Blue/Green deployments
+- Monitoring &amp; Tracing
+- Architecture (auto)documentation
+- Authentication
+- Gateway
+  - Traefik
+- JHipster</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="command-line" /><category term="linux" /><category term="kubernetes" /><category term="docker" /><category term="microservices" /><category term="architecture" /><summary type="html"># Microservices</summary></entry><entry><title type="html">CMD Magic</title><link href="https://blog.jdonado.com/cmd-magic/" rel="alternate" type="text/html" title="CMD Magic" /><published>2018-07-06T00:00:00+02:00</published><updated>2018-07-06T00:00:00+02:00</updated><id>https://blog.jdonado.com/cmd-magic</id><content type="html" xml:base="https://blog.jdonado.com/cmd-magic/">&lt;h1 id=&quot;command-line-magic&quot;&gt;Command Line Magic&lt;/h1&gt;
 
 &lt;p&gt;Last year I published &lt;a href=&quot;/vim-magic/&quot;&gt;Vim Magic&lt;/a&gt;, where I gathered all the commands that I found particularly useful when using the Vim editor. I’ve kept updating it ever since whenever I’ve found new useful tricks. It’s been so far helpful to me as a reference and hopefully to somebody else out there too. This post is the same but for the command line in Linux/Unix.&lt;/p&gt;
 
