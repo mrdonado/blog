@@ -25,7 +25,8 @@ This is not intended to be a tutorial with the basics for you to learn how to us
 ## Files
 
 - `for i in *.png ; do convert "$i" "${i%.*}.jpg" ; done` convert all **png** files into **jpg**
-- `find . -type f -exec grep -bl someWord {} \;` find all files in the current directory (and above) that contain `someWord`
+- `find . -type f -exec grep -El "someWord|someOtherWord" {} \;` find all files in the current directory (and above) that contain `someWord` or `someOtherWord`. An escaped semicolon is necessary to indicate the end of `exec`. The brackets are also necessary, since they contain the output of the `find` command, that will be fed into the grep command
+- `find . -type f | xargs grep -El "something|appstore"` exactly the same as the previous command, using `xargs` instead of `-exec`
 - `find /path/to/files* -mtime +5 -exec rm {} \;` delete files older than 5 days
 - `find . -name  '*.zip' -exec unzip {} \;` unzip all the zip files in the current directory
 - `find . -type d | egrep -o '.*src$'` find `src` directories and none of their subdirectories
