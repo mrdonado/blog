@@ -109,7 +109,8 @@
 
 <ul>
   <li><code class="highlighter-rouge">for i in *.png ; do convert "$i" "${i%.*}.jpg" ; done</code> convert all <strong>png</strong> files into <strong>jpg</strong></li>
-  <li><code class="highlighter-rouge">find . -type f -exec grep -bl someWord {} \;</code> find all files in the current directory (and above) that contain <code class="highlighter-rouge">someWord</code></li>
+  <li><code class="highlighter-rouge">find . -type f -exec grep -El "someWord|someOtherWord" {} \;</code> find all files in the current directory (and above) that contain <code class="highlighter-rouge">someWord</code> or <code class="highlighter-rouge">someOtherWord</code>. An escaped semicolon is necessary to indicate the end of <code class="highlighter-rouge">exec</code>. The brackets are also necessary, since they contain the output of the <code class="highlighter-rouge">find</code> command, that will be fed into the grep command</li>
+  <li><code class="highlighter-rouge">find . -type f | xargs grep -El "something|appstore"</code> exactly the same as the previous command, using <code class="highlighter-rouge">xargs</code> instead of <code class="highlighter-rouge">-exec</code></li>
   <li><code class="highlighter-rouge">find /path/to/files* -mtime +5 -exec rm {} \;</code> delete files older than 5 days</li>
   <li><code class="highlighter-rouge">find . -name  '*.zip' -exec unzip {} \;</code> unzip all the zip files in the current directory</li>
   <li><code class="highlighter-rouge">find . -type d | egrep -o '.*src$'</code> find <code class="highlighter-rouge">src</code> directories and none of their subdirectories</li>
