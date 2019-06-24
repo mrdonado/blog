@@ -97,7 +97,7 @@ kubectl proxy
 
 # Save the current pod name in an environment variable
 # and access it through the proxy
-export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
+export POD_NAME=$(kubectl get pods -o go-template --template '{ {range .items} } { {.metadata.name} } { {"\n"} } { {end} }')
 
 # Test the pod access via proxy
 curl http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/
