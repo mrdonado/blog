@@ -42,4 +42,10 @@ sudo systemctl stop sshtunnel2
 
 setsebool -P httpd_can_network_connect 1
 
+sudo ./certbot-auto certonly --manual --preferred-challenges=dns --email jdonado@jdonado.com --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d *.jdonado.com
+
+restorecon /etc/nginx/demo.*
+
+43 6 * * * certbot renew --post-hook "systemctl reload nginx"
+
 ```
