@@ -19,9 +19,17 @@ vim ~/.ssh/authorized_keys
 chmod 700 .ssh/
 chmod 640 authorized_keys
 
+# Open port Centos7
 sudo firewall-cmd --zone=public --add-port=19999/tcp --permanent
 sudo firewall-cmd --reload
 
+# Open port Ubuntu
+sudo ufw allow 19999/tcp
+
+# Close port
+sudo firewall-cmd --zone=public --remove-port=19999/tcp
+sudo firewall-cmd --runtime-to-permanent
+sudo firewall-cmd --reload
 
 sudo vim /etc/systemd/system/sshtunnel.service
 sudo systemctl start sshtunnel
@@ -48,4 +56,32 @@ restorecon /etc/nginx/demo.*
 
 43 6 * * * certbot renew --post-hook "systemctl reload nginx"
 
+kubeadm init
+
+# coredns pods have CrashLoopBackOff or Error state
+https://stackoverflow.com/questions/53075796/coredns-pods-have-crashloopbackoff-or-error-state/53414041#53414041
+
+# Dashboard
+
+https://docs.giantswarm.io/guides/install-kubernetes-dashboard/
+
+https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended.yaml
+
+# Configure Ingress to access the dashboard
+
+https://stackoverflow.com/questions/49845021/getting-an-kubernetes-ingress-endpoint-ip-address
+
+# Install Helm and Tiller
+
+sudo snap install helm --classic
+
+sudo helm init --service-account tiller --history-max 200
+
+# Tiller and Roles Based Access Control
+
+https://helm.sh/docs/using_helm/#tiller-and-role-based-access-control
+
+# Install MetalLB with helm
+
+sudo helm install --name metallb stable/metallb
 ```
