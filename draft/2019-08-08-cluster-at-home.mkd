@@ -12,6 +12,12 @@ tags: kubernetes docker docker-compose linux
 # Commands
 
 ```
+
+# Install Kubernetes
+https://blog.alexellis.io/kubernetes-in-10-minutes/
+
+# Setup reverse proxy
+
 sudo vim /etc/ssh/sshd_config
 systemctl restart sshd.service
 
@@ -84,4 +90,11 @@ https://helm.sh/docs/using_helm/#tiller-and-role-based-access-control
 # Install MetalLB with helm
 
 sudo helm install --name metallb stable/metallb
+
+# Install an NFS server
+
+https://vitux.com/install-nfs-server-and-client-on-ubuntu/
+
+`sudo apt-get install -y nfs-common` # Also on each node
+
 ```
