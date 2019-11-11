@@ -20,7 +20,9 @@ home: true
                 </div>
             </a>
 
-            <img src="{{post.thumb}}" class="post-list-thumb" />
+            <img src="{{post.thumb}}"
+                class="post-list-thumb"
+                alt="{{ post.title }}" />
         </li>
         {% endfor %}
     </ul>
