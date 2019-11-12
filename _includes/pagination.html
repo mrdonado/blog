@@ -3,7 +3,7 @@
 <div class="{% if paginator.total_pages > 1 %}pagination{% else %}no_pagination{% endif %}">
     {% if paginator.previous_page %}
         {% if paginator.page == 2 %}
-            <a class="prev" href="{{ site.siteurl }}/">
+            <a class="prev" aria-label="next-page" href="{{ site.siteurl }}/">
                 <i class="fa fa-chevron-left"></i>
             </a>
         {% else %}
@@ -18,7 +18,7 @@
     {% endif %}
 
     {% if paginator.next_page %}
-        <a class="next" href="{{ site.siteurl }}/page/{{ paginator.next_page }}/">
+        <a class="next" aria-label="next-page" href="{{ site.siteurl }}/page/{{ paginator.next_page }}/">
             <i class="fa fa-chevron-right"></i>
         </a>
     {% else %}
