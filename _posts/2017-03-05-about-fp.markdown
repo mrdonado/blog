@@ -5,7 +5,7 @@ date:   2017-03-05
 category: functional-programming 
 backgrounds:
     - https://blog.jdonado.com/assets/images/jsbg.jpg
-thumb: https://blog.jdonado.com/assets/images/lambda-cover.png
+thumb: https://blog.jdonado.com/assets/images/lambda-cover.jpg
 tags: functional-programming javascript
 ---
 
