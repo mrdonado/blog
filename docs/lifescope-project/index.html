@@ -114,7 +114,7 @@
 
 <p>The script also analyzed the author of each message, tagging it automatically (e.g.: doctor, news source, patient…).</p>
 
-<p>He had a first version of the script working on his computer, but he wanted to find a way to show it to the world. So I thought we could turn it into an online web application accessible for everyone and make everything Open Source. Now, the first version of our software is available online at <a href="https://www.lifescope-project.com">www.lifescope-project.com</a>.</p>
+<p>He had a first version of the script working on his computer, but he wanted to find a way to show it to the world. So I thought we could turn it into an online web application accessible for everyone and make everything Open Source. Now, the first version of our software is available online at <a href="https://www.lifescope-project.com">lifescope.jdonado.com</a>.</p>
 
 <h2 id="architecture">Architecture</h2>
 
@@ -126,7 +126,7 @@
   <li><a href="https://github.com/fjrd84/health-nlp-node">A nodeJS service</a>, sending messages from the twitter stream to a <a href="http://kr.github.io/beanstalkd/">beanstalkd</a> jobs queue.</li>
   <li>The <a href="https://github.com/fjrd84/health-nlp-analysis">python analysis engine</a>, which now just takes jobs from beanstalkd and sends the results to Firebase and <a href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a>.</li>
   <li><a href="https://firebase.google.com">Firebase DB</a>, serving the analyzed messages in real time to the frontend.</li>
-  <li>A <a href="https://github.com/fjrd84/health-nlp-react">ReactJS + Redux</a> based frontend, that works as a showcase for the project, with an introduction, a link to <a href="http://insights.lifescope-project.com/">the project’s blog</a>, and a real time timeline of analyzed messages.</li>
+  <li>A <a href="https://github.com/fjrd84/health-nlp-react">ReactJS + Redux</a> based frontend, that works as a showcase for the project, with an introduction, a link to <a href="http://lifescope-insights.jdonado.com/">the project’s blog</a>, and a real time timeline of analyzed messages.</li>
 </ul>
 
 <p><img src="https://blog.jdonado.com/assets/images/lifescope-architecture.png" alt="Architecture Diagram" title="Architecture Diagram" /></p>

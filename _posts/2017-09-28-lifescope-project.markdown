@@ -21,7 +21,7 @@ The idea was to use the [Natural Language Processing (NLP)](https://en.wikipedia
 
 The script also analyzed the author of each message, tagging it automatically (e.g.: doctor, news source, patient...).
 
-He had a first version of the script working on his computer, but he wanted to find a way to show it to the world. So I thought we could turn it into an online web application accessible for everyone and make everything Open Source. Now, the first version of our software is available online at [www.lifescope-project.com](https://www.lifescope-project.com).
+He had a first version of the script working on his computer, but he wanted to find a way to show it to the world. So I thought we could turn it into an online web application accessible for everyone and make everything Open Source. Now, the first version of our software is available online at [lifescope.jdonado.com](https://www.lifescope-project.com).
 
 ## Architecture
 
@@ -32,7 +32,7 @@ After some playing around with Flask, I decided that separating the analyzer fro
 - [A nodeJS service](https://github.com/fjrd84/health-nlp-node), sending messages from the twitter stream to a [beanstalkd](http://kr.github.io/beanstalkd/) jobs queue.
 - The [python analysis engine](https://github.com/fjrd84/health-nlp-analysis), which now just takes jobs from beanstalkd and sends the results to Firebase and [Elasticsearch](https://www.elastic.co/products/elasticsearch).
 - [Firebase DB](https://firebase.google.com), serving the analyzed messages in real time to the frontend.
-- A [ReactJS + Redux](https://github.com/fjrd84/health-nlp-react) based frontend, that works as a showcase for the project, with an introduction, a link to [the project's blog](http://insights.lifescope-project.com/), and a real time timeline of analyzed messages.
+- A [ReactJS + Redux](https://github.com/fjrd84/health-nlp-react) based frontend, that works as a showcase for the project, with an introduction, a link to [the project's blog](http://lifescope-insights.jdonado.com/), and a real time timeline of analyzed messages.
 
 ![Architecture Diagram](https://blog.jdonado.com/assets/images/lifescope-architecture.png "Architecture Diagram")
 
