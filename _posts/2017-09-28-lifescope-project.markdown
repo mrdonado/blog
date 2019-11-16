@@ -21,7 +21,7 @@ The idea was to use the [Natural Language Processing (NLP)](https://en.wikipedia
 
 The script also analyzed the author of each message, tagging it automatically (e.g.: doctor, news source, patient...).
 
-He had a first version of the script working on his computer, but he wanted to find a way to show it to the world. So I thought we could turn it into an online web application accessible for everyone and make everything Open Source. Now, the first version of our software is available online at [lifescope.jdonado.com](https://www.lifescope-project.com).
+He had a first version of the script working on his computer, but he wanted to find a way to show it to the world. So I thought we could turn it into an online web application accessible for everyone and make everything Open Source. Now, the first version of our software is available online at [https://www.lifescope-project.com](https://lifescope.jdonado.com).
 
 ## Architecture
 
