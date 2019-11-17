@@ -132,3 +132,5 @@ sudo systemctl start sshtunnel
 ```
 
 The first command will tell your system to run the service on startup. The second one (`start`) will start the service right away.
+
+Note: there are alternatives to creating your custom ssh service (e.g.: [autossh](https://linux.die.net/man/1/autossh)), but a custom service proved to be more stable on my machine. Feel free to use whatever configuration works best for you in order to keep the connection active.
