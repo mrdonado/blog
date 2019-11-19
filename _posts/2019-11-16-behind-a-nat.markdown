@@ -19,8 +19,8 @@ It's been years now since the times where you would get a static IPv4 address as
 
 Now most of the time, your home or small business router will only be reachable on an [IPv6](https://en.wikipedia.org/wiki/IPv6) address. In some cases your [ISP](https://en.wikipedia.org/wiki/Internet_service_provider) might be using something like [DS-Lite](https://www.citrix.com/blogs/2012/03/22/ds-lite-%E2%80%93-ipv4-over-ipv6-and-nat/), which puts you behind a [NAT (Network Address Translation)](https://en.wikipedia.org/wiki/Network_address_translation) protocol, making it very difficult for you to [self-host](https://en.wikipedia.org/wiki/Self-hosting_(web_services)) anything at home.
 
-## But... why?? 
-There's just [not enogh IPv4 addresses](https://en.wikipedia.org/wiki/IPv4_address_exhaustion) for all of us, and although **[IPv6](https://en.wikipedia.org/wiki/IPv6) is the solution** (and although it's been around since 1998...), [adoption is still slow](https://www.google.com/intl/en/ipv6/statistics.html#tab=ipv6-adoption). Chances are, if your server is only available under an IPv6 address, most people out there won't be able to reach you. You still need an IPv4 address for people to be able to find you on the internet in 2019. **Sadly**.
+## But... why??
+There's just [not enough IPv4 addresses](https://en.wikipedia.org/wiki/IPv4_address_exhaustion) for all of us, and although **[IPv6](https://en.wikipedia.org/wiki/IPv6) is the solution** (and although it's been around since 1998...), [adoption is still slow](https://www.google.com/intl/en/ipv6/statistics.html#tab=ipv6-adoption). Chances are, if your server is only available under an IPv6 address, most people out there won't be able to reach you. You still need an IPv4 address for people to be able to find you on the internet in 2019. **Sadly**.
 
 So if you want to be able to **self-host** anything at home you need some kind of workaround. A [dynamic DNS](https://en.wikipedia.org/wiki/Dynamic_DNS) is probably the most popular option (one that supports IPv6), but depending on your ISP's setup, that might not work for you either. So, what other options do we have?
 
