@@ -112,27 +112,28 @@
 
 <h1 id="you-might-be-behind-a-nat-too">You might be behind a NAT too</h1>
 
-<p>It’s been years now since the times where you would get a static IPv4 address assigned to your home together with your internet access. An address that you could use to ping your home router from anywhere in the world. Now you’re lucky if you’re even offered an option of paying an extra fee in order to get one. Sometimes not even a business contract will give you that.</p>
+<p>It’s been years now since the times where you would get a static IPv4 address assigned to your home together with your internet access. An address that you could use to ping your home router from anywhere in the world. Now you’re lucky if you’re even offered the option of paying an extra fee to get one. Sometimes not even a business contract will give you that.</p>
 
-<p>Now most of the time, your home or small business router will only be reachable on an <a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a> address. In some cases your <a href="https://en.wikipedia.org/wiki/Internet_service_provider">ISP</a> might be using something like <a href="https://www.citrix.com/blogs/2012/03/22/ds-lite-%E2%80%93-ipv4-over-ipv6-and-nat/">DS-Lite</a>, which puts you behind a <a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT (Network Address Translation)</a> protocol, making it very difficult for you to <a href="https://en.wikipedia.org/wiki/Self-hosting_(web_services)">self-host</a> anything at home.</p>
+<p>Now, most of the time, your home or small business router will only be reachable on an <a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a> address. In some cases your <a href="https://en.wikipedia.org/wiki/Internet_service_provider">ISP</a> might be using something like <a href="https://www.citrix.com/blogs/2012/03/22/ds-lite-%E2%80%93-ipv4-over-ipv6-and-nat/">DS-Lite</a>, which puts you behind a <a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT (Network Address Translation)</a> protocol, making it very difficult for you to <a href="https://en.wikipedia.org/wiki/Self-hosting_(web_services)">self-host</a> anything at home.</p>
 
 <h2 id="but-why">But… why??</h2>
-<p>There’s just <a href="https://en.wikipedia.org/wiki/IPv4_address_exhaustion">not enough IPv4 addresses</a> for all of us, and although <strong><a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a> is the solution</strong> (and although it’s been around since 1998…), <a href="https://www.google.com/intl/en/ipv6/statistics.html#tab=ipv6-adoption">adoption is still slow</a>. Chances are, if your server is only available under an IPv6 address, most people out there won’t be able to reach you. You still need an IPv4 address for people to be able to find you on the internet in 2019. <strong>Sadly</strong>.</p>
+
+<p>There’s just <a href="https://en.wikipedia.org/wiki/IPv4_address_exhaustion">not enogh IPv4 addresses</a> for all of us, and although <strong><a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a> is the solution</strong> (and although it’s been around since 1998…), <a href="https://www.google.com/intl/en/ipv6/statistics.html#tab=ipv6-adoption">adoption is still slow</a>. Chances are if your server is only available under an IPv6 address, most people out there won’t be able to reach you. You still need an IPv4 address for people to be able to find you on the internet in 2019. <strong>Sadly</strong>.</p>
 
 <p>So if you want to be able to <strong>self-host</strong> anything at home you need some kind of workaround. A <a href="https://en.wikipedia.org/wiki/Dynamic_DNS">dynamic DNS</a> is probably the most popular option (one that supports IPv6), but depending on your ISP’s setup, that might not work for you either. So, what other options do we have?</p>
 
 <h2 id="wait-a-minute-we-have-the-cloud-now-why-should-i-bother-about-self-hosting-at-all">Wait a minute, we have the cloud now! Why should I bother about self-hosting at all?</h2>
 
-<p>True. I wouldn’t recommend self-hosting at home for anything other than experimenting with software for your own personal use. I wouldn’t even self-host at home my personal website.</p>
+<p>True. I wouldn’t recommend self-hosting at home for anything other than experimenting with software for your personal use. I wouldn’t even self-host at home my personal website.</p>
 
 <p><strong>BUT</strong> there are just <a href="https://github.com/awesome-selfhosted/awesome-selfhosted/blob/master/README.md">so many awesome things that you can self-host</a> for your personal use… here are some examples:</p>
 
 <ul>
   <li>You can have your own <a href="https://filebrowser.xyz/">alternative to Dropbox or Google Drive</a>. Just buy a cheap 8TB hard drive and forget about paying monthly fees for getting as much online storage as you want.</li>
   <li>You can use <a href="https://www.mstream.io/">mStream</a> or <a href="https://koel.phanan.net/">Koel</a> as an alternative to a music streaming service (Spotify, Deezer, Apple Music…). If you happen to have an mp3 collection from the days where an iPod was a cool gadget you might as well have been missing it! It’s time to give it a second chance.</li>
-  <li>Same idea applied to Netflix: <a href="https://github.com/streamaserver/streama">Streama</a></li>
+  <li>The same idea applied to Netflix: <a href="https://github.com/streamaserver/streama">Streama</a></li>
   <li>Who wants to upload photos to Flickr when you have <a href="https://lycheeorg.github.io/">Lychee</a> 😄</li>
-  <li>You can even setup your own <a href="https://medium.com/nycdev/k8s-on-pi-9cc14843d43">Kubernetes cluster</a> using Raspberry PIs. Hours of entertainment await you with that.</li>
+  <li>You can even set up your own <a href="https://medium.com/nycdev/k8s-on-pi-9cc14843d43">Kubernetes cluster</a> using Raspberry PIs. Hours of entertainment await you with that.</li>
 </ul>
 
 <h2 id="okay-youve-convinced-me-im-behind-a-nat-and-i-want-your-magic-solution">Okay, you’ve convinced me, I’m behind a NAT and I want your magic solution!</h2>
@@ -157,7 +158,7 @@
 
 <p>First, <a href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04">install NGINX</a> on your server. Once you’re ready, you should be able to visit the default NGINX initial page on <code class="highlighter-rouge">http://[YOURONLINEIP:80]</code>.</p>
 
-<p>Now you can establish an <code class="highlighter-rouge">SSH</code> tunnel between your laptop at home and your server. A tunnel with a reverse proxy where your local port (<code class="highlighter-rouge">8080</code> in the example) is mapped to some other port of your server (e.g.: port <code class="highlighter-rouge">17899</code>). In order to achieve this, use this command:</p>
+<p>Now you can establish an <code class="highlighter-rouge">SSH</code> tunnel between your laptop at home and your server. A tunnel with a reverse proxy where your local port (<code class="highlighter-rouge">8080</code> in the example) is mapped to some other port of your server (e.g.: port <code class="highlighter-rouge">17899</code>). To achieve this, use this command:</p>
 
 <p><code class="highlighter-rouge">ssh -N -g -R 17899:localhost:8080 yourusername@[YOURONLINEIP]</code></p>
 
@@ -197,11 +198,11 @@ http {
 
 <p>If you want that connection to always be active, you’ll need to follow a couple of steps more. Otherwise, the tunnel will be closed after a while and the magic will be gone.</p>
 
-<p>In order to do that, you need to first configure an SSH Key-Based Authentication in order to establish an SSH connection with the remote machine <strong>without a password</strong>. <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server">Here’s a very easy tutorial</a> that explains how to do it.</p>
+<p>To do that, you need to first configure an SSH Key-Based Authentication to establish an SSH connection with the remote machine <strong>without a password</strong>. <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server">Here’s a very easy tutorial</a> that explains how to do it.</p>
 
 <p>Once you can connect from your laptop to the remote machine via SSH without entering a password, you need a service that establishes that connection and keeps it alive.</p>
 
-<p>A rather simple and reliable way is by defining a <code class="highlighter-rouge">systemd</code> service on your laptop. In order to do that, edit a new file called <code class="highlighter-rouge">sshtunnel.service</code> on <code class="highlighter-rouge">/etc/systemd/system/</code>:</p>
+<p>A rather simple and reliable way is by defining a <code class="highlighter-rouge">systemd</code> service on your laptop. To do that, edit a new file called <code class="highlighter-rouge">sshtunnel.service</code> on <code class="highlighter-rouge">/etc/systemd/system/</code>:</p>
 
 <p><code class="highlighter-rouge">sudo vim /etc/systemd/system/sshtunnel.service</code></p>
 
@@ -229,7 +230,7 @@ sudo systemctl start sshtunnel
 
 <p>The first command will tell your system to run the service on startup. The second one (<code class="highlighter-rouge">start</code>) will start the service right away.</p>
 
-<p>Note: there are alternatives to creating your custom ssh service (e.g.: <a href="https://linux.die.net/man/1/autossh">autossh</a>), but a custom service proved to be more stable on my machine. Feel free to use whatever configuration works best for you in order to keep the connection active.</p>
+<p>Note: there are alternatives to creating your custom ssh service (e.g.: <a href="https://linux.die.net/man/1/autossh">autossh</a>), but a custom service proved to be more stable on my machine. Feel free to use whatever configuration works best for you to keep the connection active.</p>
 
     </article>
 
@@ -310,7 +311,6 @@ sudo systemctl start sshtunnel
         <li class="rrssb-linkedin">
             <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.jdonado.com/behind-a-nat/&amp;title=Self-hosting%20behind%20a%20NAT&amp;summary=
 %20%20No%20one%20knows%20what%20it’s%20like%20to%20be%20a%20bad%20man,%20to%20be%20a%20sad%20man…%20behind%20a%20NAT
-
 
 " title="LinkedIn" class="popup" class="popup">
                 <span class="rrssb-icon">
