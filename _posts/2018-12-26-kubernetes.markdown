@@ -5,7 +5,7 @@ date:   2018-12-26
 category: cloud
 backgrounds:
     - https://blog.jdonado.com/assets/images/backgrounds/google-bg.png
-thumb: https://blog.jdonado.com/assets/images/kubernetes-logo.png
+thumb: https://blog.jdonado.com/assets/images/kubernetes-logo.jpg
 tags: kubernetes docker docker-compose linux
 ---
 

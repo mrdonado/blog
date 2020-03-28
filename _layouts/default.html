@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 {% include head.html %}
 
@@ -8,22 +8,33 @@
     {% include loader.html %}
     <div id="title-wrapper">
         <a class="icon home-icon"
+            aria-label="Blog's homepage"
             href="{{ site.baseurl }}/">&nbsp;</a>
         <a class="icon web-icon"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Jdonado's homepage"
             href="https://www.jdonado.com">&nbsp;</a>
          <a class="icon github-icon"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Jdonado's github"
             href="https://github.com/fjrd84">&nbsp;</a>
         <a class="icon twitter-icon"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Jdonado's twitter"
             href="https://twitter.com/jdonado">&nbsp;</a>
         <a class="icon linkedin-icon"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="My Linkedin profile"
             href="https://www.linkedin.com/in/f-javier-r-donado-6458a815/">&nbsp;</a>
         <a class="icon email-icon"
+            aria-label="Send me an e-mail"
             href="mailto:jdonado@jdonado.com">&nbsp;</a>
         <a class="icon about-icon"
+            aria-label="About Jdonado's README"
             href="{{ site.baseurl }}/about/">&nbsp;</a>
     </div>
 
@@ -43,6 +54,8 @@
     {% include sidebar.html %}
 
     {% include js.html %}
+
+    {% include cookie-consent.html %}
 
 <script type="application/javascript">
 
@@ -66,18 +79,6 @@
 
 
 </script>
-
 </body>
-
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-61346758-3', 'auto');
-    ga('send', 'pageview');
-
-</script>
 
 </html>
