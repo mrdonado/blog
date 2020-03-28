@@ -92,6 +92,7 @@ These settings can be saved into the vimrc file.
 - `set nocompatible` Ignore compatibility with ancient vi versions
 - `set smartcase` Always perform case insensitive search unless you search for capital letters
 - `set wildignore+=**/node_modules/**` Ignore directory when finding files
+- `set wrap linebreak nolist` Activate word wrap
 
 ## Exporting your configuration
 
