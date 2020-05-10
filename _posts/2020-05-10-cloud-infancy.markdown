@@ -35,15 +35,15 @@ I think that it's something quite common in IT, as well as in any other branch w
 
 There is however one thing you can do when starting a new project or when taking architectural decisions on existing projects on the cloud, and it is to **forget for a moment how big of an expert you are**, try to adopt [a beginners mindset](https://www.creativehuddle.co.uk/how-to-adopt-a-beginners-mindset), and follow the golden rule of the software development craft: [the Keep It Simple, Stupid (KISS™) principle](https://en.wikipedia.org/wiki/KISS_principle).
 
-The cloud came to help us with our jobs, not for us to overengineer our solutions or to take the [Resume Driven Development](http://radar.oreilly.com/2014/10/resume-driven-development.html) road. Things tend to get complicated by themselves and it's our responsibility to do our best to keep them as simple as possible.
+The cloud came to help us, it's not there for us to overengineer our solutions or to take the [Resume Driven Development](http://radar.oreilly.com/2014/10/resume-driven-development.html) road. Things tend to get complicated by themselves and it's our responsibility to do our best to keep them as simple as possible.
 
 Some of the clear benefits of the cloud are:
 
-- You don't have to buy or manage hardware yourself
-- It *should* be cheaper
-- Software updates are managed or simplified
-- It offers a fast and reliable service (typically 99.9% availability)
-- It makes it easier to write software that scales (although if you're a startup, chances are that [you shouldn't have to worry much about that](http://paulgraham.com/ds.html))
+- You don't have to buy or manage hardware yourself.
+- It *should* be cheaper.
+- Software updates are managed or simplified.
+- It offers a fast and reliable service (typically 99.9% availability).
+- It makes it easier to write software that scales (although if you're a startup, chances are that [you shouldn't have to worry much about that](http://paulgraham.com/ds.html)).
 
 If you misuse the tools that the cloud offers you, however, you can easily ruin its associated benefits, even creating brand new categories of problems. Here are some **common problems** that I've experienced when working on legacy projects on the cloud:
 
@@ -51,14 +51,14 @@ If you misuse the tools that the cloud offers you, however, you can easily ruin 
 - It's often the case that you cannot easily set-up a development environment on your local machine because there are too many dependencies on cloud components. You should try to avoid this early on in the project or things will quickly get out of hand, making life hard for you and still worse for newer members of your team.
 - Sometimes unit tests depend on existing infrastructure (this is a big red flag).
 - No appropriate monitoring and tracing mechanisms have been set up in order to find out exactly what happened when something went wrong.
-- It's easy to overcomplicate things when trying to apply architectural patterns like microservices or an event-oriented architecture. Sure, using patterns and tools for the sake of using them has always been an anti-pattern, but the cloud can take it to a whole new level. If there are too many components, it gets more difficult than ever to get a clear picture about what's going on and documentation tends to stay out of date.
+- It's easy to overcomplicate things when trying to apply architectural patterns like microservices or an event-oriented architecture. Sure, using patterns and tools for the sake of using them has always been an anti-pattern, but the cloud can take it to a whole new level. If there are too many components, it gets more difficult than ever to get a clear picture of what's going on and documentation tends to stay out of date.
 - If there's no deployment automation from the beginning (Infrastructure as Code), chances are that you're going to regret it.
 
-## If you *Really* are an Expert, you'll be Humble
+## If You *Really* Are an Expert, You'll Be Humble
 
-As Bret Victor pointed out on his talk about [the Future of Programming](https://www.youtube.com/watch?v=8pTEmbeENF4), the community of IT professionals is (sadly) still digesting ideas that were first formulated during the 60s and 70s.
+As Bret Victor pointed out in his talk about [the Future of Programming](https://www.youtube.com/watch?v=8pTEmbeENF4), the community of IT professionals is (sadly) still digesting ideas that were first formulated during the 60s and 70s.
 
-A good example of that is the renewed interest in Functional Programming and how mainstream Object-Oriented languages like Java, C# and C++ have recently incorporated FP concepts that were already available in LISP, first specified in 1958.
+A good example of that is the renewed interest in Functional Programming and how mainstream Object-Oriented languages like Java, C#, and C++ have recently incorporated FP concepts that were already available in LISP, first specified in 1958.
 
 We simply didn't have enough time to define best practices for the cloud yet. Since you cannot know the best practices of the future, try to keep things as simple as possible today, because chances are, you're going to need to rewrite parts of your code in the coming years. The less code you have today, the easier it will be to modify it tomorrow.
 

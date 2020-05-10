@@ -132,16 +132,16 @@
 
 <p>There is however one thing you can do when starting a new project or when taking architectural decisions on existing projects on the cloud, and it is to <strong>forget for a moment how big of an expert you are</strong>, try to adopt <a href="https://www.creativehuddle.co.uk/how-to-adopt-a-beginners-mindset">a beginners mindset</a>, and follow the golden rule of the software development craft: <a href="https://en.wikipedia.org/wiki/KISS_principle">the Keep It Simple, Stupid (KISS™) principle</a>.</p>
 
-<p>The cloud came to help us with our jobs, not for us to overengineer our solutions or to take the <a href="http://radar.oreilly.com/2014/10/resume-driven-development.html">Resume Driven Development</a> road. Things tend to get complicated by themselves and it’s our responsibility to do our best to keep them as simple as possible.</p>
+<p>The cloud came to help us, it’s not there for us to overengineer our solutions or to take the <a href="http://radar.oreilly.com/2014/10/resume-driven-development.html">Resume Driven Development</a> road. Things tend to get complicated by themselves and it’s our responsibility to do our best to keep them as simple as possible.</p>
 
 <p>Some of the clear benefits of the cloud are:</p>
 
 <ul>
-  <li>You don’t have to buy or manage hardware yourself</li>
-  <li>It <em>should</em> be cheaper</li>
-  <li>Software updates are managed or simplified</li>
-  <li>It offers a fast and reliable service (typically 99.9% availability)</li>
-  <li>It makes it easier to write software that scales (although if you’re a startup, chances are that <a href="http://paulgraham.com/ds.html">you shouldn’t have to worry much about that</a>)</li>
+  <li>You don’t have to buy or manage hardware yourself.</li>
+  <li>It <em>should</em> be cheaper.</li>
+  <li>Software updates are managed or simplified.</li>
+  <li>It offers a fast and reliable service (typically 99.9% availability).</li>
+  <li>It makes it easier to write software that scales (although if you’re a startup, chances are that <a href="http://paulgraham.com/ds.html">you shouldn’t have to worry much about that</a>).</li>
 </ul>
 
 <p>If you misuse the tools that the cloud offers you, however, you can easily ruin its associated benefits, even creating brand new categories of problems. Here are some <strong>common problems</strong> that I’ve experienced when working on legacy projects on the cloud:</p>
@@ -151,15 +151,15 @@
   <li>It’s often the case that you cannot easily set-up a development environment on your local machine because there are too many dependencies on cloud components. You should try to avoid this early on in the project or things will quickly get out of hand, making life hard for you and still worse for newer members of your team.</li>
   <li>Sometimes unit tests depend on existing infrastructure (this is a big red flag).</li>
   <li>No appropriate monitoring and tracing mechanisms have been set up in order to find out exactly what happened when something went wrong.</li>
-  <li>It’s easy to overcomplicate things when trying to apply architectural patterns like microservices or an event-oriented architecture. Sure, using patterns and tools for the sake of using them has always been an anti-pattern, but the cloud can take it to a whole new level. If there are too many components, it gets more difficult than ever to get a clear picture about what’s going on and documentation tends to stay out of date.</li>
+  <li>It’s easy to overcomplicate things when trying to apply architectural patterns like microservices or an event-oriented architecture. Sure, using patterns and tools for the sake of using them has always been an anti-pattern, but the cloud can take it to a whole new level. If there are too many components, it gets more difficult than ever to get a clear picture of what’s going on and documentation tends to stay out of date.</li>
   <li>If there’s no deployment automation from the beginning (Infrastructure as Code), chances are that you’re going to regret it.</li>
 </ul>
 
-<h2 id="if-you-really-are-an-expert-youll-be-humble">If you <em>Really</em> are an Expert, you’ll be Humble</h2>
+<h2 id="if-you-really-are-an-expert-youll-be-humble">If You <em>Really</em> Are an Expert, You’ll Be Humble</h2>
 
-<p>As Bret Victor pointed out on his talk about <a href="https://www.youtube.com/watch?v=8pTEmbeENF4">the Future of Programming</a>, the community of IT professionals is (sadly) still digesting ideas that were first formulated during the 60s and 70s.</p>
+<p>As Bret Victor pointed out in his talk about <a href="https://www.youtube.com/watch?v=8pTEmbeENF4">the Future of Programming</a>, the community of IT professionals is (sadly) still digesting ideas that were first formulated during the 60s and 70s.</p>
 
-<p>A good example of that is the renewed interest in Functional Programming and how mainstream Object-Oriented languages like Java, C# and C++ have recently incorporated FP concepts that were already available in LISP, first specified in 1958.</p>
+<p>A good example of that is the renewed interest in Functional Programming and how mainstream Object-Oriented languages like Java, C#, and C++ have recently incorporated FP concepts that were already available in LISP, first specified in 1958.</p>
 
 <p>We simply didn’t have enough time to define best practices for the cloud yet. Since you cannot know the best practices of the future, try to keep things as simple as possible today, because chances are, you’re going to need to rewrite parts of your code in the coming years. The less code you have today, the easier it will be to modify it tomorrow.</p>
 
