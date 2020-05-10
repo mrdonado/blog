@@ -90,7 +90,7 @@
     <p class="post-reading-time">&#126;
         
         
-          8 min
+          9 min
         
     </p>
     
@@ -137,7 +137,7 @@
 
 <p>Solution: import <code class="highlighter-rouge">YourService</code> and include it into the <code class="highlighter-rouge">providers</code> of the TestBed. At best you should include a mocked version, since you probably want to test that service in another specific test.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">serviceMock</span> <span class="o">=</span> <span class="p">{</span> <span class="na">someKey</span><span class="p">:</span> <span class="s1">'someValue'</span><span class="p">};</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">serviceMock</span> <span class="o">=</span> <span class="p">{</span> <span class="na">someKey</span><span class="p">:</span> <span class="dl">'</span><span class="s1">someValue</span><span class="dl">'</span><span class="p">};</span>
 <span class="nx">TestBed</span><span class="p">.</span><span class="nx">configureTestingModule</span><span class="p">({</span>
   <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -168,12 +168,12 @@
   <span class="nx">ResponseOptions</span><span class="p">,</span>
   <span class="nx">RequestMethod</span><span class="p">,</span>
   <span class="nx">XHRBackend</span>
-<span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/http'</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/http</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">import</span> <span class="p">{</span>
   <span class="nx">MockBackend</span><span class="p">,</span>
   <span class="nx">MockConnection</span>
-<span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/http/testing'</span><span class="p">;</span></code></pre></figure>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/http/testing</span><span class="dl">'</span><span class="p">;</span></code></pre></figure>
 
 <p>2.- Declare a MockBackend type variable in your describe block:</p>
 
@@ -202,11 +202,11 @@
 
 <p>5.- Now you’re ready to test your service with a mocked backend by simply subscribing to it. Here you have an example:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">'should post some key with some value'</span><span class="p">,</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should post some key with some value</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">backend</span><span class="p">.</span><span class="nx">connections</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="na">connection</span><span class="p">:</span> <span class="nx">MockConnection</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">expect</span><span class="p">(</span><span class="nx">connection</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">method</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">RequestMethod</span><span class="p">.</span><span class="nx">Post</span><span class="p">);</span>
     <span class="kd">const</span> <span class="nx">responseBody</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">connection</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">getBody</span><span class="p">());</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">responseBody</span><span class="p">.</span><span class="nx">someKey</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">'someValue'</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">responseBody</span><span class="p">.</span><span class="nx">someKey</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">someValue</span><span class="dl">'</span><span class="p">);</span>
     <span class="c1">// Mock a response with an empty object</span>
     <span class="nx">connection</span><span class="p">.</span><span class="nx">mockRespond</span><span class="p">(</span><span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="k">new</span> <span class="nx">ResponseOptions</span><span class="p">({})));</span>
     <span class="nx">done</span><span class="p">();</span>
@@ -218,10 +218,10 @@
 
 <p>Here’s a working example for an <code class="highlighter-rouge">AnalysisFormComponent</code> unit test, that mocks a <code class="highlighter-rouge">LogService</code> and performs an HTTP POST request.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">import</span> <span class="p">{</span> <span class="nx">LogService</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'../../../services/log.service'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="k">async</span><span class="p">,</span> <span class="nx">ComponentFixture</span><span class="p">,</span> <span class="nx">inject</span><span class="p">,</span> <span class="nx">TestBed</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core/testing'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">AnalysisFormComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./analysis-form.component'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">FormsModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/forms'</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">import</span> <span class="p">{</span> <span class="nx">LogService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../../services/log.service</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="k">async</span><span class="p">,</span> <span class="nx">ComponentFixture</span><span class="p">,</span> <span class="nx">inject</span><span class="p">,</span> <span class="nx">TestBed</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core/testing</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">AnalysisFormComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./analysis-form.component</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">FormsModule</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/forms</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">import</span> <span class="p">{</span>
   <span class="nx">BaseRequestOptions</span><span class="p">,</span>
@@ -230,19 +230,19 @@
   <span class="nx">ResponseOptions</span><span class="p">,</span>
   <span class="nx">RequestMethod</span><span class="p">,</span>
   <span class="nx">XHRBackend</span>
-<span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/http'</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/http</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">import</span> <span class="p">{</span>
   <span class="nx">MockBackend</span><span class="p">,</span>
   <span class="nx">MockConnection</span>
-<span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/http/testing'</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/http/testing</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="nx">describe</span><span class="p">(</span><span class="s1">'AnalysisFormComponent'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">AnalysisFormComponent</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="na">component</span><span class="p">:</span> <span class="nx">AnalysisFormComponent</span><span class="p">;</span>
   <span class="kd">let</span> <span class="na">fixture</span><span class="p">:</span> <span class="nx">ComponentFixture</span><span class="o">&lt;</span><span class="nx">AnalysisFormComponent</span><span class="o">&gt;</span><span class="p">;</span>
   <span class="kd">let</span> <span class="na">backend</span><span class="p">:</span> <span class="nx">MockBackend</span><span class="p">;</span>
 
-  <span class="kd">const</span> <span class="nx">logServiceSpy</span> <span class="o">=</span> <span class="nx">jasmine</span><span class="p">.</span><span class="nx">createSpyObj</span><span class="p">(</span><span class="s1">'logService'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'sendMessage'</span><span class="p">]);</span>
+  <span class="kd">const</span> <span class="nx">logServiceSpy</span> <span class="o">=</span> <span class="nx">jasmine</span><span class="p">.</span><span class="nx">createSpyObj</span><span class="p">(</span><span class="dl">'</span><span class="s1">logService</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">sendMessage</span><span class="dl">'</span><span class="p">]);</span>
 
   <span class="nx">beforeEach</span><span class="p">(</span><span class="k">async</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">TestBed</span><span class="p">.</span><span class="nx">configureTestingModule</span><span class="p">({</span>
@@ -278,54 +278,54 @@
       <span class="nx">backend</span> <span class="o">=</span> <span class="nx">_mockBackend</span><span class="p">;</span>
     <span class="p">}));</span>
 
-  <span class="nx">it</span><span class="p">(</span><span class="s1">'should exist'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should exist</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">expect</span><span class="p">(</span><span class="nx">component</span><span class="p">).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
   <span class="p">});</span>
 
-  <span class="nx">it</span><span class="p">(</span><span class="s1">'should clear the form after closing'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">component</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">'someMessage'</span><span class="p">;</span>
-    <span class="nx">component</span><span class="p">.</span><span class="nx">userName</span> <span class="o">=</span> <span class="s1">'someUserName'</span><span class="p">;</span>
-    <span class="nx">component</span><span class="p">.</span><span class="nx">userDescription</span> <span class="o">=</span> <span class="s1">'someDescription'</span><span class="p">;</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">component</span><span class="p">.</span><span class="nx">message</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">'someMessage'</span><span class="p">);</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">component</span><span class="p">.</span><span class="nx">userName</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">'someUserName'</span><span class="p">);</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">component</span><span class="p">.</span><span class="nx">userDescription</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">'someDescription'</span><span class="p">);</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should clear the form after closing</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">component</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">someMessage</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">component</span><span class="p">.</span><span class="nx">userName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">someUserName</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">component</span><span class="p">.</span><span class="nx">userDescription</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">someDescription</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">component</span><span class="p">.</span><span class="nx">message</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">someMessage</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">component</span><span class="p">.</span><span class="nx">userName</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">someUserName</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">component</span><span class="p">.</span><span class="nx">userDescription</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">someDescription</span><span class="dl">'</span><span class="p">);</span>
     <span class="nx">component</span><span class="p">.</span><span class="nx">closeForm</span><span class="p">();</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">component</span><span class="p">.</span><span class="nx">message</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">component</span><span class="p">.</span><span class="nx">userName</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">component</span><span class="p">.</span><span class="nx">userDescription</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">component</span><span class="p">.</span><span class="nx">message</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">component</span><span class="p">.</span><span class="nx">userName</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">component</span><span class="p">.</span><span class="nx">userDescription</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
   <span class="p">});</span>
 
-  <span class="nx">it</span><span class="p">(</span><span class="s1">'should send a POST request to the server when creating a new job for the analysis engine'</span><span class="p">,</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should send a POST request to the server when creating a new job for the analysis engine</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">backend</span><span class="p">.</span><span class="nx">connections</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="na">connection</span><span class="p">:</span> <span class="nx">MockConnection</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="nx">expect</span><span class="p">(</span><span class="nx">connection</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">method</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">RequestMethod</span><span class="p">.</span><span class="nx">Post</span><span class="p">);</span>
       <span class="kd">const</span> <span class="nx">responseBody</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">connection</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">getBody</span><span class="p">());</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">responseBody</span><span class="p">.</span><span class="nx">source</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">'web'</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">responseBody</span><span class="p">.</span><span class="nx">user_name</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">'someUserName'</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">responseBody</span><span class="p">.</span><span class="nx">user_description</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">'someDescription'</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">responseBody</span><span class="p">.</span><span class="nx">message</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">'someMessage'</span><span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">responseBody</span><span class="p">.</span><span class="nx">source</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">web</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">responseBody</span><span class="p">.</span><span class="nx">user_name</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">someUserName</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">responseBody</span><span class="p">.</span><span class="nx">user_description</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">someDescription</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">responseBody</span><span class="p">.</span><span class="nx">message</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">someMessage</span><span class="dl">'</span><span class="p">);</span>
       <span class="nx">connection</span><span class="p">.</span><span class="nx">mockRespond</span><span class="p">(</span><span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="k">new</span> <span class="nx">ResponseOptions</span><span class="p">({})));</span>
       <span class="nx">done</span><span class="p">();</span>
     <span class="p">});</span>
-    <span class="nx">component</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">'someMessage'</span><span class="p">;</span>
-    <span class="nx">component</span><span class="p">.</span><span class="nx">userName</span> <span class="o">=</span> <span class="s1">'someUserName'</span><span class="p">;</span>
-    <span class="nx">component</span><span class="p">.</span><span class="nx">userDescription</span> <span class="o">=</span> <span class="s1">'someDescription'</span><span class="p">;</span> <span class="nx">component</span><span class="p">.</span><span class="nx">sendNewJob</span><span class="p">();</span>
+    <span class="nx">component</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">someMessage</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">component</span><span class="p">.</span><span class="nx">userName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">someUserName</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">component</span><span class="p">.</span><span class="nx">userDescription</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">someDescription</span><span class="dl">'</span><span class="p">;</span> <span class="nx">component</span><span class="p">.</span><span class="nx">sendNewJob</span><span class="p">();</span>
   <span class="p">});</span>
 
-  <span class="nx">it</span><span class="p">(</span><span class="s1">'should log an error message when the analysis couldn</span><span class="se">\'</span><span class="s1">t be POSTed'</span><span class="p">,</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="s1">'An error occurred!!!'</span><span class="p">;</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should log an error message when the analysis couldn</span><span class="se">\'</span><span class="s1">t be POSTed</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">An error occurred!!!</span><span class="dl">'</span><span class="p">;</span>
     <span class="nx">backend</span><span class="p">.</span><span class="nx">connections</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">((</span><span class="na">connection</span><span class="p">:</span> <span class="nx">MockConnection</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="nx">expect</span><span class="p">(</span><span class="nx">connection</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">method</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">RequestMethod</span><span class="p">.</span><span class="nx">Post</span><span class="p">);</span>
       <span class="kd">const</span> <span class="nx">responseBody</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">connection</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">getBody</span><span class="p">());</span>
       <span class="nx">connection</span><span class="p">.</span><span class="nx">mockError</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">));</span>
     <span class="p">});</span>
-    <span class="nx">component</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="s1">'someMessage'</span><span class="p">;</span>
-    <span class="nx">component</span><span class="p">.</span><span class="nx">userName</span> <span class="o">=</span> <span class="s1">'someUserName'</span><span class="p">;</span>
-    <span class="nx">component</span><span class="p">.</span><span class="nx">userDescription</span> <span class="o">=</span> <span class="s1">'someDescription'</span><span class="p">;</span>
+    <span class="nx">component</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">someMessage</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">component</span><span class="p">.</span><span class="nx">userName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">someUserName</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">component</span><span class="p">.</span><span class="nx">userDescription</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">someDescription</span><span class="dl">'</span><span class="p">;</span>
     <span class="k">try</span> <span class="p">{</span>
       <span class="nx">component</span><span class="p">.</span><span class="nx">sendNewJob</span><span class="p">();</span>
     <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">expect</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">logServiceSpy</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">).</span><span class="nx">toHaveBeenCalledWith</span><span class="p">(</span><span class="nx">jasmine</span><span class="p">.</span><span class="nx">stringMatching</span><span class="p">(</span><span class="s1">'a problem'</span><span class="p">));</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">logServiceSpy</span><span class="p">.</span><span class="nx">sendMessage</span><span class="p">).</span><span class="nx">toHaveBeenCalledWith</span><span class="p">(</span><span class="nx">jasmine</span><span class="p">.</span><span class="nx">stringMatching</span><span class="p">(</span><span class="dl">'</span><span class="s1">a problem</span><span class="dl">'</span><span class="p">));</span>
       <span class="nx">done</span><span class="p">();</span>
     <span class="p">}</span>
   <span class="p">});</span>
@@ -570,7 +570,7 @@
 
         <div class="site-info">
             <p>
-                JDonado's README &dash; Copyright &copy; 2019
+                JDonado's README &dash; Copyright &copy; 2020
             </p>
         </div>
     </nav>

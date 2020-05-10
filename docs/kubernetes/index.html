@@ -206,7 +206,7 @@ kubectl proxy
 
 <span class="c"># Save the current pod name in an environment variable</span>
 <span class="c"># and access it through the proxy</span>
-<span class="nb">export </span><span class="nv">POD_NAME</span><span class="o">=</span><span class="k">$(</span>kubectl get pods <span class="nt">-o</span> go-template <span class="nt">--template</span> <span class="s1">'{ {range .items} } { {.metadata.name} } { {"\n"} } { {end} }'</span><span class="k">)</span>
+<span class="nb">export </span><span class="nv">POD_NAME</span><span class="o">=</span><span class="si">$(</span>kubectl get pods <span class="nt">-o</span> go-template <span class="nt">--template</span> <span class="s1">'{ {range .items} } { {.metadata.name} } { {"\n"} } { {end} }'</span><span class="si">)</span>
 
 <span class="c"># Test the pod access via proxy</span>
 curl http://localhost:8001/api/v1/namespaces/default/pods/<span class="nv">$POD_NAME</span>/proxy/
@@ -502,7 +502,7 @@ kubectl <span class="nb">exec </span>nginx-68c5b54745-hxn8r <span class="nt">--s
 
         <div class="site-info">
             <p>
-                JDonado's README &dash; Copyright &copy; 2019
+                JDonado's README &dash; Copyright &copy; 2020
             </p>
         </div>
     </nav>

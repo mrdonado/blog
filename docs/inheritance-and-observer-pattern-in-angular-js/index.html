@@ -108,14 +108,14 @@
 
 <p>Like in this example.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">'use strict'</span><span class="p">;</span>
-<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'exampleApp'</span><span class="p">,</span> <span class="p">[])</span>
-  <span class="p">.</span><span class="nx">service</span><span class="p">(</span><span class="s1">'ItemsService'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'$http'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$http</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">exampleApp</span><span class="dl">'</span><span class="p">,</span> <span class="p">[])</span>
+  <span class="p">.</span><span class="nx">service</span><span class="p">(</span><span class="dl">'</span><span class="s1">ItemsService</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">$http</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$http</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">getItems</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">$http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'www.myapi-url.com/items'</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">$http</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">www.myapi-url.com/items</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">};</span>
   <span class="p">}])</span>
-  <span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'ExampleController'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'ItemsService'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ItemsService</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">ExampleController</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">ItemsService</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ItemsService</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nb">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
 
     <span class="k">this</span><span class="p">.</span><span class="nx">itemsList</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// A property of the controller stores an array with items, initially empty.</span>
@@ -125,7 +125,7 @@
         <span class="nb">self</span><span class="p">.</span><span class="nx">itemsList</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
       <span class="p">},</span>
       <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"There has been an error"</span> <span class="o">+</span> <span class="nx">error</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">There has been an error</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">error</span><span class="p">);</span>
       <span class="p">}</span>
     <span class="p">);</span>
   <span class="p">}]);</span>            </code></pre></figure>
@@ -150,14 +150,14 @@
 
 <p>First, a service is declared with the functions that implement the observable pattern. But instead of returning a JSON, as usual in an AngularJS service, we return a function:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'notesApp'</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="s1">'observableService'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">notesApp</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="dl">'</span><span class="s1">observableService</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="c1">// A constructor is defined in order to create further services that extend this functionality</span>
     <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">observerCallbacks</span> <span class="o">=</span> <span class="p">[];</span>
       <span class="c1">//register an observer</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">registerObserverCallback</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">callback</span> <span class="o">!==</span> <span class="s2">"function"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">callback</span> <span class="o">!==</span> <span class="dl">"</span><span class="s2">function</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
           <span class="k">return</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">observerCallbacks</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
@@ -166,7 +166,7 @@
       <span class="k">this</span><span class="p">.</span><span class="nx">unregisterObserverCallback</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">found</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">observerCallbacks</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="p">{</span>
-          <span class="k">if</span> <span class="p">((</span><span class="nx">element</span> <span class="o">+</span> <span class="s1">''</span><span class="p">)</span> <span class="o">===</span> <span class="p">(</span><span class="nx">callback</span> <span class="o">+</span> <span class="s1">''</span><span class="p">))</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">((</span><span class="nx">element</span> <span class="o">+</span> <span class="dl">''</span><span class="p">)</span> <span class="o">===</span> <span class="p">(</span><span class="nx">callback</span> <span class="o">+</span> <span class="dl">''</span><span class="p">))</span> <span class="p">{</span>
             <span class="nx">found</span> <span class="o">=</span> <span class="nx">idx</span><span class="p">;</span>
           <span class="p">}</span>
         <span class="p">});</span>
@@ -187,13 +187,13 @@
 <p>Then, in order to inherit these functions, you can simply do the following (<a href="https://github.com/fjrd84/notes-app/blob/master/app/scripts/services/configuration-service.js">extract from the file configuration-service.js</a>).</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    
-<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'notesApp'</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="s1">'configurationService'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$http</span><span class="p">,</span> <span class="nx">observableService</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">notesApp</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="dl">'</span><span class="s1">configurationService</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$http</span><span class="p">,</span> <span class="nx">observableService</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">configService</span> <span class="o">=</span> <span class="p">{};</span>
     <span class="c1">// The config service inherits observable service</span>
     <span class="nx">configService</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">observableService</span><span class="p">();</span>
 
-    <span class="nx">configService</span><span class="p">.</span><span class="nx">someNewProperty</span> <span class="o">=</span> <span class="s2">"Initial Value"</span><span class="p">;</span>
+    <span class="nx">configService</span><span class="p">.</span><span class="nx">someNewProperty</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Initial Value</span><span class="dl">"</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="nx">configService</span><span class="p">;</span>
 
@@ -203,29 +203,29 @@
 
 <p>If you need to create a service that inherits from the observableService, that is also inheritable by other services, you should return a function, instead of a JSON object. This is what we do in <a href="https://github.com/fjrd84/notes-app/blob/master/app/scripts/services/basic-resource.js">basic-resource.js</a>.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'notesApp'</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="s1">'basicResource'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'observableService'</span><span class="p">,</span> <span class="s1">'$http'</span><span class="p">,</span> <span class="s1">'configurationService'</span><span class="p">,</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">notesApp</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="dl">'</span><span class="s1">basicResource</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">observableService</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">$http</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">configurationService</span><span class="dl">'</span><span class="p">,</span>
     <span class="kd">function</span> <span class="p">(</span><span class="nx">observableService</span><span class="p">,</span> <span class="nx">$http</span><span class="p">,</span> <span class="nx">configurationService</span><span class="p">)</span> <span class="p">{</span>
 
       <span class="kd">var</span> <span class="nx">basicResource</span><span class="p">;</span>
 
       <span class="c1">// some private variables and functions can be added here</span>
-      <span class="kd">var</span> <span class="nx">privateVar</span> <span class="o">=</span> <span class="s2">"privateValue"</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="nx">privateVar</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">privateValue</span><span class="dl">"</span><span class="p">;</span>
 
       <span class="kd">var</span> <span class="nx">privateFunction</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(){</span>
-        <span class="k">return</span> <span class="s2">"privateFunction"</span><span class="p">;</span>
+        <span class="k">return</span> <span class="dl">"</span><span class="s2">privateFunction</span><span class="dl">"</span><span class="p">;</span>
       <span class="p">};</span>
 
       <span class="c1">// The function you return works as the constructor of your class</span>
       <span class="nx">basicResource</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="c1">// In your new constructor, you apply the constructor of the class you want to inherit</span>
-        <span class="nx">observableService</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kr">arguments</span><span class="p">);</span>
+        <span class="nx">observableService</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
         <span class="kd">var</span> <span class="nb">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
 
         <span class="c1">// here you define the properties of the service</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">allElements</span> <span class="o">=</span> <span class="p">[];</span>
 
-        <span class="k">this</span><span class="p">.</span><span class="nx">otherPublicProperty</span> <span class="o">=</span> <span class="s2">"Initial Value"</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">otherPublicProperty</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Initial Value</span><span class="dl">"</span><span class="p">;</span>
 
       <span class="p">};</span>
 
@@ -240,10 +240,10 @@
 
 <p>Now that you have observable services, you can simply define the callbacks in your controllers, and these will be updated whenever the service retrieves new information.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'notesApp'</span><span class="p">).</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'MainController'</span><span class="p">,</span>
-  <span class="p">[</span><span class="s1">'$scope'</span><span class="p">,</span> <span class="s1">'configurationService'</span><span class="p">,</span> <span class="s1">'notesService'</span><span class="p">,</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">notesApp</span><span class="dl">'</span><span class="p">).</span><span class="nx">controller</span><span class="p">(</span><span class="dl">'</span><span class="s1">MainController</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">[</span><span class="dl">'</span><span class="s1">$scope</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">configurationService</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">notesService</span><span class="dl">'</span><span class="p">,</span>
     <span class="kd">function</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">configurationService</span><span class="p">,</span> <span class="nx">notesService</span><span class="p">)</span> <span class="p">{</span>
-      <span class="s1">'use strict'</span><span class="p">;</span>
+      <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
       <span class="kd">var</span> <span class="nb">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
 
@@ -508,7 +508,7 @@
 
         <div class="site-info">
             <p>
-                JDonado's README &dash; Copyright &copy; 2019
+                JDonado's README &dash; Copyright &copy; 2020
             </p>
         </div>
     </nav>

@@ -124,9 +124,9 @@
 
 <p>Here I come with an alternative solution that worked for me with AngularJS services. The idea is a service with a toolset of constructors, implementing the code of the objects we may want to use again and again. Something like a <a href="https://en.wikipedia.org/wiki/Factory_method_pattern">factory</a>.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">'use strict'</span><span class="p">;</span>
-<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'exampleApp'</span><span class="p">,</span> <span class="p">[])</span>
-  <span class="p">.</span><span class="nx">service</span><span class="p">(</span><span class="s1">'factoryService'</span><span class="p">,</span> <span class="p">[</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">exampleApp</span><span class="dl">'</span><span class="p">,</span> <span class="p">[])</span>
+  <span class="p">.</span><span class="nx">service</span><span class="p">(</span><span class="dl">'</span><span class="s1">factoryService</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
       <span class="c1">// Observer is going to be our constructor</span>
       <span class="na">Observer</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
@@ -134,7 +134,7 @@
           <span class="nx">observerCallbacks</span> <span class="o">=</span> <span class="p">[];</span>
 
         <span class="nx">observer</span><span class="p">.</span><span class="nx">registerObserverCallback</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
-          <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">callback</span> <span class="o">!==</span> <span class="s2">"function"</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">callback</span> <span class="o">!==</span> <span class="dl">"</span><span class="s2">function</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span><span class="p">;</span>
           <span class="p">}</span>
           <span class="nx">observerCallbacks</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
@@ -143,7 +143,7 @@
         <span class="nx">observer</span><span class="p">.</span><span class="nx">unregisterObserverCallback</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
           <span class="kd">var</span> <span class="nx">found</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
           <span class="nx">observerCallbacks</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">((</span><span class="nx">element</span> <span class="o">+</span> <span class="s1">''</span><span class="p">)</span> <span class="o">===</span> <span class="p">(</span><span class="nx">callback</span> <span class="o">+</span> <span class="s1">''</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">((</span><span class="nx">element</span> <span class="o">+</span> <span class="dl">''</span><span class="p">)</span> <span class="o">===</span> <span class="p">(</span><span class="nx">callback</span> <span class="o">+</span> <span class="dl">''</span><span class="p">))</span> <span class="p">{</span>
               <span class="nx">found</span> <span class="o">=</span> <span class="nx">idx</span><span class="p">;</span>
             <span class="p">}</span>
           <span class="p">});</span>
@@ -167,13 +167,13 @@
 
 <p>Now, if you want to create a new service that implements the functions defined in <code class="highlighter-rouge">Observer</code>, you can do something like this:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'exampleApp'</span><span class="p">,</span> <span class="p">[])</span>
-  <span class="p">.</span><span class="nx">service</span><span class="p">(</span><span class="s1">'NewService'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'factoryService'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">factoryService</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">exampleApp</span><span class="dl">'</span><span class="p">,</span> <span class="p">[])</span>
+  <span class="p">.</span><span class="nx">service</span><span class="p">(</span><span class="dl">'</span><span class="s1">NewService</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">factoryService</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">factoryService</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// New object using the constructor defined in the factory</span>
     <span class="kd">var</span> <span class="nx">observable</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">factoryService</span><span class="p">.</span><span class="nx">Observer</span><span class="p">();</span>
     <span class="k">return</span> <span class="p">{</span>
       <span class="na">observable</span><span class="p">:</span> <span class="nx">observable</span><span class="p">,</span>
-      <span class="na">otherStuff</span><span class="p">:</span> <span class="p">[</span><span class="s1">'service'</span><span class="p">,</span> <span class="s1">'specific'</span><span class="p">,</span> <span class="s1">'things'</span><span class="p">]</span>
+      <span class="na">otherStuff</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">service</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">specific</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">things</span><span class="dl">'</span><span class="p">]</span>
     <span class="p">};</span>
   <span class="p">}]);</span>   </code></pre></figure>
 
@@ -420,7 +420,7 @@
 
         <div class="site-info">
             <p>
-                JDonado's README &dash; Copyright &copy; 2019
+                JDonado's README &dash; Copyright &copy; 2020
             </p>
         </div>
     </nav>
