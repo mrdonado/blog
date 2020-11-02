@@ -90,7 +90,7 @@
     <p class="post-reading-time">&#126;
         
         
-          7 min
+          8 min
         
     </p>
     
@@ -106,7 +106,7 @@
     <article class="post-content">
         <h1 id="beyond-docker-compose">Beyond docker compose</h1>
 
-<p>Right after I started using docker to containerize my applications, I used to include a <code class="highlighter-rouge">docker-compose.yml</code> file together with them (sometimes in a separate repository) in order to illustrate how a local deployment could work. With <a href="https://docs.docker.com/compose/">docker-compose</a> you can:</p>
+<p>Right after I started using docker to containerize my applications, I used to include a <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> file together with them (sometimes in a separate repository) in order to illustrate how a local deployment could work. With <a href="https://docs.docker.com/compose/">docker-compose</a> you can:</p>
 
 <ul>
   <li>Define which services and applications are necessary to run a specific solution</li>
@@ -138,7 +138,7 @@
   <li>You can install minikube on your machine and test your complete solution even before it reaches the cloud. If something goes wrong, you can try to find out what’s happening directly on your machine without having to wait for things to upload and deploy to the cloud</li>
 </ul>
 
-<p>For me this last point is a game changer as compared to other cloud technologies. The ability to try and run everything locally makes everything easier. Forget about small changes on a <code class="highlighter-rouge">yml</code> file and trigger the CI pipelines to (pray and) see if a deployment works. Instead of that just make sure that your configuration is up and running locally on your minikube and chances are everything will work out just like that on the cloud.</p>
+<p>For me this last point is a game changer as compared to other cloud technologies. The ability to try and run everything locally makes everything easier. Forget about small changes on a <code class="language-plaintext highlighter-rouge">yml</code> file and trigger the CI pipelines to (pray and) see if a deployment works. Instead of that just make sure that your configuration is up and running locally on your minikube and chances are everything will work out just like that on the cloud.</p>
 
 <h2 id="learn-kubernetes">Learn Kubernetes</h2>
 
@@ -166,9 +166,9 @@
 
 <p>You can run Kubernetes locally on your machine by installing <strong>minikube</strong>. Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one node.</p>
 
-<p><strong>Kubectl</strong> is the Kubernetes CLI, that uses the Kubernetes API in order to interact with the cluster. You can use it to connect to your minikube and handle your deployments locally, and you can also connect to your cloud provider and handle your deployments remotely. It is kind of an equivalent to the <code class="highlighter-rouge">docker</code> command for docker.</p>
+<p><strong>Kubectl</strong> is the Kubernetes CLI, that uses the Kubernetes API in order to interact with the cluster. You can use it to connect to your minikube and handle your deployments locally, and you can also connect to your cloud provider and handle your deployments remotely. It is kind of an equivalent to the <code class="language-plaintext highlighter-rouge">docker</code> command for docker.</p>
 
-<p>In order to deploy an application in Kubernetes, you can define a deployment configuration in a <code class="highlighter-rouge">yml</code> (preferred) or in a <code class="highlighter-rouge">json</code> file. A deployment configuration instructs Kubernetes how to create and update instances of an application. The Kubernetes Deployment Controller (KDC) makes sure that the instances are up an running. NOTE: my next blog post will show a simple example of a microservices deployment in kubernetes. Here I will continue defining the basic concepts and commands for future quick reference.</p>
+<p>In order to deploy an application in Kubernetes, you can define a deployment configuration in a <code class="language-plaintext highlighter-rouge">yml</code> (preferred) or in a <code class="language-plaintext highlighter-rouge">json</code> file. A deployment configuration instructs Kubernetes how to create and update instances of an application. The Kubernetes Deployment Controller (KDC) makes sure that the instances are up an running. NOTE: my next blog post will show a simple example of a microservices deployment in kubernetes. Here I will continue defining the basic concepts and commands for future quick reference.</p>
 
 <p>In case a node goes down, the KDC will start the required containers in the remaining working nodes (self-healing mechanism).</p>
 
@@ -180,13 +180,13 @@
   <li>Pods may have one or more containers and volumes</li>
 </ul>
 
-<p>A <strong>service</strong> defines a logical set of pods and a policy to determine how to access them. It is defined by <code class="highlighter-rouge">yaml</code> or <code class="highlighter-rouge">json</code>. Services allow applications to receive traffic. You can define the following types of services (in the <code class="highlighter-rouge">type</code> field of the <code class="highlighter-rouge">yaml</code> file):</p>
+<p>A <strong>service</strong> defines a logical set of pods and a policy to determine how to access them. It is defined by <code class="language-plaintext highlighter-rouge">yaml</code> or <code class="language-plaintext highlighter-rouge">json</code>. Services allow applications to receive traffic. You can define the following types of services (in the <code class="language-plaintext highlighter-rouge">type</code> field of the <code class="language-plaintext highlighter-rouge">yaml</code> file):</p>
 
 <ul>
   <li><strong>ClusterIP</strong> (default): it makes the service only reachable within the cluster.</li>
-  <li><strong>NodePort</strong>: it exposes the service on the same port of each selected node in the cluster using NAT, making thus the service accessible from outide the cluster via <code class="highlighter-rouge">&lt;NodeIP&gt;:&lt;NodePort&gt;</code>.</li>
+  <li><strong>NodePort</strong>: it exposes the service on the same port of each selected node in the cluster using NAT, making thus the service accessible from outide the cluster via <code class="language-plaintext highlighter-rouge">&lt;NodeIP&gt;:&lt;NodePort&gt;</code>.</li>
   <li><strong>LoadBalancer</strong></li>
-  <li><strong>ExternalName</strong>: it exposes the service using an arbitrary name via <code class="highlighter-rouge">externalName</code> by returning a CNAME record. <code class="highlighter-rouge">kube-dns</code> v1.7 or higher is required.</li>
+  <li><strong>ExternalName</strong>: it exposes the service using an arbitrary name via <code class="language-plaintext highlighter-rouge">externalName</code> by returning a CNAME record. <code class="language-plaintext highlighter-rouge">kube-dns</code> v1.7 or higher is required.</li>
 </ul>
 
 <p>A service routes traffic across a set of Pods. They allow pods to die and replicate without impacting the application. Kubernetes Services handle discovery and routing. In order to match a set of pods, services use labels and selectors.</p>

@@ -108,61 +108,61 @@
 
 <h2 id="avoid-conflicts">Avoid conflicts</h2>
 
-<p>If you’ve been using nodeJS npm package manager, chances are, sooner or later you will get conflicts within your dependencies. Maybe you’re cloning an old project or maybe you just updated your environment and your <code class="highlighter-rouge">node_modules</code> folder must be regenerated.</p>
+<p>If you’ve been using nodeJS npm package manager, chances are, sooner or later you will get conflicts within your dependencies. Maybe you’re cloning an old project or maybe you just updated your environment and your <code class="language-plaintext highlighter-rouge">node_modules</code> folder must be regenerated.</p>
 
-<p>Sometimes after running <code class="highlighter-rouge">npm install</code> you don’t get exactly the modules that you need and suddenly things don’t work as expected anymore.</p>
+<p>Sometimes after running <code class="language-plaintext highlighter-rouge">npm install</code> you don’t get exactly the modules that you need and suddenly things don’t work as expected anymore.</p>
 
-<p>This might happen when there’s <a href="https://docs.npmjs.com/misc/semver">no specific version</a> defined of some dependencies in your <code class="highlighter-rouge">package.json</code>, but rather an approximate one (e.g.: using a tilde, as in <code class="highlighter-rouge">~1.2.3</code> or a caret, as in <code class="highlighter-rouge">^1.2.3</code>).</p>
+<p>This might happen when there’s <a href="https://docs.npmjs.com/misc/semver">no specific version</a> defined of some dependencies in your <code class="language-plaintext highlighter-rouge">package.json</code>, but rather an approximate one (e.g.: using a tilde, as in <code class="language-plaintext highlighter-rouge">~1.2.3</code> or a caret, as in <code class="language-plaintext highlighter-rouge">^1.2.3</code>).</p>
 
 <p>While tildes and carets can be useful if you want to automatically use more recent versions when available, they can sometimes break your project if anything new isn’t compatible with your current code.</p>
 
-<p>By just specifying a version number without carets and tildes (as in <code class="highlighter-rouge">1.2.3</code>), you fix the specific version of each dependency you need.</p>
+<p>By just specifying a version number without carets and tildes (as in <code class="language-plaintext highlighter-rouge">1.2.3</code>), you fix the specific version of each dependency you need.</p>
 
 <h3 id="lock-down-dependency-versions">Lock down dependency versions</h3>
 
 <p>Sometimes using specific module versions is not enough. Saving a list with the specific versions of all your dependencies might save your day.</p>
 
-<p>Use the <a href="https://docs.npmjs.com/cli/shrinkwrap">npm-shrinkwrap</a> command in order to create an <code class="highlighter-rouge">npm-shrinkwrap.json</code> file that <a href="https://docs.npmjs.com/files/package-locks">locks</a> all the npm dependencies:</p>
+<p>Use the <a href="https://docs.npmjs.com/cli/shrinkwrap">npm-shrinkwrap</a> command in order to create an <code class="language-plaintext highlighter-rouge">npm-shrinkwrap.json</code> file that <a href="https://docs.npmjs.com/files/package-locks">locks</a> all the npm dependencies:</p>
 
-<p><code class="highlighter-rouge">npm shrinkwrap</code></p>
+<p><code class="language-plaintext highlighter-rouge">npm shrinkwrap</code></p>
 
-<p>Another (even better) alternative is to use <a href="https://yarnpkg.com/en/docs/yarn-lock">Yarn</a> to create a <code class="highlighter-rouge">yarn.lock</code> file, which has the same goal as the <code class="highlighter-rouge">npm-shrinkwrap.json</code>, but it seems to follow a more deterministic approach, being therefore safer.</p>
+<p>Another (even better) alternative is to use <a href="https://yarnpkg.com/en/docs/yarn-lock">Yarn</a> to create a <code class="language-plaintext highlighter-rouge">yarn.lock</code> file, which has the same goal as the <code class="language-plaintext highlighter-rouge">npm-shrinkwrap.json</code>, but it seems to follow a more deterministic approach, being therefore safer.</p>
 
-<p>Yarn is compatible with the same <code class="highlighter-rouge">package.json</code> of npm, so you can just install it globally (<code class="highlighter-rouge">npm install -g yarn</code>) and try it out right away by simply running <code class="highlighter-rouge">yarn</code> on your project’s root folder, which will generate the <code class="highlighter-rouge">yarn.lock</code>.</p>
+<p>Yarn is compatible with the same <code class="language-plaintext highlighter-rouge">package.json</code> of npm, so you can just install it globally (<code class="language-plaintext highlighter-rouge">npm install -g yarn</code>) and try it out right away by simply running <code class="language-plaintext highlighter-rouge">yarn</code> on your project’s root folder, which will generate the <code class="language-plaintext highlighter-rouge">yarn.lock</code>.</p>
 
-<p>It is a very good idea to add this <code class="highlighter-rouge">yarn.lock</code> to your version control.</p>
+<p>It is a very good idea to add this <code class="language-plaintext highlighter-rouge">yarn.lock</code> to your version control.</p>
 
 <h2 id="remove-unneeded-dependencies">Remove unneeded dependencies</h2>
 
-<p>If you want to remove modules from your <code class="highlighter-rouge">node_modules</code> directory that you once installed, but that are not required anymore by your project, you can use <a href="https://docs.npmjs.com/cli/prune">prune</a>:</p>
+<p>If you want to remove modules from your <code class="language-plaintext highlighter-rouge">node_modules</code> directory that you once installed, but that are not required anymore by your project, you can use <a href="https://docs.npmjs.com/cli/prune">prune</a>:</p>
 
-<p><code class="highlighter-rouge">npm prune</code></p>
+<p><code class="language-plaintext highlighter-rouge">npm prune</code></p>
 
-<p><code class="highlighter-rouge">npm prune --production</code> will also remove the <em>devDependencies</em>.</p>
+<p><code class="language-plaintext highlighter-rouge">npm prune --production</code> will also remove the <em>devDependencies</em>.</p>
 
-<p>This is particularly useful before running <code class="highlighter-rouge">npm shrinkwrap</code> if you manually removed dependencies from your <code class="highlighter-rouge">package.json</code>.</p>
+<p>This is particularly useful before running <code class="language-plaintext highlighter-rouge">npm shrinkwrap</code> if you manually removed dependencies from your <code class="language-plaintext highlighter-rouge">package.json</code>.</p>
 
 <h2 id="list-outdated-dependencies">List outdated dependencies</h2>
 
 <p>If you want to check out which dependencies within your project are outdated, you can use the <a href="https://docs.npmjs.com/cli/outdated">npm-outdated</a> command:</p>
 
-<p><code class="highlighter-rouge">npm outdated</code></p>
+<p><code class="language-plaintext highlighter-rouge">npm outdated</code></p>
 
 <h2 id="update-dependencies">Update dependencies</h2>
 
-<p>With the module <code class="highlighter-rouge">npm-check-updates</code>, you can automatically update your dependencies to the latest versions (be careful when doing this, since modifying various depencencies at once might break things down).</p>
+<p>With the module <code class="language-plaintext highlighter-rouge">npm-check-updates</code>, you can automatically update your dependencies to the latest versions (be careful when doing this, since modifying various depencencies at once might break things down).</p>
 
 <ul>
-  <li><code class="highlighter-rouge">npm i -g npm-check-updates</code> Install the <a href="https://www.npmjs.com/package/npm-check-updates">npm-check-updates</a> module globally</li>
-  <li><code class="highlighter-rouge">npm-check-updates -u</code> the option -u upgrades your <code class="highlighter-rouge">package.json</code> automatically</li>
-  <li><code class="highlighter-rouge">npm install</code> in order to install the new versions of the dependencies (you might need to remove the <code class="highlighter-rouge">node_modules</code> directory first)</li>
+  <li><code class="language-plaintext highlighter-rouge">npm i -g npm-check-updates</code> Install the <a href="https://www.npmjs.com/package/npm-check-updates">npm-check-updates</a> module globally</li>
+  <li><code class="language-plaintext highlighter-rouge">npm-check-updates -u</code> the option -u upgrades your <code class="language-plaintext highlighter-rouge">package.json</code> automatically</li>
+  <li><code class="language-plaintext highlighter-rouge">npm install</code> in order to install the new versions of the dependencies (you might need to remove the <code class="language-plaintext highlighter-rouge">node_modules</code> directory first)</li>
 </ul>
 
 <h2 id="some-other-useful-commands">Some other useful commands</h2>
 
 <ul>
-  <li><code class="highlighter-rouge">npm ls</code> list the installed packages</li>
-  <li><code class="highlighter-rouge">npm dedupe</code> reduce duplication</li>
+  <li><code class="language-plaintext highlighter-rouge">npm ls</code> list the installed packages</li>
+  <li><code class="language-plaintext highlighter-rouge">npm dedupe</code> reduce duplication</li>
 </ul>
 
 

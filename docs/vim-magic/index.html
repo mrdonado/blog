@@ -90,7 +90,7 @@
     <p class="post-reading-time">&#126;
         
         
-          3 min
+          4 min
         
     </p>
     
@@ -118,77 +118,77 @@ whenever I discover new interesting stuff (this is kind of a personal quick refe
 <h3 id="edition-magic">Edition magic</h3>
 
 <ul>
-  <li><code class="highlighter-rouge">vi"</code> Select everything <em>inside</em> <code class="highlighter-rouge">"</code>. It also works with parenthesis, brackets, tags…</li>
-  <li><code class="highlighter-rouge">di"</code> Delete everything <em>inside</em> <code class="highlighter-rouge">"</code>. Same as before.</li>
-  <li><code class="highlighter-rouge">da"</code> Delete everything <em>inside</em> <code class="highlighter-rouge">"</code>, including the surrounding <code class="highlighter-rouge">"</code></li>
-  <li><code class="highlighter-rouge">CTRL+v</code> Start visual mode, selecting columns</li>
-  <li><code class="highlighter-rouge">=&lt;next position&gt;</code> Indent</li>
-  <li><code class="highlighter-rouge">zz</code> Scroll the current line to the center of the window</li>
-  <li><code class="highlighter-rouge">zt</code> Scroll the current line to the top of the window</li>
-  <li><code class="highlighter-rouge">zb</code> Scroll the current line to the bottom of the window</li>
-  <li><code class="highlighter-rouge">cs"'</code> Change the surrounding double quotes by simple quotes
+  <li><code class="language-plaintext highlighter-rouge">vi"</code> Select everything <em>inside</em> <code class="language-plaintext highlighter-rouge">"</code>. It also works with parenthesis, brackets, tags…</li>
+  <li><code class="language-plaintext highlighter-rouge">di"</code> Delete everything <em>inside</em> <code class="language-plaintext highlighter-rouge">"</code>. Same as before.</li>
+  <li><code class="language-plaintext highlighter-rouge">da"</code> Delete everything <em>inside</em> <code class="language-plaintext highlighter-rouge">"</code>, including the surrounding <code class="language-plaintext highlighter-rouge">"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">CTRL+v</code> Start visual mode, selecting columns</li>
+  <li><code class="language-plaintext highlighter-rouge">=&lt;next position&gt;</code> Indent</li>
+  <li><code class="language-plaintext highlighter-rouge">zz</code> Scroll the current line to the center of the window</li>
+  <li><code class="language-plaintext highlighter-rouge">zt</code> Scroll the current line to the top of the window</li>
+  <li><code class="language-plaintext highlighter-rouge">zb</code> Scroll the current line to the bottom of the window</li>
+  <li><code class="language-plaintext highlighter-rouge">cs"'</code> Change the surrounding double quotes by simple quotes
 (<a href="http://www.vim.org/scripts/script.php?script_id=1697">surround.vim</a> is required)</li>
-  <li><code class="highlighter-rouge">/\csearchString</code> Perform a case insensitive search</li>
-  <li><code class="highlighter-rouge">/\CsearchString</code> Perform a case sensitive search</li>
+  <li><code class="language-plaintext highlighter-rouge">/\csearchString</code> Perform a case insensitive search</li>
+  <li><code class="language-plaintext highlighter-rouge">/\CsearchString</code> Perform a case sensitive search</li>
 </ul>
 
 <h3 id="marks">Marks</h3>
 
 <ul>
-  <li><code class="highlighter-rouge">mk</code> mark the current position as <code class="highlighter-rouge">k</code> (any other lowercase letter will do)</li>
-  <li><code class="highlighter-rouge">mK</code> mark the current position as <code class="highlighter-rouge">K</code>. Uppercase means that it is a global mark,
+  <li><code class="language-plaintext highlighter-rouge">mk</code> mark the current position as <code class="language-plaintext highlighter-rouge">k</code> (any other lowercase letter will do)</li>
+  <li><code class="language-plaintext highlighter-rouge">mK</code> mark the current position as <code class="language-plaintext highlighter-rouge">K</code>. Uppercase means that it is a global mark,
 and it will be available even if you currently have a different file opened.</li>
-  <li><code class="highlighter-rouge">'k</code> jump to the position previously marked as <code class="highlighter-rouge">k</code></li>
+  <li><code class="language-plaintext highlighter-rouge">'k</code> jump to the position previously marked as <code class="language-plaintext highlighter-rouge">k</code></li>
 </ul>
 
 <h3 id="folds">Folds</h3>
 
 <ul>
-  <li><code class="highlighter-rouge">zf'k</code> fold lines until the <code class="highlighter-rouge">k</code> mark</li>
-  <li><code class="highlighter-rouge">zo</code> open the folded code</li>
-  <li><code class="highlighter-rouge">zc</code> close the folded code</li>
-  <li><code class="highlighter-rouge">za</code> toggle the folded code</li>
+  <li><code class="language-plaintext highlighter-rouge">zf'k</code> fold lines until the <code class="language-plaintext highlighter-rouge">k</code> mark</li>
+  <li><code class="language-plaintext highlighter-rouge">zo</code> open the folded code</li>
+  <li><code class="language-plaintext highlighter-rouge">zc</code> close the folded code</li>
+  <li><code class="language-plaintext highlighter-rouge">za</code> toggle the folded code</li>
 </ul>
 
 <h3 id="sessions">Sessions</h3>
 
 <ul>
-  <li><code class="highlighter-rouge">:mks ~/.vim/foo.vim</code> Save the current vim session</li>
-  <li><code class="highlighter-rouge">:source ~/.vim/foo.vim</code> Restore the previously saved session</li>
+  <li><code class="language-plaintext highlighter-rouge">:mks ~/.vim/foo.vim</code> Save the current vim session</li>
+  <li><code class="language-plaintext highlighter-rouge">:source ~/.vim/foo.vim</code> Restore the previously saved session</li>
 </ul>
 
 <h3 id="tabs">Tabs</h3>
 
 <ul>
-  <li><code class="highlighter-rouge">gT</code> Go to the previous tab</li>
-  <li><code class="highlighter-rouge">gt</code> Go to the next tab</li>
-  <li><code class="highlighter-rouge">:tabfind &lt;TAB&gt;</code> Find a file with autocompletion and open it in a new tab</li>
+  <li><code class="language-plaintext highlighter-rouge">gT</code> Go to the previous tab</li>
+  <li><code class="language-plaintext highlighter-rouge">gt</code> Go to the next tab</li>
+  <li><code class="language-plaintext highlighter-rouge">:tabfind &lt;TAB&gt;</code> Find a file with autocompletion and open it in a new tab</li>
 </ul>
 
 <h3 id="splitting">Splitting</h3>
 
 <ul>
-  <li><code class="highlighter-rouge">vsplit</code> Split vertically</li>
-  <li><code class="highlighter-rouge">split</code> Split horizontally</li>
+  <li><code class="language-plaintext highlighter-rouge">vsplit</code> Split vertically</li>
+  <li><code class="language-plaintext highlighter-rouge">split</code> Split horizontally</li>
 </ul>
 
 <h3 id="other-commands">Other commands</h3>
 
 <ul>
-  <li><code class="highlighter-rouge">:echo $VIM</code> Show the path to the vimrc configuration file (usually just <code class="highlighter-rouge">~/.vimrc</code>)</li>
-  <li><code class="highlighter-rouge">:!command</code> Run a unix command</li>
-  <li><code class="highlighter-rouge">:!!</code> Swap the selection by the stdout of the last command</li>
-  <li><code class="highlighter-rouge">:e .</code> Open the file explorer on the current directory, in order to edit a file</li>
-  <li><code class="highlighter-rouge">:find *.js &lt;TAB&gt;</code> Find a file with extension <code class="highlighter-rouge">.js</code> using autocompletion</li>
-  <li><code class="highlighter-rouge">:b &lt;TAB&gt;</code> Open a file that has been previously opened (and is still in the buffer)</li>
-  <li><code class="highlighter-rouge">:ls</code> List the previously opened files</li>
-  <li><code class="highlighter-rouge">:vert diffs otherfile</code> Diff the current file with <code class="highlighter-rouge">otherfile</code></li>
+  <li><code class="language-plaintext highlighter-rouge">:echo $VIM</code> Show the path to the vimrc configuration file (usually just <code class="language-plaintext highlighter-rouge">~/.vimrc</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">:!command</code> Run a unix command</li>
+  <li><code class="language-plaintext highlighter-rouge">:!!</code> Swap the selection by the stdout of the last command</li>
+  <li><code class="language-plaintext highlighter-rouge">:e .</code> Open the file explorer on the current directory, in order to edit a file</li>
+  <li><code class="language-plaintext highlighter-rouge">:find *.js &lt;TAB&gt;</code> Find a file with extension <code class="language-plaintext highlighter-rouge">.js</code> using autocompletion</li>
+  <li><code class="language-plaintext highlighter-rouge">:b &lt;TAB&gt;</code> Open a file that has been previously opened (and is still in the buffer)</li>
+  <li><code class="language-plaintext highlighter-rouge">:ls</code> List the previously opened files</li>
+  <li><code class="language-plaintext highlighter-rouge">:vert diffs otherfile</code> Diff the current file with <code class="language-plaintext highlighter-rouge">otherfile</code></li>
 </ul>
 
 <h2 id="in-edit-mode">In edit mode</h2>
 
 <ul>
-  <li><code class="highlighter-rouge">&lt;CTRL&gt;n</code> Autocomplete</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;CTRL&gt;n</code> Autocomplete</li>
 </ul>
 
 <h2 id="custom-settings">Custom settings</h2>
@@ -196,15 +196,15 @@ and it will be available even if you currently have a different file opened.</li
 <p>These settings can be saved into the vimrc file.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">syntax on</code> Activate the syntax highlighting</li>
-  <li><code class="highlighter-rouge">set number</code> Show the line numbers</li>
-  <li><code class="highlighter-rouge">set autoindent</code> Autoindentation</li>
-  <li><code class="highlighter-rouge">set path+=**</code> Include subdirectories when finding a file</li>
-  <li><code class="highlighter-rouge">set wildmenu</code> Menu helper when using tab finding files or directories</li>
-  <li><code class="highlighter-rouge">set nocompatible</code> Ignore compatibility with ancient vi versions</li>
-  <li><code class="highlighter-rouge">set smartcase</code> Always perform case insensitive search unless you search for capital letters</li>
-  <li><code class="highlighter-rouge">set wildignore+=**/node_modules/**</code> Ignore directory when finding files</li>
-  <li><code class="highlighter-rouge">set wrap linebreak nolist</code> Activate word wrap</li>
+  <li><code class="language-plaintext highlighter-rouge">syntax on</code> Activate the syntax highlighting</li>
+  <li><code class="language-plaintext highlighter-rouge">set number</code> Show the line numbers</li>
+  <li><code class="language-plaintext highlighter-rouge">set autoindent</code> Autoindentation</li>
+  <li><code class="language-plaintext highlighter-rouge">set path+=**</code> Include subdirectories when finding a file</li>
+  <li><code class="language-plaintext highlighter-rouge">set wildmenu</code> Menu helper when using tab finding files or directories</li>
+  <li><code class="language-plaintext highlighter-rouge">set nocompatible</code> Ignore compatibility with ancient vi versions</li>
+  <li><code class="language-plaintext highlighter-rouge">set smartcase</code> Always perform case insensitive search unless you search for capital letters</li>
+  <li><code class="language-plaintext highlighter-rouge">set wildignore+=**/node_modules/**</code> Ignore directory when finding files</li>
+  <li><code class="language-plaintext highlighter-rouge">set wrap linebreak nolist</code> Activate word wrap</li>
 </ul>
 
 <h2 id="exporting-your-configuration">Exporting your configuration</h2>
@@ -212,14 +212,14 @@ and it will be available even if you currently have a different file opened.</li
 <p>You can save your custom vim configuration to a repository and synchronize it with
 any other machine.</p>
 
-<p>In order to do that, just initialize your <code class="highlighter-rouge">~/.vim</code> directory as a git repository,
+<p>In order to do that, just initialize your <code class="language-plaintext highlighter-rouge">~/.vim</code> directory as a git repository,
 and push it to the cloud (e.g.: to GitHub). You can find <a href="https://github.com/fjrd84/.vim">mine here</a>
 (follow the instructions on the README in order to set it up).</p>
 
 <h2 id="and-of-course">…and of course</h2>
 
 <ul>
-  <li><code class="highlighter-rouge">:q!</code> <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">Don’t get trapped</a>.
+  <li><code class="language-plaintext highlighter-rouge">:q!</code> <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">Don’t get trapped</a>.
 Leave without saving :)</li>
 </ul>
 

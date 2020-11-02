@@ -113,77 +113,77 @@
 <h2 id="scripts">Scripts</h2>
 
 <ul>
-  <li><code class="highlighter-rouge"><span class="c">#!/bin/bash</span></code> use this as the first line of a bash script, for the interpreter to know how to handle it</li>
+  <li><code class="language-plaintext highlighter-rouge">#!/bin/bash</code> use this as the first line of a bash script, for the interpreter to know how to handle it</li>
 </ul>
 
 <h2 id="files">Files</h2>
 
 <ul>
-  <li><code class="highlighter-rouge">for i in *.png ; do convert "$i" "${i%.*}.jpg" ; done</code> convert all <strong>png</strong> files into <strong>jpg</strong></li>
-  <li><code class="highlighter-rouge">find . -type f -exec grep -El "someWord|someOtherWord" {} \;</code> find all files in the current directory (and above) that contain <code class="highlighter-rouge">someWord</code> or <code class="highlighter-rouge">someOtherWord</code>. An escaped semicolon is necessary to indicate the end of <code class="highlighter-rouge">exec</code>. The brackets are also necessary, since they contain the output of the <code class="highlighter-rouge">find</code> command, that will be fed into the grep command</li>
-  <li><code class="highlighter-rouge">find . -type f | xargs grep -El "something|appstore"</code> exactly the same as the previous command, using <code class="highlighter-rouge">xargs</code> instead of <code class="highlighter-rouge">-exec</code></li>
-  <li><code class="highlighter-rouge">find /path/to/files* -mtime +5 -exec rm {} \;</code> delete files older than 5 days</li>
-  <li><code class="highlighter-rouge">find . -name  '*.zip' -exec unzip {} \;</code> unzip all the zip files in the current directory</li>
-  <li><code class="highlighter-rouge">find . -type d | egrep -o '.*src$'</code> find <code class="highlighter-rouge">src</code> directories and none of their subdirectories</li>
-  <li><code class="highlighter-rouge">find . 2&gt;/dev/null</code> find without showing <code class="highlighter-rouge">permission denied</code> messages</li>
-  <li><code class="highlighter-rouge">wdiff one.txt two.txt | colordiff</code> color the differences between <strong>one.txt</strong> and <strong>two.txt</strong></li>
-  <li><code class="highlighter-rouge">diff -rq(w) dir1 dir2</code> compare two directory structures</li>
-  <li><code class="highlighter-rouge">SOME_FILE=$(&lt;some-file.txt)</code> load the contents of <strong>some-file.txt</strong> into the variable <strong>SOME_FILE</strong></li>
-  <li><code class="highlighter-rouge">cat oldfile.txt | tr -d '\n' &gt; newfile.txt</code> create newfile.txt as a copy of oldfile where all newlines have been removed</li>
-  <li><code class="highlighter-rouge">convert file.{jpg,png}</code> equivalent to <code class="highlighter-rouge">convert file.jpg file.png</code></li>
+  <li><code class="language-plaintext highlighter-rouge">for i in *.png ; do convert "$i" "${i%.*}.jpg" ; done</code> convert all <strong>png</strong> files into <strong>jpg</strong></li>
+  <li><code class="language-plaintext highlighter-rouge">find . -type f -exec grep -El "someWord|someOtherWord" {} \;</code> find all files in the current directory (and above) that contain <code class="language-plaintext highlighter-rouge">someWord</code> or <code class="language-plaintext highlighter-rouge">someOtherWord</code>. An escaped semicolon is necessary to indicate the end of <code class="language-plaintext highlighter-rouge">exec</code>. The brackets are also necessary, since they contain the output of the <code class="language-plaintext highlighter-rouge">find</code> command, that will be fed into the grep command</li>
+  <li><code class="language-plaintext highlighter-rouge">find . -type f | xargs grep -El "something|appstore"</code> exactly the same as the previous command, using <code class="language-plaintext highlighter-rouge">xargs</code> instead of <code class="language-plaintext highlighter-rouge">-exec</code></li>
+  <li><code class="language-plaintext highlighter-rouge">find /path/to/files* -mtime +5 -exec rm {} \;</code> delete files older than 5 days</li>
+  <li><code class="language-plaintext highlighter-rouge">find . -name  '*.zip' -exec unzip {} \;</code> unzip all the zip files in the current directory</li>
+  <li><code class="language-plaintext highlighter-rouge">find . -type d | egrep -o '.*src$'</code> find <code class="language-plaintext highlighter-rouge">src</code> directories and none of their subdirectories</li>
+  <li><code class="language-plaintext highlighter-rouge">find . 2&gt;/dev/null</code> find without showing <code class="language-plaintext highlighter-rouge">permission denied</code> messages</li>
+  <li><code class="language-plaintext highlighter-rouge">wdiff one.txt two.txt | colordiff</code> color the differences between <strong>one.txt</strong> and <strong>two.txt</strong></li>
+  <li><code class="language-plaintext highlighter-rouge">diff -rq(w) dir1 dir2</code> compare two directory structures</li>
+  <li><code class="language-plaintext highlighter-rouge">SOME_FILE=$(&lt;some-file.txt)</code> load the contents of <strong>some-file.txt</strong> into the variable <strong>SOME_FILE</strong></li>
+  <li><code class="language-plaintext highlighter-rouge">cat oldfile.txt | tr -d '\n' &gt; newfile.txt</code> create newfile.txt as a copy of oldfile where all newlines have been removed</li>
+  <li><code class="language-plaintext highlighter-rouge">convert file.{jpg,png}</code> equivalent to <code class="language-plaintext highlighter-rouge">convert file.jpg file.png</code></li>
 </ul>
 
-<p>With <code class="highlighter-rouge">xargs</code> you can avoid loops (it passes the stdout as input to the specified command):</p>
+<p>With <code class="language-plaintext highlighter-rouge">xargs</code> you can avoid loops (it passes the stdout as input to the specified command):</p>
 
 <ul>
-  <li><code class="highlighter-rouge">find . -name *.png | xargs rm -rf</code> remove recursively all png files</li>
-  <li><code class="highlighter-rouge">git branch --merged | grep -v \* | xargs git branch -D</code> remove all local git branches that have already been merged</li>
+  <li><code class="language-plaintext highlighter-rouge">find . -name *.png | xargs rm -rf</code> remove recursively all png files</li>
+  <li><code class="language-plaintext highlighter-rouge">git branch --merged | grep -v \* | xargs git branch -D</code> remove all local git branches that have already been merged</li>
 </ul>
 
 <h2 id="users-and-groups">Users and Groups</h2>
 
 <ul>
-  <li><code class="highlighter-rouge">cat /etc/passwd | cut -d: -f1</code> list all users</li>
-  <li><code class="highlighter-rouge">cat /etc/group | cut -d: -f1</code> list all groups</li>
-  <li><code class="highlighter-rouge">chown user file</code> change the owner of a file</li>
-  <li><code class="highlighter-rouge">chgrp group file</code> change the group of a file</li>
-  <li><code class="highlighter-rouge">chown user:group file</code> change the owner and group of a file</li>
+  <li><code class="language-plaintext highlighter-rouge">cat /etc/passwd | cut -d: -f1</code> list all users</li>
+  <li><code class="language-plaintext highlighter-rouge">cat /etc/group | cut -d: -f1</code> list all groups</li>
+  <li><code class="language-plaintext highlighter-rouge">chown user file</code> change the owner of a file</li>
+  <li><code class="language-plaintext highlighter-rouge">chgrp group file</code> change the group of a file</li>
+  <li><code class="language-plaintext highlighter-rouge">chown user:group file</code> change the owner and group of a file</li>
 </ul>
 
 <h2 id="networking-and-ssh">Networking and SSH</h2>
 
 <ul>
-  <li><code class="highlighter-rouge">lsof -nP | grep 9092</code> show which process is blocking the port 9092</li>
-  <li><code class="highlighter-rouge">rsync -avz --remove-source-files -e ssh /local/dir remoteuser@remotehost:/remote/dir</code> SSH copy files and remove source</li>
-  <li><code class="highlighter-rouge">ssh user@your-server.com -L 2000:25</code> SSH session and port tunneling</li>
-  <li><code class="highlighter-rouge">ssh -Y user@your-server.com</code> start an xterm</li>
-  <li><code class="highlighter-rouge">sudo route delete default gw 10.0.2.2 eth0</code> remove the default gateway on <code class="highlighter-rouge">eth0</code></li>
-  <li><code class="highlighter-rouge">sudo route add default gw 192.168.1.254 eth0</code> add the default gateway on <code class="highlighter-rouge">eth0</code></li>
-  <li><code class="highlighter-rouge">wget -c -t 0 --timeout=60 --waitretry=60 --read-timeout=10 http://example.com/file.mkv</code> download the file using the partially downloaded file (resume <code class="highlighter-rouge">-c</code>) retrying ad infinitum (<code class="highlighter-rouge">-t 0</code>), with 60s timeout and 60s wait between attempts, resetting the connection if there’s no activity in 10 seconds (<code class="highlighter-rouge">--read-timeout=10</code>)</li>
-  <li><code class="highlighter-rouge">wget -r -np -nH -R index.html http://hostname/aaa/bbb/ccc/ddd/</code> download all files and subfolders of the <code class="highlighter-rouge">ddd</code> directory, recursively (<code class="highlighter-rouge">-r</code>), without going to upper directories (<code class="highlighter-rouge">-np</code>), not saving to the hostname folder (<code class="highlighter-rouge">-nH</code>), exclude <code class="highlighter-rouge">index.html</code> files (<code class="highlighter-rouge">-r index.html</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">lsof -nP | grep 9092</code> show which process is blocking the port 9092</li>
+  <li><code class="language-plaintext highlighter-rouge">rsync -avz --remove-source-files -e ssh /local/dir remoteuser@remotehost:/remote/dir</code> SSH copy files and remove source</li>
+  <li><code class="language-plaintext highlighter-rouge">ssh user@your-server.com -L 2000:25</code> SSH session and port tunneling</li>
+  <li><code class="language-plaintext highlighter-rouge">ssh -Y user@your-server.com</code> start an xterm</li>
+  <li><code class="language-plaintext highlighter-rouge">sudo route delete default gw 10.0.2.2 eth0</code> remove the default gateway on <code class="language-plaintext highlighter-rouge">eth0</code></li>
+  <li><code class="language-plaintext highlighter-rouge">sudo route add default gw 192.168.1.254 eth0</code> add the default gateway on <code class="language-plaintext highlighter-rouge">eth0</code></li>
+  <li><code class="language-plaintext highlighter-rouge">wget -c -t 0 --timeout=60 --waitretry=60 --read-timeout=10 http://example.com/file.mkv</code> download the file using the partially downloaded file (resume <code class="language-plaintext highlighter-rouge">-c</code>) retrying ad infinitum (<code class="language-plaintext highlighter-rouge">-t 0</code>), with 60s timeout and 60s wait between attempts, resetting the connection if there’s no activity in 10 seconds (<code class="language-plaintext highlighter-rouge">--read-timeout=10</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">wget -r -np -nH -R index.html http://hostname/aaa/bbb/ccc/ddd/</code> download all files and subfolders of the <code class="language-plaintext highlighter-rouge">ddd</code> directory, recursively (<code class="language-plaintext highlighter-rouge">-r</code>), without going to upper directories (<code class="language-plaintext highlighter-rouge">-np</code>), not saving to the hostname folder (<code class="language-plaintext highlighter-rouge">-nH</code>), exclude <code class="language-plaintext highlighter-rouge">index.html</code> files (<code class="language-plaintext highlighter-rouge">-r index.html</code>)</li>
 </ul>
 
 <h2 id="random-magic">Random Magic</h2>
 
 <ul>
-  <li><code class="highlighter-rouge">&lt;ctrl&gt;+r</code> reverse search: in order to search for a command you previously used</li>
-  <li><code class="highlighter-rouge">cal</code> print the current month</li>
-  <li><code class="highlighter-rouge">sudo apt-get install build-essential checkinstall</code> in debian-based distros, install the essentials for building packages (make; make install)</li>
-  <li><code class="highlighter-rouge">openssl base64 -in input.txt -out encoded.b64</code> encode <strong>input.txt</strong> in base64 and save it to the file <strong>encoded.b64</strong></li>
-  <li><code class="highlighter-rouge">sudo !!</code> run the last command with sudo</li>
-  <li><code class="highlighter-rouge"> </code>+any command: it won’t go to the history</li>
-  <li><code class="highlighter-rouge">$( command )</code> it gives the output of command</li>
-  <li><code class="highlighter-rouge">service --status-all</code> status of services</li>
-  <li><code class="highlighter-rouge">echo "hello world" | sed -e "s/e/o/g" | sed -e "s/lo/a/g" | sed -e "s/world/mundo/g"</code> translate “hello world” to spanish</li>
-  <li><code class="highlighter-rouge">docker ps | awk '{print $8}'</code> print only the names of the current containers</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;ctrl&gt;+r</code> reverse search: in order to search for a command you previously used</li>
+  <li><code class="language-plaintext highlighter-rouge">cal</code> print the current month</li>
+  <li><code class="language-plaintext highlighter-rouge">sudo apt-get install build-essential checkinstall</code> in debian-based distros, install the essentials for building packages (make; make install)</li>
+  <li><code class="language-plaintext highlighter-rouge">openssl base64 -in input.txt -out encoded.b64</code> encode <strong>input.txt</strong> in base64 and save it to the file <strong>encoded.b64</strong></li>
+  <li><code class="language-plaintext highlighter-rouge">sudo !!</code> run the last command with sudo</li>
+  <li><code class="language-plaintext highlighter-rouge"> </code>+any command: it won’t go to the history</li>
+  <li><code class="language-plaintext highlighter-rouge">$( command )</code> it gives the output of command</li>
+  <li><code class="language-plaintext highlighter-rouge">service --status-all</code> status of services</li>
+  <li><code class="language-plaintext highlighter-rouge">echo "hello world" | sed -e "s/e/o/g" | sed -e "s/lo/a/g" | sed -e "s/world/mundo/g"</code> translate “hello world” to spanish</li>
+  <li><code class="language-plaintext highlighter-rouge">docker ps | awk '{print $8}'</code> print only the names of the current containers</li>
 </ul>
 
 <h2 id="remote-ssh-session-without-a-password">Remote SSH session without a password</h2>
 
 <ul>
-  <li><code class="highlighter-rouge">ssh-keygen -t rsa -b 2048</code> # Generate an rsa key pair</li>
-  <li><code class="highlighter-rouge">ssh-copy-id youruser@yourserver</code> # Authorize your key in the remote server</li>
-  <li><code class="highlighter-rouge">ssh youruser@yourserver</code> # Login without entering a password</li>
+  <li><code class="language-plaintext highlighter-rouge">ssh-keygen -t rsa -b 2048</code> # Generate an rsa key pair</li>
+  <li><code class="language-plaintext highlighter-rouge">ssh-copy-id youruser@yourserver</code> # Authorize your key in the remote server</li>
+  <li><code class="language-plaintext highlighter-rouge">ssh youruser@yourserver</code> # Login without entering a password</li>
 </ul>
 
 

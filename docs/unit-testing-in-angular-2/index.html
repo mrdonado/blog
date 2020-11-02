@@ -115,7 +115,7 @@
 <p>It happens when you use a custom component in a template. You have two options here:</p>
 
 <ul>
-  <li>Import <code class="highlighter-rouge">CUSTOM_ELEMENTS_SCHEMA</code> from <code class="highlighter-rouge">@angular/core</code> and add it to the <code class="highlighter-rouge">schemas</code> array of your <code class="highlighter-rouge">TestBed</code>:</li>
+  <li>Import <code class="language-plaintext highlighter-rouge">CUSTOM_ELEMENTS_SCHEMA</code> from <code class="language-plaintext highlighter-rouge">@angular/core</code> and add it to the <code class="language-plaintext highlighter-rouge">schemas</code> array of your <code class="language-plaintext highlighter-rouge">TestBed</code>:</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">TestBed</span><span class="p">.</span><span class="nx">configureTestingModule</span><span class="p">({</span>
@@ -126,16 +126,16 @@
 <p>This way it will just be ignored, and you can test that custom component in some other test (best practice: keep your unit tests simple and test just one thing at a time).</p>
 
 <ul>
-  <li>If you absolutely need to include the actual custom component in your test, you can import it in your spec and include it into the <code class="highlighter-rouge">declarations</code> field of the TestBed.</li>
+  <li>If you absolutely need to include the actual custom component in your test, you can import it in your spec and include it into the <code class="language-plaintext highlighter-rouge">declarations</code> field of the TestBed.</li>
 </ul>
 
 <h2 id="problem-cant-bind-to-ngmodel-since-it-isnt-a-known-property-of-input">Problem: Can’t bind to ‘ngModel’ since it isn’t a known property of ‘input’</h2>
 
-<p>Solution: import <code class="highlighter-rouge">FormsModule</code> and include it into the <code class="highlighter-rouge">imports</code> field of the TestBed.</p>
+<p>Solution: import <code class="language-plaintext highlighter-rouge">FormsModule</code> and include it into the <code class="language-plaintext highlighter-rouge">imports</code> field of the TestBed.</p>
 
 <h2 id="problem-no-provider-for-yourservice">Problem: No provider for YourService!</h2>
 
-<p>Solution: import <code class="highlighter-rouge">YourService</code> and include it into the <code class="highlighter-rouge">providers</code> of the TestBed. At best you should include a mocked version, since you probably want to test that service in another specific test.</p>
+<p>Solution: import <code class="language-plaintext highlighter-rouge">YourService</code> and include it into the <code class="language-plaintext highlighter-rouge">providers</code> of the TestBed. At best you should include a mocked version, since you probably want to test that service in another specific test.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">serviceMock</span> <span class="o">=</span> <span class="p">{</span> <span class="na">someKey</span><span class="p">:</span> <span class="dl">'</span><span class="s1">someValue</span><span class="dl">'</span><span class="p">};</span>
 <span class="nx">TestBed</span><span class="p">.</span><span class="nx">configureTestingModule</span><span class="p">({</span>
@@ -153,11 +153,11 @@
 <p>In case of the Http service, testing it requires a bit more of boilerplate. When some part of your code needs to do HTTP requests, you might also get the following errors when testing:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Problem: No provider for ConnectionBackend!</code></li>
-  <li><code class="highlighter-rouge">Problem: No provider for RequestOptions!</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Problem: No provider for ConnectionBackend!</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Problem: No provider for RequestOptions!</code></li>
 </ul>
 
-<p>Here are the steps needed to properly test a service that uses Angular 2’s <code class="highlighter-rouge">Http</code> service:</p>
+<p>Here are the steps needed to properly test a service that uses Angular 2’s <code class="language-plaintext highlighter-rouge">Http</code> service:</p>
 
 <p>1.- Add the following imports to your spec:</p>
 
@@ -179,7 +179,7 @@
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">let</span> <span class="nx">backend</span><span class="p">:</span> <span class="nx">MockBackend</span><span class="p">;</span></code></pre></figure>
 
-<p>3.- Add the following lines to the providers of your <code class="highlighter-rouge">TestBed</code>:</p>
+<p>3.- Add the following lines to the providers of your <code class="language-plaintext highlighter-rouge">TestBed</code>:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">providers</span><span class="p">:</span> <span class="p">[</span>
   <span class="nx">MockBackend</span><span class="p">,</span>
@@ -216,7 +216,7 @@
 
 <h2 id="example">Example</h2>
 
-<p>Here’s a working example for an <code class="highlighter-rouge">AnalysisFormComponent</code> unit test, that mocks a <code class="highlighter-rouge">LogService</code> and performs an HTTP POST request.</p>
+<p>Here’s a working example for an <code class="language-plaintext highlighter-rouge">AnalysisFormComponent</code> unit test, that mocks a <code class="language-plaintext highlighter-rouge">LogService</code> and performs an HTTP POST request.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">import</span> <span class="p">{</span> <span class="nx">LogService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../../services/log.service</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="k">async</span><span class="p">,</span> <span class="nx">ComponentFixture</span><span class="p">,</span> <span class="nx">inject</span><span class="p">,</span> <span class="nx">TestBed</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core/testing</span><span class="dl">'</span><span class="p">;</span>

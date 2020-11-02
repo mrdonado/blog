@@ -108,22 +108,22 @@
 
 <p>Clover is a boot manager that allows you to select the OS you want to boot with. It is used mostly by Hackintosh users, that is, people that install MacOSX (along with other OSs, like Linux and Windows) on a non-Apple machine.</p>
 
-<p>The Clover configuration can be quite tricky, and if you’re not lucky you can easily mess it up. That’s why it’s more than advisable to keep a backup of the <code class="highlighter-rouge">/EFI/CLOVER/config.plist</code> configuration file.</p>
+<p>The Clover configuration can be quite tricky, and if you’re not lucky you can easily mess it up. That’s why it’s more than advisable to keep a backup of the <code class="language-plaintext highlighter-rouge">/EFI/CLOVER/config.plist</code> configuration file.</p>
 
-<p>If you happen to break down your MacOSX boot, but you still have a working Windows boot on the same machine, you can follow these steps in order to restore a backup of <code class="highlighter-rouge">config.plist</code>:</p>
+<p>If you happen to break down your MacOSX boot, but you still have a working Windows boot on the same machine, you can follow these steps in order to restore a backup of <code class="language-plaintext highlighter-rouge">config.plist</code>:</p>
 
 <ul>
-  <li>Open an administrator console (run <code class="highlighter-rouge">cmd.exe</code> as Administrator) and type the following:</li>
-  <li><code class="highlighter-rouge">diskpart</code> (open diskpart)</li>
-  <li><code class="highlighter-rouge">list disk</code> (list your hard drives with)</li>
-  <li><code class="highlighter-rouge">select disk 1</code> (select the disk where your Clover EFI boot has been installed. 1 is just an example)</li>
-  <li><code class="highlighter-rouge">list partition</code> (list the partitions available on the selected disk)</li>
-  <li><code class="highlighter-rouge">select partition 1</code> (select the boot EFI partition)</li>
-  <li><code class="highlighter-rouge">assign letter=s</code> (assign a letter. S in this case)</li>
-  <li><code class="highlighter-rouge">exit</code> (exit diskpart)</li>
-  <li><code class="highlighter-rouge">s:</code> (go to the just mounted boot partition)</li>
-  <li><code class="highlighter-rouge">cd EFI\CLOVER\</code></li>
-  <li><code class="highlighter-rouge">copy c:\backups\config.plist .</code> (c:\backups is just an example. Replace this path by the path where you have your config.plist backup)</li>
+  <li>Open an administrator console (run <code class="language-plaintext highlighter-rouge">cmd.exe</code> as Administrator) and type the following:</li>
+  <li><code class="language-plaintext highlighter-rouge">diskpart</code> (open diskpart)</li>
+  <li><code class="language-plaintext highlighter-rouge">list disk</code> (list your hard drives with)</li>
+  <li><code class="language-plaintext highlighter-rouge">select disk 1</code> (select the disk where your Clover EFI boot has been installed. 1 is just an example)</li>
+  <li><code class="language-plaintext highlighter-rouge">list partition</code> (list the partitions available on the selected disk)</li>
+  <li><code class="language-plaintext highlighter-rouge">select partition 1</code> (select the boot EFI partition)</li>
+  <li><code class="language-plaintext highlighter-rouge">assign letter=s</code> (assign a letter. S in this case)</li>
+  <li><code class="language-plaintext highlighter-rouge">exit</code> (exit diskpart)</li>
+  <li><code class="language-plaintext highlighter-rouge">s:</code> (go to the just mounted boot partition)</li>
+  <li><code class="language-plaintext highlighter-rouge">cd EFI\CLOVER\</code></li>
+  <li><code class="language-plaintext highlighter-rouge">copy c:\backups\config.plist .</code> (c:\backups is just an example. Replace this path by the path where you have your config.plist backup)</li>
 </ul>
 
 <p>If everything worked fine, you can now restart and use your MacOSX boot again.</p>
@@ -131,8 +131,8 @@
 <p>In addition to that, some Clover prefixes that can help you find out what went wrong are:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">-x</code> start using the safe mode</li>
-  <li><code class="highlighter-rouge">-v</code> verbose mode</li>
+  <li><code class="language-plaintext highlighter-rouge">-x</code> start using the safe mode</li>
+  <li><code class="language-plaintext highlighter-rouge">-v</code> verbose mode</li>
 </ul>
 
 <p>You can find more information about Hackintosh and Clover on <a href="https://www.tonymacx86.com/">tonymac86</a>.</p>

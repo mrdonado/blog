@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2020-05-10T22:36:02+02:00</updated><id>https://blog.jdonado.com/feed.xml</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">The Infancy of the Cloud</title><link href="https://blog.jdonado.com/cloud-infancy/" rel="alternate" type="text/html" title="The Infancy of the Cloud" /><published>2020-05-10T00:00:00+02:00</published><updated>2020-05-10T00:00:00+02:00</updated><id>https://blog.jdonado.com/cloud-infancy</id><content type="html" xml:base="https://blog.jdonado.com/cloud-infancy/">&lt;h2 id=&quot;the-heterogeneous-world-of-it-job-titles&quot;&gt;The Heterogeneous World of IT Job Titles&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2020-11-02T18:25:43+01:00</updated><id>https://blog.jdonado.com/feed.xml</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">The Infancy of the Cloud</title><link href="https://blog.jdonado.com/cloud-infancy/" rel="alternate" type="text/html" title="The Infancy of the Cloud" /><published>2020-05-10T00:00:00+02:00</published><updated>2020-05-10T00:00:00+02:00</updated><id>https://blog.jdonado.com/cloud-infancy</id><content type="html" xml:base="https://blog.jdonado.com/cloud-infancy/">&lt;h2 id=&quot;the-heterogeneous-world-of-it-job-titles&quot;&gt;The Heterogeneous World of IT Job Titles&lt;/h2&gt;
 
 &lt;p&gt;When I started working in the IT industry, one of the things that shocked me a bit was the way job titles were used. I guess that as an undergrad, you often expect some correlation between training or a study plan and whatever position or role you play in a company. Yes, that was naive from me, I admit it. Then, the creativity some people exercised when describing their job took me by surprise. Whoever has jumped through enough LinkedIn profiles will know what I’m talking about.&lt;/p&gt;
 
@@ -107,15 +107,15 @@
 
 &lt;h2 id=&quot;setup-a-reverse-proxy&quot;&gt;Setup a Reverse Proxy&lt;/h2&gt;
 
-&lt;p&gt;I’m taking for granted that you already have something on that laptop that you want to see online from an IPv4 address. Something that you can visit locally as &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:8080&lt;/code&gt; or similar.&lt;/p&gt;
+&lt;p&gt;I’m taking for granted that you already have something on that laptop that you want to see online from an IPv4 address. Something that you can visit locally as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://localhost:8080&lt;/code&gt; or similar.&lt;/p&gt;
 
-&lt;p&gt;You also have an online server, which is reachable on an IPv4 address, like this &lt;code class=&quot;highlighter-rouge&quot;&gt;216.58.213.196&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You also have an online server, which is reachable on an IPv4 address, like this &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;216.58.213.196&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;First, &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04&quot;&gt;install NGINX&lt;/a&gt; on your server. Once you’re ready, you should be able to visit the default NGINX initial page on &lt;code class=&quot;highlighter-rouge&quot;&gt;http://[YOURONLINEIP:80]&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;First, &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04&quot;&gt;install NGINX&lt;/a&gt; on your server. Once you’re ready, you should be able to visit the default NGINX initial page on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://[YOURONLINEIP:80]&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Now you can establish an &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH&lt;/code&gt; tunnel between your laptop at home and your server. A tunnel with a reverse proxy where your local port (&lt;code class=&quot;highlighter-rouge&quot;&gt;8080&lt;/code&gt; in the example) is mapped to some other port of your server (e.g.: port &lt;code class=&quot;highlighter-rouge&quot;&gt;17899&lt;/code&gt;). To achieve this, use this command:&lt;/p&gt;
+&lt;p&gt;Now you can establish an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SSH&lt;/code&gt; tunnel between your laptop at home and your server. A tunnel with a reverse proxy where your local port (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;8080&lt;/code&gt; in the example) is mapped to some other port of your server (e.g.: port &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;17899&lt;/code&gt;). To achieve this, use this command:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh -N -g -R 17899:localhost:8080 yourusername@[YOURONLINEIP]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh -N -g -R 17899:localhost:8080 yourusername@[YOURONLINEIP]&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;While this tunnel is active, edit the NGINX configuration of your server with the following lines:&lt;/p&gt;
 
@@ -145,9 +145,9 @@ http {
 
 &lt;p&gt;Restart NGINX on your server:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo systemctl restart nginx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo systemctl restart nginx&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Now you should be able to visit &lt;code class=&quot;highlighter-rouge&quot;&gt;http://[YOURONLINEIP:80]&lt;/code&gt; and see whatever you have on the &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:8080&lt;/code&gt; of your laptop at home. ISN’T IT GREAT!!???&lt;/p&gt;
+&lt;p&gt;Now you should be able to visit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://[YOURONLINEIP:80]&lt;/code&gt; and see whatever you have on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;localhost:8080&lt;/code&gt; of your laptop at home. ISN’T IT GREAT!!???&lt;/p&gt;
 
 &lt;h2 id=&quot;some-considerations&quot;&gt;Some Considerations&lt;/h2&gt;
 
@@ -157,9 +157,9 @@ http {
 
 &lt;p&gt;Once you can connect from your laptop to the remote machine via SSH without entering a password, you need a service that establishes that connection and keeps it alive.&lt;/p&gt;
 
-&lt;p&gt;A rather simple and reliable way is by defining a &lt;code class=&quot;highlighter-rouge&quot;&gt;systemd&lt;/code&gt; service on your laptop. To do that, edit a new file called &lt;code class=&quot;highlighter-rouge&quot;&gt;sshtunnel.service&lt;/code&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/systemd/system/&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;A rather simple and reliable way is by defining a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;systemd&lt;/code&gt; service on your laptop. To do that, edit a new file called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sshtunnel.service&lt;/code&gt; on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/systemd/system/&lt;/code&gt;:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo vim /etc/systemd/system/sshtunnel.service&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo vim /etc/systemd/system/sshtunnel.service&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;And add the following contents:&lt;/p&gt;
 
@@ -183,11 +183,11 @@ WantedBy=multi-user.target
 sudo systemctl start sshtunnel
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;The first command will tell your system to run the service on startup. The second one (&lt;code class=&quot;highlighter-rouge&quot;&gt;start&lt;/code&gt;) will start the service right away.&lt;/p&gt;
+&lt;p&gt;The first command will tell your system to run the service on startup. The second one (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;start&lt;/code&gt;) will start the service right away.&lt;/p&gt;
 
 &lt;p&gt;Note: there are alternatives to creating your custom ssh service (e.g.: &lt;a href=&quot;https://linux.die.net/man/1/autossh&quot;&gt;autossh&lt;/a&gt;), but a custom service proved to be more stable on my machine. Feel free to use whatever configuration works best for you to keep the connection active.&lt;/p&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="cloud self-hosting linux" /><category term="cloud" /><category term="self-hosting" /><category term="linux" /><summary type="html">No one knows what it’s like to be a bad man, to be a sad man… behind a NAT</summary></entry><entry><title type="html">Kubernetes: beyond docker compose</title><link href="https://blog.jdonado.com/kubernetes/" rel="alternate" type="text/html" title="Kubernetes: beyond docker compose" /><published>2018-12-26T00:00:00+01:00</published><updated>2018-12-26T00:00:00+01:00</updated><id>https://blog.jdonado.com/kubernetes</id><content type="html" xml:base="https://blog.jdonado.com/kubernetes/">&lt;h1 id=&quot;beyond-docker-compose&quot;&gt;Beyond docker compose&lt;/h1&gt;
 
-&lt;p&gt;Right after I started using docker to containerize my applications, I used to include a &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file together with them (sometimes in a separate repository) in order to illustrate how a local deployment could work. With &lt;a href=&quot;https://docs.docker.com/compose/&quot;&gt;docker-compose&lt;/a&gt; you can:&lt;/p&gt;
+&lt;p&gt;Right after I started using docker to containerize my applications, I used to include a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file together with them (sometimes in a separate repository) in order to illustrate how a local deployment could work. With &lt;a href=&quot;https://docs.docker.com/compose/&quot;&gt;docker-compose&lt;/a&gt; you can:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Define which services and applications are necessary to run a specific solution&lt;/li&gt;
@@ -219,7 +219,7 @@ sudo systemctl start sshtunnel
   &lt;li&gt;You can install minikube on your machine and test your complete solution even before it reaches the cloud. If something goes wrong, you can try to find out what’s happening directly on your machine without having to wait for things to upload and deploy to the cloud&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;For me this last point is a game changer as compared to other cloud technologies. The ability to try and run everything locally makes everything easier. Forget about small changes on a &lt;code class=&quot;highlighter-rouge&quot;&gt;yml&lt;/code&gt; file and trigger the CI pipelines to (pray and) see if a deployment works. Instead of that just make sure that your configuration is up and running locally on your minikube and chances are everything will work out just like that on the cloud.&lt;/p&gt;
+&lt;p&gt;For me this last point is a game changer as compared to other cloud technologies. The ability to try and run everything locally makes everything easier. Forget about small changes on a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yml&lt;/code&gt; file and trigger the CI pipelines to (pray and) see if a deployment works. Instead of that just make sure that your configuration is up and running locally on your minikube and chances are everything will work out just like that on the cloud.&lt;/p&gt;
 
 &lt;h2 id=&quot;learn-kubernetes&quot;&gt;Learn Kubernetes&lt;/h2&gt;
 
@@ -247,9 +247,9 @@ sudo systemctl start sshtunnel
 
 &lt;p&gt;You can run Kubernetes locally on your machine by installing &lt;strong&gt;minikube&lt;/strong&gt;. Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one node.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Kubectl&lt;/strong&gt; is the Kubernetes CLI, that uses the Kubernetes API in order to interact with the cluster. You can use it to connect to your minikube and handle your deployments locally, and you can also connect to your cloud provider and handle your deployments remotely. It is kind of an equivalent to the &lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt; command for docker.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Kubectl&lt;/strong&gt; is the Kubernetes CLI, that uses the Kubernetes API in order to interact with the cluster. You can use it to connect to your minikube and handle your deployments locally, and you can also connect to your cloud provider and handle your deployments remotely. It is kind of an equivalent to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker&lt;/code&gt; command for docker.&lt;/p&gt;
 
-&lt;p&gt;In order to deploy an application in Kubernetes, you can define a deployment configuration in a &lt;code class=&quot;highlighter-rouge&quot;&gt;yml&lt;/code&gt; (preferred) or in a &lt;code class=&quot;highlighter-rouge&quot;&gt;json&lt;/code&gt; file. A deployment configuration instructs Kubernetes how to create and update instances of an application. The Kubernetes Deployment Controller (KDC) makes sure that the instances are up an running. NOTE: my next blog post will show a simple example of a microservices deployment in kubernetes. Here I will continue defining the basic concepts and commands for future quick reference.&lt;/p&gt;
+&lt;p&gt;In order to deploy an application in Kubernetes, you can define a deployment configuration in a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yml&lt;/code&gt; (preferred) or in a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;json&lt;/code&gt; file. A deployment configuration instructs Kubernetes how to create and update instances of an application. The Kubernetes Deployment Controller (KDC) makes sure that the instances are up an running. NOTE: my next blog post will show a simple example of a microservices deployment in kubernetes. Here I will continue defining the basic concepts and commands for future quick reference.&lt;/p&gt;
 
 &lt;p&gt;In case a node goes down, the KDC will start the required containers in the remaining working nodes (self-healing mechanism).&lt;/p&gt;
 
@@ -261,13 +261,13 @@ sudo systemctl start sshtunnel
   &lt;li&gt;Pods may have one or more containers and volumes&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;A &lt;strong&gt;service&lt;/strong&gt; defines a logical set of pods and a policy to determine how to access them. It is defined by &lt;code class=&quot;highlighter-rouge&quot;&gt;yaml&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;json&lt;/code&gt;. Services allow applications to receive traffic. You can define the following types of services (in the &lt;code class=&quot;highlighter-rouge&quot;&gt;type&lt;/code&gt; field of the &lt;code class=&quot;highlighter-rouge&quot;&gt;yaml&lt;/code&gt; file):&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;service&lt;/strong&gt; defines a logical set of pods and a policy to determine how to access them. It is defined by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yaml&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;json&lt;/code&gt;. Services allow applications to receive traffic. You can define the following types of services (in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;type&lt;/code&gt; field of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yaml&lt;/code&gt; file):&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;ClusterIP&lt;/strong&gt; (default): it makes the service only reachable within the cluster.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;NodePort&lt;/strong&gt;: it exposes the service on the same port of each selected node in the cluster using NAT, making thus the service accessible from outide the cluster via &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;NodeIP&amp;gt;:&amp;lt;NodePort&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;NodePort&lt;/strong&gt;: it exposes the service on the same port of each selected node in the cluster using NAT, making thus the service accessible from outide the cluster via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;NodeIP&amp;gt;:&amp;lt;NodePort&amp;gt;&lt;/code&gt;.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;LoadBalancer&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ExternalName&lt;/strong&gt;: it exposes the service using an arbitrary name via &lt;code class=&quot;highlighter-rouge&quot;&gt;externalName&lt;/code&gt; by returning a CNAME record. &lt;code class=&quot;highlighter-rouge&quot;&gt;kube-dns&lt;/code&gt; v1.7 or higher is required.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ExternalName&lt;/strong&gt;: it exposes the service using an arbitrary name via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;externalName&lt;/code&gt; by returning a CNAME record. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;kube-dns&lt;/code&gt; v1.7 or higher is required.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;A service routes traffic across a set of Pods. They allow pods to die and replicate without impacting the application. Kubernetes Services handle discovery and routing. In order to match a set of pods, services use labels and selectors.&lt;/p&gt;
@@ -353,77 +353,77 @@ kubectl &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;nginx-68c5b54745-hxn8
 &lt;h2 id=&quot;scripts&quot;&gt;Scripts&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;&lt;/code&gt; use this as the first line of a bash script, for the interpreter to know how to handle it&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#!/bin/bash&lt;/code&gt; use this as the first line of a bash script, for the interpreter to know how to handle it&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;files&quot;&gt;Files&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;for i in *.png ; do convert &quot;$i&quot; &quot;${i%.*}.jpg&quot; ; done&lt;/code&gt; convert all &lt;strong&gt;png&lt;/strong&gt; files into &lt;strong&gt;jpg&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find . -type f -exec grep -El &quot;someWord|someOtherWord&quot; {} \;&lt;/code&gt; find all files in the current directory (and above) that contain &lt;code class=&quot;highlighter-rouge&quot;&gt;someWord&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;someOtherWord&lt;/code&gt;. An escaped semicolon is necessary to indicate the end of &lt;code class=&quot;highlighter-rouge&quot;&gt;exec&lt;/code&gt;. The brackets are also necessary, since they contain the output of the &lt;code class=&quot;highlighter-rouge&quot;&gt;find&lt;/code&gt; command, that will be fed into the grep command&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find . -type f | xargs grep -El &quot;something|appstore&quot;&lt;/code&gt; exactly the same as the previous command, using &lt;code class=&quot;highlighter-rouge&quot;&gt;xargs&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;-exec&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find /path/to/files* -mtime +5 -exec rm {} \;&lt;/code&gt; delete files older than 5 days&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find . -name  '*.zip' -exec unzip {} \;&lt;/code&gt; unzip all the zip files in the current directory&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find . -type d | egrep -o '.*src$'&lt;/code&gt; find &lt;code class=&quot;highlighter-rouge&quot;&gt;src&lt;/code&gt; directories and none of their subdirectories&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find . 2&amp;gt;/dev/null&lt;/code&gt; find without showing &lt;code class=&quot;highlighter-rouge&quot;&gt;permission denied&lt;/code&gt; messages&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wdiff one.txt two.txt | colordiff&lt;/code&gt; color the differences between &lt;strong&gt;one.txt&lt;/strong&gt; and &lt;strong&gt;two.txt&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;diff -rq(w) dir1 dir2&lt;/code&gt; compare two directory structures&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SOME_FILE=$(&amp;lt;some-file.txt)&lt;/code&gt; load the contents of &lt;strong&gt;some-file.txt&lt;/strong&gt; into the variable &lt;strong&gt;SOME_FILE&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cat oldfile.txt | tr -d '\n' &amp;gt; newfile.txt&lt;/code&gt; create newfile.txt as a copy of oldfile where all newlines have been removed&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;convert file.{jpg,png}&lt;/code&gt; equivalent to &lt;code class=&quot;highlighter-rouge&quot;&gt;convert file.jpg file.png&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for i in *.png ; do convert &quot;$i&quot; &quot;${i%.*}.jpg&quot; ; done&lt;/code&gt; convert all &lt;strong&gt;png&lt;/strong&gt; files into &lt;strong&gt;jpg&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;find . -type f -exec grep -El &quot;someWord|someOtherWord&quot; {} \;&lt;/code&gt; find all files in the current directory (and above) that contain &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;someWord&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;someOtherWord&lt;/code&gt;. An escaped semicolon is necessary to indicate the end of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;exec&lt;/code&gt;. The brackets are also necessary, since they contain the output of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;find&lt;/code&gt; command, that will be fed into the grep command&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;find . -type f | xargs grep -El &quot;something|appstore&quot;&lt;/code&gt; exactly the same as the previous command, using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xargs&lt;/code&gt; instead of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-exec&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;find /path/to/files* -mtime +5 -exec rm {} \;&lt;/code&gt; delete files older than 5 days&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;find . -name  '*.zip' -exec unzip {} \;&lt;/code&gt; unzip all the zip files in the current directory&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;find . -type d | egrep -o '.*src$'&lt;/code&gt; find &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;src&lt;/code&gt; directories and none of their subdirectories&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;find . 2&amp;gt;/dev/null&lt;/code&gt; find without showing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;permission denied&lt;/code&gt; messages&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wdiff one.txt two.txt | colordiff&lt;/code&gt; color the differences between &lt;strong&gt;one.txt&lt;/strong&gt; and &lt;strong&gt;two.txt&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;diff -rq(w) dir1 dir2&lt;/code&gt; compare two directory structures&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SOME_FILE=$(&amp;lt;some-file.txt)&lt;/code&gt; load the contents of &lt;strong&gt;some-file.txt&lt;/strong&gt; into the variable &lt;strong&gt;SOME_FILE&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cat oldfile.txt | tr -d '\n' &amp;gt; newfile.txt&lt;/code&gt; create newfile.txt as a copy of oldfile where all newlines have been removed&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;convert file.{jpg,png}&lt;/code&gt; equivalent to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;convert file.jpg file.png&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;With &lt;code class=&quot;highlighter-rouge&quot;&gt;xargs&lt;/code&gt; you can avoid loops (it passes the stdout as input to the specified command):&lt;/p&gt;
+&lt;p&gt;With &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xargs&lt;/code&gt; you can avoid loops (it passes the stdout as input to the specified command):&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find . -name *.png | xargs rm -rf&lt;/code&gt; remove recursively all png files&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git branch --merged | grep -v \* | xargs git branch -D&lt;/code&gt; remove all local git branches that have already been merged&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;find . -name *.png | xargs rm -rf&lt;/code&gt; remove recursively all png files&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git branch --merged | grep -v \* | xargs git branch -D&lt;/code&gt; remove all local git branches that have already been merged&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;users-and-groups&quot;&gt;Users and Groups&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cat /etc/passwd | cut -d: -f1&lt;/code&gt; list all users&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cat /etc/group | cut -d: -f1&lt;/code&gt; list all groups&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;chown user file&lt;/code&gt; change the owner of a file&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;chgrp group file&lt;/code&gt; change the group of a file&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;chown user:group file&lt;/code&gt; change the owner and group of a file&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cat /etc/passwd | cut -d: -f1&lt;/code&gt; list all users&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cat /etc/group | cut -d: -f1&lt;/code&gt; list all groups&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chown user file&lt;/code&gt; change the owner of a file&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chgrp group file&lt;/code&gt; change the group of a file&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chown user:group file&lt;/code&gt; change the owner and group of a file&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;networking-and-ssh&quot;&gt;Networking and SSH&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;lsof -nP | grep 9092&lt;/code&gt; show which process is blocking the port 9092&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rsync -avz --remove-source-files -e ssh /local/dir remoteuser@remotehost:/remote/dir&lt;/code&gt; SSH copy files and remove source&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh user@your-server.com -L 2000:25&lt;/code&gt; SSH session and port tunneling&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh -Y user@your-server.com&lt;/code&gt; start an xterm&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo route delete default gw 10.0.2.2 eth0&lt;/code&gt; remove the default gateway on &lt;code class=&quot;highlighter-rouge&quot;&gt;eth0&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo route add default gw 192.168.1.254 eth0&lt;/code&gt; add the default gateway on &lt;code class=&quot;highlighter-rouge&quot;&gt;eth0&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wget -c -t 0 --timeout=60 --waitretry=60 --read-timeout=10 http://example.com/file.mkv&lt;/code&gt; download the file using the partially downloaded file (resume &lt;code class=&quot;highlighter-rouge&quot;&gt;-c&lt;/code&gt;) retrying ad infinitum (&lt;code class=&quot;highlighter-rouge&quot;&gt;-t 0&lt;/code&gt;), with 60s timeout and 60s wait between attempts, resetting the connection if there’s no activity in 10 seconds (&lt;code class=&quot;highlighter-rouge&quot;&gt;--read-timeout=10&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wget -r -np -nH -R index.html http://hostname/aaa/bbb/ccc/ddd/&lt;/code&gt; download all files and subfolders of the &lt;code class=&quot;highlighter-rouge&quot;&gt;ddd&lt;/code&gt; directory, recursively (&lt;code class=&quot;highlighter-rouge&quot;&gt;-r&lt;/code&gt;), without going to upper directories (&lt;code class=&quot;highlighter-rouge&quot;&gt;-np&lt;/code&gt;), not saving to the hostname folder (&lt;code class=&quot;highlighter-rouge&quot;&gt;-nH&lt;/code&gt;), exclude &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; files (&lt;code class=&quot;highlighter-rouge&quot;&gt;-r index.html&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lsof -nP | grep 9092&lt;/code&gt; show which process is blocking the port 9092&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rsync -avz --remove-source-files -e ssh /local/dir remoteuser@remotehost:/remote/dir&lt;/code&gt; SSH copy files and remove source&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh user@your-server.com -L 2000:25&lt;/code&gt; SSH session and port tunneling&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh -Y user@your-server.com&lt;/code&gt; start an xterm&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo route delete default gw 10.0.2.2 eth0&lt;/code&gt; remove the default gateway on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;eth0&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo route add default gw 192.168.1.254 eth0&lt;/code&gt; add the default gateway on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;eth0&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wget -c -t 0 --timeout=60 --waitretry=60 --read-timeout=10 http://example.com/file.mkv&lt;/code&gt; download the file using the partially downloaded file (resume &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-c&lt;/code&gt;) retrying ad infinitum (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-t 0&lt;/code&gt;), with 60s timeout and 60s wait between attempts, resetting the connection if there’s no activity in 10 seconds (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--read-timeout=10&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wget -r -np -nH -R index.html http://hostname/aaa/bbb/ccc/ddd/&lt;/code&gt; download all files and subfolders of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ddd&lt;/code&gt; directory, recursively (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-r&lt;/code&gt;), without going to upper directories (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-np&lt;/code&gt;), not saving to the hostname folder (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-nH&lt;/code&gt;), exclude &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt; files (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-r index.html&lt;/code&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;random-magic&quot;&gt;Random Magic&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;ctrl&amp;gt;+r&lt;/code&gt; reverse search: in order to search for a command you previously used&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cal&lt;/code&gt; print the current month&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install build-essential checkinstall&lt;/code&gt; in debian-based distros, install the essentials for building packages (make; make install)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;openssl base64 -in input.txt -out encoded.b64&lt;/code&gt; encode &lt;strong&gt;input.txt&lt;/strong&gt; in base64 and save it to the file &lt;strong&gt;encoded.b64&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo !!&lt;/code&gt; run the last command with sudo&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt; &lt;/code&gt;+any command: it won’t go to the history&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$( command )&lt;/code&gt; it gives the output of command&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;service --status-all&lt;/code&gt; status of services&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;echo &quot;hello world&quot; | sed -e &quot;s/e/o/g&quot; | sed -e &quot;s/lo/a/g&quot; | sed -e &quot;s/world/mundo/g&quot;&lt;/code&gt; translate “hello world” to spanish&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps | awk '{print $8}'&lt;/code&gt; print only the names of the current containers&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;ctrl&amp;gt;+r&lt;/code&gt; reverse search: in order to search for a command you previously used&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cal&lt;/code&gt; print the current month&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo apt-get install build-essential checkinstall&lt;/code&gt; in debian-based distros, install the essentials for building packages (make; make install)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openssl base64 -in input.txt -out encoded.b64&lt;/code&gt; encode &lt;strong&gt;input.txt&lt;/strong&gt; in base64 and save it to the file &lt;strong&gt;encoded.b64&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo !!&lt;/code&gt; run the last command with sudo&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; &lt;/code&gt;+any command: it won’t go to the history&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$( command )&lt;/code&gt; it gives the output of command&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;service --status-all&lt;/code&gt; status of services&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;echo &quot;hello world&quot; | sed -e &quot;s/e/o/g&quot; | sed -e &quot;s/lo/a/g&quot; | sed -e &quot;s/world/mundo/g&quot;&lt;/code&gt; translate “hello world” to spanish&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker ps | awk '{print $8}'&lt;/code&gt; print only the names of the current containers&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;remote-ssh-session-without-a-password&quot;&gt;Remote SSH session without a password&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh-keygen -t rsa -b 2048&lt;/code&gt; # Generate an rsa key pair&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh-copy-id youruser@yourserver&lt;/code&gt; # Authorize your key in the remote server&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh youruser@yourserver&lt;/code&gt; # Login without entering a password&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh-keygen -t rsa -b 2048&lt;/code&gt; # Generate an rsa key pair&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh-copy-id youruser@yourserver&lt;/code&gt; # Authorize your key in the remote server&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh youruser@yourserver&lt;/code&gt; # Login without entering a password&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="command-line" /><category term="linux" /><category term="command-line" /><category term="shell" /><category term="macosx" /><summary type="html">Command Line Magic</summary></entry><entry><title type="html">ReasonML</title><link href="https://blog.jdonado.com/reasonml/" rel="alternate" type="text/html" title="ReasonML" /><published>2018-05-26T00:00:00+02:00</published><updated>2018-05-26T00:00:00+02:00</updated><id>https://blog.jdonado.com/reasonml</id><content type="html" xml:base="https://blog.jdonado.com/reasonml/">&lt;h1 id=&quot;reasonml-programming-language&quot;&gt;ReasonML Programming Language&lt;/h1&gt;
 
 &lt;h2 id=&quot;what-is-reasonml-where-does-it-come-from-what-can-i-do-with-it&quot;&gt;What is ReasonML? Where does it come from? What can I do with it?&lt;/h2&gt;
@@ -445,7 +445,7 @@ kubectl &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;nginx-68c5b54745-hxn8
   &lt;li&gt;Code suggestions underneath the command line are cool&lt;/li&gt;
   &lt;li&gt;Compatibility with JS and OCaml&lt;/li&gt;
   &lt;li&gt;Lexical scoping&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;If&lt;/code&gt; is an expression that can be evaluated into a value (in other languages it is only an statement)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;If&lt;/code&gt; is an expression that can be evaluated into a value (in other languages it is only an statement)&lt;/li&gt;
   &lt;li&gt;Syntax of switch expressions&lt;/li&gt;
   &lt;li&gt;Objects (or records) defined in a similar way as in TypeScript&lt;/li&gt;
   &lt;li&gt;Destructuring objects (records) in a similar way as in JavaScript&lt;/li&gt;
@@ -458,7 +458,7 @@ kubectl &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;nginx-68c5b54745-hxn8
   &lt;li&gt;Optional parameters&lt;/li&gt;
   &lt;li&gt;Pipe operator for function composition&lt;/li&gt;
   &lt;li&gt;Nested structures can directly be compared for equality&lt;/li&gt;
-  &lt;li&gt;Structural &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt; and referential equality &lt;code class=&quot;highlighter-rouge&quot;&gt;===&lt;/code&gt; operators&lt;/li&gt;
+  &lt;li&gt;Structural &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;==&lt;/code&gt; and referential equality &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;===&lt;/code&gt; operators&lt;/li&gt;
   &lt;li&gt;Powerful pattern matching&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -619,61 +619,61 @@ kubectl &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;nginx-68c5b54745-hxn8
 
 &lt;h2 id=&quot;avoid-conflicts&quot;&gt;Avoid conflicts&lt;/h2&gt;
 
-&lt;p&gt;If you’ve been using nodeJS npm package manager, chances are, sooner or later you will get conflicts within your dependencies. Maybe you’re cloning an old project or maybe you just updated your environment and your &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules&lt;/code&gt; folder must be regenerated.&lt;/p&gt;
+&lt;p&gt;If you’ve been using nodeJS npm package manager, chances are, sooner or later you will get conflicts within your dependencies. Maybe you’re cloning an old project or maybe you just updated your environment and your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node_modules&lt;/code&gt; folder must be regenerated.&lt;/p&gt;
 
-&lt;p&gt;Sometimes after running &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install&lt;/code&gt; you don’t get exactly the modules that you need and suddenly things don’t work as expected anymore.&lt;/p&gt;
+&lt;p&gt;Sometimes after running &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install&lt;/code&gt; you don’t get exactly the modules that you need and suddenly things don’t work as expected anymore.&lt;/p&gt;
 
-&lt;p&gt;This might happen when there’s &lt;a href=&quot;https://docs.npmjs.com/misc/semver&quot;&gt;no specific version&lt;/a&gt; defined of some dependencies in your &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;, but rather an approximate one (e.g.: using a tilde, as in &lt;code class=&quot;highlighter-rouge&quot;&gt;~1.2.3&lt;/code&gt; or a caret, as in &lt;code class=&quot;highlighter-rouge&quot;&gt;^1.2.3&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;This might happen when there’s &lt;a href=&quot;https://docs.npmjs.com/misc/semver&quot;&gt;no specific version&lt;/a&gt; defined of some dependencies in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package.json&lt;/code&gt;, but rather an approximate one (e.g.: using a tilde, as in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~1.2.3&lt;/code&gt; or a caret, as in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;^1.2.3&lt;/code&gt;).&lt;/p&gt;
 
 &lt;p&gt;While tildes and carets can be useful if you want to automatically use more recent versions when available, they can sometimes break your project if anything new isn’t compatible with your current code.&lt;/p&gt;
 
-&lt;p&gt;By just specifying a version number without carets and tildes (as in &lt;code class=&quot;highlighter-rouge&quot;&gt;1.2.3&lt;/code&gt;), you fix the specific version of each dependency you need.&lt;/p&gt;
+&lt;p&gt;By just specifying a version number without carets and tildes (as in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.2.3&lt;/code&gt;), you fix the specific version of each dependency you need.&lt;/p&gt;
 
 &lt;h3 id=&quot;lock-down-dependency-versions&quot;&gt;Lock down dependency versions&lt;/h3&gt;
 
 &lt;p&gt;Sometimes using specific module versions is not enough. Saving a list with the specific versions of all your dependencies might save your day.&lt;/p&gt;
 
-&lt;p&gt;Use the &lt;a href=&quot;https://docs.npmjs.com/cli/shrinkwrap&quot;&gt;npm-shrinkwrap&lt;/a&gt; command in order to create an &lt;code class=&quot;highlighter-rouge&quot;&gt;npm-shrinkwrap.json&lt;/code&gt; file that &lt;a href=&quot;https://docs.npmjs.com/files/package-locks&quot;&gt;locks&lt;/a&gt; all the npm dependencies:&lt;/p&gt;
+&lt;p&gt;Use the &lt;a href=&quot;https://docs.npmjs.com/cli/shrinkwrap&quot;&gt;npm-shrinkwrap&lt;/a&gt; command in order to create an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm-shrinkwrap.json&lt;/code&gt; file that &lt;a href=&quot;https://docs.npmjs.com/files/package-locks&quot;&gt;locks&lt;/a&gt; all the npm dependencies:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm shrinkwrap&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm shrinkwrap&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Another (even better) alternative is to use &lt;a href=&quot;https://yarnpkg.com/en/docs/yarn-lock&quot;&gt;Yarn&lt;/a&gt; to create a &lt;code class=&quot;highlighter-rouge&quot;&gt;yarn.lock&lt;/code&gt; file, which has the same goal as the &lt;code class=&quot;highlighter-rouge&quot;&gt;npm-shrinkwrap.json&lt;/code&gt;, but it seems to follow a more deterministic approach, being therefore safer.&lt;/p&gt;
+&lt;p&gt;Another (even better) alternative is to use &lt;a href=&quot;https://yarnpkg.com/en/docs/yarn-lock&quot;&gt;Yarn&lt;/a&gt; to create a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yarn.lock&lt;/code&gt; file, which has the same goal as the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm-shrinkwrap.json&lt;/code&gt;, but it seems to follow a more deterministic approach, being therefore safer.&lt;/p&gt;
 
-&lt;p&gt;Yarn is compatible with the same &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; of npm, so you can just install it globally (&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -g yarn&lt;/code&gt;) and try it out right away by simply running &lt;code class=&quot;highlighter-rouge&quot;&gt;yarn&lt;/code&gt; on your project’s root folder, which will generate the &lt;code class=&quot;highlighter-rouge&quot;&gt;yarn.lock&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Yarn is compatible with the same &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package.json&lt;/code&gt; of npm, so you can just install it globally (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install -g yarn&lt;/code&gt;) and try it out right away by simply running &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yarn&lt;/code&gt; on your project’s root folder, which will generate the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yarn.lock&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;It is a very good idea to add this &lt;code class=&quot;highlighter-rouge&quot;&gt;yarn.lock&lt;/code&gt; to your version control.&lt;/p&gt;
+&lt;p&gt;It is a very good idea to add this &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;yarn.lock&lt;/code&gt; to your version control.&lt;/p&gt;
 
 &lt;h2 id=&quot;remove-unneeded-dependencies&quot;&gt;Remove unneeded dependencies&lt;/h2&gt;
 
-&lt;p&gt;If you want to remove modules from your &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules&lt;/code&gt; directory that you once installed, but that are not required anymore by your project, you can use &lt;a href=&quot;https://docs.npmjs.com/cli/prune&quot;&gt;prune&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;If you want to remove modules from your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node_modules&lt;/code&gt; directory that you once installed, but that are not required anymore by your project, you can use &lt;a href=&quot;https://docs.npmjs.com/cli/prune&quot;&gt;prune&lt;/a&gt;:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm prune&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm prune&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm prune --production&lt;/code&gt; will also remove the &lt;em&gt;devDependencies&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm prune --production&lt;/code&gt; will also remove the &lt;em&gt;devDependencies&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;This is particularly useful before running &lt;code class=&quot;highlighter-rouge&quot;&gt;npm shrinkwrap&lt;/code&gt; if you manually removed dependencies from your &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This is particularly useful before running &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm shrinkwrap&lt;/code&gt; if you manually removed dependencies from your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package.json&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;list-outdated-dependencies&quot;&gt;List outdated dependencies&lt;/h2&gt;
 
 &lt;p&gt;If you want to check out which dependencies within your project are outdated, you can use the &lt;a href=&quot;https://docs.npmjs.com/cli/outdated&quot;&gt;npm-outdated&lt;/a&gt; command:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm outdated&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm outdated&lt;/code&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;update-dependencies&quot;&gt;Update dependencies&lt;/h2&gt;
 
-&lt;p&gt;With the module &lt;code class=&quot;highlighter-rouge&quot;&gt;npm-check-updates&lt;/code&gt;, you can automatically update your dependencies to the latest versions (be careful when doing this, since modifying various depencencies at once might break things down).&lt;/p&gt;
+&lt;p&gt;With the module &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm-check-updates&lt;/code&gt;, you can automatically update your dependencies to the latest versions (be careful when doing this, since modifying various depencencies at once might break things down).&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm i -g npm-check-updates&lt;/code&gt; Install the &lt;a href=&quot;https://www.npmjs.com/package/npm-check-updates&quot;&gt;npm-check-updates&lt;/a&gt; module globally&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm-check-updates -u&lt;/code&gt; the option -u upgrades your &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; automatically&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install&lt;/code&gt; in order to install the new versions of the dependencies (you might need to remove the &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules&lt;/code&gt; directory first)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm i -g npm-check-updates&lt;/code&gt; Install the &lt;a href=&quot;https://www.npmjs.com/package/npm-check-updates&quot;&gt;npm-check-updates&lt;/a&gt; module globally&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm-check-updates -u&lt;/code&gt; the option -u upgrades your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package.json&lt;/code&gt; automatically&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install&lt;/code&gt; in order to install the new versions of the dependencies (you might need to remove the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node_modules&lt;/code&gt; directory first)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;some-other-useful-commands&quot;&gt;Some other useful commands&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm ls&lt;/code&gt; list the installed packages&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm dedupe&lt;/code&gt; reduce duplication&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm ls&lt;/code&gt; list the installed packages&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm dedupe&lt;/code&gt; reduce duplication&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="vim" /><category term="npm" /><category term="nodejs" /><summary type="html">Quick reference of some useful commands</summary></entry><entry><title type="html">Vim magic</title><link href="https://blog.jdonado.com/vim-magic/" rel="alternate" type="text/html" title="Vim magic" /><published>2017-05-28T00:00:00+02:00</published><updated>2017-05-28T00:00:00+02:00</updated><id>https://blog.jdonado.com/vim-magic</id><content type="html" xml:base="https://blog.jdonado.com/vim-magic/">&lt;h1 id=&quot;vim-magic&quot;&gt;Vim magic&lt;/h1&gt;
 
 &lt;p&gt;I’ve been using the &lt;a href=&quot;http://www.vim.org&quot;&gt;vim editor&lt;/a&gt; for a while now, and I really like it.
@@ -688,77 +688,77 @@ whenever I discover new interesting stuff (this is kind of a personal quick refe
 &lt;h3 id=&quot;edition-magic&quot;&gt;Edition magic&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vi&quot;&lt;/code&gt; Select everything &lt;em&gt;inside&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;. It also works with parenthesis, brackets, tags…&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;di&quot;&lt;/code&gt; Delete everything &lt;em&gt;inside&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;. Same as before.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;da&quot;&lt;/code&gt; Delete everything &lt;em&gt;inside&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;, including the surrounding &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL+v&lt;/code&gt; Start visual mode, selecting columns&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;=&amp;lt;next position&amp;gt;&lt;/code&gt; Indent&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zz&lt;/code&gt; Scroll the current line to the center of the window&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zt&lt;/code&gt; Scroll the current line to the top of the window&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zb&lt;/code&gt; Scroll the current line to the bottom of the window&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cs&quot;'&lt;/code&gt; Change the surrounding double quotes by simple quotes
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vi&quot;&lt;/code&gt; Select everything &lt;em&gt;inside&lt;/em&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;. It also works with parenthesis, brackets, tags…&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;di&quot;&lt;/code&gt; Delete everything &lt;em&gt;inside&lt;/em&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;. Same as before.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;da&quot;&lt;/code&gt; Delete everything &lt;em&gt;inside&lt;/em&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;, including the surrounding &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CTRL+v&lt;/code&gt; Start visual mode, selecting columns&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;=&amp;lt;next position&amp;gt;&lt;/code&gt; Indent&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;zz&lt;/code&gt; Scroll the current line to the center of the window&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;zt&lt;/code&gt; Scroll the current line to the top of the window&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;zb&lt;/code&gt; Scroll the current line to the bottom of the window&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cs&quot;'&lt;/code&gt; Change the surrounding double quotes by simple quotes
 (&lt;a href=&quot;http://www.vim.org/scripts/script.php?script_id=1697&quot;&gt;surround.vim&lt;/a&gt; is required)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/\csearchString&lt;/code&gt; Perform a case insensitive search&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/\CsearchString&lt;/code&gt; Perform a case sensitive search&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/\csearchString&lt;/code&gt; Perform a case insensitive search&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/\CsearchString&lt;/code&gt; Perform a case sensitive search&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;marks&quot;&gt;Marks&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mk&lt;/code&gt; mark the current position as &lt;code class=&quot;highlighter-rouge&quot;&gt;k&lt;/code&gt; (any other lowercase letter will do)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mK&lt;/code&gt; mark the current position as &lt;code class=&quot;highlighter-rouge&quot;&gt;K&lt;/code&gt;. Uppercase means that it is a global mark,
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mk&lt;/code&gt; mark the current position as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;k&lt;/code&gt; (any other lowercase letter will do)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mK&lt;/code&gt; mark the current position as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;K&lt;/code&gt;. Uppercase means that it is a global mark,
 and it will be available even if you currently have a different file opened.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;'k&lt;/code&gt; jump to the position previously marked as &lt;code class=&quot;highlighter-rouge&quot;&gt;k&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'k&lt;/code&gt; jump to the position previously marked as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;k&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;folds&quot;&gt;Folds&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zf'k&lt;/code&gt; fold lines until the &lt;code class=&quot;highlighter-rouge&quot;&gt;k&lt;/code&gt; mark&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zo&lt;/code&gt; open the folded code&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zc&lt;/code&gt; close the folded code&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;za&lt;/code&gt; toggle the folded code&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;zf'k&lt;/code&gt; fold lines until the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;k&lt;/code&gt; mark&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;zo&lt;/code&gt; open the folded code&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;zc&lt;/code&gt; close the folded code&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;za&lt;/code&gt; toggle the folded code&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;sessions&quot;&gt;Sessions&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:mks ~/.vim/foo.vim&lt;/code&gt; Save the current vim session&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:source ~/.vim/foo.vim&lt;/code&gt; Restore the previously saved session&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:mks ~/.vim/foo.vim&lt;/code&gt; Save the current vim session&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:source ~/.vim/foo.vim&lt;/code&gt; Restore the previously saved session&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;tabs&quot;&gt;Tabs&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gT&lt;/code&gt; Go to the previous tab&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gt&lt;/code&gt; Go to the next tab&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:tabfind &amp;lt;TAB&amp;gt;&lt;/code&gt; Find a file with autocompletion and open it in a new tab&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gT&lt;/code&gt; Go to the previous tab&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gt&lt;/code&gt; Go to the next tab&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:tabfind &amp;lt;TAB&amp;gt;&lt;/code&gt; Find a file with autocompletion and open it in a new tab&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;splitting&quot;&gt;Splitting&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vsplit&lt;/code&gt; Split vertically&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;split&lt;/code&gt; Split horizontally&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vsplit&lt;/code&gt; Split vertically&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;split&lt;/code&gt; Split horizontally&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;other-commands&quot;&gt;Other commands&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:echo $VIM&lt;/code&gt; Show the path to the vimrc configuration file (usually just &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.vimrc&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:!command&lt;/code&gt; Run a unix command&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:!!&lt;/code&gt; Swap the selection by the stdout of the last command&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:e .&lt;/code&gt; Open the file explorer on the current directory, in order to edit a file&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:find *.js &amp;lt;TAB&amp;gt;&lt;/code&gt; Find a file with extension &lt;code class=&quot;highlighter-rouge&quot;&gt;.js&lt;/code&gt; using autocompletion&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:b &amp;lt;TAB&amp;gt;&lt;/code&gt; Open a file that has been previously opened (and is still in the buffer)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:ls&lt;/code&gt; List the previously opened files&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:vert diffs otherfile&lt;/code&gt; Diff the current file with &lt;code class=&quot;highlighter-rouge&quot;&gt;otherfile&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:echo $VIM&lt;/code&gt; Show the path to the vimrc configuration file (usually just &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.vimrc&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:!command&lt;/code&gt; Run a unix command&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:!!&lt;/code&gt; Swap the selection by the stdout of the last command&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:e .&lt;/code&gt; Open the file explorer on the current directory, in order to edit a file&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:find *.js &amp;lt;TAB&amp;gt;&lt;/code&gt; Find a file with extension &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.js&lt;/code&gt; using autocompletion&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:b &amp;lt;TAB&amp;gt;&lt;/code&gt; Open a file that has been previously opened (and is still in the buffer)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:ls&lt;/code&gt; List the previously opened files&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:vert diffs otherfile&lt;/code&gt; Diff the current file with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;otherfile&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;in-edit-mode&quot;&gt;In edit mode&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;CTRL&amp;gt;n&lt;/code&gt; Autocomplete&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;CTRL&amp;gt;n&lt;/code&gt; Autocomplete&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;custom-settings&quot;&gt;Custom settings&lt;/h2&gt;
@@ -766,15 +766,15 @@ and it will be available even if you currently have a different file opened.&lt;
 &lt;p&gt;These settings can be saved into the vimrc file.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;syntax on&lt;/code&gt; Activate the syntax highlighting&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set number&lt;/code&gt; Show the line numbers&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set autoindent&lt;/code&gt; Autoindentation&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set path+=**&lt;/code&gt; Include subdirectories when finding a file&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set wildmenu&lt;/code&gt; Menu helper when using tab finding files or directories&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set nocompatible&lt;/code&gt; Ignore compatibility with ancient vi versions&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set smartcase&lt;/code&gt; Always perform case insensitive search unless you search for capital letters&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set wildignore+=**/node_modules/**&lt;/code&gt; Ignore directory when finding files&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set wrap linebreak nolist&lt;/code&gt; Activate word wrap&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;syntax on&lt;/code&gt; Activate the syntax highlighting&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;set number&lt;/code&gt; Show the line numbers&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;set autoindent&lt;/code&gt; Autoindentation&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;set path+=**&lt;/code&gt; Include subdirectories when finding a file&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;set wildmenu&lt;/code&gt; Menu helper when using tab finding files or directories&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;set nocompatible&lt;/code&gt; Ignore compatibility with ancient vi versions&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;set smartcase&lt;/code&gt; Always perform case insensitive search unless you search for capital letters&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;set wildignore+=**/node_modules/**&lt;/code&gt; Ignore directory when finding files&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;set wrap linebreak nolist&lt;/code&gt; Activate word wrap&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;exporting-your-configuration&quot;&gt;Exporting your configuration&lt;/h2&gt;
@@ -782,14 +782,14 @@ and it will be available even if you currently have a different file opened.&lt;
 &lt;p&gt;You can save your custom vim configuration to a repository and synchronize it with
 any other machine.&lt;/p&gt;
 
-&lt;p&gt;In order to do that, just initialize your &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.vim&lt;/code&gt; directory as a git repository,
+&lt;p&gt;In order to do that, just initialize your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.vim&lt;/code&gt; directory as a git repository,
 and push it to the cloud (e.g.: to GitHub). You can find &lt;a href=&quot;https://github.com/fjrd84/.vim&quot;&gt;mine here&lt;/a&gt;
 (follow the instructions on the README in order to set it up).&lt;/p&gt;
 
 &lt;h2 id=&quot;and-of-course&quot;&gt;…and of course&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:q!&lt;/code&gt; &lt;a href=&quot;https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/&quot;&gt;Don’t get trapped&lt;/a&gt;.
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:q!&lt;/code&gt; &lt;a href=&quot;https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/&quot;&gt;Don’t get trapped&lt;/a&gt;.
 Leave without saving :)&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -805,22 +805,22 @@ Leave without saving :)&lt;/li&gt;
 
 &lt;p&gt;Clover is a boot manager that allows you to select the OS you want to boot with. It is used mostly by Hackintosh users, that is, people that install MacOSX (along with other OSs, like Linux and Windows) on a non-Apple machine.&lt;/p&gt;
 
-&lt;p&gt;The Clover configuration can be quite tricky, and if you’re not lucky you can easily mess it up. That’s why it’s more than advisable to keep a backup of the &lt;code class=&quot;highlighter-rouge&quot;&gt;/EFI/CLOVER/config.plist&lt;/code&gt; configuration file.&lt;/p&gt;
+&lt;p&gt;The Clover configuration can be quite tricky, and if you’re not lucky you can easily mess it up. That’s why it’s more than advisable to keep a backup of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/EFI/CLOVER/config.plist&lt;/code&gt; configuration file.&lt;/p&gt;
 
-&lt;p&gt;If you happen to break down your MacOSX boot, but you still have a working Windows boot on the same machine, you can follow these steps in order to restore a backup of &lt;code class=&quot;highlighter-rouge&quot;&gt;config.plist&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;If you happen to break down your MacOSX boot, but you still have a working Windows boot on the same machine, you can follow these steps in order to restore a backup of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;config.plist&lt;/code&gt;:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Open an administrator console (run &lt;code class=&quot;highlighter-rouge&quot;&gt;cmd.exe&lt;/code&gt; as Administrator) and type the following:&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;diskpart&lt;/code&gt; (open diskpart)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;list disk&lt;/code&gt; (list your hard drives with)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;select disk 1&lt;/code&gt; (select the disk where your Clover EFI boot has been installed. 1 is just an example)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;list partition&lt;/code&gt; (list the partitions available on the selected disk)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;select partition 1&lt;/code&gt; (select the boot EFI partition)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;assign letter=s&lt;/code&gt; (assign a letter. S in this case)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;exit&lt;/code&gt; (exit diskpart)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;s:&lt;/code&gt; (go to the just mounted boot partition)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd EFI\CLOVER\&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;copy c:\backups\config.plist .&lt;/code&gt; (c:\backups is just an example. Replace this path by the path where you have your config.plist backup)&lt;/li&gt;
+  &lt;li&gt;Open an administrator console (run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cmd.exe&lt;/code&gt; as Administrator) and type the following:&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;diskpart&lt;/code&gt; (open diskpart)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;list disk&lt;/code&gt; (list your hard drives with)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;select disk 1&lt;/code&gt; (select the disk where your Clover EFI boot has been installed. 1 is just an example)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;list partition&lt;/code&gt; (list the partitions available on the selected disk)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;select partition 1&lt;/code&gt; (select the boot EFI partition)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assign letter=s&lt;/code&gt; (assign a letter. S in this case)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;exit&lt;/code&gt; (exit diskpart)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;s:&lt;/code&gt; (go to the just mounted boot partition)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd EFI\CLOVER\&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;copy c:\backups\config.plist .&lt;/code&gt; (c:\backups is just an example. Replace this path by the path where you have your config.plist backup)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;If everything worked fine, you can now restart and use your MacOSX boot again.&lt;/p&gt;
@@ -828,8 +828,8 @@ Leave without saving :)&lt;/li&gt;
 &lt;p&gt;In addition to that, some Clover prefixes that can help you find out what went wrong are:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-x&lt;/code&gt; start using the safe mode&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-v&lt;/code&gt; verbose mode&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-x&lt;/code&gt; start using the safe mode&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-v&lt;/code&gt; verbose mode&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;You can find more information about Hackintosh and Clover on &lt;a href=&quot;https://www.tonymacx86.com/&quot;&gt;tonymac86&lt;/a&gt;.&lt;/p&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="clover" /><category term="hackintosh" /><category term="clover" /><category term="windows" /><summary type="html">Restore your config.plist</summary></entry><entry><title type="html">About Functional Programming</title><link href="https://blog.jdonado.com/about-fp/" rel="alternate" type="text/html" title="About Functional Programming" /><published>2017-03-05T00:00:00+01:00</published><updated>2017-03-05T00:00:00+01:00</updated><id>https://blog.jdonado.com/about-fp</id><content type="html" xml:base="https://blog.jdonado.com/about-fp/">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;

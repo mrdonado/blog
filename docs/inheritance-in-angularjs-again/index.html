@@ -165,7 +165,7 @@
 
 <p>Depending on how many constructors you want to define, you can have different factory services.</p>
 
-<p>Now, if you want to create a new service that implements the functions defined in <code class="highlighter-rouge">Observer</code>, you can do something like this:</p>
+<p>Now, if you want to create a new service that implements the functions defined in <code class="language-plaintext highlighter-rouge">Observer</code>, you can do something like this:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">exampleApp</span><span class="dl">'</span><span class="p">,</span> <span class="p">[])</span>
   <span class="p">.</span><span class="nx">service</span><span class="p">(</span><span class="dl">'</span><span class="s1">NewService</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">factoryService</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">factoryService</span><span class="p">)</span> <span class="p">{</span>
@@ -177,9 +177,9 @@
     <span class="p">};</span>
   <span class="p">}]);</span>   </code></pre></figure>
 
-<p>This way, you will have a property in the <code class="highlighter-rouge">NewService</code> that’s called <code class="highlighter-rouge">observable</code>, on which you can call the functions of an <code class="highlighter-rouge">Observer</code> object that only exists in <code class="highlighter-rouge">NewService</code>.</p>
+<p>This way, you will have a property in the <code class="language-plaintext highlighter-rouge">NewService</code> that’s called <code class="language-plaintext highlighter-rouge">observable</code>, on which you can call the functions of an <code class="language-plaintext highlighter-rouge">Observer</code> object that only exists in <code class="language-plaintext highlighter-rouge">NewService</code>.</p>
 
-<p>You have not repeated the code of the functions defined in <code class="highlighter-rouge">Observable</code> and the code is easier to understand and maintain.</p>
+<p>You have not repeated the code of the functions defined in <code class="language-plaintext highlighter-rouge">Observable</code> and the code is easier to understand and maintain.</p>
 
 <p>What do you think about this approach? Would you prefer <a href="/inheritance-and-observer-pattern-in-angular-js/">the other one</a>? Do you see any potential problems when doing something like this?</p>
 

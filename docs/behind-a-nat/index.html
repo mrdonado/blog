@@ -152,15 +152,15 @@
 
 <h2 id="setup-a-reverse-proxy">Setup a Reverse Proxy</h2>
 
-<p>I’m taking for granted that you already have something on that laptop that you want to see online from an IPv4 address. Something that you can visit locally as <code class="highlighter-rouge">http://localhost:8080</code> or similar.</p>
+<p>I’m taking for granted that you already have something on that laptop that you want to see online from an IPv4 address. Something that you can visit locally as <code class="language-plaintext highlighter-rouge">http://localhost:8080</code> or similar.</p>
 
-<p>You also have an online server, which is reachable on an IPv4 address, like this <code class="highlighter-rouge">216.58.213.196</code>.</p>
+<p>You also have an online server, which is reachable on an IPv4 address, like this <code class="language-plaintext highlighter-rouge">216.58.213.196</code>.</p>
 
-<p>First, <a href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04">install NGINX</a> on your server. Once you’re ready, you should be able to visit the default NGINX initial page on <code class="highlighter-rouge">http://[YOURONLINEIP:80]</code>.</p>
+<p>First, <a href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04">install NGINX</a> on your server. Once you’re ready, you should be able to visit the default NGINX initial page on <code class="language-plaintext highlighter-rouge">http://[YOURONLINEIP:80]</code>.</p>
 
-<p>Now you can establish an <code class="highlighter-rouge">SSH</code> tunnel between your laptop at home and your server. A tunnel with a reverse proxy where your local port (<code class="highlighter-rouge">8080</code> in the example) is mapped to some other port of your server (e.g.: port <code class="highlighter-rouge">17899</code>). To achieve this, use this command:</p>
+<p>Now you can establish an <code class="language-plaintext highlighter-rouge">SSH</code> tunnel between your laptop at home and your server. A tunnel with a reverse proxy where your local port (<code class="language-plaintext highlighter-rouge">8080</code> in the example) is mapped to some other port of your server (e.g.: port <code class="language-plaintext highlighter-rouge">17899</code>). To achieve this, use this command:</p>
 
-<p><code class="highlighter-rouge">ssh -N -g -R 17899:localhost:8080 yourusername@[YOURONLINEIP]</code></p>
+<p><code class="language-plaintext highlighter-rouge">ssh -N -g -R 17899:localhost:8080 yourusername@[YOURONLINEIP]</code></p>
 
 <p>While this tunnel is active, edit the NGINX configuration of your server with the following lines:</p>
 
@@ -190,9 +190,9 @@ http {
 
 <p>Restart NGINX on your server:</p>
 
-<p><code class="highlighter-rouge">sudo systemctl restart nginx</code></p>
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl restart nginx</code></p>
 
-<p>Now you should be able to visit <code class="highlighter-rouge">http://[YOURONLINEIP:80]</code> and see whatever you have on the <code class="highlighter-rouge">localhost:8080</code> of your laptop at home. ISN’T IT GREAT!!???</p>
+<p>Now you should be able to visit <code class="language-plaintext highlighter-rouge">http://[YOURONLINEIP:80]</code> and see whatever you have on the <code class="language-plaintext highlighter-rouge">localhost:8080</code> of your laptop at home. ISN’T IT GREAT!!???</p>
 
 <h2 id="some-considerations">Some Considerations</h2>
 
@@ -202,9 +202,9 @@ http {
 
 <p>Once you can connect from your laptop to the remote machine via SSH without entering a password, you need a service that establishes that connection and keeps it alive.</p>
 
-<p>A rather simple and reliable way is by defining a <code class="highlighter-rouge">systemd</code> service on your laptop. To do that, edit a new file called <code class="highlighter-rouge">sshtunnel.service</code> on <code class="highlighter-rouge">/etc/systemd/system/</code>:</p>
+<p>A rather simple and reliable way is by defining a <code class="language-plaintext highlighter-rouge">systemd</code> service on your laptop. To do that, edit a new file called <code class="language-plaintext highlighter-rouge">sshtunnel.service</code> on <code class="language-plaintext highlighter-rouge">/etc/systemd/system/</code>:</p>
 
-<p><code class="highlighter-rouge">sudo vim /etc/systemd/system/sshtunnel.service</code></p>
+<p><code class="language-plaintext highlighter-rouge">sudo vim /etc/systemd/system/sshtunnel.service</code></p>
 
 <p>And add the following contents:</p>
 
@@ -228,7 +228,7 @@ WantedBy=multi-user.target
 sudo systemctl start sshtunnel
 </code></pre>
 
-<p>The first command will tell your system to run the service on startup. The second one (<code class="highlighter-rouge">start</code>) will start the service right away.</p>
+<p>The first command will tell your system to run the service on startup. The second one (<code class="language-plaintext highlighter-rouge">start</code>) will start the service right away.</p>
 
 <p>Note: there are alternatives to creating your custom ssh service (e.g.: <a href="https://linux.die.net/man/1/autossh">autossh</a>), but a custom service proved to be more stable on my machine. Feel free to use whatever configuration works best for you to keep the connection active.</p>
 
