@@ -35,13 +35,17 @@
 }
 
 #title-wrapper {
-    height: 5rem;
+    height: 3rem;
     text-align: right;
     position: fixed;
     z-index: 2;
+    top: 2rem;
     right: 1rem;
-    // margin-right: 2rem;
-    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 5rem;
+    background-color: #ebebebc7;
+    border: 1px solid #ebebeb;
     a.icon{
         height: 34px;
         left: 30px;
@@ -51,7 +55,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         display: inline-block;
-        opacity: 0.3;
+        opacity: 0.5;
         &:hover{
             opacity: 1;
         }
@@ -59,7 +63,7 @@
           background-image: url(../images/h-icon-home.png);        
         }
         &.email-icon {
-          background-image: url(../images/h-icon-email.png);        
+          background-image: url(../images/email-icon.svg);        
         }
         &.web-icon {
           background-image: url(../images/h-icon-web.png);        
