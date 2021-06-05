@@ -1,4 +1,112 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2020-11-02T18:25:43+01:00</updated><id>https://blog.jdonado.com/feed.xml</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">The Infancy of the Cloud</title><link href="https://blog.jdonado.com/cloud-infancy/" rel="alternate" type="text/html" title="The Infancy of the Cloud" /><published>2020-05-10T00:00:00+02:00</published><updated>2020-05-10T00:00:00+02:00</updated><id>https://blog.jdonado.com/cloud-infancy</id><content type="html" xml:base="https://blog.jdonado.com/cloud-infancy/">&lt;h2 id=&quot;the-heterogeneous-world-of-it-job-titles&quot;&gt;The Heterogeneous World of IT Job Titles&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2021-06-05T22:20:13+02:00</updated><id>https://blog.jdonado.com/feed.xml</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">The Yin and Yang of Software Development</title><link href="https://blog.jdonado.com/yin-and-yang/" rel="alternate" type="text/html" title="The Yin and Yang of Software Development" /><published>2021-06-05T00:00:00+02:00</published><updated>2021-06-05T00:00:00+02:00</updated><id>https://blog.jdonado.com/yin-and-yang</id><content type="html" xml:base="https://blog.jdonado.com/yin-and-yang/">&lt;h2 id=&quot;what-is-software-development-all-about&quot;&gt;What is software development all about?&lt;/h2&gt;
+
+&lt;p&gt;Depending on who you ask, even when asking professionals that have been many years in the industry, you’ll get very different answers. In my experience, there are two clear trends:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Software Development is a craft&lt;/strong&gt;. Your job as a software developer is similar in many ways to the job of a gardener. You don’t have a big plan because you don’t need one. You’re starting small, you’re alone and you’re building things along the way. If you’re a good gardener, however, you’ll be clean and you’ll pay attention to the tricky parts of your garden because you know that unless you keep them under control, they’ll soon get out of hand.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Software Development is an Engineering discipline&lt;/strong&gt;. Now there’s a plan. You have one or even various teams, and you’re building something big and complex for which there are clear requirements and constraints. There’s a need for a well-defined architecture, as well as processes that ensure the &lt;strong&gt;quality requirements&lt;/strong&gt;. &lt;a href=&quot;https://en.wikipedia.org/wiki/Agile_software_development&quot;&gt;Agile methodologies&lt;/a&gt; might let you delay part of the decision-making, but you cannot sacrifice quality.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You might call it the &lt;em&gt;Yin and Yang of Software Development&lt;/em&gt;. I think that both statements are true to some extent, but one might rule over the other depending on the context.&lt;/p&gt;
+
+&lt;p&gt;There’s almost always some craft or even some art in the process of software development. When you’re writing code, more often than not you’re not following a scientifically rigorous method. Instead of that, you rely on pre-existing components and on your experience to build things that work. If you need metrics, these metrics usually come after you’ve already built something. Depending on the context, however, you might need to apply engineering processes that resemble those used in other engineering disciplines.&lt;/p&gt;
+
+&lt;p&gt;These two definitions raise two new questions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In which context will one definition rule over the other?&lt;/li&gt;
+  &lt;li&gt;What is quality software?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;business-is-the-context&quot;&gt;Business is the Context&lt;/h2&gt;
+
+&lt;p&gt;When you build software in the context of a startup that is creating a new product from scratch, there are usually so many unknown factors about the final product that it often makes little sense to apply most software quality principles.&lt;/p&gt;
+
+&lt;p&gt;If you follow the principles of &lt;a href=&quot;https://www.thoughtworks.com/books/understanding-design-thinking-lean-agile-jonny-schneider&quot;&gt;Design Thinking, Lean and Agile&lt;/a&gt;, you’ll continuously perform experiments and collect data to test your hypotheses. This way, on each iteration you gain more insights about the right direction for your product.&lt;/p&gt;
+
+&lt;p&gt;Usually, during the initial iterations, you’ll have a pretty small team (maybe just one developer), and the advantages of applying software quality principles might not be too clear because oftentimes the code that you’re writing won’t live very long.&lt;/p&gt;
+
+&lt;p&gt;As Johnny Schneider explains in &lt;a href=&quot;https://www.goodreads.com/en/book/show/35784015&quot;&gt;Understanding Design Thinking, Lean and Agile&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;[…] Much of this experimentation might not involve writing a line of code—after all, &lt;strong&gt;working software is still an experiment, just a really expensive one&lt;/strong&gt;. As confidence increases and software is the experiment, Agile is how teams constantly adapt to change, repeatedly adjusting their course and taking the next steps&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;During the initial phases of a startup, and you should better spend your time experimenting and collecting data about your experiments to continue taking well-informed decisions. You can interpret this as a technical variant of Paul Graham’s &lt;a href=&quot;http://paulgraham.com/ds.html&quot;&gt;“Do things that don’t scale”&lt;/a&gt;. What is the advantage of writing a high-quality scalable solution if you end up throwing it all away?&lt;/p&gt;
+
+&lt;p&gt;Some developers would be horrified to even think about developing software like that. That’s because they don’t see software development as a craft nor as an Engineering discipline, &lt;em&gt;but as a religion&lt;/em&gt;. Good developers see the value in software quality techniques, but they can also see the big picture and the cost of &lt;a href=&quot;https://en.wikipedia.org/wiki/Non-functional_requirement&quot;&gt;non-functional requirements&lt;/a&gt;, especially in the beginning. If you don’t see this, you might end up with an overengineered solution, that is difficult to maintain and poorly addresses the business needs.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The problem with the context, however, &lt;strong&gt;is that it changes over time&lt;/strong&gt;. You might’ve started it all as a bunch of experiments, but at some point, if enough of these experiments were successful, you’ll find yourself offering a real service to real customers.&lt;/p&gt;
+
+&lt;p&gt;A good CTO in a startup will constantly try to answer the question &lt;strong&gt;“how much technical debt can we afford?”&lt;/strong&gt;. In the beginning, we need speed over anything else, because we cannot afford to take too long to try out our experiments. Otherwise, we’ll run out of time and resources and our competition will kick us out before we’ve even started.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.devgenius.io/quality-vs-speed-9a46a6254a4e&quot;&gt;But there’s an inflection point&lt;/a&gt; where development speed will start decreasing if you don’t improve the quality of your software. It’s difficult to tell when exactly this inflection point occurs for a given product, but some indicators are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Your codebase is growing a lot and more people start working on it.&lt;/li&gt;
+  &lt;li&gt;You start spending more time than usual fixing bugs.&lt;/li&gt;
+  &lt;li&gt;New developers find it increasingly difficult to start being productive.&lt;/li&gt;
+  &lt;li&gt;You need an increasing amount of time to manually test your product on each release.&lt;/li&gt;
+  &lt;li&gt;Your customers start complaining about the quality of the service.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://blog.jdonado.com/assets/images/speed-time-chart.png&quot; alt=&quot;Development speed vs. time since project start&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The team and its stakeholders should realize that the ludicrous speed of the initial phases is not sustainable over time. At some point, enough resources should be spent to continuously refactor the codebase before it’s too late. If the goal is to achieve the highest development speed possible, there’s a moment where software quality principles stop being an obstacle and become a crucial part of &lt;a href=&quot;https://www.youtube.com/watch?v=ZmgbjaRfp_Q&quot;&gt;a virtuous circle&lt;/a&gt; where you build better software, faster. In other words, if you don’t care about the quality of your software soon enough, it’s a matter of time that it’ll become unmaintainable, and that will slow you down.&lt;/p&gt;
+
+&lt;h3 id=&quot;product-development-stages&quot;&gt;Product development stages&lt;/h3&gt;
+
+&lt;p&gt;During product development, we commonly use the following terms:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Proof_of_concept&quot;&gt;PoC (Proof of Concept)&lt;/a&gt;: it’s the minimal solution to see if some idea is even feasible. It’s the cheapest way to test a hypothesis.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Prototype&quot;&gt;Prototype&lt;/a&gt;: it’s a piece of working software that solves a specific problem. It might have a beautiful design and it might seem to be robust, but it doesn’t follow most software development best practices and quality standards. It’s a good way to test a hypothesis, but it’s not maintainable in the long term. Some authors use the term “walking skeleton” for this.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Minimum_viable_product&quot;&gt;MVP (Minimum Viable Product)&lt;/a&gt;: it’s a product built on a solid technical base that offers the minimum set of desired features. The goal of an MVP is to hit the market as soon as possible while having a solid starting point that is maintainable in the long term.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After the MVP phase, you might want to continue iterating into a Minimum Marketable Product, a Minimum Lovable Product, a Minimum Delightful Product…&lt;/p&gt;
+
+&lt;p&gt;In my personal experience, most problems during product development these days have to do with misunderstandings about where you are with your product from a technical and from a business perspective. It’s the responsibility of all the team members to communicate where you are and to understand what it means.&lt;/p&gt;
+
+&lt;h2 id=&quot;quality-software&quot;&gt;Quality Software&lt;/h2&gt;
+
+&lt;p&gt;I won’t describe in depth what software quality is all about. &lt;a href=&quot;https://en.wikibooks.org/wiki/Introduction_to_Software_Engineering/Quality&quot;&gt;There’s an article in Wikipedia&lt;/a&gt; that defines it pretty well.&lt;/p&gt;
+
+&lt;p&gt;In a nutshell, in the context of a startup, quality software means:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Follow best practices.
+    &lt;ul&gt;
+      &lt;li&gt;From code style guides to DRY, KISS, SOLID principles, etc.&lt;/li&gt;
+      &lt;li&gt;Continuously refactor your code.&lt;/li&gt;
+      &lt;li&gt;Automatically analyze the complexity of your code.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Write tests.
+    &lt;ul&gt;
+      &lt;li&gt;Not just unit tests, but all kinds of tests. Tests will help you keep your solution stable and maintainable. Read &lt;a href=&quot;https://martinfowler.com/articles/practical-test-pyramid.html&quot;&gt;the practical test pyramid&lt;/a&gt; for more information about it.&lt;/li&gt;
+      &lt;li&gt;Without tests the chances that new features break existing ones without you realizing it are ever-increasing.&lt;/li&gt;
+      &lt;li&gt;Tests also work as documentation for new team members.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Do code reviews.&lt;/li&gt;
+  &lt;li&gt;Use continuous delivery pipelines.&lt;/li&gt;
+  &lt;li&gt;Design a scalable architecture.
+    &lt;ul&gt;
+      &lt;li&gt;Monitor your systems and identify failures and bottlenecks.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Doing this takes time, but it’s an investment. I wouldn’t recommend doing it all while the chances are high that you’ll end up throwing away most of your code, but as time goes by, you should better spend more and more time doing it if you don’t want to end up with a spaghetti code salad that nobody wants to work with.&lt;/p&gt;
+
+&lt;p&gt;The later that you start applying these principles, the most difficult (and expensive) it’s going to be to apply them successfully.&lt;/p&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="software-quality startup product-development" /><category term="software-quality" /><category term="startup" /><category term="product-development" /><summary type="html">What is software development all about?</summary></entry><entry><title type="html">The Infancy of the Cloud</title><link href="https://blog.jdonado.com/cloud-infancy/" rel="alternate" type="text/html" title="The Infancy of the Cloud" /><published>2020-05-10T00:00:00+02:00</published><updated>2020-05-10T00:00:00+02:00</updated><id>https://blog.jdonado.com/cloud-infancy</id><content type="html" xml:base="https://blog.jdonado.com/cloud-infancy/">&lt;h2 id=&quot;the-heterogeneous-world-of-it-job-titles&quot;&gt;The Heterogeneous World of IT Job Titles&lt;/h2&gt;
 
 &lt;p&gt;When I started working in the IT industry, one of the things that shocked me a bit was the way job titles were used. I guess that as an undergrad, you often expect some correlation between training or a study plan and whatever position or role you play in a company. Yes, that was naive from me, I admit it. Then, the creativity some people exercised when describing their job took me by surprise. Whoever has jumped through enough LinkedIn profiles will know what I’m talking about.&lt;/p&gt;
 
@@ -832,57 +940,4 @@ Leave without saving :)&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-v&lt;/code&gt; verbose mode&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;You can find more information about Hackintosh and Clover on &lt;a href=&quot;https://www.tonymacx86.com/&quot;&gt;tonymac86&lt;/a&gt;.&lt;/p&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="clover" /><category term="hackintosh" /><category term="clover" /><category term="windows" /><summary type="html">Restore your config.plist</summary></entry><entry><title type="html">About Functional Programming</title><link href="https://blog.jdonado.com/about-fp/" rel="alternate" type="text/html" title="About Functional Programming" /><published>2017-03-05T00:00:00+01:00</published><updated>2017-03-05T00:00:00+01:00</updated><id>https://blog.jdonado.com/about-fp</id><content type="html" xml:base="https://blog.jdonado.com/about-fp/">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
-
-&lt;p&gt;Recently, I’ve been doing some research on the topic of functional programming. I think it’s a good time to get together some of the resources I’ve found so far and remark the ideas that motivated me to learn more about it.&lt;/p&gt;
-
-&lt;h2 id=&quot;why-functional-programming&quot;&gt;Why Functional Programming?&lt;/h2&gt;
-
-&lt;p&gt;After reading articles, books, and watching videos by Eric Eliott, Brian Lonsdorf, Michael Fogus, Brian Beckman, and others, I’ve convinced myself about the following facts:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Object-Oriented Design and Relational Databases potentially have a big problem: they bind your software and your data together with a very rigid structure that is very difficult to modify in the future.&lt;/li&gt;
-  &lt;li&gt;You usually have to make decisions about that rigid structure at a development stage where you simply don’t have all the relevant information. Requirements change with time and rigid structures don’t like changes.&lt;/li&gt;
-  &lt;li&gt;It’s almost impossible to design a very good OOD or RDB from the very beginning because &lt;strong&gt;humans cannot predict the future&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;That’s why I think not just functional programming but also NoSQL databases are getting more and more traction. Now that memory and computational power are getting bigger and cheaper, they are becoming a great alternative for many applications. In addition to that, functional techniques present clear advantages in distributed computing.&lt;/p&gt;
-
-&lt;h3 id=&quot;fight-complexity&quot;&gt;Fight complexity&lt;/h3&gt;
-
-&lt;p&gt;As &lt;a href=&quot;https://youtu.be/ZhuHCtR3xq8?t=17m13s&quot;&gt;Brian Beckman said&lt;/a&gt;, today in the software development community, we’re out of control in the complexity space. &lt;strong&gt;The way to control complexity is compositionality&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Functional programming is probably the natural alternative to the classical Object-Oriented paradigm. It’s been around since the very beginning of computation, but for some reason, it never went mainstream. Until now.&lt;/p&gt;
-
-&lt;p&gt;JavaScript is (maybe alongside with Scala) the first mainstream programming language that provides basic tools for developing software-based partially &lt;a href=&quot;https://www.youtube.com/watch?v=eetWam3nhoM&quot;&gt;or even completely&lt;/a&gt; on the functional paradigm. Functions are first-class citizens, you can create high order functions, and you can do many other things that were not possible in any of the older classic mainstream programming languages (such as C++, Java, or C#). Interestingly enough, now that functional programming is becoming something cool and more and more people are interested in it, also the classic OOP languages are incorporating functional features to them, which is great! In fact, I think there’s great potential in combining both paradigms.&lt;/p&gt;
-
-&lt;p&gt;But functional programming can be quite tricky to understand in the beginning. It has its roots in lambda calculus (or category theory, as you prefer), and it’s full of rather esoteric terms such as monoids, monads, functors, applicative functors, and so on. But the main idea behind it is very simple: &lt;strong&gt;build software just by writing small pieces of code (functions) that perform very specific tasks&lt;/strong&gt; and then compose them in order to provide a more complex behavior. One of the main advantages of such an approach is that unit testing is much easier, sometimes even trivial.&lt;/p&gt;
-
-&lt;h3 id=&quot;first-steps&quot;&gt;First Steps&lt;/h3&gt;
-
-&lt;p&gt;Basic and easy stuff first, please. The series on &lt;a href=&quot;https://www.youtube.com/playlist?list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84&quot;&gt;functional programming in JavaScript&lt;/a&gt; by MPJ is a great starting point. If you never heard of high order functions, Map, Reduce, Currying, and some other related concepts, you can find a quick and fun introduction here.&lt;/p&gt;
-
-&lt;h3 id=&quot;i-want-more-of-this&quot;&gt;I Want More of This&lt;/h3&gt;
-
-&lt;p&gt;After convincing myself of the convenience of functions like Map and Reduce, I wanted to learn more. I found two very interesting books about functional programming with JavaScript:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.de/Functional-JavaScript-Introducing-Programming-Underscore-js/dp/1449360726&quot;&gt;Functional JavaScript&lt;/a&gt;, by Michael Fogus, is a comprehensive introduction to the main functional programming concepts. It focuses on JavaScript and the Underscore library. Concepts like purity, immutability, recursion, trampoline techniques, and currying are very well explained, with lots of examples.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/MostlyAdequate/mostly-adequate-guide&quot;&gt;Professor Frisby’s Mostly Adequate Guide to Functional Programming&lt;/a&gt;, by Brian Lonsdorf (AKA Dr. Boolean). It’s not finished yet but, hey! it’s free!!. It shows a way to develop JavaScript that, in my humble opinion, is closer to what you might expect when working with more purely functional oriented programming languages, like Scala or even Haskell. It’s related to the three videos series &lt;a href=&quot;https://www.youtube.com/watch?v=h_tkIpwbsxY&amp;amp;list=PLK_hdtAJ4KqX0JOs_KMAmUNTNMRYhWEaC&quot;&gt;Classroom Coding with Prof. Frisby&lt;/a&gt; (very interesting too, but also very dense. You might need to watch them twice to get all the concepts). You can also find many other interesting talks on youtube from this author.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If you want to start writing functional routines in your JavaScript applications, in the sense that was explained on “Functional Javascript”, &lt;a href=&quot;https://lodash.com/&quot;&gt;Lodash&lt;/a&gt; (a more performant alternative to Underscore) is a great library.&lt;/p&gt;
-
-&lt;p&gt;If you want to explore a more pure functional programming style, &lt;a href=&quot;https://github.com/lodash/lodash/tree/4.17.4-npm/fp&quot;&gt;lodash/fp&lt;/a&gt;, &lt;a href=&quot;http://ramdajs.com/&quot;&gt;Ramda&lt;/a&gt;, &lt;a href=&quot;http://folktalejs.org/&quot;&gt;Folktale&lt;/a&gt;, and &lt;a href=&quot;https://github.com/fantasyland/fantasy-land&quot;&gt;Fantasy Land&lt;/a&gt; are wonderful resources.&lt;/p&gt;
-
-&lt;p&gt;If that’s not functional enough for you, you can give a try at &lt;a href=&quot;http://www.purescript.org/&quot;&gt;PureScript&lt;/a&gt; or &lt;a href=&quot;https://clojurescript.org/&quot;&gt;ClojureScript&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;a-bit-more-advanced&quot;&gt;A Bit More Advanced&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ZhuHCtR3xq8&quot;&gt;Brian Beckman: Don’t fear the Monad&lt;/a&gt;. Brian Beckman (Princeton University, Microsoft, Amazon…) gives you a glimpse of the category theory behind monoids and monads, expressed in practical terms, familiar to an imperative programmer (he also gives C# examples). I find particularly interesting the following ideas:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Functions can be seen as data. You can model (almost) any function as a dictionary table where a lookup is performed.&lt;/li&gt;
-  &lt;li&gt;A short story about the two separated camps created when computing started: the imperative one (a tradition that led to languages like Fortran, C, Pascal, Java, etc.), where Math theory was put aside and performance was king, and the functional one (this one led to languages like Algol, Lisp, Smalltalk or Haskell), where they started out with Math theory (lambda calculus) and went from there down to the machine, sometimes at the expense of performance.&lt;/li&gt;
-  &lt;li&gt;Build complexity out of simplicity by composing functions, not by adding ad-hoc features.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="functional-programming" /><category term="functional-programming" /><category term="javascript" /><summary type="html">Introduction</summary></entry></feed>
+&lt;p&gt;You can find more information about Hackintosh and Clover on &lt;a href=&quot;https://www.tonymacx86.com/&quot;&gt;tonymac86&lt;/a&gt;.&lt;/p&gt;</content><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><category term="clover" /><category term="hackintosh" /><category term="clover" /><category term="windows" /><summary type="html">Restore your config.plist</summary></entry></feed>
