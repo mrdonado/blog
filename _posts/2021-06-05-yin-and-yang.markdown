@@ -19,7 +19,7 @@ Depending on who you ask, even when asking professionals that have been many yea
 
 You might call it the *Yin and Yang of Software Development*. I think that both statements are true to some extent, but one might rule over the other depending on the context.
 
-There's almost always some craft or even some art in the process of software development. When you're writing code, more often than not you're not following a scientifically rigorous method. Instead of that, you rely on pre-existing components and on your experience to build things that work. If you need metrics, these metrics usually come after you've already built something. Depending on the context, however, you might need to apply engineering processes and quality standards that resemble those used in other engineering disciplines.
+There's almost always some craft or even some art in the process of software development. When you're writing code, more often than not you're not following a scientifically rigorous method. Instead of that, you rely on pre-existing components and on your experience to build things that work. If you need metrics, these metrics usually come after you've already built something. However, depending on the context, you might need to apply engineering processes and quality standards that resemble those used in other engineering disciplines.
 
 These two definitions raise two new questions:
 
@@ -30,7 +30,7 @@ These two definitions raise two new questions:
 
 When you build software in the context of a startup that is creating a new product from scratch, there are usually so many unknown factors about the final product that it often makes little sense to apply most software quality measures.
 
-If you follow the principles of [Design Thinking, Lean and Agile](https://www.thoughtworks.com/books/understanding-design-thinking-lean-agile-jonny-schneider), you'll continuously perform experiments and collect data to test your hypotheses. This way, on each iteration you gain more insights about the right direction for your product.
+If you follow [Design Thinking, Lean and Agile](https://www.thoughtworks.com/books/understanding-design-thinking-lean-agile-jonny-schneider) principles, you'll continuously perform experiments and collect data to test your hypotheses. This way, on each iteration you gain more insights about the right direction for your product.
 
 Usually, during the initial iterations, you'll have a pretty small team (maybe just one developer), and the advantages of applying software quality principles might not be too clear because oftentimes the code that you're writing won't live very long.
 
@@ -38,7 +38,7 @@ As Johnny Schneider explains in [Understanding Design Thinking, Lean and Agile](
 
 > [...] Much of this experimentation might not involve writing a line of code—after all, **working software is still an experiment, just a really expensive one**. As confidence increases and software is the experiment, Agile is how teams constantly adapt to change, repeatedly adjusting their course and taking the next steps
 
-Therefore, during the initial phases of a startup you should better spend your time experimenting and collecting data about your experiments to continue taking well-informed decisions. You can interpret this as a technical variant of Paul Graham's ["Do things that don't scale"](http://paulgraham.com/ds.html). What is the advantage of writing a high-quality scalable solution if you end up throwing it all away?
+Therefore, during the initial phases of a startup, you should better spend your time experimenting and collecting data about your experiments to continue taking well-informed decisions. You can interpret this as a technical variant of Paul Graham's ["Do things that don't scale"](http://paulgraham.com/ds.html). What is the advantage of writing a high-quality scalable solution if you end up throwing it all away?
 
 Some developers would be horrified to even think about developing software like that. That's because they don't see software development as a craft nor as an Engineering discipline, *but as a religion*. Good developers see the value in software quality techniques, but they can also see the big picture and the cost of [non-functional requirements](https://en.wikipedia.org/wiki/Non-functional_requirement), especially in the beginning. If you don't see this, you might end up with an overengineered solution, that is difficult to maintain and poorly addresses the business needs.
 
@@ -62,7 +62,7 @@ The team and its stakeholders should realize that the ludicrous speed of the ini
 
 ### Product Development Stages
 
-During product development, we commonly use the following terms:
+During product development, it's quite common to use the following terms:
 
 - [PoC (Proof of Concept)](https://en.wikipedia.org/wiki/Proof_of_concept): it's the minimal solution to see if some idea is even feasible. It's the cheapest way to test a hypothesis.
 - [Prototype](https://en.wikipedia.org/wiki/Prototype): it's a piece of working software that solves a specific problem. It might have a beautiful design and it might seem to be robust, but it doesn't follow most software development best practices and quality standards. It's a good way to test a hypothesis, but it's not maintainable in the long term. Some authors use the term "walking skeleton" for this.
@@ -70,7 +70,7 @@ During product development, we commonly use the following terms:
 
 After the MVP phase, you might want to continue iterating into a Minimum Marketable Product, a Minimum Lovable Product, a Minimum Delightful Product...
 
-In my personal experience, most problems during product development these days have to do with misunderstandings about where you are with your product from a technical and from a business perspective. It's the responsibility of all the team members to communicate where you are and to understand what it means.
+In my personal experience, most problems during product development these days have to do with misunderstandings about where you are with your product from a technical and from a business perspective. It’s the team members' responsibility to communicate where you are at a given moment and understand what it means.
 
 ## Quality Software
 

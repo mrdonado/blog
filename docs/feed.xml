@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2021-06-06T12:48:27+02:00</updated><id>https://blog.jdonado.com/feed.xml</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">The Yin and Yang of Software Development: Quality and Context</title><link href="https://blog.jdonado.com/yin-and-yang/" rel="alternate" type="text/html" title="The Yin and Yang of Software Development: Quality and Context" /><published>2021-06-05T00:00:00+02:00</published><updated>2021-06-05T00:00:00+02:00</updated><id>https://blog.jdonado.com/yin-and-yang</id><content type="html" xml:base="https://blog.jdonado.com/yin-and-yang/">&lt;h2 id=&quot;what-is-software-development-all-about&quot;&gt;What Is Software Development All About?&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2021-06-06T17:47:51+02:00</updated><id>https://blog.jdonado.com/feed.xml</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">The Yin and Yang of Software Development: Quality and Context</title><link href="https://blog.jdonado.com/yin-and-yang/" rel="alternate" type="text/html" title="The Yin and Yang of Software Development: Quality and Context" /><published>2021-06-05T00:00:00+02:00</published><updated>2021-06-05T00:00:00+02:00</updated><id>https://blog.jdonado.com/yin-and-yang</id><content type="html" xml:base="https://blog.jdonado.com/yin-and-yang/">&lt;h2 id=&quot;what-is-software-development-all-about&quot;&gt;What Is Software Development All About?&lt;/h2&gt;
 
 &lt;p&gt;Depending on who you ask, even when asking professionals that have been many years in the industry, you’ll get very different answers. In my experience, there are two clear trends:&lt;/p&gt;
 
@@ -13,7 +13,7 @@
 
 &lt;p&gt;You might call it the &lt;em&gt;Yin and Yang of Software Development&lt;/em&gt;. I think that both statements are true to some extent, but one might rule over the other depending on the context.&lt;/p&gt;
 
-&lt;p&gt;There’s almost always some craft or even some art in the process of software development. When you’re writing code, more often than not you’re not following a scientifically rigorous method. Instead of that, you rely on pre-existing components and on your experience to build things that work. If you need metrics, these metrics usually come after you’ve already built something. Depending on the context, however, you might need to apply engineering processes and quality standards that resemble those used in other engineering disciplines.&lt;/p&gt;
+&lt;p&gt;There’s almost always some craft or even some art in the process of software development. When you’re writing code, more often than not you’re not following a scientifically rigorous method. Instead of that, you rely on pre-existing components and on your experience to build things that work. If you need metrics, these metrics usually come after you’ve already built something. However, depending on the context, you might need to apply engineering processes and quality standards that resemble those used in other engineering disciplines.&lt;/p&gt;
 
 &lt;p&gt;These two definitions raise two new questions:&lt;/p&gt;
 
@@ -26,7 +26,7 @@
 
 &lt;p&gt;When you build software in the context of a startup that is creating a new product from scratch, there are usually so many unknown factors about the final product that it often makes little sense to apply most software quality measures.&lt;/p&gt;
 
-&lt;p&gt;If you follow the principles of &lt;a href=&quot;https://www.thoughtworks.com/books/understanding-design-thinking-lean-agile-jonny-schneider&quot;&gt;Design Thinking, Lean and Agile&lt;/a&gt;, you’ll continuously perform experiments and collect data to test your hypotheses. This way, on each iteration you gain more insights about the right direction for your product.&lt;/p&gt;
+&lt;p&gt;If you follow &lt;a href=&quot;https://www.thoughtworks.com/books/understanding-design-thinking-lean-agile-jonny-schneider&quot;&gt;Design Thinking, Lean and Agile&lt;/a&gt; principles, you’ll continuously perform experiments and collect data to test your hypotheses. This way, on each iteration you gain more insights about the right direction for your product.&lt;/p&gt;
 
 &lt;p&gt;Usually, during the initial iterations, you’ll have a pretty small team (maybe just one developer), and the advantages of applying software quality principles might not be too clear because oftentimes the code that you’re writing won’t live very long.&lt;/p&gt;
 
@@ -36,7 +36,7 @@
   &lt;p&gt;[…] Much of this experimentation might not involve writing a line of code—after all, &lt;strong&gt;working software is still an experiment, just a really expensive one&lt;/strong&gt;. As confidence increases and software is the experiment, Agile is how teams constantly adapt to change, repeatedly adjusting their course and taking the next steps&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Therefore, during the initial phases of a startup you should better spend your time experimenting and collecting data about your experiments to continue taking well-informed decisions. You can interpret this as a technical variant of Paul Graham’s &lt;a href=&quot;http://paulgraham.com/ds.html&quot;&gt;“Do things that don’t scale”&lt;/a&gt;. What is the advantage of writing a high-quality scalable solution if you end up throwing it all away?&lt;/p&gt;
+&lt;p&gt;Therefore, during the initial phases of a startup, you should better spend your time experimenting and collecting data about your experiments to continue taking well-informed decisions. You can interpret this as a technical variant of Paul Graham’s &lt;a href=&quot;http://paulgraham.com/ds.html&quot;&gt;“Do things that don’t scale”&lt;/a&gt;. What is the advantage of writing a high-quality scalable solution if you end up throwing it all away?&lt;/p&gt;
 
 &lt;p&gt;Some developers would be horrified to even think about developing software like that. That’s because they don’t see software development as a craft nor as an Engineering discipline, &lt;em&gt;but as a religion&lt;/em&gt;. Good developers see the value in software quality techniques, but they can also see the big picture and the cost of &lt;a href=&quot;https://en.wikipedia.org/wiki/Non-functional_requirement&quot;&gt;non-functional requirements&lt;/a&gt;, especially in the beginning. If you don’t see this, you might end up with an overengineered solution, that is difficult to maintain and poorly addresses the business needs.&lt;/p&gt;
 
@@ -62,7 +62,7 @@
 
 &lt;h3 id=&quot;product-development-stages&quot;&gt;Product Development Stages&lt;/h3&gt;
 
-&lt;p&gt;During product development, we commonly use the following terms:&lt;/p&gt;
+&lt;p&gt;During product development, it’s quite common to use the following terms:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Proof_of_concept&quot;&gt;PoC (Proof of Concept)&lt;/a&gt;: it’s the minimal solution to see if some idea is even feasible. It’s the cheapest way to test a hypothesis.&lt;/li&gt;
@@ -72,7 +72,7 @@
 
 &lt;p&gt;After the MVP phase, you might want to continue iterating into a Minimum Marketable Product, a Minimum Lovable Product, a Minimum Delightful Product…&lt;/p&gt;
 
-&lt;p&gt;In my personal experience, most problems during product development these days have to do with misunderstandings about where you are with your product from a technical and from a business perspective. It’s the responsibility of all the team members to communicate where you are and to understand what it means.&lt;/p&gt;
+&lt;p&gt;In my personal experience, most problems during product development these days have to do with misunderstandings about where you are with your product from a technical and from a business perspective. It’s the team members’ responsibility to communicate where you are at a given moment and understand what it means.&lt;/p&gt;
 
 &lt;h2 id=&quot;quality-software&quot;&gt;Quality Software&lt;/h2&gt;
 
