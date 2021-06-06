@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The Yin and Yang of Software Development: Quality and Context"
+title:  "The Yin and Yang of Software Development"
 date:   2021-06-05
 category: software-quality startup product-development
 backgrounds:
