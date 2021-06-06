@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The Yin and Yang of Software Development"
+title:  "The Yin and Yang of Software Development: Quality and Context"
 date:   2021-06-05
 category: software-quality startup product-development
 backgrounds:
@@ -9,7 +9,7 @@ thumb: https://blog.jdonado.com/assets/images/yin-yang.png
 tags: software-quality startup product-development
 ---
 
-## What is software development all about?
+## What Is Software Development All About?
 
 Depending on who you ask, even when asking professionals that have been many years in the industry, you'll get very different answers. In my experience, there are two clear trends:
 
@@ -19,16 +19,16 @@ Depending on who you ask, even when asking professionals that have been many yea
 
 You might call it the *Yin and Yang of Software Development*. I think that both statements are true to some extent, but one might rule over the other depending on the context.
 
-There's almost always some craft or even some art in the process of software development. When you're writing code, more often than not you're not following a scientifically rigorous method. Instead of that, you rely on pre-existing components and on your experience to build things that work. If you need metrics, these metrics usually come after you've already built something. Depending on the context, however, you might need to apply engineering processes that resemble those used in other engineering disciplines.
+There's almost always some craft or even some art in the process of software development. When you're writing code, more often than not you're not following a scientifically rigorous method. Instead of that, you rely on pre-existing components and on your experience to build things that work. If you need metrics, these metrics usually come after you've already built something. Depending on the context, however, you might need to apply engineering processes and quality standards that resemble those used in other engineering disciplines.
 
 These two definitions raise two new questions:
 
 - In which context will one definition rule over the other?
-- What is quality software?
+- What is quality in software?
 
-## Business is the Context
+## Business Is the Context
 
-When you build software in the context of a startup that is creating a new product from scratch, there are usually so many unknown factors about the final product that it often makes little sense to apply most software quality principles.
+When you build software in the context of a startup that is creating a new product from scratch, there are usually so many unknown factors about the final product that it often makes little sense to apply most software quality measures.
 
 If you follow the principles of [Design Thinking, Lean and Agile](https://www.thoughtworks.com/books/understanding-design-thinking-lean-agile-jonny-schneider), you'll continuously perform experiments and collect data to test your hypotheses. This way, on each iteration you gain more insights about the right direction for your product.
 
@@ -38,7 +38,7 @@ As Johnny Schneider explains in [Understanding Design Thinking, Lean and Agile](
 
 > [...] Much of this experimentation might not involve writing a line of code—after all, **working software is still an experiment, just a really expensive one**. As confidence increases and software is the experiment, Agile is how teams constantly adapt to change, repeatedly adjusting their course and taking the next steps
 
-During the initial phases of a startup, and you should better spend your time experimenting and collecting data about your experiments to continue taking well-informed decisions. You can interpret this as a technical variant of Paul Graham's ["Do things that don't scale"](http://paulgraham.com/ds.html). What is the advantage of writing a high-quality scalable solution if you end up throwing it all away?
+Therefore, during the initial phases of a startup you should better spend your time experimenting and collecting data about your experiments to continue taking well-informed decisions. You can interpret this as a technical variant of Paul Graham's ["Do things that don't scale"](http://paulgraham.com/ds.html). What is the advantage of writing a high-quality scalable solution if you end up throwing it all away?
 
 Some developers would be horrified to even think about developing software like that. That's because they don't see software development as a craft nor as an Engineering discipline, *but as a religion*. Good developers see the value in software quality techniques, but they can also see the big picture and the cost of [non-functional requirements](https://en.wikipedia.org/wiki/Non-functional_requirement), especially in the beginning. If you don't see this, you might end up with an overengineered solution, that is difficult to maintain and poorly addresses the business needs.
 
@@ -46,9 +46,9 @@ Some developers would be horrified to even think about developing software like 
 
 The problem with the context, however, **is that it changes over time**. You might've started it all as a bunch of experiments, but at some point, if enough of these experiments were successful, you'll find yourself offering a real service to real customers.
 
-A good CTO in a startup will constantly try to answer the question **"how much technical debt can we afford?"**. In the beginning, we need speed over anything else, because we cannot afford to take too long to try out our experiments. Otherwise, we'll run out of time and resources and our competition will kick us out before we've even started.
+A good CTO in a startup will constantly try to answer this question: **"how much technical debt can we afford?"**. In the beginning, we need speed over anything else, because we cannot afford to take too long when trying out our experiments. Otherwise, we'll run out of time and resources and our competition will kick us out before we've even started.
 
-[But there's an inflection point](https://blog.devgenius.io/quality-vs-speed-9a46a6254a4e) where development speed will start decreasing if you don't improve the quality of your software. It's difficult to tell when exactly this inflection point occurs for a given product, but some indicators are:
+[But there's an inflection point](https://blog.devgenius.io/quality-vs-speed-9a46a6254a4e) where the velocity (that is, the development speed of new features) will dramatically decrease if you don't improve the quality of your software. It's difficult to tell when exactly this inflection point occurs for a given product, but some indicators are:
 
 - Your codebase is growing a lot and more people start working on it.
 - You start spending more time than usual fixing bugs.
@@ -60,7 +60,7 @@ A good CTO in a startup will constantly try to answer the question **"how much t
 
 The team and its stakeholders should realize that the ludicrous speed of the initial phases is not sustainable over time. At some point, enough resources should be spent to continuously refactor the codebase before it's too late. If the goal is to achieve the highest development speed possible, there's a moment where software quality principles stop being an obstacle and become a crucial part of [a virtuous circle](https://www.youtube.com/watch?v=ZmgbjaRfp_Q) where you build better software, faster. In other words, if you don't care about the quality of your software soon enough, it's a matter of time that it'll become unmaintainable, and that will slow you down.
 
-### Product development stages
+### Product Development Stages
 
 During product development, we commonly use the following terms:
 
@@ -94,3 +94,11 @@ In a nutshell, in the context of a startup, quality software means:
 Doing this takes time, but it's an investment. I wouldn't recommend doing it all while the chances are high that you'll end up throwing away most of your code, but as time goes by, you should better spend more and more time doing it if you don't want to end up with a spaghetti code salad that nobody wants to work with.
 
 The later that you start applying these principles, the most difficult (and expensive) it's going to be to apply them successfully.
+
+## Some Final Words
+
+Maybe you've always worked in an environment where quality software is valued and that's why you're probably almost religious when it comes to writing software with high-quality standards. Hopefully, you see now that there are cases where it's in fact better to go the quick & dirty way for a while and activate the feature factory mode.
+
+Feature factory and quick & dirty have a price though, I hope that's a bit clearer now. It's tempting to try to extend that unnatural velocity peak as much as you can, but you're playing with fire here. I've seen again and again companies that followed down that road, only to end up with buggy software and developer scarcity, because nobody wants to feel the pain of working with such a codebase in such conditions. If you're in a team that won't understand that whatever worked yesterday won't work today anymore, I'd suggest avoiding quick & dirty altogether.
+
+Then there's the ghost of a big rewrite. I would avoid rewriting unless it's strictly necessary because it's crazy expensive. If you extend the quick & dirty phase for too long, however, sooner or later there'll be no other choice.
