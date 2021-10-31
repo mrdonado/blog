@@ -52,7 +52,7 @@ But if you want to implement this pattern in more than one service, it is better
 
 Since inheritance is something that can be a bit tricky when using Javascript, and even more if you want to combine it with Angular, I thought it might be useful to other people if I shared my solution.
 
-I've created [a git repository](https://github.com/fjrd84/notes-app) with a complete working example. Next, I'll describe briefly how it works.
+I've created [a git repository](https://github.com/mrdonado/notes-app) with a complete working example. Next, I'll describe briefly how it works.
 
 ### The Observable Service (Parent)
 
@@ -94,7 +94,7 @@ angular.module('notesApp')
     
 ### Child Observable Service
 
-Then, in order to inherit these functions, you can simply do the following ([extract from the file configuration-service.js](https://github.com/fjrd84/notes-app/blob/master/app/scripts/services/configuration-service.js)).
+Then, in order to inherit these functions, you can simply do the following ([extract from the file configuration-service.js](https://github.com/mrdonado/notes-app/blob/master/app/scripts/services/configuration-service.js)).
 
 {% highlight javascript %}    
 angular.module('notesApp')
@@ -112,7 +112,7 @@ angular.module('notesApp')
     
 ### Inheritable Service that Inherits the observableService
 
-If you need to create a service that inherits from the observableService, that is also inheritable by other services, you should return a function, instead of a JSON object. This is what we do in [basic-resource.js](https://github.com/fjrd84/notes-app/blob/master/app/scripts/services/basic-resource.js).
+If you need to create a service that inherits from the observableService, that is also inheritable by other services, you should return a function, instead of a JSON object. This is what we do in [basic-resource.js](https://github.com/mrdonado/notes-app/blob/master/app/scripts/services/basic-resource.js).
 
 {% highlight javascript %}
 angular.module('notesApp')
@@ -185,4 +185,4 @@ Now that you have observable services, you can simply define the callbacks in yo
     }]);
 {% endhighlight %}
 
-That was it. If you want to explore the complete repository, or even experiment with it and modify it, feel free to fork me on github: [https://github.com/fjrd84/notes-app](https://github.com/fjrd84/notes-app).
+That was it. If you want to explore the complete repository, or even experiment with it and modify it, feel free to fork me on github: [https://github.com/mrdonado/notes-app](https://github.com/mrdonado/notes-app).

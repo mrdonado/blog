@@ -64,7 +64,7 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Jdonado's github"
-            href="https://github.com/fjrd84">&nbsp;</a>
+            href="https://github.com/mrdonado">&nbsp;</a>
         <a class="icon twitter-icon"
             target="_blank"
             rel="noopener noreferrer"
@@ -123,10 +123,10 @@
 <p>After some playing around with Flask, I decided that separating the analyzer from the twitter stream and the backend services was the best solution. We wanted a system that <strong>scales</strong> and that is <strong>easily maintainable</strong>. So I came about with the following <strong>microservices</strong> based architecture:</p>
 
 <ul>
-  <li><a href="https://github.com/fjrd84/health-nlp-node">A nodeJS service</a>, sending messages from the twitter stream to a <a href="http://kr.github.io/beanstalkd/">beanstalkd</a> jobs queue.</li>
-  <li>The <a href="https://github.com/fjrd84/health-nlp-analysis">python analysis engine</a>, which now just takes jobs from beanstalkd and sends the results to Firebase and <a href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a>.</li>
+  <li><a href="https://github.com/mrdonado/health-nlp-node">A nodeJS service</a>, sending messages from the twitter stream to a <a href="http://kr.github.io/beanstalkd/">beanstalkd</a> jobs queue.</li>
+  <li>The <a href="https://github.com/mrdonado/health-nlp-analysis">python analysis engine</a>, which now just takes jobs from beanstalkd and sends the results to Firebase and <a href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a>.</li>
   <li><a href="https://firebase.google.com">Firebase DB</a>, serving the analyzed messages in real time to the frontend.</li>
-  <li>A <a href="https://github.com/fjrd84/health-nlp-react">ReactJS + Redux</a> based frontend, that works as a showcase for the project, with an introduction, a link to <a href="http://lifescope-insights.jdonado.com/">the project’s blog</a>, and a real time timeline of analyzed messages.</li>
+  <li>A <a href="https://github.com/mrdonado/health-nlp-react">ReactJS + Redux</a> based frontend, that works as a showcase for the project, with an introduction, a link to <a href="http://lifescope-insights.jdonado.com/">the project’s blog</a>, and a real time timeline of analyzed messages.</li>
 </ul>
 
 <p><img src="https://blog.jdonado.com/assets/images/lifescope-architecture.png" alt="Architecture Diagram" title="Architecture Diagram" /></p>
@@ -146,7 +146,7 @@
 <h2 id="and-why-did-you">And why did you…</h2>
 
 <ul>
-  <li>Use <a href="https://facebook.github.io/react/">React</a> and <a href="http://redux.js.org/">Redux</a> for such a simple frontend? Side projects are for me a chance to experiment with technologies I’m still no expert with. I started writing it with <a href="https://github.com/fjrd84/health-nlp-frontend">Angular</a>, but since I already had other active projects that used Angular, I decided to rewrite it using React and Redux, because I like to use the time I spend on my side projects to learn new interesting stuff I don’t always use on my day job. Maybe just React would’ve been enough, but anyway, if the frontend grows into something more complex (which is quite likely), its scalability will be easier.</li>
+  <li>Use <a href="https://facebook.github.io/react/">React</a> and <a href="http://redux.js.org/">Redux</a> for such a simple frontend? Side projects are for me a chance to experiment with technologies I’m still no expert with. I started writing it with <a href="https://github.com/mrdonado/health-nlp-frontend">Angular</a>, but since I already had other active projects that used Angular, I decided to rewrite it using React and Redux, because I like to use the time I spend on my side projects to learn new interesting stuff I don’t always use on my day job. Maybe just React would’ve been enough, but anyway, if the frontend grows into something more complex (which is quite likely), its scalability will be easier.</li>
   <li>Use a VPS instead of deploying it to <a href="https://aws.amazon.com">AWS</a>? A VPS is really cheap, and for this first phase is more than enough for our needs. Also, we’re not afraid to maintain ourselves a couple of Linux machines :)</li>
 </ul>
 

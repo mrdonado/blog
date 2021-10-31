@@ -100,7 +100,7 @@ You can save your custom vim configuration to a repository and synchronize it wi
 any other machine.
 
 In order to do that, just initialize your `~/.vim` directory as a git repository,
-and push it to the cloud (e.g.: to GitHub). You can find [mine here](https://github.com/fjrd84/.vim)
+and push it to the cloud (e.g.: to GitHub). You can find [mine here](https://github.com/mrdonado/.vim)
 (follow the instructions on the README in order to set it up).
 
 ## ...and of course

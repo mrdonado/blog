@@ -64,7 +64,7 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Jdonado's github"
-            href="https://github.com/fjrd84">&nbsp;</a>
+            href="https://github.com/mrdonado">&nbsp;</a>
         <a class="icon twitter-icon"
             target="_blank"
             rel="noopener noreferrer"
@@ -208,19 +208,19 @@ http {
 
 <p>And add the following contents:</p>
 
-<pre><code class="language-systemd">[Unit]
-Description=SSH Tunnel
-After=network.target
+<div class="language-systemd highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[Unit]</span>
+<span class="nt">Description</span><span class="p">=</span>SSH Tunnel
+<span class="nt">After</span><span class="p">=</span>network.target
 
-[Service]
-Restart=always
-RestartSec=20
-User=[YOURLAPTOPUSER]
-ExecStart=/usr/bin/ssh -N -g -R 17899:localhost:8080 yourusername@[YOURONLINEIP]
+<span class="k">[Service]</span>
+<span class="nt">Restart</span><span class="p">=</span>always
+<span class="nt">RestartSec</span><span class="p">=</span>20
+<span class="nt">User</span><span class="p">=</span>[YOURLAPTOPUSER]
+<span class="nt">ExecStart</span><span class="p">=</span>/usr/bin/ssh -N -g -R 17899:localhost:8080 yourusername@[YOURONLINEIP]
 
-[Install]
-WantedBy=multi-user.target
-</code></pre>
+<span class="k">[Install]</span>
+<span class="nt">WantedBy</span><span class="p">=</span>multi-user.target
+</code></pre></div></div>
 
 <p>Then run the following commands:</p>
 

@@ -29,10 +29,10 @@ He had a first version of the script working on his computer, but he wanted to f
 
 After some playing around with Flask, I decided that separating the analyzer from the twitter stream and the backend services was the best solution. We wanted a system that **scales** and that is **easily maintainable**. So I came about with the following **microservices** based architecture:
 
-- [A nodeJS service](https://github.com/fjrd84/health-nlp-node), sending messages from the twitter stream to a [beanstalkd](http://kr.github.io/beanstalkd/) jobs queue.
-- The [python analysis engine](https://github.com/fjrd84/health-nlp-analysis), which now just takes jobs from beanstalkd and sends the results to Firebase and [Elasticsearch](https://www.elastic.co/products/elasticsearch).
+- [A nodeJS service](https://github.com/mrdonado/health-nlp-node), sending messages from the twitter stream to a [beanstalkd](http://kr.github.io/beanstalkd/) jobs queue.
+- The [python analysis engine](https://github.com/mrdonado/health-nlp-analysis), which now just takes jobs from beanstalkd and sends the results to Firebase and [Elasticsearch](https://www.elastic.co/products/elasticsearch).
 - [Firebase DB](https://firebase.google.com), serving the analyzed messages in real time to the frontend.
-- A [ReactJS + Redux](https://github.com/fjrd84/health-nlp-react) based frontend, that works as a showcase for the project, with an introduction, a link to [the project's blog](http://lifescope-insights.jdonado.com/), and a real time timeline of analyzed messages.
+- A [ReactJS + Redux](https://github.com/mrdonado/health-nlp-react) based frontend, that works as a showcase for the project, with an introduction, a link to [the project's blog](http://lifescope-insights.jdonado.com/), and a real time timeline of analyzed messages.
 
 ![Architecture Diagram](https://blog.jdonado.com/assets/images/lifescope-architecture.png "Architecture Diagram")
 
@@ -50,7 +50,7 @@ Everything is [dockerized](https://www.docker.com/), making the installation and
 
 ## And why did you...
 
-- Use [React](https://facebook.github.io/react/) and [Redux](http://redux.js.org/) for such a simple frontend? Side projects are for me a chance to experiment with technologies I'm still no expert with. I started writing it with [Angular](https://github.com/fjrd84/health-nlp-frontend), but since I already had other active projects that used Angular, I decided to rewrite it using React and Redux, because I like to use the time I spend on my side projects to learn new interesting stuff I don't always use on my day job. Maybe just React would've been enough, but anyway, if the frontend grows into something more complex (which is quite likely), its scalability will be easier.
+- Use [React](https://facebook.github.io/react/) and [Redux](http://redux.js.org/) for such a simple frontend? Side projects are for me a chance to experiment with technologies I'm still no expert with. I started writing it with [Angular](https://github.com/mrdonado/health-nlp-frontend), but since I already had other active projects that used Angular, I decided to rewrite it using React and Redux, because I like to use the time I spend on my side projects to learn new interesting stuff I don't always use on my day job. Maybe just React would've been enough, but anyway, if the frontend grows into something more complex (which is quite likely), its scalability will be easier.
 - Use a VPS instead of deploying it to [AWS](https://aws.amazon.com)? A VPS is really cheap, and for this first phase is more than enough for our needs. Also, we're not afraid to maintain ourselves a couple of Linux machines :)
 
 

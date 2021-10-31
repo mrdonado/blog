@@ -64,7 +64,7 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Jdonado's github"
-            href="https://github.com/fjrd84">&nbsp;</a>
+            href="https://github.com/mrdonado">&nbsp;</a>
         <a class="icon twitter-icon"
             target="_blank"
             rel="noopener noreferrer"
@@ -144,7 +144,7 @@
 
 <p>Since inheritance is something that can be a bit tricky when using Javascript, and even more if you want to combine it with Angular, I thought it might be useful to other people if I shared my solution.</p>
 
-<p>I’ve created <a href="https://github.com/fjrd84/notes-app">a git repository</a> with a complete working example. Next, I’ll describe briefly how it works.</p>
+<p>I’ve created <a href="https://github.com/mrdonado/notes-app">a git repository</a> with a complete working example. Next, I’ll describe briefly how it works.</p>
 
 <h3 id="the-observable-service-parent">The Observable Service (Parent)</h3>
 
@@ -184,7 +184,7 @@
 
 <h3 id="child-observable-service">Child Observable Service</h3>
 
-<p>Then, in order to inherit these functions, you can simply do the following (<a href="https://github.com/fjrd84/notes-app/blob/master/app/scripts/services/configuration-service.js">extract from the file configuration-service.js</a>).</p>
+<p>Then, in order to inherit these functions, you can simply do the following (<a href="https://github.com/mrdonado/notes-app/blob/master/app/scripts/services/configuration-service.js">extract from the file configuration-service.js</a>).</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    
 <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">notesApp</span><span class="dl">'</span><span class="p">)</span>
@@ -201,7 +201,7 @@
 
 <h3 id="inheritable-service-that-inherits-the-observableservice">Inheritable Service that Inherits the observableService</h3>
 
-<p>If you need to create a service that inherits from the observableService, that is also inheritable by other services, you should return a function, instead of a JSON object. This is what we do in <a href="https://github.com/fjrd84/notes-app/blob/master/app/scripts/services/basic-resource.js">basic-resource.js</a>.</p>
+<p>If you need to create a service that inherits from the observableService, that is also inheritable by other services, you should return a function, instead of a JSON object. This is what we do in <a href="https://github.com/mrdonado/notes-app/blob/master/app/scripts/services/basic-resource.js">basic-resource.js</a>.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="dl">'</span><span class="s1">notesApp</span><span class="dl">'</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="dl">'</span><span class="s1">basicResource</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">observableService</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">$http</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">configurationService</span><span class="dl">'</span><span class="p">,</span>
@@ -270,7 +270,7 @@
 
     <span class="p">}]);</span></code></pre></figure>
 
-<p>That was it. If you want to explore the complete repository, or even experiment with it and modify it, feel free to fork me on github: <a href="https://github.com/fjrd84/notes-app">https://github.com/fjrd84/notes-app</a>.</p>
+<p>That was it. If you want to explore the complete repository, or even experiment with it and modify it, feel free to fork me on github: <a href="https://github.com/mrdonado/notes-app">https://github.com/mrdonado/notes-app</a>.</p>
 
     </article>
 

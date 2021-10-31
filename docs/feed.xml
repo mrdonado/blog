@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2021-06-06T17:49:30+02:00</updated><id>https://blog.jdonado.com/feed.xml</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">The Yin and Yang of Software Development</title><link href="https://blog.jdonado.com/yin-and-yang/" rel="alternate" type="text/html" title="The Yin and Yang of Software Development" /><published>2021-06-05T00:00:00+02:00</published><updated>2021-06-05T00:00:00+02:00</updated><id>https://blog.jdonado.com/yin-and-yang</id><content type="html" xml:base="https://blog.jdonado.com/yin-and-yang/">&lt;h2 id=&quot;what-is-software-development-all-about&quot;&gt;What Is Software Development All About?&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://blog.jdonado.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.jdonado.com/" rel="alternate" type="text/html" /><updated>2021-10-31T23:40:30+01:00</updated><id>https://blog.jdonado.com/feed.xml</id><title type="html">JDonado’s README</title><subtitle>Coding in English, thinking in Spanish, living in Germany</subtitle><author><name>F. Javier R. Donado</name><email>jdonado@jdonado.com</email><uri>https://www.jdonado.com</uri></author><entry><title type="html">The Yin and Yang of Software Development</title><link href="https://blog.jdonado.com/yin-and-yang/" rel="alternate" type="text/html" title="The Yin and Yang of Software Development" /><published>2021-06-05T00:00:00+02:00</published><updated>2021-06-05T00:00:00+02:00</updated><id>https://blog.jdonado.com/yin-and-yang</id><content type="html" xml:base="https://blog.jdonado.com/yin-and-yang/">&lt;h2 id=&quot;what-is-software-development-all-about&quot;&gt;What Is Software Development All About?&lt;/h2&gt;
 
 &lt;p&gt;Depending on who you ask, even when asking professionals that have been many years in the industry, you’ll get very different answers. In my experience, there are two clear trends:&lt;/p&gt;
 
@@ -279,19 +279,19 @@ http {
 
 &lt;p&gt;And add the following contents:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-systemd&quot;&gt;[Unit]
-Description=SSH Tunnel
-After=network.target
+&lt;div class=&quot;language-systemd highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;[Unit]&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;Description&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;SSH Tunnel
+&lt;span class=&quot;nt&quot;&gt;After&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;network.target
 
-[Service]
-Restart=always
-RestartSec=20
-User=[YOURLAPTOPUSER]
-ExecStart=/usr/bin/ssh -N -g -R 17899:localhost:8080 yourusername@[YOURONLINEIP]
+&lt;span class=&quot;k&quot;&gt;[Service]&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;Restart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;always
+&lt;span class=&quot;nt&quot;&gt;RestartSec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;20
+&lt;span class=&quot;nt&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;[YOURLAPTOPUSER]
+&lt;span class=&quot;nt&quot;&gt;ExecStart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;/usr/bin/ssh -N -g -R 17899:localhost:8080 yourusername@[YOURONLINEIP]
 
-[Install]
-WantedBy=multi-user.target
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;k&quot;&gt;[Install]&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;WantedBy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;multi-user.target
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Then run the following commands:&lt;/p&gt;
 
@@ -527,7 +527,7 @@ kubectl &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;nginx-68c5b54745-hxn8
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo apt-get install build-essential checkinstall&lt;/code&gt; in debian-based distros, install the essentials for building packages (make; make install)&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openssl base64 -in input.txt -out encoded.b64&lt;/code&gt; encode &lt;strong&gt;input.txt&lt;/strong&gt; in base64 and save it to the file &lt;strong&gt;encoded.b64&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo !!&lt;/code&gt; run the last command with sudo&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; &lt;/code&gt;+any command: it won’t go to the history&lt;/li&gt;
+  &lt;li&gt;` `+any command: it won’t go to the history&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$( command )&lt;/code&gt; it gives the output of command&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;service --status-all&lt;/code&gt; status of services&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;echo &quot;hello world&quot; | sed -e &quot;s/e/o/g&quot; | sed -e &quot;s/lo/a/g&quot; | sed -e &quot;s/world/mundo/g&quot;&lt;/code&gt; translate “hello world” to spanish&lt;/li&gt;
@@ -637,7 +637,7 @@ kubectl &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;nginx-68c5b54745-hxn8
 
 &lt;span class=&quot;c1&quot;&gt;// You can define functions like this (in this case, types are optional, since they&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// can be inferred&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// A function with labelled and optional parameters&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Defaultname&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;middleName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -700,10 +700,10 @@ kubectl &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;nginx-68c5b54745-hxn8
 &lt;p&gt;After some playing around with Flask, I decided that separating the analyzer from the twitter stream and the backend services was the best solution. We wanted a system that &lt;strong&gt;scales&lt;/strong&gt; and that is &lt;strong&gt;easily maintainable&lt;/strong&gt;. So I came about with the following &lt;strong&gt;microservices&lt;/strong&gt; based architecture:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/fjrd84/health-nlp-node&quot;&gt;A nodeJS service&lt;/a&gt;, sending messages from the twitter stream to a &lt;a href=&quot;http://kr.github.io/beanstalkd/&quot;&gt;beanstalkd&lt;/a&gt; jobs queue.&lt;/li&gt;
-  &lt;li&gt;The &lt;a href=&quot;https://github.com/fjrd84/health-nlp-analysis&quot;&gt;python analysis engine&lt;/a&gt;, which now just takes jobs from beanstalkd and sends the results to Firebase and &lt;a href=&quot;https://www.elastic.co/products/elasticsearch&quot;&gt;Elasticsearch&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/mrdonado/health-nlp-node&quot;&gt;A nodeJS service&lt;/a&gt;, sending messages from the twitter stream to a &lt;a href=&quot;http://kr.github.io/beanstalkd/&quot;&gt;beanstalkd&lt;/a&gt; jobs queue.&lt;/li&gt;
+  &lt;li&gt;The &lt;a href=&quot;https://github.com/mrdonado/health-nlp-analysis&quot;&gt;python analysis engine&lt;/a&gt;, which now just takes jobs from beanstalkd and sends the results to Firebase and &lt;a href=&quot;https://www.elastic.co/products/elasticsearch&quot;&gt;Elasticsearch&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://firebase.google.com&quot;&gt;Firebase DB&lt;/a&gt;, serving the analyzed messages in real time to the frontend.&lt;/li&gt;
-  &lt;li&gt;A &lt;a href=&quot;https://github.com/fjrd84/health-nlp-react&quot;&gt;ReactJS + Redux&lt;/a&gt; based frontend, that works as a showcase for the project, with an introduction, a link to &lt;a href=&quot;http://lifescope-insights.jdonado.com/&quot;&gt;the project’s blog&lt;/a&gt;, and a real time timeline of analyzed messages.&lt;/li&gt;
+  &lt;li&gt;A &lt;a href=&quot;https://github.com/mrdonado/health-nlp-react&quot;&gt;ReactJS + Redux&lt;/a&gt; based frontend, that works as a showcase for the project, with an introduction, a link to &lt;a href=&quot;http://lifescope-insights.jdonado.com/&quot;&gt;the project’s blog&lt;/a&gt;, and a real time timeline of analyzed messages.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://blog.jdonado.com/assets/images/lifescope-architecture.png&quot; alt=&quot;Architecture Diagram&quot; title=&quot;Architecture Diagram&quot; /&gt;&lt;/p&gt;
@@ -723,7 +723,7 @@ kubectl &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;nginx-68c5b54745-hxn8
 &lt;h2 id=&quot;and-why-did-you&quot;&gt;And why did you…&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Use &lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React&lt;/a&gt; and &lt;a href=&quot;http://redux.js.org/&quot;&gt;Redux&lt;/a&gt; for such a simple frontend? Side projects are for me a chance to experiment with technologies I’m still no expert with. I started writing it with &lt;a href=&quot;https://github.com/fjrd84/health-nlp-frontend&quot;&gt;Angular&lt;/a&gt;, but since I already had other active projects that used Angular, I decided to rewrite it using React and Redux, because I like to use the time I spend on my side projects to learn new interesting stuff I don’t always use on my day job. Maybe just React would’ve been enough, but anyway, if the frontend grows into something more complex (which is quite likely), its scalability will be easier.&lt;/li&gt;
+  &lt;li&gt;Use &lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React&lt;/a&gt; and &lt;a href=&quot;http://redux.js.org/&quot;&gt;Redux&lt;/a&gt; for such a simple frontend? Side projects are for me a chance to experiment with technologies I’m still no expert with. I started writing it with &lt;a href=&quot;https://github.com/mrdonado/health-nlp-frontend&quot;&gt;Angular&lt;/a&gt;, but since I already had other active projects that used Angular, I decided to rewrite it using React and Redux, because I like to use the time I spend on my side projects to learn new interesting stuff I don’t always use on my day job. Maybe just React would’ve been enough, but anyway, if the frontend grows into something more complex (which is quite likely), its scalability will be easier.&lt;/li&gt;
   &lt;li&gt;Use a VPS instead of deploying it to &lt;a href=&quot;https://aws.amazon.com&quot;&gt;AWS&lt;/a&gt;? A VPS is really cheap, and for this first phase is more than enough for our needs. Also, we’re not afraid to maintain ourselves a couple of Linux machines :)&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -899,7 +899,7 @@ and it will be available even if you currently have a different file opened.&lt;
 any other machine.&lt;/p&gt;
 
 &lt;p&gt;In order to do that, just initialize your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.vim&lt;/code&gt; directory as a git repository,
-and push it to the cloud (e.g.: to GitHub). You can find &lt;a href=&quot;https://github.com/fjrd84/.vim&quot;&gt;mine here&lt;/a&gt;
+and push it to the cloud (e.g.: to GitHub). You can find &lt;a href=&quot;https://github.com/mrdonado/.vim&quot;&gt;mine here&lt;/a&gt;
 (follow the instructions on the README in order to set it up).&lt;/p&gt;
 
 &lt;h2 id=&quot;and-of-course&quot;&gt;…and of course&lt;/h2&gt;

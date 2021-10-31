@@ -23,7 +23,7 @@ I used AngularJS to develop [www.jdonado.com](https://www.jdonado.com). So actua
 
 This blog is based in [Jekyll](https://jekyllrb.com/), and uses a slightly modified [Travelogue](https://github.com/SalGnt/Travelogue) template.
 
-Both projects are open source, so feel free to visit me on [GitHub](https://github.com/fjrd84). Any feedback will be appreciated.
+Both projects are open source, so feel free to visit me on [GitHub](https://github.com/mrdonado). Any feedback will be appreciated.
 
 ## Did you do it all?
 
