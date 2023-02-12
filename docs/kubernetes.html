@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=6.0, user-scalable=yes">
 
-    <title>Restore clover using Windows</title>
-    <meta name="description" content="Restore%20your%20config.plist">
+    <title>Kubernetes: beyond docker compose</title>
+    <meta name="description" content="Beyond%20docker%20compose">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700italic,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
@@ -28,7 +28,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png" />
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/images/apple-touch-icon-152x152.png" />
 
-    <link rel="canonical" href="https://blog.jdonado.com/restore-clover/">
+    <link rel="canonical" href="https://blog.jdonado.com/kubernetes">
     <link type="application/atom+xml" rel="alternate" href="https://blog.jdonado.com/feed.xml" title="JDonado&apos;s README" />
 </head>
 
@@ -95,52 +95,180 @@
     <p class="post-reading-time">&#126;
         
         
-          1 min
+          8 min
         
     </p>
     
 
     <header class="post-header">
         
-        <img src="https://blog.jdonado.com/assets/images/clover.png" alt="Restore clover using Windows" class="post-thumb" />
+        <img src="https://blog.jdonado.com/assets/images/kubernetes-logo.jpg" alt="Kubernetes: beyond docker compose" class="post-thumb" />
         
 
-        <h1 class="post-title">Restore clover using Windows</h1>
+        <h1 class="post-title">Kubernetes: beyond docker compose</h1>
     </header>
 
     <article class="post-content">
-        <h1 id="restore-your-configplist">Restore your config.plist</h1>
+        <h1 id="beyond-docker-compose">Beyond docker compose</h1>
 
-<p>Clover is a boot manager that allows you to select the OS you want to boot with. It is used mostly by Hackintosh users, that is, people that install MacOSX (along with other OSs, like Linux and Windows) on a non-Apple machine.</p>
-
-<p>The Clover configuration can be quite tricky, and if you’re not lucky you can easily mess it up. That’s why it’s more than advisable to keep a backup of the <code class="language-plaintext highlighter-rouge">/EFI/CLOVER/config.plist</code> configuration file.</p>
-
-<p>If you happen to break down your MacOSX boot, but you still have a working Windows boot on the same machine, you can follow these steps in order to restore a backup of <code class="language-plaintext highlighter-rouge">config.plist</code>:</p>
+<p>Right after I started using docker to containerize my applications, I used to include a <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> file together with them (sometimes in a separate repository) in order to illustrate how a local deployment could work. With <a href="https://docs.docker.com/compose/">docker-compose</a> you can:</p>
 
 <ul>
-  <li>Open an administrator console (run <code class="language-plaintext highlighter-rouge">cmd.exe</code> as Administrator) and type the following:</li>
-  <li><code class="language-plaintext highlighter-rouge">diskpart</code> (open diskpart)</li>
-  <li><code class="language-plaintext highlighter-rouge">list disk</code> (list your hard drives with)</li>
-  <li><code class="language-plaintext highlighter-rouge">select disk 1</code> (select the disk where your Clover EFI boot has been installed. 1 is just an example)</li>
-  <li><code class="language-plaintext highlighter-rouge">list partition</code> (list the partitions available on the selected disk)</li>
-  <li><code class="language-plaintext highlighter-rouge">select partition 1</code> (select the boot EFI partition)</li>
-  <li><code class="language-plaintext highlighter-rouge">assign letter=s</code> (assign a letter. S in this case)</li>
-  <li><code class="language-plaintext highlighter-rouge">exit</code> (exit diskpart)</li>
-  <li><code class="language-plaintext highlighter-rouge">s:</code> (go to the just mounted boot partition)</li>
-  <li><code class="language-plaintext highlighter-rouge">cd EFI\CLOVER\</code></li>
-  <li><code class="language-plaintext highlighter-rouge">copy c:\backups\config.plist .</code> (c:\backups is just an example. Replace this path by the path where you have your config.plist backup)</li>
+  <li>Define which services and applications are necessary to run a specific solution</li>
+  <li>Detail how they may interact with each other</li>
+  <li>Specify in which order they should start</li>
+  <li>Describe the network in which the containers are going to be deployed</li>
+  <li>Setup the environment for everything to work in harmony</li>
 </ul>
 
-<p>If everything worked fine, you can now restart and use your MacOSX boot again.</p>
+<p>After a while I got used to the simplicity and usefulness of docker compose. However, deploying services with docker compose like this (that is: without <a href="https://docs.docker.com/engine/swarm/">swarm mode</a>) had an important limitation: <strong>you could only deploy to a single machine</strong>.</p>
 
-<p>In addition to that, some Clover prefixes that can help you find out what went wrong are:</p>
+<p>If you have more advanced deployment needs, e.g.:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">-x</code> start using the safe mode</li>
-  <li><code class="language-plaintext highlighter-rouge">-v</code> verbose mode</li>
+  <li>Deployment of services on a cluster with various nodes</li>
+  <li>Need of a scaling strategy</li>
+  <li>Coordinate updates with zero-downtime deployment</li>
 </ul>
 
-<p>You can find more information about Hackintosh and Clover on <a href="https://www.tonymacx86.com/">tonymac86</a>.</p>
+<p>then you need a container orchestrator. There are a number of solutions for orchestration of containers in the cloud: Docker Swarm, Kubernetes, Apache Mesos, CloudFoundry’s Diego…</p>
+
+<p>Depending on your needs, the right tool might vary. For me, Kubernetes seemed like a very good compromise between features and ease of use. Some of the reasons why I think it’s a good choice are:</p>
+
+<ul>
+  <li>It’s perfectly integrated with docker. If you’re already using docker containers, then you’re halfway there</li>
+  <li>It is open source. That means (among other things) that you’re not attached to a specific provider. There are currently a number of providers of Kubernetes as a service in the cloud and you’re always free to deploy Kubernetes clusters yourself on whichever your cloud infrastructure is</li>
+  <li>The <a href="https://kubernetes.io/docs/home/?path=users&amp;persona=app-developer&amp;level=foundational">documentation</a> is very good</li>
+  <li>It’s currently <a href="https://thenewstack.io/data-says-kubernetes-deployment-patterns/">by far the most popular</a> container orchestration technology. If you have any problem, there’s a good chance that you’ll find help on <a href="https://stackoverflow.com/questions/tagged/kubernetes">StackOverflow</a></li>
+  <li>You can install minikube on your machine and test your complete solution even before it reaches the cloud. If something goes wrong, you can try to find out what’s happening directly on your machine without having to wait for things to upload and deploy to the cloud</li>
+</ul>
+
+<p>For me this last point is a game changer as compared to other cloud technologies. The ability to try and run everything locally makes everything easier. Forget about small changes on a <code class="language-plaintext highlighter-rouge">yml</code> file and trigger the CI pipelines to (pray and) see if a deployment works. Instead of that just make sure that your configuration is up and running locally on your minikube and chances are everything will work out just like that on the cloud.</p>
+
+<h2 id="learn-kubernetes">Learn Kubernetes</h2>
+
+<p>If you want to learn Kubernetes, the <a href="https://kubernetes.io/docs/tutorials/">tutorials</a> section of the official Kubernetes website is a great starting point. I myself followed it and then I completed a couple of the <a href="https://kubernetes.io/docs/tutorials/online-training/overview/">online training</a> courses that they link to.</p>
+
+<p>What follows are the notes I took while learning about it.</p>
+
+<h1 id="kubernetes-a-quick-overview-for-developers">Kubernetes: a quick overview for developers</h1>
+
+<p>Kubernetes is an open source container orchestrator created by Google and now maintained by the <a href="https://en.wikipedia.org/wiki/Linux_Foundation#Cloud_Native_Computing_Foundation">Cloud Native Computing Foundation</a>.</p>
+
+<p>Every Kubernetes infrastructure has the following components:</p>
+
+<ul>
+  <li>Master: it coordinates all activities in the cluster (scheduling, apps maintenance, scaling, updating…)</li>
+  <li>Nodes: workers that run applications. They have:
+    <ul>
+      <li>A Kubelet: an agent responsible for communication between the node and the Kubernetes Master (communicating via the Kubernetes API). It manages the pods and the containers running on a machine</li>
+      <li>A container runtime, such as docker or rkt, responsible for pulling container images, unpacking the container and running an application</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The minimum of nodes in a production infrastructure is 3.</p>
+
+<p>You can run Kubernetes locally on your machine by installing <strong>minikube</strong>. Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one node.</p>
+
+<p><strong>Kubectl</strong> is the Kubernetes CLI, that uses the Kubernetes API in order to interact with the cluster. You can use it to connect to your minikube and handle your deployments locally, and you can also connect to your cloud provider and handle your deployments remotely. It is kind of an equivalent to the <code class="language-plaintext highlighter-rouge">docker</code> command for docker.</p>
+
+<p>In order to deploy an application in Kubernetes, you can define a deployment configuration in a <code class="language-plaintext highlighter-rouge">yml</code> (preferred) or in a <code class="language-plaintext highlighter-rouge">json</code> file. A deployment configuration instructs Kubernetes how to create and update instances of an application. The Kubernetes Deployment Controller (KDC) makes sure that the instances are up an running. NOTE: my next blog post will show a simple example of a microservices deployment in kubernetes. Here I will continue defining the basic concepts and commands for future quick reference.</p>
+
+<p>In case a node goes down, the KDC will start the required containers in the remaining working nodes (self-healing mechanism).</p>
+
+<p><strong>Pods</strong> are the smallest deployable units of computing that can be created and managed in Kubernetes. Pods are in an private, isolated network. They are visible from other pods and services within the same cluster, but not from outside. A pod is an abstraction that represents a group of one or more containers and some shared resources for those containers, such as volumes, networking and container specific information (image version or ports).</p>
+
+<ul>
+  <li>There’s one IP per pod</li>
+  <li>Pods share namespaces</li>
+  <li>Pods may have one or more containers and volumes</li>
+</ul>
+
+<p>A <strong>service</strong> defines a logical set of pods and a policy to determine how to access them. It is defined by <code class="language-plaintext highlighter-rouge">yaml</code> or <code class="language-plaintext highlighter-rouge">json</code>. Services allow applications to receive traffic. You can define the following types of services (in the <code class="language-plaintext highlighter-rouge">type</code> field of the <code class="language-plaintext highlighter-rouge">yaml</code> file):</p>
+
+<ul>
+  <li><strong>ClusterIP</strong> (default): it makes the service only reachable within the cluster.</li>
+  <li><strong>NodePort</strong>: it exposes the service on the same port of each selected node in the cluster using NAT, making thus the service accessible from outide the cluster via <code class="language-plaintext highlighter-rouge">&lt;NodeIP&gt;:&lt;NodePort&gt;</code>.</li>
+  <li><strong>LoadBalancer</strong></li>
+  <li><strong>ExternalName</strong>: it exposes the service using an arbitrary name via <code class="language-plaintext highlighter-rouge">externalName</code> by returning a CNAME record. <code class="language-plaintext highlighter-rouge">kube-dns</code> v1.7 or higher is required.</li>
+</ul>
+
+<p>A service routes traffic across a set of Pods. They allow pods to die and replicate without impacting the application. Kubernetes Services handle discovery and routing. In order to match a set of pods, services use labels and selectors.</p>
+
+<p>In this image you can see a representation of the aforementioned elements: nodes, pods, services and how they relate to each other.</p>
+
+<p><img src="https://blog.jdonado.com/assets/images/pods-nodes-services.png" alt="Architecture Diagram" title="Architecture Diagram" /></p>
+
+<h2 id="kubectl-quick-reference">Kubectl quick reference</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Note: each line is a specific example</span>
+<span class="c"># Don't copy paste this on the terminal!!</span>
+
+<span class="c"># Create a proxy that forwards communications into the cluster-wide</span>
+<span class="c"># private network.</span>
+kubectl proxy
+
+<span class="c"># Save the current pod name in an environment variable</span>
+<span class="c"># and access it through the proxy</span>
+<span class="nb">export </span><span class="nv">POD_NAME</span><span class="o">=</span><span class="si">$(</span>kubectl get pods <span class="nt">-o</span> go-template <span class="nt">--template</span> <span class="s1">'{ {range .items} } { {.metadata.name} } { {"\n"} } { {end} }'</span><span class="si">)</span>
+
+<span class="c"># Test the pod access via proxy</span>
+curl http://localhost:8001/api/v1/namespaces/default/pods/<span class="nv">$POD_NAME</span>/proxy/
+
+<span class="c"># Minikube</span>
+minikube version
+minikube start
+
+<span class="c"># Deploy a dashboard</span>
+kubectl apply <span class="nt">-f</span> https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+kubectl proxy
+kubectl create serviceaccount cluster-admin-dashboard-sa
+kubectl create clusterrolebinding cluster-admin-dashboard-sa <span class="se">\\</span>n  <span class="nt">--clusterrole</span><span class="o">=</span>cluster-admin <span class="se">\\</span>n  <span class="nt">--serviceaccount</span><span class="o">=</span>default:cluster-admin-dashboard-sa
+
+<span class="c"># Get secret to connect to the dashboard</span>
+kubectl get secret | <span class="nb">grep </span>cluster-admin-dashboard-sa
+kubectl describe secret cluster-admin-dashboard-sa-token-sblqz
+
+<span class="c"># Run a new image / create a new deployment</span>
+kubectl run nginx <span class="nt">--image</span><span class="o">=</span>nginx:1.10.0 <span class="c"># deploy nginx</span>
+kubectl run kubernetes-bootcamp <span class="nt">--image</span><span class="o">=</span>gcr.io/google-samples/kubernetes-bootcamp:v1 <span class="nt">--port</span><span class="o">=</span>8080
+
+<span class="c"># Apply whatever it is described in a file (deployment, service, secret...)</span>
+kubectl apply <span class="nt">-f</span> your-file.yml
+
+<span class="c"># Delete</span>
+kubectl delete <span class="nt">-f</span> your-file.yml
+kubectl delete service <span class="nt">-l</span> <span class="nv">run</span><span class="o">=</span>some-app <span class="c"># Remove services labeled with `run=some-app`</span>
+
+<span class="c"># Get information</span>
+kubectl version
+kubectl cluster-info
+kubectl get <span class="o">[</span>all|nodes|pods|deployments|services|replicasets]
+kubectl describe pods nginx-68c5b54745-hxn8r
+kubectl logs nginx-68c5b54745-hxn8r <span class="nt">-f</span>
+
+<span class="c"># Expose a deployment</span>
+kubectl expose deployments nginx <span class="nt">--port</span> 80 <span class="nt">--type</span> LoadBalancer
+
+<span class="c"># Forward ports</span>
+kubectl port-forward nginx-68c5b54745-hxn8r 10080:80
+
+<span class="c"># Label</span>
+kubectl label pod <span class="nv">$POD_NAME</span> <span class="nv">app</span><span class="o">=</span>v1 <span class="c"># Add the label `app=v1` to the pod `$POD_NAME`</span>
+
+<span class="c"># Scale</span>
+kubectl scale deployments/kubernetes-bootcamp <span class="nt">--replicas</span><span class="o">=</span>4
+
+<span class="c"># Update/Rollback and undo</span>
+kubecel <span class="nb">set </span>image deployments/your-app<span class="o">=</span>you/your-app:v2
+kubectl rollout status deployments/your-app
+kubectl rollout undo deployments/your-app
+
+<span class="c"># Execute commands on a container in a pod</span>
+kubectl <span class="nb">exec </span>nginx-68c5b54745-hxn8r <span class="nt">--stdin</span> <span class="nt">--tty</span> /bin/sh
+
+</code></pre></div></div>
 
     </article>
 
@@ -148,7 +276,7 @@
         
         <div class="meta">
             <h3 class="meta-title">Date</h3>
-            <span class="meta-content">May 26, 2017</span>
+            <span class="meta-content">December 26, 2018</span>
         </div>
         
         
@@ -157,7 +285,7 @@
             <h3 class="meta-title">Categories</h3>
             <span class="meta-content">
                 
-                    Clover&nbsp;
+                    Cloud&nbsp;
                 
             </span>
         </div>
@@ -167,11 +295,13 @@
             <h3 class="meta-title">Tags</h3>
             <span class="meta-content">
                 
-                    Hackintosh&nbsp;
+                    Kubernetes&nbsp;
                 
-                    Clover&nbsp;
+                    Docker&nbsp;
                 
-                    Windows&nbsp;
+                    Docker-compose&nbsp;
+                
+                    Linux&nbsp;
                 
             </span>
         </div>
@@ -187,7 +317,7 @@
     <ul class="rrssb-buttons tiny-format clearfix">
         
         <li class="rrssb-facebook">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.jdonado.com/restore-clover/" title="Facebook" class="popup">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.jdonado.com/kubernetes" title="Facebook" class="popup">
                 <span class="rrssb-icon">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                         <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434
@@ -201,7 +331,7 @@
         
         
         <li class="rrssb-twitter">
-            <a href="http://twitter.com/share?url=https://blog.jdonado.com/restore-clover/&amp;text=Restore%20clover%20using%20Windows" title="Twitter" class="popup">
+            <a href="http://twitter.com/share?url=https://blog.jdonado.com/kubernetes&amp;text=Kubernetes:%20beyond%20docker%20compose" title="Twitter" class="popup">
                 <span class="rrssb-icon">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                         <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32
@@ -219,7 +349,7 @@
         
         
         <li class="rrssb-linkedin">
-            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.jdonado.com/restore-clover/&amp;title=Restore%20clover%20using%20Windows&amp;summary=Restore%20your%20config.plist
+            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.jdonado.com/kubernetes&amp;title=Kubernetes:%20beyond%20docker%20compose&amp;summary=Beyond%20docker%20compose
 " title="LinkedIn" class="popup" class="popup">
                 <span class="rrssb-icon">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -236,7 +366,7 @@
         
         
         <li class="rrssb-reddit">
-            <a href="http://www.reddit.com/submit?url=https://blog.jdonado.com/restore-clover/&amp;title=Restore%20clover%20using%20Windows" title="Reddit" class="popup">
+            <a href="http://www.reddit.com/submit?url=https://blog.jdonado.com/kubernetes&amp;title=Kubernetes:%20beyond%20docker%20compose" title="Reddit" class="popup">
                 <span class="rrssb-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><g><path d="M11.794 15.316c0-1.029-0.835-1.895-1.866-1.895c-1.03 0-1.893 0.865-1.893 1.895s0.863 1.9 1.9 1.9 C10.958 17.2 11.8 16.3 11.8 15.316z"/><path d="M18.1 13.422c-1.029 0-1.895 0.864-1.895 1.895c0 1 0.9 1.9 1.9 1.865c1.031 0 1.869-0.836 1.869-1.865 C19.969 14.3 19.1 13.4 18.1 13.422z"/><path d="M17.527 19.791c-0.678 0.678-1.826 1.006-3.514 1.006c-0.004 0-0.009 0-0.014 0c-0.004 0-0.01 0-0.015 0 c-1.686 0-2.834-0.328-3.51-1.005c-0.264-0.265-0.693-0.265-0.958 0c-0.264 0.265-0.264 0.7 0 1 c0.943 0.9 2.4 1.4 4.5 1.402c0.005 0 0 0 0 0c0.005 0 0 0 0 0c2.066 0 3.527-0.459 4.47-1.402 c0.265-0.264 0.265-0.693 0.002-0.958C18.221 19.5 17.8 19.5 17.5 19.791z"/><path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237c-0.793 0-1.518 0.287-2.082 0.761c-2.039-1.295-4.646-2.069-7.438-2.219 l1.483-4.691l4.062 0.956c0.071 1.4 1.3 2.6 2.7 2.555c1.488 0 2.695-1.208 2.695-2.695C25.881 3.2 24.7 2 23.2 2 c-1.059 0-1.979 0.616-2.42 1.508l-4.633-1.091c-0.344-0.081-0.693 0.118-0.803 0.455l-1.793 5.7 C10.548 8.6 7.7 9.4 5.6 10.75C5.006 10.3 4.3 10 3.5 10.029c-1.785 0-3.237 1.452-3.237 3.2 c0 1.1 0.6 2.1 1.4 2.69c-0.04 0.272-0.061 0.551-0.061 0.831c0 2.3 1.3 4.4 3.7 5.9 c2.299 1.5 5.3 2.3 8.6 2.325c3.228 0 6.271-0.825 8.571-2.325c2.387-1.56 3.7-3.66 3.7-5.917 c0-0.26-0.016-0.514-0.051-0.768C27.088 15.5 27.7 14.4 27.7 13.267z M23.186 3.355c0.74 0 1.3 0.6 1.3 1.3 c0 0.738-0.6 1.34-1.34 1.34s-1.342-0.602-1.342-1.34C21.844 4 22.4 3.4 23.2 3.355z M1.648 13.3 c0-1.038 0.844-1.882 1.882-1.882c0.31 0 0.6 0.1 0.9 0.209c-1.049 0.868-1.813 1.861-2.26 2.9 C1.832 14.2 1.6 13.8 1.6 13.267z M21.773 21.57c-2.082 1.357-4.863 2.105-7.831 2.105c-2.967 0-5.747-0.748-7.828-2.105 c-1.991-1.301-3.088-3-3.088-4.782c0-1.784 1.097-3.484 3.088-4.784c2.081-1.358 4.861-2.106 7.828-2.106 c2.967 0 5.7 0.7 7.8 2.106c1.99 1.3 3.1 3 3.1 4.784C24.859 18.6 23.8 20.3 21.8 21.57z M25.787 14.6 c-0.432-1.084-1.191-2.095-2.244-2.977c0.273-0.156 0.59-0.245 0.928-0.245c1.035 0 1.9 0.8 1.9 1.9 C26.354 13.8 26.1 14.3 25.8 14.605z"/></g></svg>
                 </span>
@@ -246,7 +376,7 @@
         
         
         <li class="rrssb-hackernews">
-            <a href="https://news.ycombinator.com/submitlink?u=https://blog.jdonado.com/restore-clover/&amp;t=Restore%20clover%20using%20Windows" title="Hacker News" class="popup">
+            <a href="https://news.ycombinator.com/submitlink?u=https://blog.jdonado.com/kubernetes&amp;t=Kubernetes:%20beyond%20docker%20compose" title="Hacker News" class="popup">
                 <span class="rrssb-icon">
                     <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                         <polygon fill="#FFFFFF" points="14.001,13.626 9.492,4.435 6.588,4.435 12.753,16.644 12.753,23.565 15.262,23.565 15.262,16.644
@@ -261,7 +391,7 @@
         
         
         <li class="rrssb-pocket">
-            <a href="https://getpocket.com/save?url=https://blog.jdonado.com/restore-clover/" class="popup">
+            <a href="https://getpocket.com/save?url=https://blog.jdonado.com/kubernetes" class="popup">
                 <span class="rrssb-icon">
                     <svg width="32px" height="28px" viewBox="0 0 32 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
                         <path d="M28.7817528,0.00172488695 C30.8117487,0.00431221738 31.9749312,1.12074529 31.9644402,3.10781507 C31.942147,6.67703739 32.1336065,10.2669583 31.8057648,13.8090137 C30.7147076,25.5813672 17.2181194,31.8996281 7.20714461,25.3808491 C2.71833574,22.4571656 0.196577202,18.3122624 0.0549495772,12.9357897 C-0.0342233715,9.5774348 0.00642900214,6.21519891 0.0300336062,2.85555035 C0.0405245414,1.1129833 1.21157517,0.0146615391 3.01995012,0.00819321302 C7.34746087,-0.00603710433 11.6775944,0.00431221738 16.0064164,0.00172488695 C20.2644248,0.00172488695 24.5237444,-0.00215610869 28.7817528,0.00172488695 L28.7817528,0.00172488695 Z M8.64885184,7.85611511 C7.38773662,7.99113854 6.66148108,8.42606978 6.29310958,9.33228474 C5.90114134,10.2969233 6.17774769,11.1421181 6.89875951,11.8276216 C9.35282156,14.161969 11.8108164,16.4924215 14.2976518,18.7943114 C15.3844131,19.7966007 16.5354102,19.7836177 17.6116843,18.7813283 C20.0185529,16.5495467 22.4070683,14.2982907 24.7824746,12.0327533 C25.9845979,10.8850542 26.1012707,9.56468083 25.1469132,8.60653379 C24.1361858,7.59255976 22.8449191,7.6743528 21.5890476,8.85191291 C19.9936451,10.3488554 18.3680912,11.8172352 16.8395462,13.3777945 C16.1342655,14.093159 15.7200114,14.0048744 15.0566806,13.3440386 C13.4599671,11.7484252 11.8081945,10.2060421 10.1262706,8.70001155 C9.65564653,8.27936164 9.00411403,8.05345704 8.64885184,7.85611511 L8.64885184,7.85611511 L8.64885184,7.85611511 Z"></path>
@@ -273,7 +403,7 @@
         
         
         <li class="rrssb-email">
-            <a href="mailto:?subject=Restore%20clover%20using%20Windows&amp;body=https://blog.jdonado.com/restore-clover/" title="Email">
+            <a href="mailto:?subject=Kubernetes:%20beyond%20docker%20compose&amp;body=https://blog.jdonado.com/kubernetes" title="Email">
                 <span class="rrssb-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><g><path d="M20.111 26.147c-2.336 1.051-4.361 1.401-7.125 1.401c-6.462 0-12.146-4.633-12.146-12.265 c0-7.94 5.762-14.833 14.561-14.833c6.853 0 11.8 4.7 11.8 11.252c0 5.684-3.194 9.265-7.399 9.3 c-1.829 0-3.153-0.934-3.347-2.997h-0.077c-1.208 1.986-2.96 2.997-5.023 2.997c-2.532 0-4.361-1.868-4.361-5.062 c0-4.749 3.504-9.071 9.111-9.071c1.713 0 3.7 0.4 4.6 0.973l-1.169 7.203c-0.388 2.298-0.116 3.3 1 3.4 c1.673 0 3.773-2.102 3.773-6.58c0-5.061-3.27-8.994-9.303-8.994c-5.957 0-11.175 4.673-11.175 12.1 c0 6.5 4.2 10.2 10 10.201c1.986 0 4.089-0.43 5.646-1.245L20.111 26.147z M16.646 10.1 c-0.311-0.078-0.701-0.155-1.207-0.155c-2.571 0-4.595 2.53-4.595 5.529c0 1.5 0.7 2.4 1.9 2.4 c1.441 0 2.959-1.828 3.311-4.087L16.646 10.068z"/></g></svg>
                 </span>
@@ -300,13 +430,13 @@
 
             
 <div class="next-post">
-    <a href="/vim-magic/" class="next-post-link"></a>
+    <a href="/behind-a-nat" class="next-post-link"></a>
 
-    <img src="https://blog.jdonado.com/assets/images/vim-icon.png" class="next-post-thumb" />
+    <img src="https://blog.jdonado.com/assets/images/behind-a-nat.jpg" class="next-post-thumb" />
 
     <div class="next-post-info">
         <span class="next-story">Next Story</span>
-        <h3 class="next-post-title">Vim magic</h3>
+        <h3 class="next-post-title">Self-hosting behind a NAT</h3>
     </div>
 </div>
 
@@ -396,7 +526,7 @@
 
         var steps = [];
         var images = [
-            'https://blog.jdonado.com/assets/images/backgrounds/clover.png',
+            'https://blog.jdonado.com/assets/images/backgrounds/google-bg.png',
         ];
 
         if (images.length > 0) {
