@@ -1,6 +1,6 @@
 # Site settings
 name: JDonado's README
-description: 'Coding in English, thinking in Spanish, living in Germany'
+description: F. Javier R. Donado\'s blog about software architecture, development and technology
 
 baseurl: '' # the subpath of your site, e.g. /blog
 url: 'https://blog.jdonado.com' # the base hostname & protocol for your site
@@ -8,7 +8,7 @@ url: 'https://blog.jdonado.com' # the base hostname & protocol for your site
 # Build settings
 markdown:            kramdown
 relative_permalinks: false
-permalink:           :title/
+permalink:           /:title
 
 pagination:          true
 paginate:            8
