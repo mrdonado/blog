@@ -29,7 +29,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/images/apple-touch-icon-152x152.png" />
 
     <link rel="canonical" href="https://blog.jdonado.com/reasonml/">
-    <link type="application/atom+xml" rel="alternate" href="https://blog.jdonado.com/feed.xml" title="JDonado's README" />
+    <link type="application/atom+xml" rel="alternate" href="https://blog.jdonado.com/feed.xml" title="JDonado&apos;s README" />
 </head>
 
 
@@ -161,15 +161,15 @@
 
 <span class="kd">let</span> <span class="nx">isMorning</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 <span class="c1">// This binds "Good Morning" to the name `greeting`</span>
-<span class="kd">let</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="k">if</span> <span class="p">(</span><span class="nx">isMorning</span><span class="p">)</span> <span class="p">{</span><span class="dl">"</span><span class="s2">Good Morning</span><span class="dl">"</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">};</span>
+<span class="kd">let</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="nf">if </span><span class="p">(</span><span class="nx">isMorning</span><span class="p">)</span> <span class="p">{</span><span class="dl">"</span><span class="s2">Good Morning</span><span class="dl">"</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">};</span>
 
 <span class="c1">// A switch expression</span>
 <span class="kd">let</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="nx">stranger</span> <span class="o">=&gt;</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">stranger</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">switch </span><span class="p">(</span><span class="nx">stranger</span><span class="p">)</span> <span class="p">{</span>
     <span class="o">|</span> <span class="nx">Teacher</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">Hey professor</span><span class="dl">"</span>
     <span class="o">|</span> <span class="nx">Director</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">Hello director</span><span class="dl">"</span>
-    <span class="o">|</span> <span class="nx">Student</span><span class="p">(</span><span class="dl">"</span><span class="s2">Richard</span><span class="dl">"</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">Still here Ricky?</span><span class="dl">"</span>
-    <span class="o">|</span> <span class="nx">Student</span><span class="p">(</span><span class="nx">anyOtherName</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">Hey, </span><span class="dl">"</span> <span class="o">++</span> <span class="nx">anyOtherName</span> <span class="o">++</span> <span class="dl">"</span><span class="s2">.</span><span class="dl">"</span>
+    <span class="o">|</span> <span class="nc">Student</span><span class="p">(</span><span class="dl">"</span><span class="s2">Richard</span><span class="dl">"</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">Still here Ricky?</span><span class="dl">"</span>
+    <span class="o">|</span> <span class="nc">Student</span><span class="p">(</span><span class="nx">anyOtherName</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">Hey, </span><span class="dl">"</span> <span class="o">++</span> <span class="nx">anyOtherName</span> <span class="o">++</span> <span class="dl">"</span><span class="s2">.</span><span class="dl">"</span>
     <span class="o">|</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">unknown</span><span class="dl">"</span>
   <span class="p">};</span>
 
@@ -205,23 +205,23 @@
 
 <span class="c1">// A function with labelled and optional parameters</span>
 <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="p">(</span><span class="o">~</span><span class="nx">firstName</span><span class="o">=</span><span class="dl">"</span><span class="s2">Defaultname</span><span class="dl">"</span><span class="p">,</span> <span class="o">~</span><span class="nx">middleName</span><span class="o">=</span><span class="p">?,</span> <span class="o">~</span><span class="nx">lastName</span><span class="p">,</span> <span class="p">())</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">middleName</span><span class="p">)</span> <span class="p">{</span>
-  <span class="o">|</span> <span class="nx">Some</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">firstName</span> <span class="o">++</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">++</span> <span class="nx">value</span> <span class="o">++</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">++</span> <span class="nx">lastName</span>
+  <span class="nf">switch </span><span class="p">(</span><span class="nx">middleName</span><span class="p">)</span> <span class="p">{</span>
+  <span class="o">|</span> <span class="nc">Some</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">firstName</span> <span class="o">++</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">++</span> <span class="nx">value</span> <span class="o">++</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">++</span> <span class="nx">lastName</span>
   <span class="o">|</span> <span class="nx">None</span> <span class="o">=&gt;</span> <span class="nx">firstName</span> <span class="o">++</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">++</span> <span class="nx">lastName</span>
   <span class="p">};</span>
 <span class="p">};</span>
 
 <span class="c1">// Pipe operators example: find the largest element smaller than 4</span>
 <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-  <span class="o">|&gt;</span> <span class="nx">List</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">compare</span><span class="p">)</span>
+  <span class="o">|&gt;</span> <span class="nx">List</span><span class="p">.</span><span class="nf">sort</span><span class="p">(</span><span class="nx">compare</span><span class="p">)</span>
   <span class="o">|&gt;</span> <span class="nx">List</span><span class="p">.</span><span class="nx">rev</span>
-  <span class="o">|&gt;</span> <span class="nx">List</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">);</span>
+  <span class="o">|&gt;</span> <span class="nx">List</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">);</span>
 
 <span class="c1">// Recursive functions (without rec, the function cannot call itself)</span>
 <span class="kd">let</span> <span class="nx">rec</span> <span class="nx">countBack</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">print_int</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
-    <span class="nx">countBack</span><span class="p">(</span><span class="nx">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print_int</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+    <span class="nf">countBack</span><span class="p">(</span><span class="nx">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
   <span class="p">};</span>
 <span class="p">};</span>
 
@@ -232,10 +232,10 @@
 <span class="p">[</span><span class="o">|</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="o">|</span><span class="p">]</span>
 
 <span class="c1">// A pattern matching example</span>
-<span class="k">switch</span> <span class="p">([</span><span class="o">|</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="o">|</span><span class="p">])</span> <span class="p">{</span>
-<span class="o">|</span> <span class="p">[</span><span class="o">|</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="nx">_</span><span class="o">|</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">print_endline</span><span class="p">(</span><span class="dl">"</span><span class="s2">a, b and something</span><span class="dl">"</span><span class="p">)</span>
-<span class="o">|</span> <span class="p">[</span><span class="o">|</span><span class="nx">_</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="o">|</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">print_endline</span><span class="p">(</span><span class="dl">"</span><span class="s2">something and </span><span class="dl">"</span> <span class="o">++</span> <span class="nx">x</span> <span class="o">++</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">++</span> <span class="nx">y</span><span class="p">)</span>
-<span class="o">|</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">print_endline</span><span class="p">(</span><span class="dl">"</span><span class="s2">An Array</span><span class="dl">"</span><span class="p">)</span>
+<span class="nf">switch </span><span class="p">([</span><span class="o">|</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="o">|</span><span class="p">])</span> <span class="p">{</span>
+<span class="o">|</span> <span class="p">[</span><span class="o">|</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="nx">_</span><span class="o">|</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nf">print_endline</span><span class="p">(</span><span class="dl">"</span><span class="s2">a, b and something</span><span class="dl">"</span><span class="p">)</span>
+<span class="o">|</span> <span class="p">[</span><span class="o">|</span><span class="nx">_</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="o">|</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nf">print_endline</span><span class="p">(</span><span class="dl">"</span><span class="s2">something and </span><span class="dl">"</span> <span class="o">++</span> <span class="nx">x</span> <span class="o">++</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">++</span> <span class="nx">y</span><span class="p">)</span>
+<span class="o">|</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nf">print_endline</span><span class="p">(</span><span class="dl">"</span><span class="s2">An Array</span><span class="dl">"</span><span class="p">)</span>
 <span class="p">};</span>
 
 <span class="c1">// Example Math module</span>
@@ -473,8 +473,6 @@
             
         
             
-        
-            
                 
                 <li class="sb-close ">
                     <a href="/tags/">Tags</a>
@@ -489,7 +487,7 @@
 
         <div class="site-info">
             <p>
-                JDonado's README &dash; Copyright &copy; 2021
+                JDonado's README &dash; Copyright &copy; 2023
             </p>
         </div>
     </nav>
