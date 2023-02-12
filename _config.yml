@@ -51,4 +51,5 @@ exclude:
   - icons.psd
   - docs
   - README.md
+  - local-notes
   - old
