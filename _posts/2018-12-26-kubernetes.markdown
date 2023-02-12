@@ -4,7 +4,7 @@ title:  "Kubernetes: beyond docker compose"
 date:   2018-12-26
 category: cloud
 backgrounds:
-    - https://blog.jdonado.com/assets/images/backgrounds/google-bg.png
+    - https://blog.jdonado.com/assets/images/backgrounds/google-bg.jpg
 thumb: https://blog.jdonado.com/assets/images/kubernetes-logo.jpg
 tags: kubernetes docker docker-compose linux
 ---

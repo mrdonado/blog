@@ -4,7 +4,7 @@ title:  "Restore clover using Windows"
 date:   2017-05-26
 category: clover
 backgrounds:
-    - https://blog.jdonado.com/assets/images/backgrounds/clover.png
+    - https://blog.jdonado.com/assets/images/backgrounds/clover.jpg
 thumb: https://blog.jdonado.com/assets/images/clover.png
 tags: hackintosh clover windows
 ---
