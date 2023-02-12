@@ -4,7 +4,7 @@ title:  "ReasonML"
 date:   2018-05-26
 category: programming-language
 backgrounds:
-    - https://blog.jdonado.com/assets/images/backgrounds/reasonml.png
+    - https://blog.jdonado.com/assets/images/backgrounds/reasonml.jpg
 thumb: https://blog.jdonado.com/assets/images/reasonml.jpg
 tags: functional-programming programming-language javascript ocaml reasonml
 ---
