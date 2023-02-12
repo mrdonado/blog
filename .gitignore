@@ -5,3 +5,4 @@ bower_components/
 *.swp
 .DS_Store
 .jekyll-cache
+deployments
