@@ -182,9 +182,10 @@
 
         @include transition($transition-base);
 
-        // &:first-child {
-        //     width: 100%;
-        // }
+        &.heading-box {
+            width: 100%;
+            height: 120px;
+        }
 
         &:last-child {
             margin-bottom: $spacing-unit;
@@ -243,7 +244,10 @@
 }
 
 .rss-subscribe {
-    text-align: center;
+    text-align: right;
+    a {
+      color: $grey-color-dark;
+    }
 }
 
 /*

@@ -10,6 +10,20 @@ home: true
         {% else %}
         {% assign source = site.posts %}
         {% endif %}
+        {% if paginator.page == 1%}
+        <li class="heading-box">
+            <a href="/about" class="post-list-link">
+                <div class="post-list-info">
+                    <h2 class="post-list-title"> JDonado's Readme</h2>
+                    <span class="post-list-meta">About the author</span>
+                </div>
+            </a>
+
+            <img src="/assets/images/blog-thumb-1.jpg"
+                class="post-list-thumb"
+                alt="Blog Thumbnail" />
+        </li>
+        {% endif %}
 
         {% for post in source %}
         <li>
@@ -27,11 +41,10 @@ home: true
         {% endfor %}
     </ul>
 
-    <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
-    <!-- <p class="rss-subscribe">
+    <p class="rss-subscribe">
         <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
             Subscribe via RSS
             <i class="icon ion-social-rss"></i>
         </a>
-    </p> -->
+    </p>
 </div>
