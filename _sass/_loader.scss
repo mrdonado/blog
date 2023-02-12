@@ -8,7 +8,7 @@
     right: 2 * $spacing-unit;
     position: fixed;
     opacity: 0;
-    top: $spacing-unit / 2;
+    top: calc($spacing-unit / 2);
     z-index: 1;
 
     svg path {
