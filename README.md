@@ -13,7 +13,7 @@ First of all, [install Ruby on your system](https://www.ruby-lang.org/en/documen
 
 Then, run the following commands on the console.
 
-```
+```sh
  sudo gem update --system
  sudo gem install -n /usr/local/bin jekyll
  sudo gem install -n /usr/local/bin jekyll-feed
@@ -21,3 +21,19 @@ Then, run the following commands on the console.
  sudo gem install -n /usr/local/bin jekyll-paginate
  jekyll serve
 ```
+
+## Updated instructions – macOS 13.1+ with ARM CPU
+
+Use [Homebrew](https://brew.sh/) to install Ruby.
+
+Follow the instructions on [the jekyll blog](https://jekyllrb.com/docs/installation/macos/)
+
+Then install the rest of the dependencies.
+
+```sh
+gem install jekyll-feed
+gem install jekyll-sitemap
+gem install jekyll-paginate
+```
+
+Finally, run jekyll in development mode with `jekyll serve`
