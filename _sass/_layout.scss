@@ -245,6 +245,7 @@
 
 .rss-subscribe {
     text-align: right;
+    padding: 0 calc($spacing-unit / 4);
     a {
       color: $grey-color-dark;
     }
