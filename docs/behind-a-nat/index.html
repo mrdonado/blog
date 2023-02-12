@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=6.0, user-scalable=yes">
 
-    <title>The Yin and Yang of Software Development</title>
-    <meta name="description" content="What%20Is%20Software%20Development%20All%20About?">
+    <title>Self-hosting behind a NAT</title>
+    <meta name="description" content="%20%20No%20one%20knows%20what%20it’s%20like%20to%20be%20a%20bad%20man,%20to%20be%20a%20sad%20man…%20behind%20a%20NAT">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700italic,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
@@ -28,7 +28,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png" />
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/images/apple-touch-icon-152x152.png" />
 
-    <link rel="canonical" href="https://blog.jdonado.com/yin-and-yang">
+    <link rel="canonical" href="https://blog.jdonado.com/behind-a-nat/">
     <link type="application/atom+xml" rel="alternate" href="https://blog.jdonado.com/feed.xml" title="JDonado&apos;s README" />
 </head>
 
@@ -95,137 +95,147 @@
     <p class="post-reading-time">&#126;
         
         
-          9 min
+          6 min
         
     </p>
     
 
     <header class="post-header">
         
-        <img src="https://blog.jdonado.com/assets/images/yin-yang.png" alt="The Yin and Yang of Software Development" class="post-thumb" />
+        <img src="https://blog.jdonado.com/assets/images/behind-a-nat.jpg" alt="Self-hosting behind a NAT" class="post-thumb" />
         
 
-        <h1 class="post-title">The Yin and Yang of Software Development</h1>
+        <h1 class="post-title">Self-hosting behind a NAT</h1>
     </header>
 
     <article class="post-content">
-        <h2 id="what-is-software-development-all-about">What Is Software Development All About?</h2>
-
-<p>Depending on who you ask, even when asking professionals that have been many years in the industry, you’ll get very different answers. In my experience, there are two clear trends:</p>
-
-<ul>
-  <li>
-    <p><strong>Software Development is a craft</strong>. Your job as a software developer is similar in many ways to the job of a gardener. You don’t have a big plan because you don’t need one. You’re starting small, you’re alone and you’re building things along the way. If you’re a good gardener, however, you’ll be clean and you’ll pay attention to the tricky parts of your garden because you know that unless you keep them under control, they’ll soon get out of hand.</p>
-  </li>
-  <li>
-    <p><strong>Software Development is an Engineering discipline</strong>. Now there’s a plan. You have one or even various teams, and you’re building something big and complex for which there are clear requirements and constraints. There’s a need for a well-defined architecture, as well as processes that ensure the <strong>quality requirements</strong>. <a href="https://en.wikipedia.org/wiki/Agile_software_development">Agile methodologies</a> might let you delay part of the decision-making, but you cannot sacrifice quality.</p>
-  </li>
-</ul>
-
-<p>You might call it the <em>Yin and Yang of Software Development</em>. I think that both statements are true to some extent, but one might rule over the other depending on the context.</p>
-
-<p>There’s almost always some craft or even some art in the process of software development. When you’re writing code, more often than not you’re not following a scientifically rigorous method. Instead of that, you rely on pre-existing components and on your experience to build things that work. If you need metrics, these metrics usually come after you’ve already built something. However, depending on the context, you might need to apply engineering processes and quality standards that resemble those used in other engineering disciplines.</p>
-
-<p>These two definitions raise two new questions:</p>
-
-<ul>
-  <li>In which context will one definition rule over the other?</li>
-  <li>What is quality in software?</li>
-</ul>
-
-<h2 id="business-is-the-context">Business Is the Context</h2>
-
-<p>When you build software in the context of a startup that is creating a new product from scratch, there are usually so many unknown factors about the final product that it often makes little sense to apply most software quality measures.</p>
-
-<p>If you follow <a href="https://www.thoughtworks.com/books/understanding-design-thinking-lean-agile-jonny-schneider">Design Thinking, Lean and Agile</a> principles, you’ll continuously perform experiments and collect data to test your hypotheses. This way, on each iteration you gain more insights about the right direction for your product.</p>
-
-<p>Usually, during the initial iterations, you’ll have a pretty small team (maybe just one developer), and the advantages of applying software quality principles might not be too clear because oftentimes the code that you’re writing won’t live very long.</p>
-
-<p>As Johnny Schneider explains in <a href="https://www.goodreads.com/en/book/show/35784015">Understanding Design Thinking, Lean and Agile</a>:</p>
-
-<blockquote>
-  <p>[…] Much of this experimentation might not involve writing a line of code—after all, <strong>working software is still an experiment, just a really expensive one</strong>. As confidence increases and software is the experiment, Agile is how teams constantly adapt to change, repeatedly adjusting their course and taking the next steps</p>
+        <blockquote>
+  <p>No one knows what it’s like to be a bad man, to be a sad man… behind a NAT</p>
 </blockquote>
 
-<p>Therefore, during the initial phases of a startup, you should better spend your time experimenting and collecting data about your experiments to continue taking well-informed decisions. You can interpret this as a technical variant of Paul Graham’s <a href="http://paulgraham.com/ds.html">“Do things that don’t scale”</a>. What is the advantage of writing a high-quality scalable solution if you end up throwing it all away?</p>
+<p>Said <a href="https://www.youtube.com/watch?v=dMrImMedYRo">a famous song</a> (more or less…)</p>
 
-<p>Some developers would be horrified to even think about developing software like that. That’s because they don’t see software development as a craft nor as an Engineering discipline, <em>but as a religion</em>. Good developers see the value in software quality techniques, but they can also see the big picture and the cost of <a href="https://en.wikipedia.org/wiki/Non-functional_requirement">non-functional requirements</a>, especially in the beginning. If you don’t see this, you might end up with an overengineered solution, that is difficult to maintain and poorly addresses the business needs.</p>
+<h1 id="you-might-be-behind-a-nat-too">You might be behind a NAT too</h1>
 
-<hr />
+<p>It’s been years now since the times where you would get a static IPv4 address assigned to your home together with your internet access. An address that you could use to ping your home router from anywhere in the world. Now you’re lucky if you’re even offered the option of paying an extra fee to get one. Sometimes not even a business contract will give you that.</p>
 
-<p>The problem with the context, however, <strong>is that it changes over time</strong>. You might’ve started it all as a bunch of experiments, but at some point, if enough of these experiments were successful, you’ll find yourself offering a real service to real customers.</p>
+<p>Now, most of the time, your home or small business router will only be reachable on an <a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a> address. In some cases your <a href="https://en.wikipedia.org/wiki/Internet_service_provider">ISP</a> might be using something like <a href="https://www.citrix.com/blogs/2012/03/22/ds-lite-%E2%80%93-ipv4-over-ipv6-and-nat/">DS-Lite</a>, which puts you behind a <a href="https://en.wikipedia.org/wiki/Network_address_translation">NAT (Network Address Translation)</a> protocol, making it very difficult for you to <a href="https://en.wikipedia.org/wiki/Self-hosting_(web_services)">self-host</a> anything at home.</p>
 
-<p>A good CTO in a startup will constantly try to answer this question: <strong>“how much technical debt can we afford?”</strong>. In the beginning, we need speed over anything else, because we cannot afford to take too long when trying out our experiments. Otherwise, we’ll run out of time and resources and our competition will kick us out before we’ve even started.</p>
+<h2 id="but-why">But… why??</h2>
 
-<p><a href="https://blog.devgenius.io/quality-vs-speed-9a46a6254a4e">But there’s an inflection point</a> where the velocity (that is, the development speed of new features) will dramatically decrease if you don’t improve the quality of your software. It’s difficult to tell when exactly this inflection point occurs for a given product, but some indicators are:</p>
+<p>There’s just <a href="https://en.wikipedia.org/wiki/IPv4_address_exhaustion">not enough IPv4 addresses</a> for all of us, and although <strong><a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a> is the solution</strong> (and although it’s been around since 1998…), <a href="https://www.google.com/intl/en/ipv6/statistics.html#tab=ipv6-adoption">adoption is still slow</a>. Chances are if your server is only available under an IPv6 address, most people out there won’t be able to reach you. You still need an IPv4 address for people to be able to find you on the internet in 2019. <strong>Sadly</strong>.</p>
 
-<ul>
-  <li>Your codebase is growing a lot and more people start working on it.</li>
-  <li>You start spending more time than usual fixing bugs.</li>
-  <li>New developers find it increasingly difficult to start being productive.</li>
-  <li>You need an increasing amount of time to manually test your product on each release.</li>
-  <li>Your customers start complaining about the quality of the service.</li>
-</ul>
+<p>So if you want to be able to <strong>self-host</strong> anything at home you need some kind of workaround. A <a href="https://en.wikipedia.org/wiki/Dynamic_DNS">dynamic DNS</a> is probably the most popular option (one that supports IPv6), but depending on your ISP’s setup, that might not work for you either. So, what other options do we have?</p>
 
-<p><img src="https://blog.jdonado.com/assets/images/speed-time-chart.png" alt="Development speed vs. time since project start" /></p>
+<h2 id="wait-a-minute-we-have-the-cloud-now-why-should-i-bother-about-self-hosting-at-all">Wait a minute, we have the cloud now! Why should I bother about self-hosting at all?</h2>
 
-<p>The team and its stakeholders should realize that the ludicrous speed of the initial phases is not sustainable over time. At some point, enough resources should be spent to continuously refactor the codebase before it’s too late. If the goal is to achieve the highest development speed possible, there’s a moment where software quality principles stop being an obstacle and become a crucial part of <a href="https://www.youtube.com/watch?v=ZmgbjaRfp_Q">a virtuous circle</a> where you build better software, faster. In other words, if you don’t care about the quality of your software soon enough, it’s a matter of time that it’ll become unmaintainable, and that will slow you down.</p>
+<p>True. I wouldn’t recommend self-hosting at home for anything other than experimenting with software for your personal use. I wouldn’t even self-host at home my personal website.</p>
 
-<h3 id="product-development-stages">Product Development Stages</h3>
-
-<p>During product development, it’s quite common to use the following terms:</p>
+<p><strong>BUT</strong> there are just <a href="https://github.com/awesome-selfhosted/awesome-selfhosted/blob/master/README.md">so many awesome things that you can self-host</a> for your personal use… here are some examples:</p>
 
 <ul>
-  <li><a href="https://en.wikipedia.org/wiki/Proof_of_concept">PoC (Proof of Concept)</a>: it’s the minimal solution to see if some idea is even feasible. It’s the cheapest way to test a hypothesis.</li>
-  <li><a href="https://en.wikipedia.org/wiki/Prototype">Prototype</a>: it’s a piece of working software that solves a specific problem. It might have a beautiful design and it might seem to be robust, but it doesn’t follow most software development best practices and quality standards. It’s a good way to test a hypothesis, but it’s not maintainable in the long term. Some authors use the term “walking skeleton” for this.</li>
-  <li><a href="https://en.wikipedia.org/wiki/Minimum_viable_product">MVP (Minimum Viable Product)</a>: it’s a product built on a solid technical base that offers the minimum set of desired features. The goal of an MVP is to hit the market as soon as possible while having a solid starting point that is maintainable in the long term.</li>
+  <li>You can have your own <a href="https://filebrowser.xyz/">alternative to Dropbox or Google Drive</a>. Just buy a cheap 8TB hard drive and forget about paying monthly fees for getting as much online storage as you want.</li>
+  <li>You can use <a href="https://www.mstream.io/">mStream</a> or <a href="https://koel.phanan.net/">Koel</a> as an alternative to a music streaming service (Spotify, Deezer, Apple Music…). If you happen to have an mp3 collection from the days where an iPod was a cool gadget you might as well have been missing it! It’s time to give it a second chance.</li>
+  <li>The same idea applied to Netflix: <a href="https://github.com/streamaserver/streama">Streama</a></li>
+  <li>Who wants to upload photos to Flickr when you have <a href="https://lycheeorg.github.io/">Lychee</a> 😄</li>
+  <li>You can even set up your own <a href="https://medium.com/nycdev/k8s-on-pi-9cc14843d43">Kubernetes cluster</a> using Raspberry PIs. Hours of entertainment await you with that.</li>
 </ul>
 
-<p>After the MVP phase, you might want to continue iterating into a Minimum Marketable Product, a Minimum Lovable Product, a Minimum Delightful Product…</p>
+<h2 id="okay-youve-convinced-me-im-behind-a-nat-and-i-want-your-magic-solution">Okay, you’ve convinced me, I’m behind a NAT and I want your magic solution!</h2>
 
-<p>In my personal experience, most problems during product development these days have to do with misunderstandings about where you are with your product from a technical and from a business perspective. It’s the team members’ responsibility to communicate where you are at a given moment and understand what it means.</p>
+<p>Now we’re talking! If you want to self-host stuff at home and you happen to be behind a NAT; if for whatever reason a dynamic DNS doesn’t work for you, <strong>you can always SETUP A REVERSE PROXY</strong> ⚡️⚡️⚡️⛈.</p>
 
-<h2 id="quality-software">Quality Software</h2>
+<p>The catch here is that you need access to a machine that is already reachable under an IPv4 address. If you’re reading this, you probably have one. If you don’t have it yet, you can get one for <a href="https://www.vpsag.com/">3€ a month</a>, and use it not just as a portal for your self-hosted stuff, but for hosting anything that doesn’t require a lot of processing power (that’s where I host this blog and all my side project’s pages). Some other popular options are <a href="https://www.digitalocean.com/">Digital Ocean</a> or <a href="https://aws.amazon.com/ec2/">AWS EC2</a>.</p>
 
-<p>I won’t describe in depth what software quality is all about. <a href="https://en.wikibooks.org/wiki/Introduction_to_Software_Engineering/Quality">There’s an article in Wikipedia</a> that defines it pretty well.</p>
+<p>You also need a machine (or more!) that is always running at home, where you’ll run the stuff that you want to self-host. An old laptop will do. You just install there whatever Linux distro you like the best and you’re good to go.</p>
 
-<p>In a nutshell, in the context of a startup, quality software means:</p>
+<p>Take a look at mine, isn’t it beautiful?</p>
 
-<ul>
-  <li>Follow best practices.
-    <ul>
-      <li>From code style guides to DRY, KISS, SOLID principles, etc.</li>
-      <li>Continuously refactor your code.</li>
-      <li>Automatically analyze the complexity of your code.</li>
-    </ul>
-  </li>
-  <li>Write tests.
-    <ul>
-      <li>Not just unit tests, but all kinds of tests. Tests will help you keep your solution stable and maintainable. Read <a href="https://martinfowler.com/articles/practical-test-pyramid.html">the practical test pyramid</a> for more information about it.</li>
-      <li>Without tests the chances that new features break existing ones without you realizing it are ever-increasing.</li>
-      <li>Tests also work as documentation for new team members.</li>
-    </ul>
-  </li>
-  <li>Do code reviews.</li>
-  <li>Use continuous delivery pipelines.</li>
-  <li>Design a scalable architecture.
-    <ul>
-      <li>Monitor your systems and identify failures and bottlenecks.</li>
-    </ul>
-  </li>
-</ul>
+<p><img src="https://blog.jdonado.com/assets/images/laptop.jpeg" alt="laptop for self-hosting" title="My good'ol Thinkpad" /></p>
 
-<p>Doing this takes time, but it’s an investment. I wouldn’t recommend doing it all while the chances are high that you’ll end up throwing away most of your code, but as time goes by, you should better spend more and more time doing it if you don’t want to end up with a spaghetti code salad that nobody wants to work with.</p>
+<p>A Raspberry PI will do the trick too.</p>
 
-<p>The later that you start applying these principles, the most difficult (and expensive) it’s going to be to apply them successfully.</p>
+<h2 id="setup-a-reverse-proxy">Setup a Reverse Proxy</h2>
 
-<h2 id="some-final-words">Some Final Words</h2>
+<p>I’m taking for granted that you already have something on that laptop that you want to see online from an IPv4 address. Something that you can visit locally as <code class="language-plaintext highlighter-rouge">http://localhost:8080</code> or similar.</p>
 
-<p>Maybe you’ve always worked in an environment where quality software is valued and that’s why you’re probably almost religious when it comes to writing software with high-quality standards. Hopefully, you see now that there are cases where it’s in fact better to go the quick &amp; dirty way for a while and activate the feature factory mode.</p>
+<p>You also have an online server, which is reachable on an IPv4 address, like this <code class="language-plaintext highlighter-rouge">216.58.213.196</code>.</p>
 
-<p>Feature factory and quick &amp; dirty have a price though, I hope that’s a bit clearer now. It’s tempting to try to extend that unnatural velocity peak as much as you can, but you’re playing with fire here. I’ve seen again and again companies that followed down that road, only to end up with buggy software and developer scarcity, because nobody wants to feel the pain of working with such a codebase in such conditions. If you’re in a team that won’t understand that whatever worked yesterday won’t work today anymore, I’d suggest avoiding quick &amp; dirty altogether.</p>
+<p>First, <a href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04">install NGINX</a> on your server. Once you’re ready, you should be able to visit the default NGINX initial page on <code class="language-plaintext highlighter-rouge">http://[YOURONLINEIP:80]</code>.</p>
 
-<p>Then there’s the ghost of a big rewrite. I would avoid rewriting unless it’s strictly necessary because it’s crazy expensive. If you extend the quick &amp; dirty phase for too long, however, sooner or later there’ll be no other choice.</p>
+<p>Now you can establish an <code class="language-plaintext highlighter-rouge">SSH</code> tunnel between your laptop at home and your server. A tunnel with a reverse proxy where your local port (<code class="language-plaintext highlighter-rouge">8080</code> in the example) is mapped to some other port of your server (e.g.: port <code class="language-plaintext highlighter-rouge">17899</code>). To achieve this, use this command:</p>
+
+<p><code class="language-plaintext highlighter-rouge">ssh -N -g -R 17899:localhost:8080 yourusername@[YOURONLINEIP]</code></p>
+
+<p>While this tunnel is active, edit the NGINX configuration of your server with the following lines:</p>
+
+<pre><code class="language-nginxconfig">
+http {
+
+  upstream backend-home {
+    server 0.0.0.0:17899;
+  }
+
+  server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name _;
+    return 301 https://$host$request_uri;
+
+    location / {
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_pass_request_headers on;
+      proxy_pass http://backend-home;
+    }
+  }
+
+}
+</code></pre>
+
+<p>Restart NGINX on your server:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo systemctl restart nginx</code></p>
+
+<p>Now you should be able to visit <code class="language-plaintext highlighter-rouge">http://[YOURONLINEIP:80]</code> and see whatever you have on the <code class="language-plaintext highlighter-rouge">localhost:8080</code> of your laptop at home. ISN’T IT GREAT!!???</p>
+
+<h2 id="some-considerations">Some Considerations</h2>
+
+<p>If you want that connection to always be active, you’ll need to follow a couple of steps more. Otherwise, the tunnel will be closed after a while and the magic will be gone.</p>
+
+<p>To do that, you need to first configure an SSH Key-Based Authentication to establish an SSH connection with the remote machine <strong>without a password</strong>. <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server">Here’s a very easy tutorial</a> that explains how to do it.</p>
+
+<p>Once you can connect from your laptop to the remote machine via SSH without entering a password, you need a service that establishes that connection and keeps it alive.</p>
+
+<p>A rather simple and reliable way is by defining a <code class="language-plaintext highlighter-rouge">systemd</code> service on your laptop. To do that, edit a new file called <code class="language-plaintext highlighter-rouge">sshtunnel.service</code> on <code class="language-plaintext highlighter-rouge">/etc/systemd/system/</code>:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo vim /etc/systemd/system/sshtunnel.service</code></p>
+
+<p>And add the following contents:</p>
+
+<div class="language-systemd highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[Unit]</span>
+<span class="nt">Description</span><span class="p">=</span>SSH Tunnel
+<span class="nt">After</span><span class="p">=</span>network.target
+
+<span class="k">[Service]</span>
+<span class="nt">Restart</span><span class="p">=</span>always
+<span class="nt">RestartSec</span><span class="p">=</span>20
+<span class="nt">User</span><span class="p">=</span>[YOURLAPTOPUSER]
+<span class="nt">ExecStart</span><span class="p">=</span>/usr/bin/ssh -N -g -R 17899:localhost:8080 yourusername@[YOURONLINEIP]
+
+<span class="k">[Install]</span>
+<span class="nt">WantedBy</span><span class="p">=</span>multi-user.target
+</code></pre></div></div>
+
+<p>Then run the following commands:</p>
+
+<pre><code class="language-shscript">sudo systemctl enable sshtunnel
+sudo systemctl start sshtunnel
+</code></pre>
+
+<p>The first command will tell your system to run the service on startup. The second one (<code class="language-plaintext highlighter-rouge">start</code>) will start the service right away.</p>
+
+<p>Note: there are alternatives to creating your custom ssh service (e.g.: <a href="https://linux.die.net/man/1/autossh">autossh</a>), but a custom service proved to be more stable on my machine. Feel free to use whatever configuration works best for you to keep the connection active.</p>
 
     </article>
 
@@ -233,7 +243,7 @@
         
         <div class="meta">
             <h3 class="meta-title">Date</h3>
-            <span class="meta-content">June 5, 2021</span>
+            <span class="meta-content">November 16, 2019</span>
         </div>
         
         
@@ -242,7 +252,7 @@
             <h3 class="meta-title">Categories</h3>
             <span class="meta-content">
                 
-                    Software-quality startup product-development&nbsp;
+                    Cloud self-hosting linux&nbsp;
                 
             </span>
         </div>
@@ -252,11 +262,11 @@
             <h3 class="meta-title">Tags</h3>
             <span class="meta-content">
                 
-                    Software-quality&nbsp;
+                    Cloud&nbsp;
                 
-                    Startup&nbsp;
+                    Self-hosting&nbsp;
                 
-                    Product-development&nbsp;
+                    Linux&nbsp;
                 
             </span>
         </div>
@@ -272,7 +282,7 @@
     <ul class="rrssb-buttons tiny-format clearfix">
         
         <li class="rrssb-facebook">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.jdonado.com/yin-and-yang" title="Facebook" class="popup">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.jdonado.com/behind-a-nat/" title="Facebook" class="popup">
                 <span class="rrssb-icon">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                         <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434
@@ -286,7 +296,7 @@
         
         
         <li class="rrssb-twitter">
-            <a href="http://twitter.com/share?url=https://blog.jdonado.com/yin-and-yang&amp;text=The%20Yin%20and%20Yang%20of%20Software%20Development" title="Twitter" class="popup">
+            <a href="http://twitter.com/share?url=https://blog.jdonado.com/behind-a-nat/&amp;text=Self-hosting%20behind%20a%20NAT" title="Twitter" class="popup">
                 <span class="rrssb-icon">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                         <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32
@@ -304,7 +314,9 @@
         
         
         <li class="rrssb-linkedin">
-            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.jdonado.com/yin-and-yang&amp;title=The%20Yin%20and%20Yang%20of%20Software%20Development&amp;summary=What%20Is%20Software%20Development%20All%20About?
+            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.jdonado.com/behind-a-nat/&amp;title=Self-hosting%20behind%20a%20NAT&amp;summary=
+%20%20No%20one%20knows%20what%20it’s%20like%20to%20be%20a%20bad%20man,%20to%20be%20a%20sad%20man…%20behind%20a%20NAT
+
 " title="LinkedIn" class="popup" class="popup">
                 <span class="rrssb-icon">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -321,7 +333,7 @@
         
         
         <li class="rrssb-reddit">
-            <a href="http://www.reddit.com/submit?url=https://blog.jdonado.com/yin-and-yang&amp;title=The%20Yin%20and%20Yang%20of%20Software%20Development" title="Reddit" class="popup">
+            <a href="http://www.reddit.com/submit?url=https://blog.jdonado.com/behind-a-nat/&amp;title=Self-hosting%20behind%20a%20NAT" title="Reddit" class="popup">
                 <span class="rrssb-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><g><path d="M11.794 15.316c0-1.029-0.835-1.895-1.866-1.895c-1.03 0-1.893 0.865-1.893 1.895s0.863 1.9 1.9 1.9 C10.958 17.2 11.8 16.3 11.8 15.316z"/><path d="M18.1 13.422c-1.029 0-1.895 0.864-1.895 1.895c0 1 0.9 1.9 1.9 1.865c1.031 0 1.869-0.836 1.869-1.865 C19.969 14.3 19.1 13.4 18.1 13.422z"/><path d="M17.527 19.791c-0.678 0.678-1.826 1.006-3.514 1.006c-0.004 0-0.009 0-0.014 0c-0.004 0-0.01 0-0.015 0 c-1.686 0-2.834-0.328-3.51-1.005c-0.264-0.265-0.693-0.265-0.958 0c-0.264 0.265-0.264 0.7 0 1 c0.943 0.9 2.4 1.4 4.5 1.402c0.005 0 0 0 0 0c0.005 0 0 0 0 0c2.066 0 3.527-0.459 4.47-1.402 c0.265-0.264 0.265-0.693 0.002-0.958C18.221 19.5 17.8 19.5 17.5 19.791z"/><path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237c-0.793 0-1.518 0.287-2.082 0.761c-2.039-1.295-4.646-2.069-7.438-2.219 l1.483-4.691l4.062 0.956c0.071 1.4 1.3 2.6 2.7 2.555c1.488 0 2.695-1.208 2.695-2.695C25.881 3.2 24.7 2 23.2 2 c-1.059 0-1.979 0.616-2.42 1.508l-4.633-1.091c-0.344-0.081-0.693 0.118-0.803 0.455l-1.793 5.7 C10.548 8.6 7.7 9.4 5.6 10.75C5.006 10.3 4.3 10 3.5 10.029c-1.785 0-3.237 1.452-3.237 3.2 c0 1.1 0.6 2.1 1.4 2.69c-0.04 0.272-0.061 0.551-0.061 0.831c0 2.3 1.3 4.4 3.7 5.9 c2.299 1.5 5.3 2.3 8.6 2.325c3.228 0 6.271-0.825 8.571-2.325c2.387-1.56 3.7-3.66 3.7-5.917 c0-0.26-0.016-0.514-0.051-0.768C27.088 15.5 27.7 14.4 27.7 13.267z M23.186 3.355c0.74 0 1.3 0.6 1.3 1.3 c0 0.738-0.6 1.34-1.34 1.34s-1.342-0.602-1.342-1.34C21.844 4 22.4 3.4 23.2 3.355z M1.648 13.3 c0-1.038 0.844-1.882 1.882-1.882c0.31 0 0.6 0.1 0.9 0.209c-1.049 0.868-1.813 1.861-2.26 2.9 C1.832 14.2 1.6 13.8 1.6 13.267z M21.773 21.57c-2.082 1.357-4.863 2.105-7.831 2.105c-2.967 0-5.747-0.748-7.828-2.105 c-1.991-1.301-3.088-3-3.088-4.782c0-1.784 1.097-3.484 3.088-4.784c2.081-1.358 4.861-2.106 7.828-2.106 c2.967 0 5.7 0.7 7.8 2.106c1.99 1.3 3.1 3 3.1 4.784C24.859 18.6 23.8 20.3 21.8 21.57z M25.787 14.6 c-0.432-1.084-1.191-2.095-2.244-2.977c0.273-0.156 0.59-0.245 0.928-0.245c1.035 0 1.9 0.8 1.9 1.9 C26.354 13.8 26.1 14.3 25.8 14.605z"/></g></svg>
                 </span>
@@ -331,7 +343,7 @@
         
         
         <li class="rrssb-hackernews">
-            <a href="https://news.ycombinator.com/submitlink?u=https://blog.jdonado.com/yin-and-yang&amp;t=The%20Yin%20and%20Yang%20of%20Software%20Development" title="Hacker News" class="popup">
+            <a href="https://news.ycombinator.com/submitlink?u=https://blog.jdonado.com/behind-a-nat/&amp;t=Self-hosting%20behind%20a%20NAT" title="Hacker News" class="popup">
                 <span class="rrssb-icon">
                     <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                         <polygon fill="#FFFFFF" points="14.001,13.626 9.492,4.435 6.588,4.435 12.753,16.644 12.753,23.565 15.262,23.565 15.262,16.644
@@ -346,7 +358,7 @@
         
         
         <li class="rrssb-pocket">
-            <a href="https://getpocket.com/save?url=https://blog.jdonado.com/yin-and-yang" class="popup">
+            <a href="https://getpocket.com/save?url=https://blog.jdonado.com/behind-a-nat/" class="popup">
                 <span class="rrssb-icon">
                     <svg width="32px" height="28px" viewBox="0 0 32 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
                         <path d="M28.7817528,0.00172488695 C30.8117487,0.00431221738 31.9749312,1.12074529 31.9644402,3.10781507 C31.942147,6.67703739 32.1336065,10.2669583 31.8057648,13.8090137 C30.7147076,25.5813672 17.2181194,31.8996281 7.20714461,25.3808491 C2.71833574,22.4571656 0.196577202,18.3122624 0.0549495772,12.9357897 C-0.0342233715,9.5774348 0.00642900214,6.21519891 0.0300336062,2.85555035 C0.0405245414,1.1129833 1.21157517,0.0146615391 3.01995012,0.00819321302 C7.34746087,-0.00603710433 11.6775944,0.00431221738 16.0064164,0.00172488695 C20.2644248,0.00172488695 24.5237444,-0.00215610869 28.7817528,0.00172488695 L28.7817528,0.00172488695 Z M8.64885184,7.85611511 C7.38773662,7.99113854 6.66148108,8.42606978 6.29310958,9.33228474 C5.90114134,10.2969233 6.17774769,11.1421181 6.89875951,11.8276216 C9.35282156,14.161969 11.8108164,16.4924215 14.2976518,18.7943114 C15.3844131,19.7966007 16.5354102,19.7836177 17.6116843,18.7813283 C20.0185529,16.5495467 22.4070683,14.2982907 24.7824746,12.0327533 C25.9845979,10.8850542 26.1012707,9.56468083 25.1469132,8.60653379 C24.1361858,7.59255976 22.8449191,7.6743528 21.5890476,8.85191291 C19.9936451,10.3488554 18.3680912,11.8172352 16.8395462,13.3777945 C16.1342655,14.093159 15.7200114,14.0048744 15.0566806,13.3440386 C13.4599671,11.7484252 11.8081945,10.2060421 10.1262706,8.70001155 C9.65564653,8.27936164 9.00411403,8.05345704 8.64885184,7.85611511 L8.64885184,7.85611511 L8.64885184,7.85611511 Z"></path>
@@ -358,7 +370,7 @@
         
         
         <li class="rrssb-email">
-            <a href="mailto:?subject=The%20Yin%20and%20Yang%20of%20Software%20Development&amp;body=https://blog.jdonado.com/yin-and-yang" title="Email">
+            <a href="mailto:?subject=Self-hosting%20behind%20a%20NAT&amp;body=https://blog.jdonado.com/behind-a-nat/" title="Email">
                 <span class="rrssb-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><g><path d="M20.111 26.147c-2.336 1.051-4.361 1.401-7.125 1.401c-6.462 0-12.146-4.633-12.146-12.265 c0-7.94 5.762-14.833 14.561-14.833c6.853 0 11.8 4.7 11.8 11.252c0 5.684-3.194 9.265-7.399 9.3 c-1.829 0-3.153-0.934-3.347-2.997h-0.077c-1.208 1.986-2.96 2.997-5.023 2.997c-2.532 0-4.361-1.868-4.361-5.062 c0-4.749 3.504-9.071 9.111-9.071c1.713 0 3.7 0.4 4.6 0.973l-1.169 7.203c-0.388 2.298-0.116 3.3 1 3.4 c1.673 0 3.773-2.102 3.773-6.58c0-5.061-3.27-8.994-9.303-8.994c-5.957 0-11.175 4.673-11.175 12.1 c0 6.5 4.2 10.2 10 10.201c1.986 0 4.089-0.43 5.646-1.245L20.111 26.147z M16.646 10.1 c-0.311-0.078-0.701-0.155-1.207-0.155c-2.571 0-4.595 2.53-4.595 5.529c0 1.5 0.7 2.4 1.9 2.4 c1.441 0 2.959-1.828 3.311-4.087L16.646 10.068z"/></g></svg>
                 </span>
@@ -384,6 +396,17 @@
 
 
             
+<div class="next-post">
+    <a href="/cloud-infancy/" class="next-post-link"></a>
+
+    <img src="https://blog.jdonado.com/assets/images/cloud.jpg" class="next-post-thumb" />
+
+    <div class="next-post-info">
+        <span class="next-story">Next Story</span>
+        <h3 class="next-post-title">The Infancy of the Cloud</h3>
+    </div>
+</div>
+
 
 
         </div>
@@ -470,7 +493,7 @@
 
         var steps = [];
         var images = [
-            'https://blog.jdonado.com/assets/images/backgrounds/buddha.jpg',
+            'https://blog.jdonado.com/assets/images/behind-a-nat-bg.jpg',
         ];
 
         if (images.length > 0) {
