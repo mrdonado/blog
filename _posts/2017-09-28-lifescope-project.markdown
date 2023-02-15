@@ -11,7 +11,7 @@ thumb: https://blog.jdonado.com/assets/images/lifescope.jpg
 tags: python ai nlp nodejs docker architecture reactjs redux
 ---
 
-# An artificial intelligence software looking for solutions to healthcare problems
+# An AI software looking for solutions to healthcare problems
 
 ## Some history
 
