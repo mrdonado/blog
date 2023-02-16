@@ -8,7 +8,7 @@ Welcome to my blog, amigos! My name is F. Javier R. Donado, I was born in Madrid
 
 I've been [writing software](https://www.youtube.com/watch?v=9LfmrkyP81M) since the early 2000s. My favorite programming languages are TypeScript, Python, and Kotlin, although I've used many more over the years (Java, JavaScript, C++, Clojure, PHP, Perl...). My focus is web development (full-stack) and mobile apps.
 
-I have a master's in [Telecom Engineering](https://www.uc3m.es/master/telecommunication-engineering) and currently, I work as a Software Architect at [Porsche Digital](https://www.porsche.digital/) in Ludwigsburg.
+I have a master's in [Telecom Engineering](https://www.uc3m.es/master/telecommunication-engineering) and currently, I work as a [System Architect](https://www.scaledagileframework.com/system-architect-engineering/) at [Porsche Digital](https://www.porsche.digital/) in Ludwigsburg.
 
 I love flexible & scalable architectures, DDD, functional programming, the AWS cloud, Docker, VIM, Visual Studio Code, and the clicky sound of a mechanical keyboard.
 
