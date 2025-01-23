@@ -1,6 +1,8 @@
 # JDonado blog - JDonado's Readme
 
-## [blog.jdonado.com](https://blog.jdonado.com)
+Not online anymore. Replaced by https://www.jdonado.com
+
+---
 
 Blog powered by [Jekyll](https://jekyllrb.com/) with a template based in [Travelogue](https://github.com/SalGnt/Travelogue);
 
